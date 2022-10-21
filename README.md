@@ -1,17 +1,3 @@
 # rede_social_lr
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# rede_social_lr" 
+Esse projeto e o Front-end de uma rede social construido em Flutter, pelos discentes Luiggi & Rafael do 6° Periodo TSI do Instituto Federal campus Morrinhos, onde será realizado o desenvolvimento como um trabalho final para as disciplinas de API Rest & Desenvolvimento para Sistemas Moveis ministradas pelo docente Marcel Melo. ( Back-end está em outro repositorio ) [LINK]
