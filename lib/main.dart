@@ -14,7 +14,6 @@ void main() {
       routes: {
         '/': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
-        // '/telab': (context) => TelaB(),
       },
     ),
   );
