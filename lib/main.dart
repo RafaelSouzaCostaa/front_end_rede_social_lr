@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'ScreenHome/screen_home.dart';
+import 'ScreenSplash/screen_splash.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -9,7 +12,8 @@ void main() {
       ),
       initialRoute: '/',
       routes: {
-        //'/': (_) => screen(),
+        '/': (context) => const ScreenSplash(),
+        '/home': (context) => const ScreenHome(),
         // '/telab': (context) => TelaB(),
       },
     ),
