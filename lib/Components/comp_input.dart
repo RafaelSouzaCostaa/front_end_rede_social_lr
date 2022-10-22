@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-class ComponentInput extends StatelessWidget {
+class ComponentInput extends StatefulWidget {
   String labelText;
   var suffixIcon;
   bool obscureText = false;
@@ -19,16 +19,21 @@ class ComponentInput extends StatelessWidget {
   });
 
   @override
+  State<ComponentInput> createState() => _ComponentInputState();
+}
+
+class _ComponentInputState extends State<ComponentInput> {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
       height: 65,
       child: TextFormField(
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
-        obscureText: obscureText,
+        obscureText: widget.obscureText,
         decoration: InputDecoration(
-          suffix: suffixIcon,
-          labelText: labelText,
+          suffix: widget.suffixIcon,
+          labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
           hintStyle: TextStyle(fontSize: 13, color: Colors.white24),
           enabledBorder: OutlineInputBorder(
@@ -46,7 +51,7 @@ class ComponentInput extends StatelessWidget {
             ),
           ),
         ),
-        validator: validator == true
+        validator: widget.validator == true
             ? (value) {
                 if (value!.isEmpty) {
                   return "Campo Obrigatorio";
