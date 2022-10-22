@@ -12,7 +12,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
         '/': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
@@ -25,7 +25,7 @@ void main() {
 }
 
 
-//ATENCAO
+//ATENCAO APENAS TAGS GIT E INFOS
 
 //CUIDADOS AO IMPORTAR ARQUIVOS PROPRIOS, NÃO IMPORTAR COM "PACKAGE:" IMPORTAR DA MANEIRA TRADICIONAL "../PASTA/ARQUIVO.DART",
 //ISSO VAI EVITAR UMA GRANDE DOR DE CABEÇA DEPOIS;
