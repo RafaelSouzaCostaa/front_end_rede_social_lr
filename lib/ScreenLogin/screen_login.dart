@@ -86,7 +86,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                                   style: TextStyle(color: Color(0xFF26F4E8)),
                                 ),
                                 onTap: () {
-                                  //TODO > Navigator para pagina de cadastro
+                                  Navigator.pushNamed(context, "/cadastro");
                                 },
                               ),
                             ],
