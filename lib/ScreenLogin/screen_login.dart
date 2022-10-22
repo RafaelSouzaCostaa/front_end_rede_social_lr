@@ -120,7 +120,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF26F4E8),
+                            backgroundColor: const Color(
+                                0xFF26F4E8), //ATENCAO Luiggi coloquei Border Radius no BTN da Screen cadastro, ve qual fica melhor e muda pro que vc preferir
                           ),
                           child: const Text(
                             "Login",
