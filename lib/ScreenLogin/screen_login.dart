@@ -16,79 +16,81 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF0E1010),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-              width: 50,
-              child: Image.asset("assets/image/logo.png"),
-            ),
-            const SizedBox(height: 100),
-            Form(
-              child: Column(children: [
-                Container(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: ComponentInput(
-                    labelText: 'Usuario',
-                    controller: user_controller,
-                    validator: true,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF0E1010),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 50,
+                child: Image.asset("assets/image/logo.png"),
+              ),
+              const SizedBox(height: 100),
+              Form(
+                child: Column(children: [
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: ComponentInput(
+                      labelText: 'Usuario',
+                      controller: user_controller,
+                      validator: true,
+                    ),
                   ),
-                ),
-                ComponentInput(
-                    labelText: 'Senha', controller: password_controller),
-                Row(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.only(top: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Não tem uma conta? ",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "Cadastre-se",
+                  ComponentInput(
+                      labelText: 'Senha', controller: password_controller),
+                  Row(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.only(top: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Não tem uma conta? ",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "Cadastre-se",
+                              style: TextStyle(color: Color(0xFF26F4E8)),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 50),
+                  Row(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.75,
+                        padding: EdgeInsets.only(left: 35),
+                        child: GestureDetector(
+                          child: Text(
+                            "Esqueceu sua senha?",
                             style: TextStyle(color: Color(0xFF26F4E8)),
                           ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(height: 50),
-                Row(
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.75,
-                      padding: EdgeInsets.only(left: 35),
-                      child: GestureDetector(
-                        child: Text(
-                          "Esqueceu sua senha?",
-                          style: TextStyle(color: Color(0xFF26F4E8)),
+                          onTap: () {},
                         ),
-                        onTap: () {},
                       ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Login",
-                        style: TextStyle(color: Colors.black),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Login",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF26F4E8),
+                        ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF26F4E8),
-                      ),
-                    ),
-                  ],
-                )
-              ]),
-            )
-          ],
+                    ],
+                  )
+                ]),
+              )
+            ],
+          ),
         ),
       ),
     );
