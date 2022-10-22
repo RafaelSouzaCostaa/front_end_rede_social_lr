@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CompBotao extends StatefulWidget {
+class CompBotao extends StatelessWidget {
   String nome;
 
   CompBotao({super.key, required this.nome});
 
-  @override
-  State<CompBotao> createState() => _CompBotaoState();
-}
-
-class _CompBotaoState extends State<CompBotao> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -23,7 +18,7 @@ class _CompBotaoState extends State<CompBotao> {
       ),
       onPressed: () {/*IMPLEMENTAÇÃO NA CHAMADA COM GESTURE DETECTOR*/},
       child: Text(
-        widget.nome,
+        nome,
         style:
             const TextStyle(color: Colors.black, fontFamily: 'Imprima-Regular'),
       ),
