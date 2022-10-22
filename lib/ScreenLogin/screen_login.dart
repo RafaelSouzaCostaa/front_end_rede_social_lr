@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 import '../Components/comp_input.dart';
@@ -12,8 +10,8 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
-  TextEditingController user_controller = TextEditingController();
-  TextEditingController password_controller = TextEditingController();
+  TextEditingController userController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   bool _visiblePassword = false;
 
@@ -21,13 +19,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF0E1010),
+        backgroundColor: const Color(0xFF0E1010),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: SizedBox(
                     height: 25,
                     width: 25,
@@ -41,10 +39,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   //user
                   child: Column(children: [
                     Container(
-                      padding: EdgeInsets.only(bottom: 20),
+                      padding: const EdgeInsets.only(bottom: 20),
                       child: ComponentInput(
                         labelText: 'Usuario',
-                        controller: user_controller,
+                        controller: userController,
                         validator: true,
                       ),
                     ),
@@ -52,15 +50,15 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       //Senha
                       obscureText: !_visiblePassword,
                       labelText: 'Senha',
-                      controller: password_controller,
+                      controller: passwordController,
                       suffixIcon: IconButton(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         icon: _visiblePassword
-                            ? Icon(Icons.visibility_sharp)
-                            : Icon(Icons.visibility_off_sharp),
+                            ? const Icon(Icons.visibility_sharp)
+                            : const Icon(Icons.visibility_off_sharp),
                         color: Colors.white70,
-                        style: ButtonStyle(),
+                        style: const ButtonStyle(),
                         onPressed: () {
                           setState(() {
                             _visiblePassword = !_visiblePassword;
@@ -72,16 +70,16 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width,
-                          padding: EdgeInsets.only(top: 15),
+                          padding: const EdgeInsets.only(top: 15),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
+                              const Text(
                                 "Não tem uma conta? ",
                                 style: TextStyle(color: Colors.white),
                               ),
                               GestureDetector(
-                                child: Text(
+                                child: const Text(
                                   "Cadastre-se",
                                   style: TextStyle(color: Color(0xFF26F4E8)),
                                 ),
@@ -101,9 +99,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * 0.75,
-                          padding: EdgeInsets.only(left: 35),
+                          padding: const EdgeInsets.only(left: 35),
                           child: GestureDetector(
-                            child: Text(
+                            child: const Text(
                               "Esqueceu sua senha?",
                               style: TextStyle(
                                 color: Color(
@@ -118,9 +116,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF26F4E8),
+                            backgroundColor: const Color(0xFF26F4E8),
                           ),
-                          child: Text(
+                          child: const Text(
                             "Login",
                             style: TextStyle(color: Colors.black),
                           ),
