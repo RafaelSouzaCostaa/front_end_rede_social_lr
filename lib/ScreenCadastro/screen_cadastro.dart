@@ -22,95 +22,97 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFF0E1010),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 10),
-              SizedBox(
-                height: 25,
-                width: 25,
-                child: Image.asset("assets/image/logo.png"),
-              ),
-              const SizedBox(height: 100),
-              Form(
-                child: Column(
-                  children: [
-                    ComponentInput(
-                      labelText: 'Usuario',
-                      controller: userController,
-                      validator: true,
-                    ),
-                    const SizedBox(height: 20),
-                    ComponentInput(
-                      labelText: 'Email ou Telefone',
-                      controller: passwordController,
-                    ),
-                    const SizedBox(height: 20),
-                    ComponentInput(
-                      labelText: 'Data Nascimento',
-                      controller: passwordController,
-                    ),
-                    const SizedBox(height: 20),
-                    ComponentInput(
-                      labelText: 'Senha',
-                      controller: passwordController,
-                    ),
-                    SizedBox(
-                      height: altura * 0.33,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 35, right: 35),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Row(children: [
-                              const Text(
-                                "Já tem uma Conta?",
-                                style: TextStyle(
-                                  color: Color(0xFFC2B7B7),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  "Login",
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: Image.asset("assets/image/logo.png"),
+                ),
+                const SizedBox(height: 100),
+                Form(
+                  child: Column(
+                    children: [
+                      ComponentInput(
+                        labelText: 'Usuario',
+                        controller: userController,
+                        validator: true,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Email ou Telefone',
+                        controller: passwordController,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Data Nascimento',
+                        controller: passwordController,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Senha',
+                        controller: passwordController,
+                      ),
+                      SizedBox(
+                        height: altura * 0.33,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 35, right: 35),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Row(children: [
+                                const Text(
+                                  "Já tem uma Conta?",
                                   style: TextStyle(
-                                    color: Color(0xFF26F4E8),
+                                    color: Color(0xFFC2B7B7),
                                   ),
                                 ),
-                              ),
-                            ]),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              //IMPLEMENTAR Botao de cadastrar
-                            },
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
+                                const SizedBox(
+                                  width: 10,
                                 ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    "Login",
+                                    style: TextStyle(
+                                      color: Color(0xFF26F4E8),
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                //IMPLEMENTAR Botao de cadastrar
+                              },
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                ),
+                                backgroundColor: MaterialStateProperty.all(
+                                    Colors.grey.shade500),
                               ),
-                              backgroundColor: MaterialStateProperty.all(
-                                  Colors.grey.shade500),
+                              child: const Text(
+                                "Cadastro",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                            child: const Text(
-                              "Cadastro",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
