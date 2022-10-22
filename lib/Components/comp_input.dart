@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class ComponentInput extends StatefulWidget {
   String labelText;
-  Icon? suffixIcon;
+  var suffixIcon;
   bool obscureText = false;
-  bool validator = true;
+  bool validator = false;
   TextEditingController controller;
 
   ComponentInput({
@@ -12,7 +14,7 @@ class ComponentInput extends StatefulWidget {
     required this.labelText,
     this.suffixIcon,
     this.obscureText = false,
-    this.validator = true,
+    this.validator = false,
     required this.controller,
   });
 
@@ -28,9 +30,11 @@ class _ComponentInputState extends State<ComponentInput> {
       height: 65,
       child: TextFormField(
         style: TextStyle(color: Colors.white70),
+        obscureText: widget.obscureText,
         decoration: InputDecoration(
+          suffix: widget.suffixIcon,
           labelText: widget.labelText,
-          labelStyle: TextStyle(fontSize: 13, color: Colors.white60),
+          labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
           hintStyle: TextStyle(fontSize: 13, color: Colors.white24),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -47,6 +51,13 @@ class _ComponentInputState extends State<ComponentInput> {
             ),
           ),
         ),
+        validator: widget.validator == true
+            ? (value) {
+                if (value!.isEmpty) {
+                  return "Campo Obrigatorio";
+                }
+              }
+            : null,
       ),
     );
   }

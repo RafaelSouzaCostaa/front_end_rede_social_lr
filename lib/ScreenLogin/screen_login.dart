@@ -14,6 +14,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
   TextEditingController user_controller = TextEditingController();
   TextEditingController password_controller = TextEditingController();
 
+  bool _visiblePassword = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,6 +37,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   height: MediaQuery.of(context).size.height * 0.25,
                 ),
                 Form(
+                  //user
                   child: Column(children: [
                     Container(
                       padding: EdgeInsets.only(bottom: 20),
@@ -45,7 +48,25 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       ),
                     ),
                     ComponentInput(
-                        labelText: 'Senha', controller: password_controller),
+                      //Senha
+                      obscureText: !_visiblePassword,
+                      labelText: 'Senha',
+                      controller: password_controller,
+                      suffixIcon: IconButton(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        icon: _visiblePassword
+                            ? Icon(Icons.visibility_sharp)
+                            : Icon(Icons.visibility_off_sharp),
+                        color: Colors.white70,
+                        style: ButtonStyle(),
+                        onPressed: () {
+                          setState(() {
+                            _visiblePassword = !_visiblePassword;
+                          });
+                        },
+                      ),
+                    ),
                     Row(
                       children: [
                         Container(
@@ -92,12 +113,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ),
                         ElevatedButton(
                           onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF26F4E8),
+                          ),
                           child: Text(
                             "Login",
                             style: TextStyle(color: Colors.black),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF26F4E8),
                           ),
                         ),
                       ],
