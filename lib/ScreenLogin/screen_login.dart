@@ -108,7 +108,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               style: TextStyle(color: Color(0xFF26F4E8)),
                             ),
                             onTap: () {
-                              //TODO > Navigator para pagina de trocar senha
+                              //IMPLEMENTAR > Navigator para pagina de trocar senha
                             },
                           ),
                         ),

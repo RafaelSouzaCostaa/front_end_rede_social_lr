@@ -25,23 +25,22 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
         body: Center(
           child: Column(
             children: [
+              SizedBox(height: 10),
               SizedBox(
-                height: 50,
-                width: 50,
+                height: 25,
+                width: 25,
                 child: Image.asset("assets/image/logo.png"),
               ),
               const SizedBox(height: 100),
               Form(
                 child: Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: ComponentInput(
-                        labelText: 'Usuario',
-                        controller: userController,
-                        validator: true,
-                      ),
+                    ComponentInput(
+                      labelText: 'Usuario',
+                      controller: userController,
+                      validator: true,
                     ),
+                    const SizedBox(height: 20),
                     ComponentInput(
                       labelText: 'Email ou Telefone',
                       controller: passwordController,
@@ -57,7 +56,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                       controller: passwordController,
                     ),
                     SizedBox(
-                      height: altura * 0.3,
+                      height: altura * 0.33,
                     ),
                     Container(
                       margin: const EdgeInsets.only(left: 35, right: 35),
@@ -66,7 +65,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                           Expanded(
                             child: Row(children: [
                               const Text(
-                                "Tem uma Conta?",
+                                "Já tem uma Conta?",
                                 style: TextStyle(
                                   color: Color(0xFFC2B7B7),
                                 ),
@@ -89,7 +88,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              //ATENCAO Botao de cadastrar
+                              //IMPLEMENTAR Botao de cadastrar
                             },
                             style: ButtonStyle(
                               shape: MaterialStateProperty.all(
