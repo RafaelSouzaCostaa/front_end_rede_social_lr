@@ -8,7 +8,7 @@ import 'ScreenSplash/screen_splash.dart';
 void main() {
   runApp(
     MaterialApp(
-      title: 'Flutter Demo',
+      title: 'RedeSocial',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
