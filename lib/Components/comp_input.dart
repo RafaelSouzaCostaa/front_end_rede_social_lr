@@ -5,17 +5,14 @@ class ComponentInput extends StatefulWidget {
   Icon? suffixIcon;
   bool obscureText = false;
   bool validator = true;
-  // var width;
-  // var heigth;
   TextEditingController controller;
 
   ComponentInput({
+    super.key,
     required this.labelText,
     this.suffixIcon,
     this.obscureText = false,
     this.validator = true,
-    // this.width = 250,
-    // this.heigth = 40,
     required this.controller,
   });
 
@@ -30,16 +27,20 @@ class _ComponentInputState extends State<ComponentInput> {
       width: MediaQuery.of(context).size.width * 0.85,
       height: 65,
       child: TextFormField(
+        style: TextStyle(color: Colors.white70),
         decoration: InputDecoration(
           labelText: widget.labelText,
-          labelStyle: TextStyle(fontSize: 13), //L
+          labelStyle: TextStyle(fontSize: 13, color: Colors.white60),
+          hintStyle: TextStyle(fontSize: 13, color: Colors.white24),
           enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: Colors.grey.shade600,
               width: 0.45,
             ),
           ),
           focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
               color: Color(0xFF635959),
               width: 1.2,
