@@ -4,6 +4,7 @@ class ComponentInput extends StatefulWidget {
   String labelText;
   Icon? suffixIcon;
   bool obscureText = false;
+  bool validator = true;
   // var width;
   // var heigth;
   TextEditingController controller;
@@ -12,6 +13,7 @@ class ComponentInput extends StatefulWidget {
     required this.labelText,
     this.suffixIcon,
     this.obscureText = false,
+    this.validator = true,
     // this.width = 250,
     // this.heigth = 40,
     required this.controller,
@@ -25,16 +27,22 @@ class _ComponentInputState extends State<ComponentInput> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 250,
-      height: 40,
+      width: MediaQuery.of(context).size.width * 0.85,
+      height: 65,
       child: TextFormField(
         decoration: InputDecoration(
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13), //L
-          border: OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              width: 1.5,
-              color: Colors.white,
+              color: Colors.grey.shade600,
+              width: 0.45,
+            ),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFF635959),
+              width: 1.2,
             ),
           ),
         ),
