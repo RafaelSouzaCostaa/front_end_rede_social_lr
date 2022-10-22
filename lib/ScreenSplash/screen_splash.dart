@@ -2,7 +2,7 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
-import '../ScreenHome/screen_home.dart';
+
 import '../ScreenLogin/screen_login.dart';
 
 class ScreenSplash extends StatefulWidget {

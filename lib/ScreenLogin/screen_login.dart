@@ -105,10 +105,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           child: GestureDetector(
                             child: Text(
                               "Esqueceu sua senha?",
-                              style: TextStyle(color: Color(0xFF26F4E8)),
+                              style: TextStyle(
+                                color: Color(
+                                    0xFF26F4E8), //ATENCAO Luiggi e essa cor mesmo?
+                              ),
                             ),
                             onTap: () {
-                              //IMPLEMENTAR > Navigator para pagina de trocar senha
+                              //IMPLEMENTAR Navigator para pagina de trocar senha
                             },
                           ),
                         ),
