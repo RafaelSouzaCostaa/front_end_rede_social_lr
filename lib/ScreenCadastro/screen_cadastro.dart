@@ -86,7 +86,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            //CADASTRO BTN
+                            Navigator.pop(context);
                           },
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all(
