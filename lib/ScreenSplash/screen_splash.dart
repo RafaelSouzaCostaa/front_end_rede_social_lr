@@ -1,7 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-
 import '../ScreenHome/screen_home.dart';
 import '../ScreenLogin/screen_login.dart';
 
@@ -33,23 +33,27 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 78, 8, 134),
+      backgroundColor: Color(0xFF1A2323),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 80,
-              height: 80,
-              child: Image.asset("assets/image/logo.png"),
+            Container(
+              alignment: Alignment.center,
+              height: MediaQuery.of(context).size.height * 0.9,
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child: Image.asset("assets/image/logo.png"),
+              ),
             ),
-            const Text(
-              'Rede Social LR',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            SizedBox(
+              width: 30,
+              height: 30,
+              child: CircularProgressIndicator(
+                strokeWidth: 4,
+                color: Colors.purple.shade900,
               ),
             ),
           ],

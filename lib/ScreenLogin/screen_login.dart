@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Components/comp_input.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
@@ -8,6 +9,9 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
+  TextEditingController user_controller = TextEditingController();
+  TextEditingController password_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,38 +26,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
             const SizedBox(height: 100),
             Form(
               child: Column(children: [
-                SizedBox(
-                  width: 250,
-                  height: 40,
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Usuario",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 1.5,
-                          color: Color.fromARGB(26, 2, 19, 255),
-                        ),
-                      ),
-                    ),
-                  ),
+                Container(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: ComponentInput(
+                      labelText: 'Usuario', controller: user_controller),
                 ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  width: 250,
-                  height: 40,
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Senha",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 1.5,
-                          color: Color.fromARGB(26, 2, 19, 255),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 50),
+                ComponentInput(
+                    labelText: 'Senha', controller: password_controller),
                 Row(
                   children: const [
                     Text("Não tem uma conta? "),
