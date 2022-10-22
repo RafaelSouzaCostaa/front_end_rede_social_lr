@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Components/comp_button.dart';
 
 import '../Components/comp_input.dart';
 
@@ -87,26 +88,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                 ),
                               ]),
                             ),
-                            ElevatedButton(
-                              onPressed: () {
-                                //IMPLEMENTAR Botao de cadastrar
-                              },
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
-                                ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color(0xFF26F4E8)),
-                              ),
-                              child: const Text(
-                                "Cadastro",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Imprima-Regular'),
-                              ),
-                            ),
+                            CompBotao(nome: "Cadastro"),
                           ],
                         ),
                       )
