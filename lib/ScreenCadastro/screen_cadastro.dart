@@ -75,6 +75,9 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                               width: 10,
                             ),
                             GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
                               child: const Text(
                                 "Login",
                                 style: TextStyle(
@@ -86,7 +89,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            //ATENCAO Botao de cadastrar
                           },
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all(
