@@ -58,9 +58,14 @@ class _ScreenLoginState extends State<ScreenLogin> {
                                 "Não tem uma conta? ",
                                 style: TextStyle(color: Colors.white),
                               ),
-                              Text(
-                                "Cadastre-se",
-                                style: TextStyle(color: Color(0xFF26F4E8)),
+                              GestureDetector(
+                                child: Text(
+                                  "Cadastre-se",
+                                  style: TextStyle(color: Color(0xFF26F4E8)),
+                                ),
+                                onTap: () {
+                                  //TODO > Navigator para pagina de cadastro
+                                },
                               ),
                             ],
                           ),
@@ -80,7 +85,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               "Esqueceu sua senha?",
                               style: TextStyle(color: Color(0xFF26F4E8)),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              //TODO > Navigator para pagina de trocar senha
+                            },
                           ),
                         ),
                         ElevatedButton(
