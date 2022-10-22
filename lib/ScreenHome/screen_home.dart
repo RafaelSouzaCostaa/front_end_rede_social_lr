@@ -10,6 +10,14 @@ class ScreenHome extends StatefulWidget {
 class _ScreenHomeState extends State<ScreenHome> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: const [
+            Text("Luiggi Testando"),
+          ],
+        ),
+      ),
+    );
   }
 }
