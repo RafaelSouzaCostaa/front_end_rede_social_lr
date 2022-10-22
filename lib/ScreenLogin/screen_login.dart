@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Components/comp_input.dart';
-import 'package:rede_social_lr/ScreenCadastro/screen_cadastro.dart';
+
+import '../Components/comp_input.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
