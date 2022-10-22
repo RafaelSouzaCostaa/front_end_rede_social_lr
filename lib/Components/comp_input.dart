@@ -32,7 +32,7 @@ class _ComponentInputState extends State<ComponentInput> {
       child: TextFormField(
         decoration: InputDecoration(
           labelText: widget.labelText,
-          labelStyle: TextStyle(fontSize: 13), //L
+          labelStyle: const TextStyle(fontSize: 13), //L
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.grey.shade600,

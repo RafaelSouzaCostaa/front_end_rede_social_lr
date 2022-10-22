@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rede_social_lr/Components/comp_input.dart';
+import 'package:rede_social_lr/ScreenCadastro/screen_cadastro.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
@@ -52,9 +53,14 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               "Não tem uma conta? ",
                               style: TextStyle(color: Colors.white),
                             ),
-                            Text(
-                              "Cadastre-se",
-                              style: TextStyle(color: Color(0xFF26F4E8)),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/cadastro');
+                              },
+                              child: Text(
+                                "Cadastre-se",
+                                style: TextStyle(color: Color(0xFF26F4E8)),
+                              ),
                             ),
                           ],
                         ),
