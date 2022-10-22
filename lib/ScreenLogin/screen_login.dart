@@ -120,7 +120,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ),
                         GestureDetector(
                           onTap: () {},
-                          child: ComponentButton(text: "Login"),
+                          child: ComponentButton(
+                            text: "Login",
+                            onPressed: () {},
+                          ),
                         ),
                       ],
                     )
