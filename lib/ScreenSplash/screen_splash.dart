@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import '../ScreenHome/screen_home.dart';
+import '../ScreenLogin/screen_login.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({Key? key}) : super(key: key);
@@ -20,11 +21,11 @@ class _ScreenSplashState extends State<ScreenSplash> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 3500), () {});
+    await Future.delayed(const Duration(milliseconds: 1000), () {});
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: ((context) => const ScreenHome()),
+        builder: ((context) => const ScreenLogin()),
       ),
     );
   }
@@ -32,7 +33,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 199, 203, 236),
+      backgroundColor: Color.fromARGB(255, 78, 8, 134),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
