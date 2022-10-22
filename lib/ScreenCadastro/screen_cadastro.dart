@@ -68,8 +68,8 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                 const Text(
                                   "Já tem uma Conta?",
                                   style: TextStyle(
-                                    color: Color(0xFFC2B7B7),
-                                  ),
+                                      color: Color(0xFFC2B7B7),
+                                      fontFamily: 'Imprima-Regular'),
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -81,8 +81,8 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                   child: const Text(
                                     "Login",
                                     style: TextStyle(
-                                      color: Color(0xFF26F4E8),
-                                    ),
+                                        color: Color(0xFF26F4E8),
+                                        fontFamily: 'Imprima-Regular'),
                                   ),
                                 ),
                               ]),
@@ -98,11 +98,13 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                   ),
                                 ),
                                 backgroundColor: MaterialStateProperty.all(
-                                    Colors.grey.shade500),
+                                    Color(0xFF26F4E8)),
                               ),
                               child: const Text(
                                 "Cadastro",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Imprima-Regular'),
                               ),
                             ),
                           ],

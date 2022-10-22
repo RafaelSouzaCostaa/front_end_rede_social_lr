@@ -76,12 +76,16 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             children: [
                               const Text(
                                 "Não tem uma conta? ",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Imprima-Regular'),
                               ),
                               GestureDetector(
                                 child: const Text(
                                   "Cadastre-se",
-                                  style: TextStyle(color: Color(0xFF26F4E8)),
+                                  style: TextStyle(
+                                      color: Color(0xFF26F4E8),
+                                      fontFamily: 'Imprima-Regular'),
                                 ),
                                 onTap: () {
                                   Navigator.pushNamed(context, "/cadastro");
@@ -104,9 +108,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             child: const Text(
                               "Esqueceu sua senha?",
                               style: TextStyle(
-                                color: Color(
-                                    0xFF26F4E8), //ATENCAO Luiggi e essa cor mesmo?
-                              ),
+                                  color: Color(
+                                      0xFF26F4E8), //ATENCAO Luiggi e essa cor mesmo?
+                                  fontFamily: 'Imprima-Regular'),
                             ),
                             onTap: () {
                               //IMPLEMENTAR Navigator para pagina de trocar senha
@@ -120,7 +124,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           ),
                           child: const Text(
                             "Login",
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Imprima-Regular'),
                           ),
                         ),
                       ],
