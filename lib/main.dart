@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ScreenHome/screen_home.dart';
+import 'ScreenLogin/screen_login.dart';
 import 'ScreenSplash/screen_splash.dart';
 
 void main() {
@@ -14,7 +15,9 @@ void main() {
       routes: {
         '/': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
+        "/login": (context) => const ScreenLogin(),
       },
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
