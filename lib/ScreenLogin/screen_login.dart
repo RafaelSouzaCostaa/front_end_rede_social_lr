@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Components/comp_button.dart';
 import '../Components/comp_input.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -82,7 +83,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               ),
                               GestureDetector(
                                 child: const Text(
-                                  "Cadastre-se",
+                                  " Cadastre-se",
                                   style: TextStyle(
                                       color: Color(0xFF26F4E8),
                                       fontFamily: 'Imprima-Regular'),
@@ -117,18 +118,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             },
                           ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(
-                                0xFF26F4E8), //ATENCAO Luiggi coloquei Border Radius no BTN da Screen cadastro, ve qual fica melhor e muda pro que vc preferir
-                          ),
-                          child: const Text(
-                            "Login",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Imprima-Regular'),
-                          ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: CompBotao(nome: "Login"),
                         ),
                       ],
                     )
