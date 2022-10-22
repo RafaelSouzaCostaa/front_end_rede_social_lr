@@ -88,7 +88,10 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                 ),
                               ]),
                             ),
-                            CompBotao(nome: "Cadastro"),
+                            GestureDetector(
+                              onTap: () {},
+                              child: CompBotao(nome: "Cadastro"),
+                            ),
                           ],
                         ),
                       )

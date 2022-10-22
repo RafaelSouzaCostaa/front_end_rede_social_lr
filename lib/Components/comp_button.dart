@@ -14,7 +14,8 @@ class CompBotao extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.0),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all(const Color(0xFF26F4E8)),
+        backgroundColor:
+            MaterialStateProperty.all(const Color.fromARGB(188, 38, 244, 234)),
       ),
       onPressed: () {/*IMPLEMENTAÇÃO NA CHAMADA COM GESTURE DETECTOR*/},
       child: Text(
