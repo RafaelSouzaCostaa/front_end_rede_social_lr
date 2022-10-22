@@ -21,7 +21,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 1000), () {});
+    await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -48,12 +48,12 @@ class _ScreenSplashState extends State<ScreenSplash> {
                 child: Image.asset("assets/image/logo.png"),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
               height: 30,
               child: CircularProgressIndicator(
                 strokeWidth: 4,
-                color: Colors.purple.shade900,
+                color: Color(0xFF26F4E8),
               ),
             ),
           ],
