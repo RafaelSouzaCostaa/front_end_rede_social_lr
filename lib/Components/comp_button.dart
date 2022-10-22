@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class ComponentButton extends StatefulWidget {
   String text;
   Color color;
+  Function onPressed;
 
-  ComponentButton({super.key, required this.text, this.color = Colors.black});
+  ComponentButton(
+      {super.key,
+      required this.text,
+      this.color = Colors.black,
+      required this.onPressed});
 
   @override
   State<ComponentButton> createState() => _ComponentButtonState();
@@ -23,7 +28,9 @@ class _ComponentButtonState extends State<ComponentButton> {
         backgroundColor:
             MaterialStateProperty.all(const Color.fromARGB(188, 38, 244, 234)),
       ),
-      onPressed: () {/*IMPLEMENTAÇÃO NA CHAMADA COM GESTURE DETECTOR*/},
+      onPressed: () {
+        widget.onPressed();
+      },
       child: Text(
         widget.text,
         style: TextStyle(color: widget.color, fontFamily: 'Imprima-Regular'),

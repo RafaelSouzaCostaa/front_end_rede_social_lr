@@ -88,7 +88,10 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                 ),
                               ]),
                             ),
-                            ComponentButton(text: "Cadastro"),
+                            ComponentButton(
+                              text: "Cadastro",
+                              onPressed: () {},
+                            ),
                           ],
                         ),
                       )
