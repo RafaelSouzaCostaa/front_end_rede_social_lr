@@ -88,7 +88,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                 ),
                               ]),
                             ),
-                            CompBotao(nome: "Cadastro"),
+                            ComponentButton(text: "Cadastro"),
                           ],
                         ),
                       )

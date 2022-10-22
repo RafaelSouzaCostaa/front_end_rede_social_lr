@@ -19,7 +19,7 @@ class ComponentInput extends StatefulWidget {
   });
 
   @override
-  _ComponentInputState createState() => _ComponentInputState();
+  State<ComponentInput> createState() => _ComponentInputState();
 }
 
 class _ComponentInputState extends State<ComponentInput> {
