@@ -59,14 +59,20 @@ class _ScreenBarraLateralState extends State<ScreenBarraLateral> {
                   child: Container(
                     padding: const EdgeInsets.only(bottom: 30, left: 10),
                     child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       child: Row(
                         children: [
-                          Icon(Icons.logout_outlined,
-                              color: CustomizedColors.iconLogout),
+                          Icon(
+                            Icons.logout_outlined,
+                            color: CustomizedColors.iconLogout,
+                          ),
                           const SizedBox(width: 10),
-                          Text("LOGOUT",
-                              style:
-                                  TextStyle(color: CustomizedColors.lightText)),
+                          Text(
+                            "LOGOUT",
+                            style: TextStyle(color: CustomizedColors.lightText),
+                          ),
                         ],
                       ),
                     ),
