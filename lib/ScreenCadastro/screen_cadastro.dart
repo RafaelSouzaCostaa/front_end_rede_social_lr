@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Components/comp_button.dart';
+import '../Components/comp_button.dart';
 
 import '../Components/comp_input.dart';
 
