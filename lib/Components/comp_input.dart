@@ -59,6 +59,7 @@ class _ComponentInputState extends State<ComponentInput> {
                 if (value!.isEmpty) {
                   return "Campo Obrigatorio";
                 }
+                return null;
               }
             : null,
       ),

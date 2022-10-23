@@ -16,7 +16,6 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController dataBirthController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     double altura = MediaQuery.of(context).size.height;
@@ -58,51 +57,51 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                         labelText: 'Senha',
                         controller: passwordController,
                       ),
-                      SizedBox(
-                        height: altura * 0.33,
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: altura * 0.33,
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.only(left: 35, right: 35, bottom: 30),
+                  width: MediaQuery.of(context).size.width * 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Já tem uma Conta?",
+                            style: TextStyle(
+                                color: CustomizedColors.lightText,
+                                fontFamily: 'Imprima-Regular'),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: CustomizedColors.linkInText,
+                                  fontFamily: 'Imprima-Regular'),
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                            left: 35, right: 35, bottom: 30),
-                        width: MediaQuery.of(context).size.width * 1,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Já tem uma Conta?",
-                                  style: TextStyle(
-                                      color: CustomizedColors.lightText,
-                                      fontFamily: 'Imprima-Regular'),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    "Login",
-                                    style: TextStyle(
-                                        color: CustomizedColors.linkInText,
-                                        fontFamily: 'Imprima-Regular'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            ComponentButton(
-                              text: "Cadastro",
-                              maxWidth: 180,
-                              widthDouble:
-                                  0.25, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
-                              onPressed: () {}, //IMPLEMENTAR
-                            ),
-                          ],
-                        ),
-                      )
+                      ComponentButton(
+                        text: "Cadastro",
+                        maxWidth: 180,
+                        widthDouble:
+                            0.25, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
+                        onPressed: () {}, //IMPLEMENTAR
+                      ),
                     ],
                   ),
                 )
