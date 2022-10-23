@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Components/comp_button.dart';
 
+import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_input.dart';
 
 class ScreenCadastro extends StatefulWidget {
@@ -22,7 +23,7 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
     //double largura = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFF0E1010),
+        backgroundColor: CustomizedColors.darkBackground,
         body: SingleChildScrollView(
           child: Center(
             child: Column(
@@ -66,10 +67,10 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                           children: [
                             Expanded(
                               child: Row(children: [
-                                const Text(
+                                Text(
                                   "Já tem uma Conta?",
                                   style: TextStyle(
-                                      color: Color(0xFFC2B7B7),
+                                      color: CustomizedColors.lightText,
                                       fontFamily: 'Imprima-Regular'),
                                 ),
                                 const SizedBox(
@@ -79,10 +80,10 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                                   onTap: () {
                                     Navigator.pop(context);
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     "Login",
                                     style: TextStyle(
-                                        color: Color(0xFF26F4E8),
+                                        color: CustomizedColors.linkInText,
                                         fontFamily: 'Imprima-Regular'),
                                   ),
                                 ),

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../Colors/pattern_colors.dart';
+
 class ComponentInput extends StatefulWidget {
   String labelText;
   var suffixIcon;
@@ -43,10 +45,10 @@ class _ComponentInputState extends State<ComponentInput> {
               width: 0.45,
             ),
           ),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
-              color: Color(0xFF635959),
+              color: PatternColors.blackShadows,
               width: 1.2,
             ),
           ),
