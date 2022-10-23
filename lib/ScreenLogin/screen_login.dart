@@ -132,6 +132,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       onTap: () {},
                       child: ComponentButton(
                         text: "Login",
+                        widthDouble: 0.20,
+                        maxWidth: 170,
                         onPressed: () {
                           Navigator.pushNamed(context, "/cadastro");
                         },
