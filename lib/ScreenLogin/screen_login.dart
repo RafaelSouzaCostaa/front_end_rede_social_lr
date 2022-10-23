@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Components/comp_appBar.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_button.dart';
@@ -21,25 +22,19 @@ class _ScreenLoginState extends State<ScreenLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         backgroundColor: CustomizedColors.darkBackground,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
+          child: ComponentAppBar(),
+        ),
         body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SizedBox(
-                    height: 25,
-                    width: 25,
-                    child: Image.asset("assets/image/logo.png"),
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.25,
-                ),
-                Form(
-                  //user
-                  child: Column(children: [
+          child: Align(
+            heightFactor: 1.6,
+            child: Column(children: [
+              Form(
+                child: Column(
+                  children: [
                     Container(
                       padding: const EdgeInsets.only(bottom: 20),
                       child: ComponentInput(
@@ -68,83 +63,84 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         },
                       ),
                     ),
-                    Row(
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          padding: const EdgeInsets.only(top: 15),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Não tem uma conta? ",
-                                style: TextStyle(
-                                    color: CustomizedColors.lightText,
-                                    fontFamily: 'Imprima-Regular'),
-                              ),
-                              GestureDetector(
-                                child: Text(
-                                  " Cadastre-se",
-                                  style: TextStyle(
-                                      color: CustomizedColors.linkInText,
-                                      fontFamily: 'Imprima-Regular'),
-                                ),
-                                onTap: () {
-                                  Navigator.pushNamed(context, "/cadastro");
-                                },
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.35,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.75,
-                          padding: const EdgeInsets.only(left: 35),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Esqueceu sua senha?",
-                                style: TextStyle(
-                                    color: CustomizedColors.lightText,
-                                    fontFamily: 'Imprima-Regular'),
-                              ),
-                              GestureDetector(
-                                child: Text(
-                                  "  Recuperar",
-                                  style: TextStyle(
-                                      color: CustomizedColors.linkInText,
-                                      fontFamily: 'Imprima-Regular'),
-                                ),
-                                onTap: () {
-                                  //IMPLEMENTAR Navigator para pagina de trocar senha
-                                  Navigator.pushNamed(context,
-                                      "/barralateral"); //ATENCAO apagar, e so teste
-                                },
-                              ),
-                            ],
-                          ),
+                        Text(
+                          "Não tem uma conta? ",
+                          style: TextStyle(
+                              color: CustomizedColors.lightText,
+                              fontFamily: 'Imprima-Regular'),
                         ),
                         GestureDetector(
-                          onTap: () {},
-                          child: ComponentButton(
-                            text: "Login",
-                            onPressed: () {
-                              Navigator.pushNamed(context, "/cadastro");
-                            },
+                          child: Text(
+                            "Cadastre-se",
+                            style: TextStyle(
+                                color: CustomizedColors.linkInText,
+                                fontFamily: 'Imprima-Regular'),
                           ),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/cadastro");
+                          },
                         ),
                       ],
-                    )
-                  ]),
-                )
-              ],
-            ),
+                    ),
+                  )
+                ],
+              ),
+              Align(
+                heightFactor: 12,
+                child: Row(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.75,
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Esqueceu sua senha?",
+                            style: TextStyle(
+                                color: CustomizedColors.lightText,
+                                fontFamily: 'Imprima-Regular'),
+                          ),
+                          GestureDetector(
+                            child: Text(
+                              "  Recuperar",
+                              style: TextStyle(
+                                  color: CustomizedColors.linkInText,
+                                  fontFamily: 'Imprima-Regular'),
+                            ),
+                            onTap: () {
+                              //IMPLEMENTAR Navigator para pagina de trocar senha
+                              Navigator.pushNamed(context,
+                                  "/barralateral"); //ATENCAO apagar, e so teste
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: ComponentButton(
+                        text: "Login",
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/cadastro");
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ]),
           ),
         ),
       ),

@@ -13,9 +13,9 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/barralateral',
+      initialRoute: '/login',
       routes: {
-        '/': (context) => const ScreenSplash(),
+        '/Splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenCadastro(),
