@@ -123,6 +123,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                                 ),
                                 onTap: () {
                                   //IMPLEMENTAR Navigator para pagina de trocar senha
+                                  Navigator.pushNamed(context,
+                                      "/barralateral"); //ATENCAO apagar, e so teste
                                 },
                               ),
                             ],

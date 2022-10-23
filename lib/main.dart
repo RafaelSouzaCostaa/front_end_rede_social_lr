@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/ScreenBarraLateral/screen_barra_lateral.dart';
 
 import 'ScreenCadastro/screen_cadastro.dart';
 import 'ScreenHome/screen_home.dart';
@@ -12,12 +13,13 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/barralateral',
       routes: {
         '/': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenCadastro(),
+        "/barralateral": (context) => const ScreenBarraLateral(),
       },
       debugShowCheckedModeBanner: false,
     ),

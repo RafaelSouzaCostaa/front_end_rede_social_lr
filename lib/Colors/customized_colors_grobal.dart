@@ -7,4 +7,5 @@ class CustomizedColors {
   static Color darkBackground = PatternColors.chineseDark;
   static Color inputBorderColor = PatternColors.blackShadows;
   static Color lightText = PatternColors.blackShadows;
+  static Color iconLogout = PatternColors.blackShadows;
 }
