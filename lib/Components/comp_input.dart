@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
 
 import '../Colors/pattern_colors.dart';
 
@@ -48,7 +49,7 @@ class _ComponentInputState extends State<ComponentInput> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(
-              color: PatternColors.blackShadows,
+              color: CustomizedColors.inputBorderColor,
               width: 1.2,
             ),
           ),

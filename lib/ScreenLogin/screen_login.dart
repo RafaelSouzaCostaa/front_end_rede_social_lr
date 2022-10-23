@@ -76,10 +76,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
+                              Text(
                                 "Não tem uma conta? ",
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: CustomizedColors.lightText,
                                     fontFamily: 'Imprima-Regular'),
                               ),
                               GestureDetector(
@@ -106,16 +106,26 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         Container(
                           width: MediaQuery.of(context).size.width * 0.75,
                           padding: const EdgeInsets.only(left: 35),
-                          child: GestureDetector(
-                            child: Text(
-                              "Esqueceu sua senha?",
-                              style: TextStyle(
-                                  color: CustomizedColors.linkInText,
-                                  fontFamily: 'Imprima-Regular'),
-                            ),
-                            onTap: () {
-                              //IMPLEMENTAR Navigator para pagina de trocar senha
-                            },
+                          child: Row(
+                            children: [
+                              Text(
+                                "Esqueceu sua senha?",
+                                style: TextStyle(
+                                    color: CustomizedColors.lightText,
+                                    fontFamily: 'Imprima-Regular'),
+                              ),
+                              GestureDetector(
+                                child: Text(
+                                  "  Recuperar",
+                                  style: TextStyle(
+                                      color: CustomizedColors.linkInText,
+                                      fontFamily: 'Imprima-Regular'),
+                                ),
+                                onTap: () {
+                                  //IMPLEMENTAR Navigator para pagina de trocar senha
+                                },
+                              ),
+                            ],
                           ),
                         ),
                         GestureDetector(

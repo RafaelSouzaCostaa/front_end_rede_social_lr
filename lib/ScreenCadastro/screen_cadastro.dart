@@ -66,32 +66,34 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Row(children: [
-                                Text(
-                                  "Já tem uma Conta?",
-                                  style: TextStyle(
-                                      color: CustomizedColors.lightText,
-                                      fontFamily: 'Imprima-Regular'),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    "Login",
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Já tem uma Conta?",
                                     style: TextStyle(
-                                        color: CustomizedColors.linkInText,
+                                        color: CustomizedColors.lightText,
                                         fontFamily: 'Imprima-Regular'),
                                   ),
-                                ),
-                              ]),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      "Login",
+                                      style: TextStyle(
+                                          color: CustomizedColors.linkInText,
+                                          fontFamily: 'Imprima-Regular'),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             ComponentButton(
                               text: "Cadastro",
-                              onPressed: () {},
+                              onPressed: () {}, //IMPLEMENTAR
                             ),
                           ],
                         ),
