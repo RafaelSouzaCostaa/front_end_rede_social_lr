@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../Components/comp_button.dart';
 
 import '../Colors/customized_colors_grobal.dart';
+import '../Components/comp_button.dart';
 import '../Components/comp_input.dart';
 
 class ScreenCadastro extends StatefulWidget {
