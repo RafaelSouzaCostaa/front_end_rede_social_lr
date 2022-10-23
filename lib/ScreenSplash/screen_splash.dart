@@ -2,9 +2,9 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
-import 'package:rede_social_lr/Colors/pattern_colors.dart';
 
+import '../Colors/customized_colors_grobal.dart';
+import '../Colors/pattern_colors.dart';
 import '../ScreenLogin/screen_login.dart';
 
 class ScreenSplash extends StatefulWidget {
