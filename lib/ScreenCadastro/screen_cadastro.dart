@@ -93,6 +93,8 @@ class _ScreenCadastroState extends State<ScreenCadastro> {
                             ),
                             ComponentButton(
                               text: "Cadastro",
+                              widthDouble:
+                                  0.18, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
                               onPressed: () {}, //IMPLEMENTAR
                             ),
                           ],
