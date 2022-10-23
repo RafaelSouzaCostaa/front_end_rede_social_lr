@@ -107,11 +107,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           width: MediaQuery.of(context).size.width * 0.75,
                           padding: const EdgeInsets.only(left: 35),
                           child: GestureDetector(
-                            child: const Text(
+                            child: Text(
                               "Esqueceu sua senha?",
                               style: TextStyle(
-                                  color: Color(
-                                      0xFF26F4E8), //ATENCAO Luiggi e essa cor mesmo?
+                                  color: CustomizedColors.linkInText,
                                   fontFamily: 'Imprima-Regular'),
                             ),
                             onTap: () {

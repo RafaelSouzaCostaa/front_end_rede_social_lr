@@ -2,6 +2,8 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
+import 'package:rede_social_lr/Colors/pattern_colors.dart';
 
 import '../ScreenLogin/screen_login.dart';
 
@@ -33,7 +35,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A2323),
+      backgroundColor: CustomizedColors.darkBackground,
       body: Center(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -48,12 +50,12 @@ class _ScreenSplashState extends State<ScreenSplash> {
                 child: Image.asset("assets/image/logo.png"),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 30,
               height: 30,
               child: CircularProgressIndicator(
                 strokeWidth: 4,
-                color: Color(0xFF26F4E8),
+                color: PatternColors.fluorescentBlue,
               ),
             ),
           ],

@@ -28,7 +28,7 @@ class _ComponentButtonState extends State<ComponentButton> {
           ),
         ),
         backgroundColor:
-            MaterialStateProperty.all(PatternColors.fluorescentBlue),
+            MaterialStateProperty.all(CustomizedColors.buttonBackground),
       ),
       onPressed: () {
         widget.onPressed();
