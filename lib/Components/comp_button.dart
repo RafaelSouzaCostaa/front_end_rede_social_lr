@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
+import 'package:rede_social_lr/Colors/pattern_colors.dart';
 
 class ComponentButton extends StatefulWidget {
   String text;
@@ -26,7 +28,7 @@ class _ComponentButtonState extends State<ComponentButton> {
           ),
         ),
         backgroundColor:
-            MaterialStateProperty.all(const Color.fromARGB(188, 38, 244, 234)),
+            MaterialStateProperty.all(PatternColors.fluorescentBlue),
       ),
       onPressed: () {
         widget.onPressed();

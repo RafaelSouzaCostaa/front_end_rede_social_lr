@@ -21,7 +21,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFF0E1010),
+        backgroundColor: CustomizedColors.darkBackground,
         body: SingleChildScrollView(
           child: Center(
             child: Column(
