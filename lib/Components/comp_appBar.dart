@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
+
+import '../Colors/customized_colors_grobal.dart';
 
 class ComponentAppBar extends StatefulWidget {
+  // bool appBarProfilePicture;
+
   ComponentAppBar({super.key});
 
   @override
@@ -16,6 +19,9 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
       centerTitle: true,
       backgroundColor: CustomizedColors.darkBackground,
       automaticallyImplyLeading: true,
+      // leading: widget.appBarProfilePicture == true
+      //     ? Image.asset("")//TODO> Pegar a mesma imagem que está no perfil
+      //     : null, 
     );
   }
 }
