@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
 
-import '../Colors/pattern_colors.dart';
+import '../Colors/customized_colors_grobal.dart';
+
 
 class ComponentInput extends StatefulWidget {
   String labelText;
