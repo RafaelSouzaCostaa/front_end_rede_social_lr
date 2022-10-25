@@ -141,13 +141,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
                     child: ComponentButton(
                       text: "Login",
                       widthDouble: 0.20,
                       maxWidth: 170,
                       onPressed: () {
-                        Navigator.pushNamed(context, "/cadastro");
+                        Navigator.pushNamed(context, "/home");
                       },
                     ),
                   ),

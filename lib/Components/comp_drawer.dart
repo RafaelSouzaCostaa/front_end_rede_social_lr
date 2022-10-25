@@ -48,10 +48,11 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             height: MediaQuery.of(context).size.height * 0.73,
           ),
           Container(
-            // color: const Color.fromARGB(255, 2, 29, 2),
             height: MediaQuery.of(context).size.height * 0.07,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/login");
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
