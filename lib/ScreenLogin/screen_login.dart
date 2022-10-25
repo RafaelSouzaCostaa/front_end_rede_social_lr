@@ -42,13 +42,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
             Form(
               child: Column(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: ComponentInput(
-                      labelText: 'Usuario',
-                      controller: userController,
-                      validator: true,
-                    ),
+                  ComponentInput(
+                    labelText: 'Usuario',
+                    controller: userController,
+                    validator: true,
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   ComponentInput(
                     //Senha
@@ -59,10 +59,16 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       icon: _visiblePassword
-                          ? const Icon(Icons.visibility_sharp)
-                          : const Icon(Icons.visibility_off_sharp),
+                          ? const Icon(
+                              Icons.visibility_sharp,
+                              size: 30,
+                            )
+                          : const Icon(
+                              Icons.visibility_off_sharp,
+                              size: 30,
+                            ),
                       color: Colors.white70,
-                      style: const ButtonStyle(),
+                      // style: const ButtonStyle(),
                       onPressed: () {
                         setState(() {
                           _visiblePassword = !_visiblePassword;
