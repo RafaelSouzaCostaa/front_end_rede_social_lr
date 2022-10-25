@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rede_social_lr/ScreenSideBar/screen_side_bar.dart';
 
-import 'ScreenCadastro/screen_cadastro.dart';
+import 'ScreenRegistration/screen_registration.dart';
 import 'ScreenHome/screen_home.dart';
 import 'ScreenLogin/screen_login.dart';
 import 'ScreenSplash/screen_splash.dart';
@@ -18,7 +18,7 @@ void main() {
         '/Splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
-        "/cadastro": (context) => const ScreenCadastro(),
+        "/cadastro": (context) => const ScreenRegistration(),
         "/barralateral": (context) => const ScreenSideBar(),
       },
       debugShowCheckedModeBanner: false,
