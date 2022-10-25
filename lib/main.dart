@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/ScreenSideBar/screen_side_bar.dart';
 
 import 'ScreenRegistration/screen_registration.dart';
 import 'ScreenHome/screen_home.dart';
