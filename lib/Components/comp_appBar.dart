@@ -17,7 +17,12 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Image.asset("assets/image/logo.png", scale: 3),
+      title: GestureDetector(
+        child: Image.asset("assets/image/logo.png", scale: 3),
+        onTap: () {
+          Navigator.pushNamed(context, "/home");
+        },
+      ),
       centerTitle: true,
       backgroundColor: CustomizedColors.darkBackground,
       automaticallyImplyLeading: true,
