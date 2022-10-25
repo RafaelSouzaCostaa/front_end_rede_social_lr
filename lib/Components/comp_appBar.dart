@@ -1,11 +1,13 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
 class ComponentAppBar extends StatefulWidget {
-  // bool appBarProfilePicture;
+  bool hasDrawer;
 
-  ComponentAppBar({super.key});
+  ComponentAppBar({super.key, required this.hasDrawer});
 
   @override
   State<ComponentAppBar> createState() => _ComponentAppBarState();
@@ -19,9 +21,21 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
       centerTitle: true,
       backgroundColor: CustomizedColors.darkBackground,
       automaticallyImplyLeading: true,
-      // leading: widget.appBarProfilePicture == true
-      //     ? Image.asset("")//TODO> Pegar a mesma imagem que está no perfil
-      //     : null, 
+      leading: widget.hasDrawer == true
+          ? TextButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: const SizedBox(
+                width: 38,
+                //Image.asset("")//TODO> Pegar a mesma imagem que está no perfil
+                child: Icon(
+                  Icons.add_a_photo,
+                  color: Colors.white,
+                  size: 18,
+                ),
+              ))
+          : null,
     );
   }
 }

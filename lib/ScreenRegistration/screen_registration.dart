@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
+import '../Components/comp_appBar.dart';
 import '../Components/comp_button.dart';
 import '../Components/comp_input.dart';
 
@@ -23,17 +24,17 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
+          child: ComponentAppBar(
+            hasDrawer: false,
+          ),
+        ),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: Image.asset("assets/image/logo.png"),
-                ),
-                const SizedBox(height: 100),
+                const SizedBox(height: 110),
                 Form(
                   child: Column(
                     children: [
@@ -65,7 +66,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                 ),
                 Container(
                   margin:
-                      const EdgeInsets.only(left: 35, right: 35, bottom: 30),
+                      const EdgeInsets.only(left: 30, right: 30, bottom: 30),
                   width: MediaQuery.of(context).size.width * 1,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,7 +81,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                                 fontFamily: 'Imprima-Regular'),
                           ),
                           const SizedBox(
-                            width: 10,
+                            width: 5,
                           ),
                           GestureDetector(
                             onTap: () {
@@ -95,12 +96,15 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                           ),
                         ],
                       ),
-                      ComponentButton(
-                        text: "Cadastro",
-                        maxWidth: 180,
-                        widthDouble:
-                            0.25, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
-                        onPressed: () {}, //IMPLEMENTAR
+                      Container(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: ComponentButton(
+                          text: "Cadastro",
+                          maxWidth: 180,
+                          widthDouble:
+                              0.25, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
+                          onPressed: () {}, //IMPLEMENTAR
+                        ),
                       ),
                     ],
                   ),

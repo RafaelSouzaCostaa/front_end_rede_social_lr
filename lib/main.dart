@@ -13,13 +13,12 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/home',
       routes: {
         '/Splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenRegistration(),
-        "/barralateral": (context) => const ScreenSideBar(),
       },
       debugShowCheckedModeBanner: false,
     ),

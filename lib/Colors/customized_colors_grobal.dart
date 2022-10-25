@@ -8,4 +8,5 @@ class CustomizedColors {
   static Color inputBorderColor = PatternColors.blackShadows;
   static Color lightText = PatternColors.blackShadows;
   static Color iconLogout = PatternColors.blackShadows;
+  static Color iconBackground = PatternColors.outerSpace;
 }
