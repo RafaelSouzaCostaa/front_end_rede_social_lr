@@ -4,14 +4,14 @@ import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_button.dart';
 import '../Components/comp_input.dart';
 
-class ScreenCadastro extends StatefulWidget {
-  const ScreenCadastro({Key? key}) : super(key: key);
+class ScreenRegistration extends StatefulWidget {
+  const ScreenRegistration({Key? key}) : super(key: key);
 
   @override
-  State<ScreenCadastro> createState() => _ScreenCadastroState();
+  State<ScreenRegistration> createState() => _ScreenRegistrationState();
 }
 
-class _ScreenCadastroState extends State<ScreenCadastro> {
+class _ScreenRegistrationState extends State<ScreenRegistration> {
   TextEditingController userController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
