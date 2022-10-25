@@ -10,6 +10,10 @@ class ScreenPerfil extends StatefulWidget {
 class _ScreenPerfilState extends State<ScreenPerfil> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [],
+      ),
+    );
   }
 }

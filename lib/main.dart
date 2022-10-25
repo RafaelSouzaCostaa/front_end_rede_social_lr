@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/ScreenBarraLateral/screen_barra_lateral.dart';
+import 'package:rede_social_lr/ScreenSideBar/screen_side_bar.dart';
 
 import 'ScreenCadastro/screen_cadastro.dart';
 import 'ScreenHome/screen_home.dart';
@@ -19,7 +19,7 @@ void main() {
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenCadastro(),
-        "/barralateral": (context) => const ScreenBarraLateral(),
+        "/barralateral": (context) => const ScreenSideBar(),
       },
       debugShowCheckedModeBanner: false,
     ),

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
-class ScreenBarraLateral extends StatefulWidget {
-  const ScreenBarraLateral({super.key});
+class ScreenSideBar extends StatefulWidget {
+  const ScreenSideBar({super.key});
 
   @override
-  State<ScreenBarraLateral> createState() => _ScreenBarraLateralState();
+  State<ScreenSideBar> createState() => _ScreenSideBarState();
 }
 
-class _ScreenBarraLateralState extends State<ScreenBarraLateral> {
+class _ScreenSideBarState extends State<ScreenSideBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
