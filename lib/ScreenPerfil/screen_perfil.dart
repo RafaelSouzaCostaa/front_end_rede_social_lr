@@ -28,11 +28,11 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 //Background image
                 color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.28,
+                height: MediaQuery.of(context).size.height * 0.16,
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.23),
+                    top: MediaQuery.of(context).size.height * 0.12),
                 child: Center(
                   child: CircleAvatar(
                     radius: 43.5,
