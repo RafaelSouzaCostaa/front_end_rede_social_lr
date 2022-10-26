@@ -26,8 +26,31 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
           Stack(
             children: [
               Container(
+                //Background image
                 color: Colors.white,
-              )
+                height: MediaQuery.of(context).size.height * 0.28,
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.23),
+                child: Center(
+                  child: CircleAvatar(
+                    radius: 43.5,
+                    backgroundColor: CustomizedColors.darkBackground,
+                    child: CircleAvatar(
+                      radius: 41,
+                      //CustomizedColors.darkBackground,
+                      backgroundColor: Colors.white10,
+                      child: Icon(
+                        Icons.add_a_photo,
+                        size: 20,
+                        color: CustomizedColors.iconsBlue,
+                      ),
+                      //ATENCAO Imagem de Perfil (image == null ? : ,)
+                    ),
+                  ),
+                ),
+              ),
             ],
           )
         ],
