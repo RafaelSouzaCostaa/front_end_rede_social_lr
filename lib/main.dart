@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/ScreenPerfil/screen_perfil.dart';
 
 import 'ScreenRegistration/screen_registration.dart';
 import 'ScreenHome/screen_home.dart';
@@ -18,6 +19,7 @@ void main() {
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenRegistration(),
+        "/perfil": (context) => const ScreenPerfil(),
       },
       debugShowCheckedModeBanner: false,
     ),

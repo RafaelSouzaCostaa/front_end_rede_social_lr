@@ -36,7 +36,7 @@ class _ComponentInputState extends State<ComponentInput> {
         decoration: InputDecoration(
           suffixIcon: Padding(
             padding: const EdgeInsetsDirectional.only(end: 12),
-            child: widget.suffixIcon, // myIcon is a 48px-wide widget.
+            child: widget.suffixIcon,
           ),
           alignLabelWithHint: true,
           labelText: widget.labelText,
