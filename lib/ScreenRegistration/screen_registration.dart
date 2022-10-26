@@ -73,9 +73,11 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                           color: Colors.white70,
                           // style: const ButtonStyle(),
                           onPressed: () {
-                            setState(() {
-                              _visiblePassword = !_visiblePassword;
-                            });
+                            setState(
+                              () {
+                                _visiblePassword = !_visiblePassword;
+                              },
+                            );
                           },
                         ),
                       ),
