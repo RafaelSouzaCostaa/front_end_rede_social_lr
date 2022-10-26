@@ -42,3 +42,6 @@ test: para testes, ok?
 chore: geralmente o mais emblemático. Serve para coisas relacionados a build, configs e afins. Por exemplo, mexeu em algo no package.json? Use esse cara, seja atualizando a versão do pacote ou instalando novas dependências
 revert: Finalmente algum para eu explicar. O nome já diz o que é, certo? Caso você precise fazer um revert, manda ver nesse prefixo.
 */
+
+
+//IMPLEMENTAR  Utilizar o GETX EcoSystem 
