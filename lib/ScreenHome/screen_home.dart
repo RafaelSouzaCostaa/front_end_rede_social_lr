@@ -26,7 +26,7 @@ class _ScreenHomeState extends State<ScreenHome> {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: [],
+            children: [Container()],
           ),
         ),
       ),

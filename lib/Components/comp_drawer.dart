@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
-import 'comp_textButton.dart';
+import 'comp_text_button.dart';
 
 class ComponentDrawer extends StatefulWidget {
   const ComponentDrawer({super.key});
@@ -26,14 +26,12 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 size: 30,
               ),
             ),
-            Container(
-              child: const Text(
-                "Luiggi Rafaela",
-                style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'Imprima-Regular',
-                    color: Colors.white),
-              ),
+            const Text(
+              "Luiggi Rafaela",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Imprima-Regular',
+                  color: Colors.white),
             ),
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
@@ -49,12 +47,12 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               color: Colors.white30,
               thickness: 0.5,
             ),
-            Container(
+            SizedBox(
               //Container Geral
               height: MediaQuery.of(context).size.height * 0.77,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     //Container sem o Logout, pra ele ficar no fim da lista
                     height: MediaQuery.of(context).size.height * 0.71,
                     child: Column(
