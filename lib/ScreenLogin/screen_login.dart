@@ -55,25 +55,28 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     obscureText: !_visiblePassword,
                     labelText: 'Senha',
                     controller: passwordController,
-                    suffixIcon: IconButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      icon: _visiblePassword
-                          ? const Icon(
-                              Icons.visibility_sharp,
-                              size: 30,
-                            )
-                          : const Icon(
-                              Icons.visibility_off_sharp,
-                              size: 30,
-                            ),
-                      color: Colors.white70,
-                      // style: const ButtonStyle(),
-                      onPressed: () {
-                        setState(() {
-                          _visiblePassword = !_visiblePassword;
-                        });
-                      },
+
+                    suffixIcon: Container(
+                      child: IconButton(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        icon: _visiblePassword
+                            ? const Icon(
+                                Icons.visibility_sharp,
+                                size: 23,
+                              )
+                            : const Icon(
+                                Icons.visibility_off_sharp,
+                                // size: 23,
+                              ),
+                        color: Colors.white70,
+                        // style: const ButtonStyle(),
+                        onPressed: () {
+                          setState(() {
+                            _visiblePassword = !_visiblePassword;
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ],

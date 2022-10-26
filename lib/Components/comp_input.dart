@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
-
 class ComponentInput extends StatefulWidget {
   String labelText;
   var suffixIcon;
@@ -30,12 +29,16 @@ class _ComponentInputState extends State<ComponentInput> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: 65,
+      height: 50,
       child: TextFormField(
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
         obscureText: widget.obscureText,
         decoration: InputDecoration(
-          suffix: widget.suffixIcon,
+          suffixIcon: Padding(
+            padding: const EdgeInsetsDirectional.only(end: 12),
+            child: widget.suffixIcon, // myIcon is a 48px-wide widget.
+          ),
+          alignLabelWithHint: true,
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
           hintStyle: TextStyle(fontSize: 13, color: Colors.white24),
