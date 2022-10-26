@@ -17,10 +17,13 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController dataBirthController = TextEditingController();
+
+  bool _visiblePassword = false;
+
   @override
   Widget build(BuildContext context) {
     double altura = MediaQuery.of(context).size.height;
-    //double largura = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
@@ -57,6 +60,24 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       ComponentInput(
                         labelText: 'Senha',
                         controller: passwordController,
+                        suffixIcon: IconButton(
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          icon: _visiblePassword == true
+                              ? const Icon(
+                                  Icons.visibility_sharp,
+                                )
+                              : const Icon(
+                                  Icons.visibility_off_sharp,
+                                ),
+                          color: Colors.white70,
+                          // style: const ButtonStyle(),
+                          onPressed: () {
+                            setState(() {
+                              _visiblePassword = !_visiblePassword;
+                            });
+                          },
+                        ),
                       ),
                     ],
                   ),
