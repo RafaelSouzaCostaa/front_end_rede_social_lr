@@ -9,6 +9,7 @@ class CustomizedColors {
   //Background
   static Color buttonBackground = PatternColors.fluorescentBlue;
   static Color darkBackground = PatternColors.chineseDark;
+  static Color pinkBackground = PatternColors.fashionFuchsia;
   static Color iconBackground = PatternColors.outerSpace;
 
   //Bordas
