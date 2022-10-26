@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
-
 class ComponentTextButton extends StatefulWidget {
   String text;
   IconData? icon;
@@ -35,7 +33,7 @@ class ComponentTextButton extends StatefulWidget {
 class _ComponentTextButtonState extends State<ComponentTextButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.white,
       height: MediaQuery.of(context).size.height * widget.heightPercentage,
       child: TextButton(
