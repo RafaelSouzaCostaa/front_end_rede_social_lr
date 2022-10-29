@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_appBar.dart';
-import '../Components/comp_post.dart';
 
 class ScreenPerfil extends StatefulWidget {
   const ScreenPerfil({Key? key}) : super(key: key);
@@ -78,37 +77,18 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                 child: Row(
                   //Posts e Curtidas
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Center(
-                        child: Text(
-                          "Postagens",
-                          style: TextStyle(color: CustomizedColors.lightText),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Center(
-                        child: Text(
-                          "Curtidas",
-                          style: TextStyle(color: CustomizedColors.lightText),
-                        ),
-                      ),
-                    ),
+                    //const CompTabBar()
                   ],
                 ),
               ),
-              Column(
-                children: [
-                  // ListView(
-                  //   children: [
-                  //     ComponentPost(),
-                  //   ],
-                  // )
-                  Row()
-                ],
-              )
+              // Expanded(
+              //   child: ListView.builder(
+              //     itemCount: 2,
+              //     itemBuilder: (context, index) {
+              //       return ComponentPost();
+              //     },
+              //   ),
+              // ),
             ],
           ),
         ],
