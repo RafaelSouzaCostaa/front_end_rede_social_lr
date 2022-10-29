@@ -28,24 +28,24 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 //Background image
                 color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.12,
+                height: MediaQuery.of(context).size.height * 0.14,
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.05),
+                    top: MediaQuery.of(context).size.height * 0.08),
                 child: Center(
                   //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                   child: Container(
-                    width: 120,
-                    height: 120,
+                    width: 110,
+                    height: 110,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            width: 4, color: CustomizedColors.darkBackground),
+                            width: 3.2, color: CustomizedColors.darkBackground),
                         borderRadius: BorderRadius.circular(60)),
                     child: const CircleAvatar(
                       backgroundImage:
                           ExactAssetImage("assets/image/perfil.jpg"),
-                      //ATENCAO Imagem de Perfil (image == null ? : ,)
+                      //ATENCAO Imagem de Perfil (image == null ? : ,);
                     ),
                   ),
                 ),
@@ -57,17 +57,20 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 padding: const EdgeInsets.only(top: 10),
                 child: Column(children: [
-                  Center(
+                  const Center(
                     child: Text(
                       "Matilde Alone", //NomePerfil
-                      style: TextStyle(
-                          color: CustomizedColors.lightText, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      "@Placeholder", //NomePerfil
-                      style: TextStyle(color: CustomizedColors.lightText),
+                  Container(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: Center(
+                      child: Text(
+                        "@Placeholder", //NomePerfil
+                        style: TextStyle(
+                            color: CustomizedColors.linkInText, fontSize: 14),
+                      ),
                     ),
                   ),
                 ]),

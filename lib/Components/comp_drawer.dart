@@ -53,7 +53,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
         Expanded(
           child: ListView.builder(
             //ATENCAO lista apenas para teste de scroll
-            itemCount: 2,
+            itemCount: 1,
             itemBuilder: (BuildContext context, int index) {
               return ComponentTextButton(
                 onPressed: () {
