@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_appBar.dart';
+import '../Components/comp_post.dart';
 
 class ScreenPerfil extends StatefulWidget {
   const ScreenPerfil({Key? key}) : super(key: key);
@@ -28,11 +29,11 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 //Background image
                 color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.16,
+                height: MediaQuery.of(context).size.height * 0.24,
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.12),
+                    top: MediaQuery.of(context).size.height * 0.19),
                 child: Center(
                   child: CircleAvatar(
                     radius: 43.5,
@@ -52,7 +53,25 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                 ),
               ),
             ],
-          )
+          ),
+          Container(
+              child: Column(
+            children: [
+              Row(
+                //Posts e Curtidas
+                children: [],
+              ),
+              Column(
+                children: [
+                  ListView(
+                    children: [
+                      ComponentPost(),
+                    ],
+                  )
+                ],
+              )
+            ],
+          )),
         ],
       ),
     );
