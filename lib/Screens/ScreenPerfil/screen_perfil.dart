@@ -76,7 +76,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   ),
                 ]),
               ),
-              const SizedBox(width: 200, height: 500, child: Testes())
+              const Testes()
               // Expanded(
               //   child: ListView.builder(
               //     itemCount: 2,
