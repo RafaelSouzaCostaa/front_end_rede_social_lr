@@ -32,14 +32,13 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
                 Scaffold.of(context).openDrawer();
               },
               child: const SizedBox(
-                width: 38,
-                //Image.asset("")//TODO> Pegar a mesma imagem que está no perfil
-                child: Icon(
-                  Icons.add_a_photo,
-                  color: Colors.white,
-                  size: 18,
+                width: 30,
+                child: CircleAvatar(
+                  backgroundImage: ExactAssetImage("assets/image/perfil.jpg"),
+                  //ATENCAO Imagem de Perfil (image == null ? : ,)
                 ),
-              ))
+              ),
+            )
           : null,
     );
   }

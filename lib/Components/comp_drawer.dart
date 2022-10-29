@@ -15,11 +15,12 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: CustomizedColors.darkBackground,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
+      child: Column(children: [
+        Container(
+          margin: const EdgeInsets.only(top: 20, bottom: 5),
+          child: Column(children: [
             Container(
-              margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.only(bottom: 15),
               width: 100,
               height: 100,
               child: const CircleAvatar(
@@ -47,45 +48,44 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               color: Colors.white30,
               thickness: 0.5,
             ),
-            SizedBox(
-              //Container Geral
-              height: MediaQuery.of(context).size.height * 0.77,
-              child: Column(
-                children: [
-                  SizedBox(
-                    //Container sem o Logout, pra ele ficar no fim da lista
-                    height: MediaQuery.of(context).size.height * 0.71,
-                    child: Column(
-                      children: [
-                        ComponentTextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, "/perfil");
-                          },
-                          text: "PERFIL",
-                          icon: Icons.person,
-                          iconColor: CustomizedColors.icons,
-                          textColor: CustomizedColors.lightText,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                        ),
-                      ],
-                    ),
-                  ),
-                  ComponentTextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/login");
-                    },
-                    text: "LOGOUT",
-                    icon: Icons.logout_outlined,
-                    iconColor: CustomizedColors.icons,
-                    textColor: CustomizedColors.lightText,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                  ),
-                ],
-              ),
-            )
-          ],
+          ]),
         ),
-      ),
+        Expanded(
+          child: ListView.builder(
+            //ATENCAO lista apenas para teste de scroll
+            itemCount: 50,
+            itemBuilder: (BuildContext context, int index) {
+              return ComponentTextButton(
+                onPressed: () {
+                  //Navigator.pushNamed(context, "/perfil");
+                },
+                text: "PERFIL ${index + 1}",
+                icon: Icons.person,
+                iconColor: CustomizedColors.icons,
+                textColor: CustomizedColors.lightText,
+                mainAxisAlignment: MainAxisAlignment.start,
+              );
+            },
+          ),
+        ),
+        const Divider(
+          color: Colors.white30,
+          thickness: 0.5,
+        ),
+        Container(
+          padding: const EdgeInsets.only(top: 1, bottom: 1),
+          child: ComponentTextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, "/login");
+            },
+            text: "LOGOUT",
+            icon: Icons.logout_outlined,
+            iconColor: CustomizedColors.icons,
+            textColor: CustomizedColors.lightText,
+            mainAxisAlignment: MainAxisAlignment.end,
+          ),
+        ),
+      ]),
     );
   }
 }
