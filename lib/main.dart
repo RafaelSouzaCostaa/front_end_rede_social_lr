@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/ScreenPerfil/screen_perfil.dart';
 
 import 'ScreenRegistration/screen_registration.dart';
 import 'ScreenHome/screen_home.dart';
 import 'ScreenLogin/screen_login.dart';
 import 'ScreenSplash/screen_splash.dart';
+import 'Screens/ScreenPerfil/screen_perfil.dart';
 
 void main() {
   runApp(

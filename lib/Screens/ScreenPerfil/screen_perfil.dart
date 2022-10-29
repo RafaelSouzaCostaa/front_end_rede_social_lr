@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
-import '../Components/comp_appBar.dart';
+import '../../Colors/customized_colors_grobal.dart';
+import '../../Components/comp_appBar.dart';
 
 class ScreenPerfil extends StatefulWidget {
   const ScreenPerfil({Key? key}) : super(key: key);
