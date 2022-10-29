@@ -12,27 +12,20 @@ class Testes extends StatefulWidget {
 class _TestesState extends State<Testes> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(50),
-          child: ComponentAppBar(
-            hasDrawer: true,
-          ),
-        ),
-        body: TabBar(tabs: [
+        body: TabBarView(children: [
           Tab(
-            icon: Icon(
-              Icons.abc,
-              color: CustomizedColors.linkInText,
-              size: 50,
+            icon: Text(
+              "Alomomola 5",
+              style: TextStyle(color: Color.fromARGB(255, 231, 3, 3)),
             ),
           ),
-          const Tab(
+          Tab(
             child: Text(
               "Alomomola",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Color.fromARGB(255, 212, 3, 3)),
             ),
           ),
         ]),

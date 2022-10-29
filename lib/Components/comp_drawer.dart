@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
+import '../Screens/screen_teste.dart';
 import 'comp_text_button.dart';
 
 class ComponentDrawer extends StatefulWidget {
@@ -85,6 +86,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             mainAxisAlignment: MainAxisAlignment.end,
           ),
         ),
+        const SizedBox(width: 200, height: 500, child: Testes())
+        // Expanded(
       ]),
     );
   }

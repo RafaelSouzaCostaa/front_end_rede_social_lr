@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Screens/screen_teste.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -75,15 +76,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   ),
                 ]),
               ),
-              Container(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  //Posts e Curtidas
-                  children: [
-                    //const CompTabBar()
-                  ],
-                ),
-              ),
+              const SizedBox(width: 200, height: 500, child: Testes())
               // Expanded(
               //   child: ListView.builder(
               //     itemCount: 2,
