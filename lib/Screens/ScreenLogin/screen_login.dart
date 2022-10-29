@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rede_social_lr/Components/comp_appBar.dart';
 
-import '../Colors/customized_colors_grobal.dart';
-import '../Components/comp_button.dart';
-import '../Components/comp_input.dart';
+import '../../Colors/customized_colors_grobal.dart';
+import '../../Components/comp_button.dart';
+import '../../Components/comp_input.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);

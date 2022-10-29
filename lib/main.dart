@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'ScreenRegistration/screen_registration.dart';
-import 'ScreenHome/screen_home.dart';
-import 'ScreenLogin/screen_login.dart';
-import 'ScreenSplash/screen_splash.dart';
+import 'Screens/ScreenHome/screen_home.dart';
+import 'Screens/ScreenLogin/screen_login.dart';
+import 'Screens/ScreenRegistration/screen_registration.dart';
+import 'Screens/ScreenSplash/screen_splash.dart';
 import 'Screens/ScreenPerfil/screen_perfil.dart';
 
 void main() {

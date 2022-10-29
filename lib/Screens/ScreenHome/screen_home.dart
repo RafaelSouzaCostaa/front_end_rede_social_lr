@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
-import '../Components/comp_appBar.dart';
-import '../Components/comp_drawer.dart';
+import '../../Colors/customized_colors_grobal.dart';
+import '../../Components/comp_appBar.dart';
+import '../../Components/comp_drawer.dart';
 
 class ScreenHome extends StatefulWidget {
   const ScreenHome({super.key});

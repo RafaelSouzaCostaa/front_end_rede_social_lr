@@ -1,8 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
-import '../Colors/pattern_colors.dart';
+import '../../Colors/customized_colors_grobal.dart';
+import '../../Colors/pattern_colors.dart';
 import '../ScreenLogin/screen_login.dart';
 
 class ScreenSplash extends StatefulWidget {
