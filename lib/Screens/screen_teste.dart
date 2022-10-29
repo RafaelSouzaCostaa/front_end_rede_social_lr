@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../Colors/customized_colors_grobal.dart';
-import '../Components/comp_appBar.dart';
 
 class Testes extends StatefulWidget {
   const Testes({super.key});
@@ -15,6 +14,10 @@ class _TestesState extends State<Testes> {
     return const DefaultTabController(
       length: 2,
       child: Scaffold(
+        appBar: TabBar(tabs: [
+          Icon(Icons.abc, color: Colors.amber),
+          Icon(Icons.abc, color: Colors.amber)
+        ]),
         body: TabBarView(children: [
           Tab(
             icon: Text(
