@@ -19,11 +19,11 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(top: 20, bottom: 20),
-              child: const Icon(
-                Icons.add_a_photo,
-                color: Colors.white,
-                size: 30,
+              margin: const EdgeInsets.all(20),
+              width: 100,
+              height: 100,
+              child: const CircleAvatar(
+                backgroundImage: ExactAssetImage("assets/image/perfil.jpg"),
               ),
             ),
             const Text(

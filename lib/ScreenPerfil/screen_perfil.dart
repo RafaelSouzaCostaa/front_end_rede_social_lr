@@ -33,20 +33,19 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.19),
+                    top: MediaQuery.of(context).size.height * 0.17),
                 child: Center(
-                  child: CircleAvatar(
-                    radius: 43.5,
-                    backgroundColor: CustomizedColors.darkBackground,
-                    child: CircleAvatar(
-                      radius: 41,
-                      //CustomizedColors.darkBackground,
-                      backgroundColor: Colors.white10,
-                      child: Icon(
-                        Icons.add_a_photo,
-                        size: 20,
-                        color: CustomizedColors.iconsBlue,
-                      ),
+                  //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 4, color: CustomizedColors.darkBackground),
+                        borderRadius: BorderRadius.circular(60)),
+                    child: const CircleAvatar(
+                      backgroundImage:
+                          ExactAssetImage("assets/image/perfil.jpg"),
                       //ATENCAO Imagem de Perfil (image == null ? : ,)
                     ),
                   ),
@@ -63,11 +62,12 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               ),
               Column(
                 children: [
-                  ListView(
-                    children: [
-                      ComponentPost(),
-                    ],
-                  )
+                  // ListView(
+                  //   children: [
+                  //     ComponentPost(),
+                  //   ],
+                  // )
+                  Row()
                 ],
               )
             ],
