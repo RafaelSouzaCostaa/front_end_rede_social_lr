@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 import '../Components/comp_appBar.dart';
-import '../Components/comp_post.dart';
 
 class ScreenPerfil extends StatefulWidget {
   const ScreenPerfil({Key? key}) : super(key: key);
@@ -29,16 +28,16 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 //Background image
                 color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.12,
+                height: MediaQuery.of(context).size.height * 0.14,
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.05),
+                    top: MediaQuery.of(context).size.height * 0.08),
                 child: Center(
                   //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                   child: Container(
-                    width: 120,
-                    height: 120,
+                    width: 110,
+                    height: 110,
                     decoration: BoxDecoration(
                         border: Border.all(
                             width: 4, color: CustomizedColors.darkBackground),
@@ -46,7 +45,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                     child: const CircleAvatar(
                       backgroundImage:
                           ExactAssetImage("assets/image/perfil.jpg"),
-                      //ATENCAO Imagem de Perfil (image == null ? : ,)
+                      //ATENCAO Imagem de Perfil (image == null ? : ,);
                     ),
                   ),
                 ),

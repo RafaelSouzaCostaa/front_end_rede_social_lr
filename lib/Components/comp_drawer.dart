@@ -53,11 +53,11 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
         Expanded(
           child: ListView.builder(
             //ATENCAO lista apenas para teste de scroll
-            itemCount: 50,
+            itemCount: 1,
             itemBuilder: (BuildContext context, int index) {
               return ComponentTextButton(
                 onPressed: () {
-                  //Navigator.pushNamed(context, "/perfil");
+                  Navigator.pushNamed(context, "/perfil");
                 },
                 text: "PERFIL ${index + 1}",
                 icon: Icons.person,
