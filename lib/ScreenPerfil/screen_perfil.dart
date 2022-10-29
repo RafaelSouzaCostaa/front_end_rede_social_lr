@@ -40,7 +40,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                     height: 110,
                     decoration: BoxDecoration(
                         border: Border.all(
-                            width: 4, color: CustomizedColors.darkBackground),
+                            width: 3.2, color: CustomizedColors.darkBackground),
                         borderRadius: BorderRadius.circular(60)),
                     child: const CircleAvatar(
                       backgroundImage:
@@ -57,17 +57,19 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 padding: const EdgeInsets.only(top: 10),
                 child: Column(children: [
-                  Center(
+                  const Center(
                     child: Text(
                       "Matilde Alone", //NomePerfil
-                      style: TextStyle(
-                          color: CustomizedColors.lightText, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      "@Placeholder", //NomePerfil
-                      style: TextStyle(color: CustomizedColors.lightText),
+                  Container(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: const Center(
+                      child: Text(
+                        "@Placeholder", //NomePerfil
+                        style: TextStyle(color: Colors.white70, fontSize: 14),
+                      ),
                     ),
                   ),
                 ]),
