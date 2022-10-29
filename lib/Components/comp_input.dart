@@ -31,9 +31,11 @@ class _ComponentInputState extends State<ComponentInput> {
       width: MediaQuery.of(context).size.width * 0.85,
       height: 50,
       child: TextFormField(
+        // textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
         obscureText: widget.obscureText,
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(horizontal: 16),
           suffixIcon: Padding(
             padding: const EdgeInsetsDirectional.only(end: 12),
             child: widget.suffixIcon,
@@ -41,7 +43,10 @@ class _ComponentInputState extends State<ComponentInput> {
           alignLabelWithHint: true,
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
-          hintStyle: TextStyle(fontSize: 13, color: Colors.white24),
+          hintStyle: TextStyle(
+            fontSize: 13,
+            color: Colors.white24,
+          ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(

@@ -53,12 +53,51 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               ),
             ],
           ),
-          Container(
-              child: Column(
+          Column(
             children: [
-              Row(
-                //Posts e Curtidas
-                children: [],
+              Container(
+                padding: const EdgeInsets.only(top: 10),
+                child: Column(children: [
+                  Center(
+                    child: Text(
+                      "Matilde Alone", //NomePerfil
+                      style: TextStyle(
+                          color: CustomizedColors.lightText, fontSize: 20),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "@Placeholder", //NomePerfil
+                      style: TextStyle(color: CustomizedColors.lightText),
+                    ),
+                  ),
+                ]),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 20),
+                child: Row(
+                  //Posts e Curtidas
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Center(
+                        child: Text(
+                          "Postagens",
+                          style: TextStyle(color: CustomizedColors.lightText),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Center(
+                        child: Text(
+                          "Curtidas",
+                          style: TextStyle(color: CustomizedColors.lightText),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Column(
                 children: [
@@ -71,7 +110,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                 ],
               )
             ],
-          )),
+          ),
         ],
       ),
     );

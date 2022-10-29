@@ -15,7 +15,7 @@ void main() {
       ),
       initialRoute: '/home',
       routes: {
-        '/Splash': (context) => const ScreenSplash(),
+        '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
         "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenRegistration(),
