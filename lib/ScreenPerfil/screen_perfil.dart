@@ -65,10 +65,11 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 5),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         "@Placeholder", //NomePerfil
-                        style: TextStyle(color: Colors.white70, fontSize: 14),
+                        style: TextStyle(
+                            color: CustomizedColors.linkInText, fontSize: 14),
                       ),
                     ),
                   ),
