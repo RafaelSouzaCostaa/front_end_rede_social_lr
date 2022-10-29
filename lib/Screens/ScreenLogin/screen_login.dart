@@ -134,18 +134,15 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               fontFamily: 'Imprima-Regular'),
                         ),
                         GestureDetector(
-                          child: Text(
-                            "  Recuperar",
-                            style: TextStyle(
-                                color: CustomizedColors.linkInText,
-                                fontFamily: 'Imprima-Regular'),
-                          ),
-                          onTap: () {
-                            //IMPLEMENTAR Navigator para pagina de trocar senha
-                            Navigator.pushNamed(context,
-                                "/barralateral"); //ATENCAO apagar, e so teste
-                          },
-                        ),
+                            child: Text(
+                              "  Recuperar",
+                              style: TextStyle(
+                                  color: CustomizedColors.linkInText,
+                                  fontFamily: 'Imprima-Regular'),
+                            ),
+                            onTap: () {
+                              //IMPLEMENTAR Navigator para pagina de trocar senha
+                            }),
                       ],
                     ),
                   ),

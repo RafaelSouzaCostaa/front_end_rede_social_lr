@@ -13,7 +13,7 @@ class _TestesState extends State<Testes> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 1,
-      height: MediaQuery.of(context).size.height * 0.5,
+      height: MediaQuery.of(context).size.height * 0.56,
       margin: const EdgeInsets.only(top: 15),
       child: DefaultTabController(
         length: 2,
@@ -33,17 +33,18 @@ class _TestesState extends State<Testes> {
             labelPadding: const EdgeInsets.all(10),
             indicatorWeight: 3,
           ),
-          body: const TabBarView(children: [
+          body: TabBarView(children: [
             Tab(
-              icon: Text(
-                "Alomomola 5",
-                style: TextStyle(color: Color.fromARGB(255, 231, 3, 3)),
+              child: Container(
+                //IMPLEMENTAR algo no lugar desse Container
+                decoration: BoxDecoration(color: CustomizedColors.lightText),
               ),
             ),
             Tab(
-              child: Text(
-                "Alomomola",
-                style: TextStyle(color: Color.fromARGB(255, 212, 3, 3)),
+              child: Container(
+                //IMPLEMENTAR algo no lugar desse Container
+                decoration:
+                    BoxDecoration(color: CustomizedColors.pinkBackground),
               ),
             ),
           ]),

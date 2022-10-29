@@ -35,7 +35,7 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
                 width: 30,
                 child: CircleAvatar(
                   backgroundImage: ExactAssetImage("assets/image/perfil.jpg"),
-                  //ATENCAO Imagem de Perfil (image == null ? : ,)
+                  //IMPLEMENTAR Imagem de Perfil (image == null ? : ,)
                 ),
               ),
             )
