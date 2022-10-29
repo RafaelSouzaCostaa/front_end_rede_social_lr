@@ -29,11 +29,11 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
               Container(
                 //Background image
                 color: Colors.white,
-                height: MediaQuery.of(context).size.height * 0.24,
+                height: MediaQuery.of(context).size.height * 0.12,
               ),
               Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.17),
+                    top: MediaQuery.of(context).size.height * 0.05),
                 child: Center(
                   //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                   child: Container(
