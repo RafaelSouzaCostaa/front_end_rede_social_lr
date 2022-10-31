@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Screens/screen_teste.dart';
+import 'package:rede_social_lr/Components/comp_tab.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -79,15 +79,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   ),
                 ]),
               ),
-              const Testes()
-              // Expanded(
-              //   child: ListView.builder(
-              //     itemCount: 2,
-              //     itemBuilder: (context, index) {
-              //       return ComponentPost();
-              //     },
-              //   ),
-              // ),
+              const ComponentTab(),
             ],
           ),
         ],
