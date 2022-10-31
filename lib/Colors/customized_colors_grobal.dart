@@ -11,6 +11,7 @@ class CustomizedColors {
   static Color darkBackground = PatternColors.chineseDark;
   static Color pinkBackground = PatternColors.fashionFuchsia;
   static Color iconBackground = PatternColors.outerSpace;
+  static Color blueBackground = PatternColors.fluorescentBlue;
 
   //Bordas
   static Color inputBorderColor = PatternColors.blackShadows;

@@ -20,14 +20,15 @@ class _ComponentTabState extends State<ComponentTab> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: TabBar(
-            tabs: [
+            indicatorColor: CustomizedColors.blueBackground,
+            unselectedLabelColor: CustomizedColors.lightText,
+            labelColor: CustomizedColors.blueBackground,
+            tabs: const [
               Text(
                 "Post",
-                style: TextStyle(color: CustomizedColors.lightText),
               ),
               Text(
                 "Curtidas",
-                style: TextStyle(color: CustomizedColors.lightText),
               )
             ],
             labelPadding: const EdgeInsets.all(10),
