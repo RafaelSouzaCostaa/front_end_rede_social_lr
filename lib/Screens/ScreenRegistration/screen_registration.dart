@@ -53,6 +53,12 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
+                        labelText: '@nickname',
+                        controller: userController,
+                        validator: true,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
                         labelText: 'Data Nascimento',
                         controller: passwordController,
                       ),

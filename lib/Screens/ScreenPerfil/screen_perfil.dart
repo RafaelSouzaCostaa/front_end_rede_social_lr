@@ -43,9 +43,10 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                         border: Border.all(
                             width: 3.2, color: CustomizedColors.darkBackground),
                         borderRadius: BorderRadius.circular(60)),
-                    child: const CircleAvatar(
+                    child: CircleAvatar(
+                      backgroundColor: CustomizedColors.linkInText,
                       backgroundImage:
-                          ExactAssetImage("assets/image/perfil.jpg"),
+                          const AssetImage("assets/image/perfil.jpg"),
                       //ATENCAO Imagem de Perfil (image == null ? : ,);
                     ),
                   ),
