@@ -86,7 +86,6 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             mainAxisAlignment: MainAxisAlignment.end,
           ),
         ),
-        const SizedBox(width: 200, height: 500, child: Testes())
         // Expanded(
       ]),
     );
