@@ -7,6 +7,7 @@ class ComponentTab extends StatefulWidget {
   @override
   State<ComponentTab> createState() => _ComponentTabState();
 }
+
 class _ComponentTabState extends State<ComponentTab> {
   @override
   Widget build(BuildContext context) {
@@ -22,14 +23,7 @@ class _ComponentTabState extends State<ComponentTab> {
             indicatorColor: CustomizedColors.blueBackground,
             unselectedLabelColor: CustomizedColors.lightText,
             labelColor: CustomizedColors.blueBackground,
-            tabs: const [
-              Text(
-                "Post",
-              ),
-              Text(
-                "Curtidas",
-              )
-            ],
+            tabs: const [Text("Post"), Text("Curtidas")],
             labelPadding: const EdgeInsets.all(10),
             indicatorWeight: 3,
           ),

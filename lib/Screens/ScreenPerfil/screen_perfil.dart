@@ -64,7 +64,11 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                     const Center(
                       child: Text(
                         "Nome do Usuario", //NomePerfil
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Imprima-Regular',
+                        ),
                       ),
                     ),
                     Container(
@@ -73,7 +77,10 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                         child: Text(
                           "@nickname", //NomePerfil
                           style: TextStyle(
-                              color: CustomizedColors.linkInText, fontSize: 14),
+                            color: CustomizedColors.linkInText,
+                            fontSize: 14,
+                            fontFamily: 'Imprima-Regular',
+                          ),
                         ),
                       ),
                     ),
