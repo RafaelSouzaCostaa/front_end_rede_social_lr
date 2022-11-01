@@ -48,7 +48,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                       child: CircleAvatar(
                         backgroundColor: CustomizedColors.linkInText,
                         backgroundImage:
-                            const AssetImage("assets/image/perfil.jpg"),
+                            const AssetImage("assets/image/perfil.png"),
                         //ATENCAO Imagem de Perfil (image == null ? : ,);
                       ),
                     ),
@@ -63,7 +63,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   child: Column(children: [
                     const Center(
                       child: Text(
-                        "Matilde Alone", //NomePerfil
+                        "Nome do Usuario", //NomePerfil
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -71,7 +71,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                       padding: const EdgeInsets.only(top: 5),
                       child: Center(
                         child: Text(
-                          "@Placeholder", //NomePerfil
+                          "@nickname", //NomePerfil
                           style: TextStyle(
                               color: CustomizedColors.linkInText, fontSize: 14),
                         ),

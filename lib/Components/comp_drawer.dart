@@ -25,11 +25,11 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               width: 100,
               height: 100,
               child: const CircleAvatar(
-                backgroundImage: ExactAssetImage("assets/image/perfil.jpg"),
+                backgroundImage: ExactAssetImage("assets/image/perfil.png"),
               ),
             ),
             const Text(
-              "Luiggi Rafaela",
+              "Nome do Usuario",
               style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
@@ -38,7 +38,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: const Text(
-                "@placeHolder",
+                "@nickname",
                 style: TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',

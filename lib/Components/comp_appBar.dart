@@ -34,7 +34,7 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
               child: const SizedBox(
                 width: 30,
                 child: CircleAvatar(
-                  backgroundImage: ExactAssetImage("assets/image/perfil.jpg"),
+                  backgroundImage: ExactAssetImage("assets/image/perfil.png"),
                   //IMPLEMENTAR Imagem de Perfil (image == null ? : ,)
                 ),
               ),
