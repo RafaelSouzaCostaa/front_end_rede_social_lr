@@ -7,7 +7,6 @@ class ComponentTab extends StatefulWidget {
   @override
   State<ComponentTab> createState() => _ComponentTabState();
 }
-
 class _ComponentTabState extends State<ComponentTab> {
   @override
   Widget build(BuildContext context) {
