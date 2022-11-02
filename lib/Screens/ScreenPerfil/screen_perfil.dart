@@ -15,12 +15,7 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(50),
-        child: ComponentAppBar(
-          hasDrawer: false,
-        ),
-      ),
+      appBar: ComponentAppBar(hasDrawer: false),
       backgroundColor: CustomizedColors.darkBackground,
       body: SingleChildScrollView(
         child: Column(

@@ -18,12 +18,7 @@ class _ScreenHomeState extends State<ScreenHome> {
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
         drawer: const ComponentDrawer(),
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(50),
-          child: ComponentAppBar(
-            hasDrawer: true,
-          ),
-        ),
+        appBar: ComponentAppBar(hasDrawer: false),
         body: SingleChildScrollView(
           child: Column(
             children: [Container()],

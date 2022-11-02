@@ -27,12 +27,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: CustomizedColors.darkBackground,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(50),
-          child: ComponentAppBar(
-            hasDrawer: false,
-          ),
-        ),
+        appBar: ComponentAppBar(hasDrawer: false),
         body: SingleChildScrollView(
           padding: const EdgeInsets.only(top: 10),
           child: Column(children: [

@@ -27,12 +27,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(50),
-          child: ComponentAppBar(
-            hasDrawer: false,
-          ),
-        ),
+        appBar: ComponentAppBar(hasDrawer: false),
         body: SingleChildScrollView(
           child: Center(
             child: Column(

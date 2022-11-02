@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
-class ComponentAppBar extends StatefulWidget {
+class ComponentAppBar extends StatefulWidget implements PreferredSizeWidget {
   bool hasDrawer;
 
   ComponentAppBar({super.key, required this.hasDrawer});
 
   @override
   State<ComponentAppBar> createState() => _ComponentAppBarState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
 }
 
 class _ComponentAppBarState extends State<ComponentAppBar> {
