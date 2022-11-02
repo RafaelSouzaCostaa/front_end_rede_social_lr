@@ -1,5 +1,5 @@
 class bancoTestPost {
-  final post = {
+  static final post = {
     "userName": "Joaquim Ribeiro",
     "nickName": "JR_Bispo",
     "userProfilePicture": "assets/image/perfil.png",

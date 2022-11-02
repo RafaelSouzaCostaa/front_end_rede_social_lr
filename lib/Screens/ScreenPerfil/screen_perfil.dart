@@ -86,7 +86,25 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                     ),
                   ]),
                 ),
-                const ComponentTab(),
+                ComponentTab(
+                  height: 0.56,
+                  width: 1,
+                  indicatorColor: CustomizedColors.blueBackground,
+                  labelColor: CustomizedColors.blueBackground,
+                  unselectedLabelColor: CustomizedColors.lightText,
+                  tabsName: const [
+                    Text("Postagens"),
+                    Text("Curtidas"),
+                  ],
+                  tabs: [
+                    Tab(
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Tab(
+                      child: Container(color: Colors.transparent),
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
