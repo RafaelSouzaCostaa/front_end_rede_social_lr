@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Colors/customized_colors_grobal.dart';
 
 class Testes extends StatefulWidget {
   const Testes({super.key});

@@ -22,24 +22,43 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    double altura = MediaQuery.of(context).size.height;
+    //double altura = MediaQuery.of(context).size.height;
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
         appBar: ComponentAppBar(hasDrawer: false),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                const SizedBox(height: 110),
-                Form(
+        body: Column(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(),
+            ),
+            Flexible(
+              flex: 10,
+              child: SingleChildScrollView(
+                child: Form(
                   child: Column(
                     children: [
                       ComponentInput(
                         labelText: 'Usuario',
                         controller: userController,
                         validator: true,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Email ou Telefone',
+                        controller: passwordController,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Email ou Telefone',
+                        controller: passwordController,
+                      ),
+                      const SizedBox(height: 20),
+                      ComponentInput(
+                        labelText: 'Email ou Telefone',
+                        controller: passwordController,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
@@ -85,56 +104,57 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: altura * 0.33,
-                ),
-                Container(
-                  margin:
-                      const EdgeInsets.only(left: 30, right: 30, bottom: 30),
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Container(),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              width: MediaQuery.of(context).size.width * 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Já tem uma Conta?",
-                            style: TextStyle(
-                                color: CustomizedColors.lightText,
-                                fontFamily: 'Imprima-Regular'),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  color: CustomizedColors.linkInText,
-                                  fontFamily: 'Imprima-Regular'),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        "Já tem uma Conta?",
+                        style: TextStyle(
+                            color: CustomizedColors.lightText,
+                            fontFamily: 'Imprima-Regular'),
                       ),
-                      Container(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: ComponentButton(
-                          text: "Cadastro",
-                          //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
-                          width: 0.25,
-                          onPressed: () {}, //IMPLEMENTAR
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              color: CustomizedColors.linkInText,
+                              fontFamily: 'Imprima-Regular'),
                         ),
                       ),
                     ],
                   ),
-                )
-              ],
-            ),
-          ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: ComponentButton(
+                      text: "Cadastro",
+                      //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
+                      width: 0.25,
+                      height: 0.04,
+                      onPressed: () {}, //IMPLEMENTAR
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

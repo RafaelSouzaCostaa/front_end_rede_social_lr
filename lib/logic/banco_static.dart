@@ -1,4 +1,4 @@
-class bancoTestPost {
+class BancoTestPost {
   static final post = {
     "userName": "Joaquim Ribeiro",
     "nickName": "JR_Bispo",

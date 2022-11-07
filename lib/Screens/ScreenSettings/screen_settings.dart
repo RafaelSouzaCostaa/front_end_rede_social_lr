@@ -11,9 +11,7 @@ class _ScreenConfigState extends State<ScreenConfig> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [],
-      ),
+      body: Column(),
     );
   }
 }

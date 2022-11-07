@@ -20,7 +20,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
+    //double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
@@ -28,131 +28,127 @@ class _ScreenLoginState extends State<ScreenLogin> {
         resizeToAvoidBottomInset: true,
         backgroundColor: CustomizedColors.darkBackground,
         appBar: ComponentAppBar(hasDrawer: false),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 10),
-          child: Column(children: [
-            SizedBox(
-              height: screenHeight * 0.19,
-            ),
-            Form(
-              child: Column(
-                children: [
-                  ComponentInput(
-                    labelText: 'Usuario',
-                    controller: userController,
-                    validator: true,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ComponentInput(
-                    //Senha
-                    obscureText: !_visiblePassword,
-                    labelText: 'Senha',
-                    controller: passwordController,
+        body: Column(children: [
+          Flexible(
+            child: Container(),
+          ),
+          Form(
+            child: Column(
+              children: [
+                ComponentInput(
+                  labelText: 'Usuario',
+                  controller: userController,
+                  validator: true,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ComponentInput(
+                  //Senha
+                  obscureText: !_visiblePassword,
+                  labelText: 'Senha',
+                  controller: passwordController,
 
-                    suffixIcon: IconButton(
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      icon: _visiblePassword
-                          ? const Icon(
-                              Icons.visibility_sharp,
-                              size: 23,
-                            )
-                          : const Icon(
-                              Icons.visibility_off_sharp,
-                              // size: 23,
-                            ),
-                      color: Colors.white70,
-                      // style: const ButtonStyle(),
-                      onPressed: () {
-                        setState(
-                          () {
-                            _visiblePassword = !_visiblePassword;
-                          },
-                        );
+                  suffixIcon: IconButton(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    icon: _visiblePassword
+                        ? const Icon(
+                            Icons.visibility_sharp,
+                            size: 23,
+                          )
+                        : const Icon(
+                            Icons.visibility_off_sharp,
+                            // size: 23,
+                          ),
+                    color: Colors.white70,
+                    // style: const ButtonStyle(),
+                    onPressed: () {
+                      setState(
+                        () {
+                          _visiblePassword = !_visiblePassword;
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Não tem uma conta? ",
+                      style: TextStyle(
+                          color: CustomizedColors.lightText,
+                          fontFamily: 'Imprima-Regular'),
+                    ),
+                    GestureDetector(
+                      child: Text(
+                        "Cadastre-se",
+                        style: TextStyle(
+                            color: CustomizedColors.linkInText,
+                            fontFamily: 'Imprima-Regular'),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, "/cadastro");
                       },
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
+                  ],
+                ),
+              )
+            ],
+          ),
+          Flexible(
+            child: Container(),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 20),
+            child: Row(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(top: 15),
+                  width: screenWidth * 0.75,
+                  padding: const EdgeInsets.only(right: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Não tem uma conta? ",
+                        "Esqueceu sua senha?",
                         style: TextStyle(
                             color: CustomizedColors.lightText,
                             fontFamily: 'Imprima-Regular'),
                       ),
                       GestureDetector(
-                        child: Text(
-                          "Cadastre-se",
-                          style: TextStyle(
-                              color: CustomizedColors.linkInText,
-                              fontFamily: 'Imprima-Regular'),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, "/cadastro");
-                        },
-                      ),
+                          child: Text(
+                            "  Recuperar",
+                            style: TextStyle(
+                                color: CustomizedColors.linkInText,
+                                fontFamily: 'Imprima-Regular'),
+                          ),
+                          onTap: () {
+                            //IMPLEMENTAR Navigator para pagina de trocar senha
+                          }),
                     ],
                   ),
-                )
+                ),
+                ComponentButton(
+                  text: "Login",
+                  width: 0.20,
+                  height: 0.04,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                ),
               ],
             ),
-            // SizedBox(
-            //   height: screenHeight * 0.39,
-            // ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    width: screenWidth * 0.75,
-                    padding: const EdgeInsets.only(right: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Esqueceu sua senha?",
-                          style: TextStyle(
-                              color: CustomizedColors.lightText,
-                              fontFamily: 'Imprima-Regular'),
-                        ),
-                        GestureDetector(
-                            child: Text(
-                              "  Recuperar",
-                              style: TextStyle(
-                                  color: CustomizedColors.linkInText,
-                                  fontFamily: 'Imprima-Regular'),
-                            ),
-                            onTap: () {
-                              //IMPLEMENTAR Navigator para pagina de trocar senha
-                            }),
-                      ],
-                    ),
-                  ),
-                  ComponentButton(
-                    text: "Login",
-                    width: 0.20,
-                    height: 0.04,
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/home");
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ]),
-        ),
+          ),
+        ]),
       ),
     );
   }
