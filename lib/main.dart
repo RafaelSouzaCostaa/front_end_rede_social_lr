@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Screens/ScreenSettings/screen_settings.dart';
 
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
@@ -14,13 +15,14 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/home',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
-        "/login": (context) => const ScreenLogin(),
         "/cadastro": (context) => const ScreenRegistration(),
+        "/login": (context) => const ScreenLogin(),
         "/perfil": (context) => const ScreenPerfil(),
+        "/setting": (context) => const ScreenSettings(),
         "/teste": (context) => const Testes(),
       },
       debugShowCheckedModeBanner: false,

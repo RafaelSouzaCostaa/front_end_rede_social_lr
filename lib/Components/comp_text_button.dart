@@ -7,7 +7,7 @@ class ComponentTextButton extends StatefulWidget {
   Color iconColor;
   Function onPressed;
   MainAxisAlignment mainAxisAlignment;
-  num heightPercentage;
+  num height;
   double rightPadding;
   double leftPadding;
   double spaceBetweenIconAndText;
@@ -19,8 +19,8 @@ class ComponentTextButton extends StatefulWidget {
     this.textColor = Colors.white,
     this.iconColor = Colors.white,
     required this.onPressed,
-    this.mainAxisAlignment = MainAxisAlignment.center,
-    this.heightPercentage = 0.06,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.height = 6,
     this.leftPadding = 5,
     this.rightPadding = 10,
     this.spaceBetweenIconAndText = 8,
@@ -33,9 +33,10 @@ class ComponentTextButton extends StatefulWidget {
 class _ComponentTextButtonState extends State<ComponentTextButton> {
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+
     return SizedBox(
-      // color: Colors.white,
-      height: MediaQuery.of(context).size.height * widget.heightPercentage,
+      height: screenHeight * (widget.height / 100),
       child: TextButton(
         onPressed: () {
           widget.onPressed();
@@ -45,10 +46,12 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
           children: [
             Container(
               padding: EdgeInsets.only(left: widget.leftPadding),
-              child: Icon(
-                widget.icon,
-                color: widget.iconColor,
-              ),
+              child: widget.icon != null
+                  ? Icon(
+                      widget.icon,
+                      color: widget.iconColor,
+                    )
+                  : null,
             ),
             Container(
               padding: EdgeInsets.only(

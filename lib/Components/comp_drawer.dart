@@ -52,7 +52,16 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
         ),
         Flexible(
           child: SingleChildScrollView(
-            child: Column(children: []),
+            child: Column(children: [
+              ComponentTextButton(
+                text: "Perfil",
+                icon: Icons.person,
+                mainAxisAlignment: MainAxisAlignment.start,
+                onPressed: () {
+                  Navigator.pushNamed(context, "/perfil");
+                },
+              ),
+            ]),
           ),
         ),
         const Divider(
@@ -63,7 +72,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           padding: const EdgeInsets.only(top: 1, bottom: 1),
           child: ComponentTextButton(
             onPressed: () {
-              Navigator.pushNamed(context, "/login");
+              Navigator.pushNamed(context, "/setting");
             },
             text: "",
             icon: Icons.settings,
