@@ -47,22 +47,12 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: 'Email ou Telefone',
+                        labelText: 'Email',
                         controller: passwordController,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: 'Email ou Telefone',
-                        controller: passwordController,
-                      ),
-                      const SizedBox(height: 20),
-                      ComponentInput(
-                        labelText: 'Email ou Telefone',
-                        controller: passwordController,
-                      ),
-                      const SizedBox(height: 20),
-                      ComponentInput(
-                        labelText: 'Email ou Telefone',
+                        labelText: 'Telefone',
                         controller: passwordController,
                       ),
                       const SizedBox(height: 20),
