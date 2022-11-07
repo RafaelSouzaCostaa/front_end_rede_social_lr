@@ -22,7 +22,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    //double altura = MediaQuery.of(context).size.height;
+    //double screenHeight = MediaQuery.of(context).size.height;
+    //double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -81,7 +82,6 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                                   Icons.visibility_off_sharp,
                                 ),
                           color: Colors.white70,
-                          // style: const ButtonStyle(),
                           onPressed: () {
                             setState(
                               () {
@@ -102,8 +102,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
             ),
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
-              width: MediaQuery.of(context).size.width * 1,
-              color: Colors.pink,
+              width: MediaQuery.of(context).size.width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -136,7 +135,6 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     padding: const EdgeInsets.only(left: 5),
                     child: ComponentButton(
                       text: "Cadastro",
-                      //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
                       width: 25,
                       height: 6,
                       onPressed: () {}, //IMPLEMENTAR

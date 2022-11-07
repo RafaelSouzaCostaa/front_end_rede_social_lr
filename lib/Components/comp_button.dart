@@ -16,8 +16,8 @@ class ComponentButton extends StatefulWidget {
     required this.text,
     this.color = Colors.black,
     required this.onPressed,
-    this.width = 20,
-    this.height = 4,
+    this.width = 25,
+    this.height = 6,
   });
 
   @override
