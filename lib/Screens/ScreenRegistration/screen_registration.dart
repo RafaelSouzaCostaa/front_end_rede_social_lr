@@ -103,6 +103,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
             Container(
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               width: MediaQuery.of(context).size.width * 1,
+              color: Colors.pink,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -136,8 +137,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     child: ComponentButton(
                       text: "Cadastro",
                       //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
-                      width: 0.25,
-                      height: 0.04,
+                      width: 25,
+                      height: 6,
                       onPressed: () {}, //IMPLEMENTAR
                     ),
                   ),

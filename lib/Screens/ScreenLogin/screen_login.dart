@@ -139,8 +139,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
                 ComponentButton(
                   text: "Login",
-                  width: 0.20,
-                  height: 0.04,
+                  width: 25,
+                  height: 6,
                   onPressed: () {
                     Navigator.pushNamed(context, "/home");
                   },

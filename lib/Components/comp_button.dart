@@ -16,8 +16,8 @@ class ComponentButton extends StatefulWidget {
     required this.text,
     this.color = Colors.black,
     required this.onPressed,
-    this.width = 0.17,
-    this.height = 0.20,
+    this.width = 20,
+    this.height = 4,
   });
 
   @override
@@ -28,8 +28,8 @@ class _ComponentButtonState extends State<ComponentButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * widget.width,
-        height: MediaQuery.of(context).size.height * widget.height,
+      width: widget.width * 5,
+      height: widget.height * 5,
       child: ElevatedButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all(
