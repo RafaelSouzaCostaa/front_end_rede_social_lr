@@ -96,8 +96,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             color: CustomizedColors.linkInText,
                             fontFamily: 'Imprima-Regular'),
                       ),
-                      onTap: () {
-                        Navigator.pushNamed(context, "/cadastro");
+                      onTap: () async{
+                        await Navigator.pushNamed(context, "/cadastro");
                       },
                     ),
                   ],
@@ -140,8 +140,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   text: "Login",
                   width: 20,
                   height: 6,
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/home");
+                  onPressed: () async{
+                    await Navigator.pushNamed(context, "/home");
                   },
                 ),
               ],

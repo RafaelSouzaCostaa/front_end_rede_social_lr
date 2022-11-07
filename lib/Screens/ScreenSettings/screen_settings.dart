@@ -26,26 +26,26 @@ class _ScreenSettingsState extends State<ScreenSettings> {
           children: [
             ComponentTextButton(
               text: "Alterar Nome",
-              onPressed: () {
-                Navigator.pushNamed(context, "/login");
+              onPressed: () async {
+                await Navigator.pushNamed(context, "/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Apelido",
-              onPressed: () {
-                Navigator.pushNamed(context, "/login");
+              onPressed: () async {
+                await Navigator.pushNamed(context, "/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Senha",
-              onPressed: () {
-                Navigator.pushNamed(context, "/login");
+              onPressed: () async {
+                await Navigator.pushNamed(context, "/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Email",
-              onPressed: () {
-                Navigator.pushNamed(context, "/login");
+              onPressed: () async {
+                await Navigator.pushNamed(context, "/login");
               },
             ),
             ComponentTextButton(
@@ -53,8 +53,8 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               icon: Icons.logout,
               iconColor: Colors.red,
               textColor: Colors.red,
-              onPressed: () {
-                Navigator.pushNamed(context, "/login");
+              onPressed: () async {
+                await Navigator.pushNamed(context, "/login");
               },
             ),
           ],

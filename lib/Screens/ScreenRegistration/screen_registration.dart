@@ -22,8 +22,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    //double screenWidth = MediaQuery.of(context).size.width;
+    // double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -102,7 +102,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20, top: 50),
-              width: MediaQuery.of(context).size.width,
+              width: screenWidth,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -119,8 +119,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                         width: 5,
                       ),
                       GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, "/login");
+                        onTap: () async {
+                          await Navigator.pushNamed(context, "/login");
                         },
                         child: Text(
                           "Login",
