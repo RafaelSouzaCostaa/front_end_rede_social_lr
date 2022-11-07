@@ -107,14 +107,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 )
               ],
             ),
-            SizedBox(
-              height: screenHeight * 0.39,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                bottom: 5,
-              ),
+            // SizedBox(
+            //   height: screenHeight * 0.39,
+            // ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.95,
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
                     width: screenWidth * 0.75,
@@ -141,15 +140,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    child: ComponentButton(
-                      text: "Login",
-                      widthDouble: 0.20,
-                      maxWidth: 170,
-                      onPressed: () {
-                        Navigator.pushNamed(context, "/home");
-                      },
-                    ),
+                  ComponentButton(
+                    text: "Login",
+                    width: 0.20,
+                    height: 0.04,
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/home");
+                    },
                   ),
                 ],
               ),

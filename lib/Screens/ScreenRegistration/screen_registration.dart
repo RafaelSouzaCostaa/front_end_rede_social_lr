@@ -124,9 +124,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                         padding: const EdgeInsets.only(left: 5),
                         child: ComponentButton(
                           text: "Cadastro",
-                          maxWidth: 180,
-                          widthDouble:
-                              0.25, //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
+                          //ATENCAO passando tamanho em porcentagem para btn ficar responsivo
+                          width: 0.25,
                           onPressed: () {}, //IMPLEMENTAR
                         ),
                       ),
