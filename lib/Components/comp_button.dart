@@ -34,7 +34,7 @@ class _ComponentButtonState extends State<ComponentButton> {
         style: ButtonStyle(
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(7),
             ),
           ),
           backgroundColor:
@@ -46,7 +46,10 @@ class _ComponentButtonState extends State<ComponentButton> {
         child: Text(
           widget.text,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(color: widget.color, fontFamily: 'Imprima-Regular'),
+          style: TextStyle(
+            color: widget.color,
+            fontFamily: 'Imprima-Regular',
+          ),
         ),
       ),
     );

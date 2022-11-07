@@ -22,7 +22,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    //double screenHeight = MediaQuery.of(context).size.height;
+    double screenHeight = MediaQuery.of(context).size.height;
     //double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
@@ -36,7 +36,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
               child: Container(),
             ),
             Flexible(
-              flex: 10,
+              flex: 3,
               child: SingleChildScrollView(
                 child: Form(
                   child: Column(
@@ -101,7 +101,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
               child: Container(),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              margin: const EdgeInsets.only(bottom: 20, top: 50),
               width: MediaQuery.of(context).size.width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

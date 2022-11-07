@@ -109,37 +109,36 @@ class _ScreenLoginState extends State<ScreenLogin> {
             child: Container(),
           ),
           Container(
-            padding: const EdgeInsets.only(top: 20, bottom: 20),
+            padding: const EdgeInsets.only(top: 50, bottom: 20),
             child: Row(
+              //Texto e Botao
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  width: screenWidth * 0.75,
-                  padding: const EdgeInsets.only(right: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Esqueceu sua senha?",
-                        style: TextStyle(
-                            color: CustomizedColors.lightText,
-                            fontFamily: 'Imprima-Regular'),
-                      ),
-                      GestureDetector(
-                          child: Text(
-                            "  Recuperar",
-                            style: TextStyle(
-                                color: CustomizedColors.linkInText,
-                                fontFamily: 'Imprima-Regular'),
-                          ),
-                          onTap: () {
-                            //IMPLEMENTAR Navigator para pagina de trocar senha
-                          }),
-                    ],
-                  ),
+                Row(
+                  //Texto
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Esqueceu sua senha?",
+                      style: TextStyle(
+                          color: CustomizedColors.lightText,
+                          fontFamily: 'Imprima-Regular'),
+                    ),
+                    GestureDetector(
+                        child: Text(
+                          "  Recuperar",
+                          style: TextStyle(
+                              color: CustomizedColors.linkInText,
+                              fontFamily: 'Imprima-Regular'),
+                        ),
+                        onTap: () {
+                          //IMPLEMENTAR Navigator para pagina de trocar senha
+                        }),
+                  ],
                 ),
                 ComponentButton(
                   text: "Login",
-                  width: 25,
+                  width: 20,
                   height: 6,
                   onPressed: () {
                     Navigator.pushNamed(context, "/home");
