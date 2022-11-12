@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Components/comp_appBar.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
+import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 
@@ -96,7 +96,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             color: CustomizedColors.linkInText,
                             fontFamily: 'Imprima-Regular'),
                       ),
-                      onTap: () async{
+                      onTap: () async {
                         await Navigator.pushNamed(context, "/cadastro");
                       },
                     ),
@@ -140,7 +140,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   text: "Login",
                   width: 20,
                   height: 6,
-                  onPressed: () async{
+                  onPressed: () async {
                     await Navigator.pushNamed(context, "/home");
                   },
                 ),

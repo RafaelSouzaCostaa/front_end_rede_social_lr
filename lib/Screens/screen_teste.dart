@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Colors/customized_colors_grobal.dart';
+import '../Components/comp_tab.dart';
 
 class Testes extends StatefulWidget {
   const Testes({super.key});
@@ -89,18 +90,25 @@ class _TestesState extends State<Testes> {
             ),
             SliverList(
               delegate: SliverChildListDelegate([
-                Container(
-                  height: 800,
-                  color: Colors.red,
+                ComponentTab(
+                  height: 0.56,
+                  width: 1,
+                  indicatorColor: CustomizedColors.blueBackground,
+                  labelColor: CustomizedColors.blueBackground,
+                  unselectedLabelColor: CustomizedColors.lightText,
+                  tabsName: const [
+                    Text("Postagens"),
+                    Text("Curtidas"),
+                  ],
+                  tabs: [
+                    Tab(
+                      child: Container(color: Colors.transparent),
+                    ),
+                    Tab(
+                      child: Container(color: Colors.transparent),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 800,
-                  color: Colors.yellow,
-                ),
-                Container(
-                  height: 800,
-                  color: Colors.green,
-                )
               ]),
             ),
           ],

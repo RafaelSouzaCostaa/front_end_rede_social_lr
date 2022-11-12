@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Components/comp_tab.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
+import '../../Components/comp_tab.dart';
 
 class ScreenPerfil extends StatefulWidget {
   const ScreenPerfil({Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Colors/customized_colors_grobal.dart';
-import 'package:rede_social_lr/Components/comp_appBar.dart';
-import 'package:rede_social_lr/Components/comp_text_button.dart';
+
+import '../../Colors/customized_colors_grobal.dart';
+import '../../Components/comp_appBar.dart';
+import '../../Components/comp_text_button.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
