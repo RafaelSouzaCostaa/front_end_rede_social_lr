@@ -29,7 +29,7 @@ class _ComponentTabState extends State<ComponentTab> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * widget.width,
-      height: MediaQuery.of(context).size.height * widget.height,
+      height: 1500,
       margin: const EdgeInsets.only(top: 15),
       child: DefaultTabController(
         length: widget.tabsName.length,
