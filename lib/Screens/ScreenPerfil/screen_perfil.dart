@@ -128,50 +128,52 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
             ),
             SliverList(
               delegate: SliverChildListDelegate([
-                ComponentTab(
-                  height: 0.56,
-                  width: 1,
-                  indicatorColor: CustomizedColors.blueBackground,
-                  labelColor: CustomizedColors.blueBackground,
-                  unselectedLabelColor: CustomizedColors.lightText,
-                  tabsName: const [
-                    Text("Postagens"),
-                    Text("Curtidas"),
-                  ],
-                  tabs: [
-                    Tab(
-                      child: Flexible(
-                        child: SingleChildScrollView(
-                          child: Column(children: [
-                            Container(
-                              color: Colors.white,
-                              height: 300,
+                Flexible(
+                  child: Column(
+                    children: [
+                      ComponentTab(
+                        height: 1,
+                        width: 1,
+                        indicatorColor: CustomizedColors.blueBackground,
+                        labelColor: CustomizedColors.blueBackground,
+                        unselectedLabelColor: CustomizedColors.lightText,
+                        tabsName: const [
+                          Text("Postagens"),
+                          Text("Curtidas"),
+                        ],
+                        tabs: [
+                          Tab(
+                            child: SingleChildScrollView(
+                              child: Column(children: [
+                                Container(
+                                  color: Colors.white,
+                                  height: 300,
+                                ),
+                                Container(
+                                  color: Colors.pink,
+                                  height: 900,
+                                ),
+                              ]),
                             ),
-                            Container(
-                              color: Colors.pink,
-                              height: 900,
+                          ),
+                          Tab(
+                            child: SingleChildScrollView(
+                              child: Column(children: [
+                                Container(
+                                  color: Colors.white,
+                                  height: 300,
+                                ),
+                                Container(
+                                  color: Colors.pink,
+                                  height: 900,
+                                ),
+                              ]),
                             ),
-                          ]),
-                        ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Tab(
-                      child: Flexible(
-                        child: SingleChildScrollView(
-                          child: Column(children: [
-                            Container(
-                              color: Colors.white,
-                              height: 300,
-                            ),
-                            Container(
-                              color: Colors.pink,
-                              height: 300,
-                            ),
-                          ]),
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ]),
             ),
