@@ -6,7 +6,7 @@ import 'Screens/ScreenLogin/screen_login.dart';
 import 'Screens/ScreenRegistration/screen_registration.dart';
 import 'Screens/ScreenSplash/screen_splash.dart';
 import 'Screens/ScreenPerfil/screen_perfil.dart';
-import 'Screens/screen_teste.dart';
+// import 'Screens/screen_teste.dart';
 
 void main() {
   runApp(
@@ -23,7 +23,7 @@ void main() {
         "/login": (context) => const ScreenLogin(),
         "/perfil": (context) => const ScreenPerfil(),
         "/setting": (context) => const ScreenSettings(),
-        "/teste": (context) => const Testes(),
+        // "/teste": (context) => const Testes(),
       },
       debugShowCheckedModeBanner: false,
     ),
