@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Screens/screen_teste.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_tab.dart';
@@ -49,15 +50,17 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
             SliverAppBar(
               backgroundColor: CustomizedColors.darkBackground,
               pinned: true,
-              expandedHeight: 300,
+              expandedHeight: 320,
               leading: visible
-                  ? Text("ssds", style: TextStyle(color: Colors.amber))
+                  ? const Text("ssds", style: TextStyle(color: Colors.amber))
                   : null,
               title: visible
-                  ? Text("data", style: TextStyle(color: Colors.amber))
+                  ? const Text("data", style: TextStyle(color: Colors.amber))
                   : null,
               actions: visible
-                  ? [Text("action", style: TextStyle(color: Colors.amber))]
+                  ? const [
+                      Text("action", style: TextStyle(color: Colors.amber))
+                    ]
                   : null,
               flexibleSpace: FlexibleSpaceBar(
                 background: Column(
@@ -143,32 +146,28 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                         ],
                         tabs: [
                           Tab(
-                            child: SingleChildScrollView(
-                              child: Column(children: [
-                                Container(
-                                  color: Colors.white,
-                                  height: 300,
-                                ),
-                                Container(
-                                  color: Colors.pink,
-                                  height: 900,
-                                ),
-                              ]),
-                            ),
+                            child: Column(children: [
+                              Container(
+                                color: Colors.white,
+                                height: 300,
+                              ),
+                              Container(
+                                color: Colors.pink,
+                                height: 100,
+                              ),
+                            ]),
                           ),
                           Tab(
-                            child: SingleChildScrollView(
-                              child: Column(children: [
-                                Container(
-                                  color: Colors.white,
-                                  height: 300,
-                                ),
-                                Container(
-                                  color: Colors.pink,
-                                  height: 900,
-                                ),
-                              ]),
-                            ),
+                            child: Column(children: [
+                              Container(
+                                color: Colors.white,
+                                height: 300,
+                              ),
+                              Container(
+                                color: Colors.pink,
+                                height: 900,
+                              ),
+                            ]),
                           ),
                         ],
                       ),
