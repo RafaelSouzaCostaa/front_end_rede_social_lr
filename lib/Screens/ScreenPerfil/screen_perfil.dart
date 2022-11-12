@@ -67,13 +67,12 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                         Container(
                           //Background image
                           color: Colors.white,
-                          height: MediaQuery.of(context).size.height * 0.20,
+                          height: MediaQuery.of(context).size.height * 0.16,
                         ),
                         Container(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.075),
+                              top: MediaQuery.of(context).size.height * 0.11),
                           child: Center(
-                            //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                             child: Container(
                               width: 110,
                               height: 110,
@@ -93,25 +92,25 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                         ),
                       ],
                     ),
-                    Text(
+                    const Text(
                       "Nome",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: 17),
                     ),
-                    Text(
+                    const Text(
                       "Nickname",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 14),
                     ),
-                    Text(
+                    const Text(
                       "Descrição akjdfaskjdghsakjdgakshdglhafghasdfjshdhjsad" +
                           "klhsafdhgashdgsahdgsadgalsgdjsadsadsagdlhsagjd",
                       style: TextStyle(color: Colors.white),
                     ),
                     Container(
                       color: Colors.pink,
-                      width: screenWidth * 0.15,
+                      width: screenWidth * 0.6,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           Text(
                             "X Seguindo",
                             style: TextStyle(color: Colors.white),
@@ -141,10 +140,36 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                   ],
                   tabs: [
                     Tab(
-                      child: Container(color: Colors.transparent),
+                      child: Flexible(
+                        child: SingleChildScrollView(
+                          child: Column(children: [
+                            Container(
+                              color: Colors.white,
+                              height: 300,
+                            ),
+                            Container(
+                              color: Colors.pink,
+                              height: 900,
+                            ),
+                          ]),
+                        ),
+                      ),
                     ),
                     Tab(
-                      child: Container(color: Colors.transparent),
+                      child: Flexible(
+                        child: SingleChildScrollView(
+                          child: Column(children: [
+                            Container(
+                              color: Colors.white,
+                              height: 300,
+                            ),
+                            Container(
+                              color: Colors.pink,
+                              height: 300,
+                            ),
+                          ]),
+                        ),
+                      ),
                     ),
                   ],
                 ),
