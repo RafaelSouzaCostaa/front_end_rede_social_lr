@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -28,25 +29,25 @@ class _ScreenSettingsState extends State<ScreenSettings> {
             ComponentTextButton(
               text: "Alterar Nome",
               onPressed: () async {
-                await Navigator.pushNamed(context, "/login");
+                await Get.toNamed("/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Apelido",
               onPressed: () async {
-                await Navigator.pushNamed(context, "/login");
+                await Get.toNamed("/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Senha",
               onPressed: () async {
-                await Navigator.pushNamed(context, "/login");
+                await Get.toNamed("/login");
               },
             ),
             ComponentTextButton(
               text: "Alterar Email",
               onPressed: () async {
-                await Navigator.pushNamed(context, "/login");
+                await Get.toNamed("/login");
               },
             ),
             ComponentTextButton(
@@ -55,7 +56,8 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               iconColor: Colors.red,
               textColor: Colors.red,
               onPressed: () async {
-                await Navigator.pushNamed(context, "/login");
+                //apagar token
+                await Get.toNamed("/login");
               },
             ),
           ],

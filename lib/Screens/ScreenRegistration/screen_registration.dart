@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -120,7 +121,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       ),
                       GestureDetector(
                         onTap: () async {
-                          await Navigator.pushNamed(context, "/login");
+                          await Get.toNamed("/login");
                         },
                         child: Text(
                           "Login",

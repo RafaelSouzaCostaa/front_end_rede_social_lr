@@ -47,17 +47,33 @@ class _ComponentInputState extends State<ComponentInput> {
             fontSize: 13,
             color: Colors.white24,
           ),
+          //Borda Padrão
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: Colors.grey.shade600,
               width: 0.45,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: CustomizedColors.inputBorderColor,
+              width: 1.2,
+            ),
+          ),
+          //Validator Border
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(7)),
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 0.45,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(7)),
+            borderSide: BorderSide(
+              color: Colors.red,
               width: 1.2,
             ),
           ),

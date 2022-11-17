@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -13,8 +14,9 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
-  TextEditingController userController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController _userController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _form_key = GlobalKey<FormState>();
 
   bool _visiblePassword = false;
 
@@ -33,11 +35,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
             child: Container(),
           ),
           Form(
+            key: _form_key,
             child: Column(
               children: [
                 ComponentInput(
                   labelText: 'Usuario',
-                  controller: userController,
+                  controller: _userController,
                   validator: true,
                 ),
                 const SizedBox(
@@ -47,7 +50,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   //Senha
                   obscureText: !_visiblePassword,
                   labelText: 'Senha',
-                  controller: passwordController,
+                  controller: _passwordController,
+                  validator: true,
 
                   suffixIcon: IconButton(
                     splashColor: Colors.transparent,
@@ -97,7 +101,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             fontFamily: 'Imprima-Regular'),
                       ),
                       onTap: () async {
-                        await Navigator.pushNamed(context, "/cadastro");
+                        await Get.toNamed("/cadastro");
                       },
                     ),
                   ],
@@ -141,7 +145,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   width: 20,
                   height: 6,
                   onPressed: () async {
-                    await Navigator.pushNamed(context, "/home");
+                    FocusScope.of(context).unfocus();
+
+                    if (_form_key.currentState!.validate()) {
+                      // await Navigator.pushNamed(context, "/home");
+                      await Get.toNamed("/home");
+                    }
                   },
                 ),
               ],

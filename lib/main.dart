@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:rede_social_lr/Screens/ScreenSettings/screen_settings.dart';
 
 import 'Screens/ScreenHome/screen_home.dart';
@@ -10,12 +11,12 @@ import 'Screens/ScreenPerfil/screen_perfil.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    GetMaterialApp(
       title: 'RedeSocial',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/perfil',
+      initialRoute: '/login',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
