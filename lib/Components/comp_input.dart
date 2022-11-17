@@ -29,7 +29,6 @@ class _ComponentInputState extends State<ComponentInput> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: 50,
       child: TextFormField(
         // textAlign: TextAlign.center,
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
