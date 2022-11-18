@@ -2,7 +2,7 @@ import 'dart:ui';
 
 class Profile {
   late String name;
-  late String nickname;
+  late String nickName;
   late String email;
   late String password;
   Image? profilePicture;
@@ -11,7 +11,7 @@ class Profile {
 
   Profile({
     required this.name,
-    required this.nickname,
+    required this.nickName,
     required this.email,
     required this.password,
     this.profilePicture,
@@ -20,7 +20,7 @@ class Profile {
 
   Profile.fromMap(Map map) {
     name = map["name"];
-    nickname = map["nickname"];
+    nickName = map["nickName"];
     email = map["email"];
     password = map["password"];
     // phone = map["phone"];
@@ -30,7 +30,7 @@ class Profile {
 
   Map<String, dynamic> toMap() => {
         "name": name,
-        "nickname": nickname,
+        "nickName": nickName,
         "email": email,
         "password": password,
         // "phone": phone,

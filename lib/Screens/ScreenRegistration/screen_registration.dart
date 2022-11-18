@@ -138,7 +138,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                         if (_formKey.currentState!.validate()) {
                           Profile newProfile = Profile(
                             name: _nameController.text,
-                            nickname: _nicknameController.text,
+                            nickName: _nicknameController.text,
                             email: _emailController.text,
                             password: _passwordController.text,
                           );
