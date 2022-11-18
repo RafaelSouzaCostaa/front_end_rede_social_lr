@@ -50,7 +50,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
               pinned: true,
               expandedHeight: 320,
               leading: visible
-                  ? const Text("ssds", style: TextStyle(color: Colors.amber))
+                  ? const Text("ssdnms", style: TextStyle(color: Colors.amber))
                   : null,
               title: visible
                   ? const Text("data", style: TextStyle(color: Colors.amber))

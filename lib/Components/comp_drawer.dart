@@ -58,7 +58,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 icon: Icons.person,
                 mainAxisAlignment: MainAxisAlignment.start,
                 onPressed: () {
-                  Navigator.pushNamed(context, "/perfil");
+                  Navigator.pushNamed(context, "/profile");
                 },
               ),
             ]),

@@ -22,7 +22,7 @@ void main() {
         '/home': (context) => const ScreenHome(),
         "/cadastro": (context) => const ScreenRegistration(),
         "/login": (context) => const ScreenLogin(),
-        "/perfil": (context) => const ScreenProfile(),
+        "/profile": (context) => const ScreenProfile(),
         "/setting": (context) => const ScreenSettings(),
         // "/teste": (context) => const Testes(),
       },
