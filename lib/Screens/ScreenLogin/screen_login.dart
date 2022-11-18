@@ -158,7 +158,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           "Erro ao fazer login",
                           "Email ou Senha invalidos",
                           snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Color.fromARGB(255, 138, 8, 8),
+                          backgroundColor: const Color.fromARGB(255, 138, 8, 8),
                           colorText: Colors.white,
                           borderRadius: 2,
                           duration: const Duration(milliseconds: 3000),
