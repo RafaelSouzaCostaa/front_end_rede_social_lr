@@ -6,6 +6,13 @@ import 'api_constants.dart';
 
 class ApiService {
   static Future<Profile> createProfile(Profile profile) async {
+    print(jsonEncode(<String, String>{
+      'name': profile.name,
+      'nickname': profile.nickName,
+      'email': profile.email,
+      'password': profile.password,
+      'creationdDate': profile.creationDate.toString(),
+    }));
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.createProfile),
       headers: <String, String>{
@@ -13,15 +20,17 @@ class ApiService {
       },
       body: jsonEncode(<String, String>{
         'name': profile.name,
-        'nickname': profile.nickname,
+        'nickName': profile.nickName,
         'email': profile.email,
         'password': profile.password,
+        'creationDate': profile.creationDate.toString(),
       }),
     );
 
     if (response.statusCode == 201) {
       return Profile.fromMap(jsonDecode(response.body));
     } else {
+      print(response.body);
       throw Exception('Falha ao criar Perfil');
     }
   }

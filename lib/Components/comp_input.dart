@@ -31,6 +31,7 @@ class _ComponentInputState extends State<ComponentInput> {
       width: MediaQuery.of(context).size.width * 0.85,
       child: TextFormField(
         // textAlign: TextAlign.center,
+        controller: widget.controller,
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
         obscureText: widget.obscureText,
         decoration: InputDecoration(
