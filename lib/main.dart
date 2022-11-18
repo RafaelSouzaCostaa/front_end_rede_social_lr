@@ -51,4 +51,4 @@ revert: Finalmente algum para eu explicar. O nome já diz o que é, certo? Caso 
 */
 
 
-//IMPLEMENTAR  Utilizar o GETX EcoSystem 
+//IMPLEMENTAR  Utilizar o GETX EcoSystem //LUIGGI se implementado com exito, deletar essa linha, já para ir vendo outros horizontes
