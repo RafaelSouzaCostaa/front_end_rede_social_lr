@@ -8,7 +8,7 @@ class ApiService {
   static Future<Profile> createProfile(Profile profile) async {
     print(jsonEncode(<String, String>{
       'name': profile.name,
-      'nickname': profile.nickName,
+      'nickname': profile.nickname,
       'email': profile.email,
       'password': profile.password,
       'creationdDate': profile.creationDate.toString(),
@@ -20,7 +20,7 @@ class ApiService {
       },
       body: jsonEncode(<String, String>{
         'name': profile.name,
-        'nickName': profile.nickName,
+        'nickname': profile.nickname,
         'email': profile.email,
         'password': profile.password,
         'creationDate': profile.creationDate.toString(),
