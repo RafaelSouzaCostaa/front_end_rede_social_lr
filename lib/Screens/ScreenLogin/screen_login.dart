@@ -156,22 +156,24 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           "Logado com sucesso",
                           "Aguarde o redirecionamento",
                           snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Color.fromARGB(255, 8, 138, 18),
                           colorText: Colors.white,
                           borderRadius: 2,
-                          duration: const Duration(milliseconds: 10),
+                          duration: const Duration(milliseconds: 3000),
+                          snackbarStatus: (status) => {
+                            if (status.toString() == "SnackbarStatus.CLOSED")
+                              {Get.toNamed("/home")}
+                          },
                         );
-
-                        await Get.toNamed("/home");
                       } else {
                         Get.snackbar(
                           "Erro ao fazer login",
                           "Email ou Senha invalidos",
                           snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Color.fromARGB(255, 138, 8, 8),
                           colorText: Colors.white,
                           borderRadius: 2,
-                          duration: const Duration(milliseconds: 10),
+                          duration: const Duration(milliseconds: 3000),
                           isDismissible: true,
                           dismissDirection: DismissDirection.horizontal,
                           forwardAnimationCurve: Curves.easeOutBack,
