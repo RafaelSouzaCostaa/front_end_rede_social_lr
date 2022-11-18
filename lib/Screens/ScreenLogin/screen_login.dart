@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Global/api_service.dart';
+import 'package:rede_social_lr/Global/testeGetX.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -27,6 +28,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
     //double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
+    TestGetX teste2 = Get.put(TestGetX());
+    String stringTEste = "sdffd";
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -139,6 +142,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ),
                         onTap: () {
                           //IMPLEMENTAR Navigator para pagina de trocar senha
+                          print(teste2.teste);
+                          stringTEste += "s";
+                          teste2.teste.value = stringTEste;
                         }),
                   ],
                 ),
