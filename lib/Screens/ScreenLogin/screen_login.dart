@@ -152,19 +152,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         _userController.text,
                         _passwordController.text,
                       )) {
-                        Get.snackbar(
-                          "Logado com sucesso",
-                          "Aguarde o redirecionamento",
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Color.fromARGB(255, 8, 138, 18),
-                          colorText: Colors.white,
-                          borderRadius: 2,
-                          duration: const Duration(milliseconds: 3000),
-                          snackbarStatus: (status) => {
-                            if (status.toString() == "SnackbarStatus.CLOSED")
-                              {Get.toNamed("/home")}
-                          },
-                        );
+                        Get.toNamed("/home");
                       } else {
                         Get.snackbar(
                           "Erro ao fazer login",
