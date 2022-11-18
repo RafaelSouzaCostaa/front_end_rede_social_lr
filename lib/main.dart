@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:rede_social_lr/Screens/ScreenSettings/screen_settings.dart';
 
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
+import 'Screens/ScreenProfile/screen_profile.dart';
 import 'Screens/ScreenRegistration/screen_registration.dart';
+import 'Screens/ScreenSettings/screen_settings.dart';
 import 'Screens/ScreenSplash/screen_splash.dart';
-import 'Screens/ScreenPerfil/screen_perfil.dart';
 // import 'Screens/screen_teste.dart';
 
 void main() {
@@ -22,7 +22,7 @@ void main() {
         '/home': (context) => const ScreenHome(),
         "/cadastro": (context) => const ScreenRegistration(),
         "/login": (context) => const ScreenLogin(),
-        "/perfil": (context) => const ScreenPerfil(),
+        "/perfil": (context) => const ScreenProfile(),
         "/setting": (context) => const ScreenSettings(),
         // "/teste": (context) => const Testes(),
       },

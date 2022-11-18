@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Screens/screen_teste.dart';
-
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_tab.dart';
 
-class ScreenPerfil extends StatefulWidget {
-  const ScreenPerfil({Key? key}) : super(key: key);
+class ScreenProfile extends StatefulWidget {
+  const ScreenProfile({Key? key}) : super(key: key);
 
   @override
-  State<ScreenPerfil> createState() => _ScreenPerfilState();
+  State<ScreenProfile> createState() => _ScreenProfileState();
 }
 
-class _ScreenPerfilState extends State<ScreenPerfil> {
+class _ScreenProfileState extends State<ScreenProfile> {
   ScrollController scrollController = ScrollController();
   bool visible = false;
   double auxScroll = 0.0;
@@ -87,8 +85,8 @@ class _ScreenPerfilState extends State<ScreenPerfil> {
                               child: CircleAvatar(
                                 backgroundColor: CustomizedColors.linkInText,
                                 backgroundImage:
-                                    const AssetImage("assets/image/perfil.png"),
-                                //ATENCAO Imagem de Perfil (image == null ? : ,);
+                                    const AssetImage("assets/image/profile.png"),
+                                //ATENCAO Imagem de Profile (image == null ? : ,);
                               ),
                             ),
                           ),
