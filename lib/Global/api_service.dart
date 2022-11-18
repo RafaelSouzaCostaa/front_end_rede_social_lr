@@ -28,19 +28,17 @@ class ApiService {
   }
 
   static Future<Token> login(String email, String password) async {
-    final response =
-        await http.post(Uri.parse(APIConstants.apiUrl + APIConstants.login),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(<String, String>{
-              'email': email,
-              'password': password,
-            }));
+    final response = await http.post(
+        Uri.parse(APIConstants.apiUrl + APIConstants.createProfile),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'email': email,
+          'password': password,
+        }));
     if (response.statusCode == 200) {
-      Token token =
-          Token(jsonDecode(response.body)["token"]); //LUIGGI TA arrumando aqui
-      return token;
+      return Token(jsonDecode(response.body)["token"]);
     } else {
       throw Exception('Falha ao criar Perfil');
     }
