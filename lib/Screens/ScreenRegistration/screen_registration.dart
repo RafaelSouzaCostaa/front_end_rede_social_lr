@@ -144,6 +144,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                             creationDate: DateTime.now().millisecondsSinceEpoch,
                           );
                           await ApiService.createProfile(newProfile);
+                          Get.toNamed("/home");
                         }
                       }, //IMPLEMENTAR
                     ),
