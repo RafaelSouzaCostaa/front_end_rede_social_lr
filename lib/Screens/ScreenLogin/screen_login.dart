@@ -148,7 +148,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     FocusScope.of(context).unfocus();
 
                     if (_form_key.currentState!.validate()) {
-                      // await Navigator.pushNamed(context, "/home");
                       await Get.toNamed("/home");
                     }
                   },
