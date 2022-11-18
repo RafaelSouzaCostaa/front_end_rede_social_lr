@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:rede_social_lr/Global/api_service.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
@@ -55,7 +56,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   labelText: 'Senha',
                   controller: _passwordController,
                   validator: true,
-
                   suffixIcon: IconButton(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
@@ -148,14 +148,15 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   width: 20,
                   height: 6,
                   onPressed: () async {
-                    if (await ApiService.login(
-                        _userController.text, _passwordController.text)) {
-                      print("Logado: " + globalToken.token.value);
-                    }
-                    FocusScope.of(context).unfocus();
-
                     if (_formKey.currentState!.validate()) {
-                      await Get.toNamed("/home");
+                      if (await ApiService.login(
+                          _userController.text, _passwordController.text)) {
+                        print("Logado: " + globalToken.token.value);
+                      }
+                      FocusScope.of(context).unfocus();
+                      if (_formKey.currentState!.validate()) {
+                        await Get.toNamed("/home");
+                      }
                     }
                   },
                 ),
