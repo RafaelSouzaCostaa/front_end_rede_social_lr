@@ -26,8 +26,8 @@ class ApiService {
         'creationDate': profile.creationDate.toString(),
       }),
     );
-
-    if (response.statusCode == 201) {
+    print("CCCOOOOOOOODDDIGOO" + response.statusCode.toString());
+    if (response.statusCode == 200) {
       return Profile.fromMap(jsonDecode(response.body));
     } else {
       print(response.body);
