@@ -11,7 +11,8 @@ class TokenController extends GetxController {
     _token = "";
   }
 
-  void verificarToken(){
+  void verificarToken() {
+    //LUIGGI oque seria essa verificarToken?
     //não precisa disso, só implementar um singleton na criação do token
   }
 }
