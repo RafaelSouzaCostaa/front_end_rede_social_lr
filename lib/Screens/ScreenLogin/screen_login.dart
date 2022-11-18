@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Global/api_service.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
+import '../../Global/token.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
@@ -145,6 +147,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   width: 20,
                   height: 6,
                   onPressed: () async {
+                    Token token = await ApiService.login(
+                        _userController.text, _passwordController.text);
+
                     FocusScope.of(context).unfocus();
 
                     if (_formKey.currentState!.validate()) {
