@@ -16,7 +16,7 @@ class ScreenLogin extends StatefulWidget {
 class _ScreenLoginState extends State<ScreenLogin> {
   TextEditingController _userController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  final GlobalKey<FormState> _form_key = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool _visiblePassword = false;
 
@@ -35,7 +35,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
             child: Container(),
           ),
           Form(
-            key: _form_key,
+            key: _formKey,
             child: Column(
               children: [
                 ComponentInput(
@@ -147,7 +147,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   onPressed: () async {
                     FocusScope.of(context).unfocus();
 
-                    if (_form_key.currentState!.validate()) {
+                    if (_formKey.currentState!.validate()) {
                       await Get.toNamed("/home");
                     }
                   },

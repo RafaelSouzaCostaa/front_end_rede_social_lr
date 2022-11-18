@@ -5,6 +5,8 @@ import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
+import '../../Global/api_service.dart';
+import '../../Models/model_profile.dart';
 
 class ScreenRegistration extends StatefulWidget {
   const ScreenRegistration({Key? key}) : super(key: key);
@@ -14,10 +16,11 @@ class ScreenRegistration extends StatefulWidget {
 }
 
 class _ScreenRegistrationState extends State<ScreenRegistration> {
-  TextEditingController userController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController dataBirthController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nicknameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool _visiblePassword = false;
 
@@ -40,38 +43,31 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
               flex: 3,
               child: SingleChildScrollView(
                 child: Form(
+                  key: _formKey,
                   child: Column(
                     children: [
                       ComponentInput(
                         labelText: 'Usuario',
-                        controller: userController,
+                        controller: _nameController,
                         validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: 'Email',
-                        controller: passwordController,
-                      ),
-                      const SizedBox(height: 20),
-                      ComponentInput(
-                        labelText: 'Telefone',
-                        controller: passwordController,
-                      ),
-                      const SizedBox(height: 20),
-                      ComponentInput(
-                        labelText: '@nickname',
-                        controller: userController,
+                        controller: _emailController,
                         validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: 'Data Nascimento',
-                        controller: passwordController,
+                        labelText: '@nickname',
+                        controller: _nicknameController,
+                        validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: 'Senha',
-                        controller: passwordController,
+                        controller: _passwordController,
+                        validator: true,
                         suffixIcon: IconButton(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
@@ -138,7 +134,17 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       text: "Cadastro",
                       width: 25,
                       height: 6,
-                      onPressed: () {}, //IMPLEMENTAR
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Profile newProfile = Profile(
+                            name: _nameController.text,
+                            nickname: _nicknameController.text,
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                          );
+                          ApiService.createProfile(newProfile);
+                        }
+                      }, //IMPLEMENTAR
                     ),
                   ),
                 ],
