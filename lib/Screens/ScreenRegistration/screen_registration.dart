@@ -134,7 +134,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       text: "Cadastro",
                       width: 25,
                       height: 6,
-                      onPressed: () async{
+                      onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           Profile newProfile = Profile(
                             name: _nameController.text,
@@ -142,6 +142,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                             email: _emailController.text,
                             password: _passwordController.text,
                           );
+                          print("Controler: " + _nameController.text);
                           await ApiService.createProfile(newProfile);
                         }
                       }, //IMPLEMENTAR
