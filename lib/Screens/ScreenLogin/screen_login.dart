@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:rede_social_lr/Global/api_service.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
+import '../../Global/api_service.dart';
 import '../../Global/token.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -150,12 +149,33 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       if (await ApiService.login(
-                          _userController.text, _passwordController.text)) {
-                        print("Logado: " + globalToken.token.value);
-                      }
-                      FocusScope.of(context).unfocus();
-                      if (_formKey.currentState!.validate()) {
+                        _userController.text,
+                        _passwordController.text,
+                      )) {
+                        Get.snackbar(
+                          "Logado com sucesso",
+                          "Aguarde o redirecionamento",
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: Colors.red,
+                          colorText: Colors.white,
+                          borderRadius: 2,
+                          duration: const Duration(milliseconds: 10),
+                        );
+
                         await Get.toNamed("/home");
+                      } else {
+                        Get.snackbar(
+                          "Erro ao fazer login",
+                          "Email ou Senha invalidos",
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: Colors.red,
+                          colorText: Colors.white,
+                          borderRadius: 2,
+                          duration: const Duration(milliseconds: 10),
+                          isDismissible: true,
+                          dismissDirection: DismissDirection.horizontal,
+                          forwardAnimationCurve: Curves.easeOutBack,
+                        );
                       }
                     }
                   },

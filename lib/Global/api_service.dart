@@ -1,8 +1,6 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
 import '../Models/model_profile.dart';
 import 'api_constants.dart';
@@ -45,7 +43,7 @@ class ApiService {
       token.token.value = jsonDecode(response.body)["token"];
       return true;
     } else {
-      print(response.statusCode.toString() + ": " + response.body.toString());
+      print("${response.statusCode.toString()}: ${response.body.toString()}");
       throw Exception('Falha ao criar Perfil');
     }
   }
