@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
@@ -16,7 +16,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/cadastro',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
