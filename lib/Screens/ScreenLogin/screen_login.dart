@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Global/api_service.dart';
-import 'package:rede_social_lr/Global/testeGetX.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -17,8 +16,8 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
-  TextEditingController _userController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _userController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool _visiblePassword = false;
@@ -26,10 +25,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
   @override
   Widget build(BuildContext context) {
     //double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    //double screenWidth = MediaQuery.of(context).size.width;
+    Token globalToken = Get.put(Token());
 
-    TestGetX teste2 = Get.put(TestGetX());
-    String stringTEste = "sdffd";
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -142,9 +140,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         ),
                         onTap: () {
                           //IMPLEMENTAR Navigator para pagina de trocar senha
-                          print(teste2.teste);
-                          stringTEste += "s";
-                          teste2.teste.value = stringTEste;
                         }),
                   ],
                 ),
@@ -153,9 +148,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   width: 20,
                   height: 6,
                   onPressed: () async {
-                    Token token = await ApiService.login(
-                        _userController.text, _passwordController.text);
-
+                    if (await ApiService.login(
+                        _userController.text, _passwordController.text)) {
+                      print("Logado: " + globalToken.token.value);
+                    }
                     FocusScope.of(context).unfocus();
 
                     if (_formKey.currentState!.validate()) {

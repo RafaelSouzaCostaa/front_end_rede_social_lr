@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:ffi';
 
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
 import '../Models/model_profile.dart';
 import 'api_constants.dart';
@@ -27,19 +30,22 @@ class ApiService {
     }
   }
 
-  static Future<Token> login(String email, String password) async {
-    final response = await http.post(
-        Uri.parse(APIConstants.apiUrl + APIConstants.createProfile),
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: jsonEncode(<String, String>{
-          'email': email,
-          'password': password,
-        }));
+  static Future<bool> login(String email, String password) async {
+    Token token = Get.put(Token());
+    final response =
+        await http.post(Uri.parse(APIConstants.apiUrl + APIConstants.login),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(<String, String>{
+              'email': email,
+              'password': password,
+            }));
     if (response.statusCode == 200) {
-      return Token(jsonDecode(response.body)["token"]);
+      token.token.value = jsonDecode(response.body)["token"];
+      return true;
     } else {
+      print(response.statusCode.toString() + ": " + response.body.toString());
       throw Exception('Falha ao criar Perfil');
     }
   }
