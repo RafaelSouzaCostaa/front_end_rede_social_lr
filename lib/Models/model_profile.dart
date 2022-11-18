@@ -23,7 +23,7 @@ class Profile {
     name = map["name"];
     nickname = map["nickname"];
     email = map["email"];
-    password = map["password"];
+    password = map["password"]; //LUIGGI erro aqui
     // phone = map["phone"];
     // image = map["image"];
     birthDate = map["birthDate"];
