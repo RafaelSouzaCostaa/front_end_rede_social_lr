@@ -47,4 +47,23 @@ class ApiService {
       throw Exception('Falha ao criar Perfil');
     }
   }
+
+  static Future<bool> buscarDadosProfile() async {
+    //LUIGGI arruma um name "buscarDadosProfile" melhor ok
+    Token token = Get.put(Token());
+    final response = await http.get(
+      Uri.parse(APIConstants.apiUrl + APIConstants.getProfileByToken),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-access-token': token.token.value
+      },
+    );
+    if (response.statusCode == 200) {
+      print("Resposta: " + response.body);
+      return true;
+    } else {
+      print("${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao sincronizar Perfil');
+    }
+  }
 }

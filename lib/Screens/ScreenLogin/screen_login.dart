@@ -152,7 +152,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         _userController.text,
                         _passwordController.text,
                       )) {
-                        Get.toNamed("/home");
+                        if (await ApiService.buscarDadosProfile()) {
+                          Get.toNamed("/home");
+                        }
                       } else {
                         Get.snackbar(
                           "Erro ao fazer login",

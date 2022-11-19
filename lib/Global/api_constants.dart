@@ -9,16 +9,22 @@ class APIConstants {
 
   static String createProfile = '/profile/create';
   static String getAllProfiles = '/profile/getAll';
-  static String getProfileByNickname(nickname){
+
+  static String getProfileByToken = '/profile/getProfileByToken';
+
+  static String getProfileByNickname(nickname) {
     return '/profile/getByNickname/$nickname';
   }
-  static String getProfileById(id){
+
+  static String getProfileById(id) {
     return '/profile/getById/$id';
-  } 
-  static String deleteProfileById(id){
+  }
+
+  static String deleteProfileById(id) {
     return '/profile/deleteById/$id';
   }
-  static String setFollowProfile(id){
+
+  static String setFollowProfile(id) {
     return '/profile/setFollow/$id';
   }
 
