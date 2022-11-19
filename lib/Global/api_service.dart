@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:rede_social_lr/Global/profile_authenticated.dart';
+
 import '../Models/model_profile.dart';
 import 'api_constants.dart';
+import 'profile_authenticated.dart';
 import 'token.dart';
 
 class ApiService {
@@ -25,6 +26,7 @@ class ApiService {
     if (response.statusCode == 200) {
       return Profile.fromMap(jsonDecode(response.body));
     } else {
+      print("Error ${response.statusCode.toString()}: ${response.body.toString()}");
       throw Exception('Falha ao criar Perfil');
     }
   }
@@ -44,8 +46,8 @@ class ApiService {
       token.token.value = jsonDecode(response.body)["token"];
       return true;
     } else {
-      print("${response.statusCode.toString()}: ${response.body.toString()}");
-      throw Exception('Falha ao criar Perfil');
+      print("Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha realizar Login, confira seus dados!');
     }
   }
 
@@ -64,7 +66,7 @@ class ApiService {
       profileAuthenticated.profile = response.body;
       return true;
     } else {
-      print("${response.statusCode.toString()}: ${response.body.toString()}");
+      print("Error ${response.statusCode.toString()}: ${response.body.toString()}");
       throw Exception('Falha ao sincronizar Perfil');
     }
   }

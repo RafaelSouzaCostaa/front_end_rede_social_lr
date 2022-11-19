@@ -16,7 +16,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/cadastro',
+      initialRoute: '/home',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),

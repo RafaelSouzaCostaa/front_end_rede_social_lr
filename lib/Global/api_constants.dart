@@ -9,7 +9,6 @@ class APIConstants {
 
   static String createProfile = '/profile/create';
   static String getAllProfiles = '/profile/getAll';
-
   static String getProfileByToken = '/profile/getProfileByToken';
 
   static String getProfileByNickname(nickname) {
