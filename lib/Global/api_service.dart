@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:rede_social_lr/Global/profile_authenticated.dart';
 import '../Models/model_profile.dart';
 import 'api_constants.dart';
 import 'token.dart';
@@ -51,6 +52,7 @@ class ApiService {
   static Future<bool> buscarDadosProfile() async {
     //LUIGGI arruma um name "buscarDadosProfile" melhor ok
     Token token = Get.put(Token());
+    ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
     final response = await http.get(
       Uri.parse(APIConstants.apiUrl + APIConstants.getProfileByToken),
       headers: <String, String>{
@@ -59,7 +61,7 @@ class ApiService {
       },
     );
     if (response.statusCode == 200) {
-      print("Resposta: " + response.body);
+      profileAuthenticated.profile = response.body;
       return true;
     } else {
       print("${response.statusCode.toString()}: ${response.body.toString()}");

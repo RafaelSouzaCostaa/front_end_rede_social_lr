@@ -6,6 +6,7 @@ import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
+import '../../Global/profile_authenticated.dart';
 import '../../Global/token.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -27,6 +28,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
     //double screenHeight = MediaQuery.of(context).size.height;
     //double screenWidth = MediaQuery.of(context).size.width;
     Token globalToken = Get.put(Token());
+    ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
 
     return SafeArea(
       child: Scaffold(
@@ -153,6 +155,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         _passwordController.text,
                       )) {
                         if (await ApiService.buscarDadosProfile()) {
+                          print("ScreenLogin: " +
+                              profileAuthenticated.profile.toString());
                           Get.toNamed("/home");
                         }
                       } else {
