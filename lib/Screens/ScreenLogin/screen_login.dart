@@ -154,10 +154,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         _userController.text,
                         _passwordController.text,
                       )) {
-                        if (await ApiService.buscarDadosProfile()) {
+                        if (await ApiService.getProfileData()) {
                           //LUIGGI apos login, foi enviado o token para a rota de validação, retornando o profile e salvando em GLobal/profile_authenticated.dart
-                          print("ScreenLogin: " +
-                              profileAuthenticated.profile.toString());
+                          print(
+                              "ScreenLogin: ${profileAuthenticated.profile.toString()}");
                           Get.toNamed("/home");
                         }
                       } else {
