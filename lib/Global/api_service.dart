@@ -76,6 +76,48 @@ class ApiService {
     }
   }
 
+//Testar
+  static Future<List<Profile>> getAllProfiles() async {
+    Token token = Get.put(Token());
+    final response = await http.get(
+      Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-access-token': token.token.value
+      },
+    );
+    if (response.statusCode == 200) {
+      List<Profile> profiles = List<Profile>.empty(growable: true);
+      profiles.add(Profile.fromMap(jsonDecode(response.body)));
+      return profiles;
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao recuperar perfis');
+    }
+  }
+
+  static Future<Profile> getProfileByNick(String nickname) async {
+    Token token = Get.put(Token());
+    final response = await http.get(
+      Uri.parse(
+          APIConstants.apiUrl + APIConstants.getProfileByNickname(nickname)),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-access-token': token.token.value
+      },
+    );
+
+    if (response.statusCode == 200) {
+      return Profile.fromMap(jsonDecode(response.body));
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha recuperar perfil!');
+    }
+  }
+
+//Testar
   static Future<bool> deleteProfile(String id) async {
     Token token = Get.put(Token());
     final response = await http.delete(
