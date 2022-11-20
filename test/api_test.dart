@@ -1,7 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:rede_social_lr/Global/api_service.dart';
-
 import 'package:rede_social_lr/Models/model_profile.dart';
 
 void main() {
