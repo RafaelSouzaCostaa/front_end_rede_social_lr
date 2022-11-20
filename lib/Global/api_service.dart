@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -72,8 +73,6 @@ class ApiService {
     if (response.statusCode == 200) {
       profileAuthenticated.profileAuthentic.value =
           Profile.fromMap(jsonDecode(response.body));
-      //Lembrete pro Luiggi que é burro: salva na variavel global, por isso não retorna ele
-      //LUIGGI que isso?! que violencia
       return true;
     } else {
       print(
@@ -82,7 +81,6 @@ class ApiService {
     }
   }
 
-  //LUIGGI VALIDADADO = TESTADO RETORNANDO UMA LISTA DE PROFILES
   static Future<List<Profile>> getAllProfiles() async {
     Token token = Get.put(Token());
     final response = await http.get(
@@ -108,7 +106,6 @@ class ApiService {
     }
   }
 
-  //LUIGGI testado, tava correto, tinha uma erro mas era no servidor, tava entregando o valor em array e não em formato json
   static Future<Profile> getProfileByNick(String nickname) async {
     Token token = Get.put(Token());
     final response = await http.get(
@@ -129,7 +126,6 @@ class ApiService {
     }
   }
 
-  //LUIGGI testado está OK
   static Future<bool> deleteProfile(String id) async {
     Token token = Get.put(Token());
     final response = await http.delete(
@@ -149,7 +145,6 @@ class ApiService {
     }
   }
 
-  //LUIGGI testado esta funcionando agora
   static Future<Post> createPost(
       String description, List<String> urlsImage) async {
     Token token = Get.put(Token());
@@ -183,7 +178,6 @@ class ApiService {
     }
   }
 
-  //LUIGGI testado e funcionando
   static Future<List<Post>> getAllPosts() async {
     Token token = Get.put(Token());
     final response = await http.get(
