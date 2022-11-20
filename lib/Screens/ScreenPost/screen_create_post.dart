@@ -25,8 +25,11 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
             ComponentInput(
               labelText: "",
               controller: _textController,
+              focusedBorderColor: Colors.transparent,
+              unfocusedBorderColor: Colors.transparent,
+              validator: true,
               maxLines: 5,
-              minLines: 1,
+              minLines: 5,
             ),
           ],
         ),

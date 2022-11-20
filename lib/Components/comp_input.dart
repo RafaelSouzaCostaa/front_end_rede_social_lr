@@ -12,6 +12,9 @@ class ComponentInput extends StatefulWidget {
   int maxLines;
   bool obscureText = false;
   bool validator = false;
+  Color? focusedBorderColor;
+  Color? unfocusedBorderColor;
+
   TextEditingController controller;
 
   ComponentInput({
@@ -23,6 +26,8 @@ class ComponentInput extends StatefulWidget {
     this.width = 8.5,
     this.minLines = 1,
     this.maxLines = 1,
+    this.focusedBorderColor,
+    this.unfocusedBorderColor,
     required this.controller,
   });
 
@@ -42,7 +47,7 @@ class _ComponentInputState extends State<ComponentInput> {
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
         obscureText: widget.obscureText,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16),
+          contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           alignLabelWithHint: true,
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
@@ -58,14 +63,15 @@ class _ComponentInputState extends State<ComponentInput> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
-              color: Colors.grey.shade600,
+              color: widget.unfocusedBorderColor ?? Colors.grey.shade600,
               width: 0.45,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
-              color: CustomizedColors.inputBorderColor,
+              color: widget.focusedBorderColor ??
+                  CustomizedColors.inputBorderColor,
               width: 1.2,
             ),
           ),
