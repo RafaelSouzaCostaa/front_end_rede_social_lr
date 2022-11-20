@@ -5,6 +5,8 @@ class Profile {
   late String nickname;
   late String email;
   late String password;
+  String? phone;
+  String? image;
   Image? profilePicture;
   int? birthDate;
   int? creationDate;
@@ -23,8 +25,8 @@ class Profile {
     name = map["name"];
     nickname = map["nickname"];
     email = map["email"];
-    // phone = map["phone"];
-    // image = map["image"];
+    phone = map["phone"];
+    image = map["image"];
     birthDate = map["birthDate"];
     creationDate = map["creationDate"];
   }
@@ -34,8 +36,8 @@ class Profile {
         "nickname": nickname,
         "email": email,
         "password": password,
-        // "phone": phone,
-        // "image": image,
+        "phone": phone,
+        "image": image,
         "birthDate": birthDate,
         "creationDate": creationDate,
       };
