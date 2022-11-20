@@ -7,6 +7,9 @@ import '../Colors/customized_colors_grobal.dart';
 class ComponentInput extends StatefulWidget {
   String labelText;
   var suffixIcon;
+  double width;
+  int minLines;
+  int maxLines;
   bool obscureText = false;
   bool validator = false;
   TextEditingController controller;
@@ -17,6 +20,9 @@ class ComponentInput extends StatefulWidget {
     this.suffixIcon,
     this.obscureText = false,
     this.validator = false,
+    this.width = 8.5,
+    this.minLines = 1,
+    this.maxLines = 1,
     required this.controller,
   });
 
@@ -28,24 +34,25 @@ class _ComponentInputState extends State<ComponentInput> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: MediaQuery.of(context).size.width * (widget.width / 10),
       child: TextFormField(
-        // textAlign: TextAlign.center,
+        minLines: widget.obscureText ? 1 : widget.minLines,
+        maxLines: widget.obscureText ? 1 : widget.maxLines,
         controller: widget.controller,
         style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
         obscureText: widget.obscureText,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 16),
-          suffixIcon: Padding(
-            padding: const EdgeInsetsDirectional.only(end: 12),
-            child: widget.suffixIcon,
-          ),
           alignLabelWithHint: true,
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
           hintStyle: TextStyle(
             fontSize: 13,
             color: Colors.white24,
+          ),
+          suffixIcon: Padding(
+            padding: const EdgeInsetsDirectional.only(end: 12),
+            child: widget.suffixIcon,
           ),
           //Borda Padrão
           enabledBorder: OutlineInputBorder(

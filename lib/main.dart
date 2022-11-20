@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
+import 'Screens/ScreenPost/screen_create_post.dart';
 import 'Screens/ScreenProfile/screen_profile.dart';
 import 'Screens/ScreenRegistration/screen_registration.dart';
 import 'Screens/ScreenSettings/screen_settings.dart';
@@ -16,7 +17,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/home',
+      initialRoute: '/createPost',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
@@ -24,6 +25,7 @@ void main() {
         "/login": (context) => const ScreenLogin(),
         "/profile": (context) => const ScreenProfile(),
         "/setting": (context) => const ScreenSettings(),
+        "/createPost": (context) => const ScreenCreatePost(),
         // "/teste": (context) => const Testes(),
       },
       debugShowCheckedModeBanner: false,

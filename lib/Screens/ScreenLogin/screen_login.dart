@@ -98,16 +98,18 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           color: CustomizedColors.lightText,
                           fontFamily: 'Imprima-Regular'),
                     ),
-                    GestureDetector(
+                    TextButton(
+                      style: TextButton.styleFrom(
+                          foregroundColor: CustomizedColors.darkBackground),
+                      onPressed: () async {
+                        await Get.toNamed("/cadastro");
+                      },
                       child: Text(
                         "Cadastre-se",
                         style: TextStyle(
                             color: CustomizedColors.linkInText,
                             fontFamily: 'Imprima-Regular'),
                       ),
-                      onTap: () async {
-                        await Get.toNamed("/cadastro");
-                      },
                     ),
                   ],
                 ),
@@ -133,16 +135,20 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           color: CustomizedColors.lightText,
                           fontFamily: 'Imprima-Regular'),
                     ),
-                    GestureDetector(
-                        child: Text(
-                          "  Recuperar",
-                          style: TextStyle(
-                              color: CustomizedColors.linkInText,
-                              fontFamily: 'Imprima-Regular'),
-                        ),
-                        onTap: () async {
-                          //IMPLEMENTAR Navigator para pagina de trocar senha
-                        }),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: CustomizedColors.darkBackground,
+                      ),
+                      onPressed: () async {
+                        //IMPLEMENTAR Navigator para pagina de trocar senha
+                      },
+                      child: Text(
+                        "Recuperar",
+                        style: TextStyle(
+                            color: CustomizedColors.linkInText,
+                            fontFamily: 'Imprima-Regular'),
+                      ),
+                    ),
                   ],
                 ),
                 ComponentButton(
