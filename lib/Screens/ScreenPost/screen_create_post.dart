@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Components/comp_input.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
+import '../../Components/comp_button.dart';
+import '../../Components/comp_input.dart';
 
 class ScreenCreatePost extends StatefulWidget {
   const ScreenCreatePost({super.key});
@@ -22,14 +23,22 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
       body: Center(
         child: Column(
           children: [
-            ComponentInput(
-              labelText: "",
-              controller: _textController,
-              focusedBorderColor: Colors.transparent,
-              unfocusedBorderColor: Colors.transparent,
-              validator: true,
-              maxLines: 5,
-              minLines: 5,
+            Container(
+              padding: const EdgeInsets.only(top: 10),
+              child: ComponentInput(
+                hintText: "Alguma fofoca nova?",
+                controller: _textController,
+                focusedBorderColor: Colors.transparent,
+                unfocusedBorderColor: Colors.transparent,
+                validator: true,
+                maxLines: 5,
+                minLines: 5,
+                maxLenght: 280,
+              ),
+            ),
+            ComponentButton(
+              text: "Kitterar",
+              onPressed: () {},
             ),
           ],
         ),

@@ -8,7 +8,6 @@ import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
 import '../../Global/token.dart';
-import '../../Models/model_profile.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);

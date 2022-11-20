@@ -5,30 +5,33 @@ import 'package:flutter/material.dart';
 import '../Colors/customized_colors_grobal.dart';
 
 class ComponentInput extends StatefulWidget {
-  String labelText;
+  String? labelText;
+  String? hintText;
+  TextEditingController controller;
   var suffixIcon;
   double width;
   int minLines;
   int maxLines;
-  bool obscureText = false;
+  int? maxLenght;
   bool validator = false;
+  bool obscureText = false;
   Color? focusedBorderColor;
   Color? unfocusedBorderColor;
 
-  TextEditingController controller;
-
   ComponentInput({
     super.key,
-    required this.labelText,
+    this.labelText,
+    required this.controller,
+    this.hintText,
     this.suffixIcon,
-    this.obscureText = false,
-    this.validator = false,
-    this.width = 8.5,
+    this.maxLenght = 35,
     this.minLines = 1,
     this.maxLines = 1,
+    this.validator = false,
+    this.obscureText = false,
+    this.width = 8.5,
     this.focusedBorderColor,
     this.unfocusedBorderColor,
-    required this.controller,
   });
 
   @override
@@ -41,6 +44,7 @@ class _ComponentInputState extends State<ComponentInput> {
     return SizedBox(
       width: MediaQuery.of(context).size.width * (widget.width / 10),
       child: TextFormField(
+        maxLength: widget.maxLenght,
         minLines: widget.obscureText ? 1 : widget.minLines,
         maxLines: widget.obscureText ? 1 : widget.maxLines,
         controller: widget.controller,
@@ -49,6 +53,7 @@ class _ComponentInputState extends State<ComponentInput> {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           alignLabelWithHint: true,
+          hintText: widget.hintText,
           labelText: widget.labelText,
           labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
           hintStyle: TextStyle(
