@@ -1,6 +1,10 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Colors/customized_colors_grobal.dart';
+import '../Global/profile_authenticated.dart';
 import 'comp_text_button.dart';
 
 class ComponentDrawer extends StatefulWidget {
@@ -11,8 +15,11 @@ class ComponentDrawer extends StatefulWidget {
 }
 
 class _ComponentDrawerState extends State<ComponentDrawer> {
+  ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
+
   @override
   Widget build(BuildContext context) {
+    String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     return Drawer(
       backgroundColor: CustomizedColors.darkBackground,
       child: Column(children: [
@@ -20,25 +27,27 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           margin: const EdgeInsets.only(top: 20, bottom: 5),
           child: Column(children: [
             Container(
-              margin: const EdgeInsets.only(bottom: 15),
-              width: 100,
-              height: 100,
-              child: const CircleAvatar(
-                backgroundImage: ExactAssetImage("assets/image/perfil.png"),
-              ),
-            ),
-            const Text(
-              "Nome do Usuario",
-              style: TextStyle(
+                margin: const EdgeInsets.only(bottom: 15),
+                width: 100,
+                height: 100,
+                child: urlImageProfile != null
+                    ? CircleAvatar(
+                        backgroundImage: NetworkImage(urlImageProfile))
+                    : const CircleAvatar(
+                        backgroundImage:
+                            ExactAssetImage("assets/image/perfil.png"))),
+            Text(
+              profileAuthenticated.profileAuthentic.value.name,
+              style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
                   color: Colors.white),
             ),
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
-              child: const Text(
-                "@nickname",
-                style: TextStyle(
+              child: Text(
+                "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
                     color: Colors.white70),

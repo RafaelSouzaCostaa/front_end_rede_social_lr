@@ -70,7 +70,8 @@ class ApiService {
       },
     );
     if (response.statusCode == 200) {
-      profileAuthenticated.profile = response.body;
+      profileAuthenticated.profileAuthentic.value =
+          Profile.fromMap(jsonDecode(response.body));
       //Lembrete pro Luiggi que é burro: salva na variavel global, por isso não retorna ele
       //LUIGGI que isso?! que violencia
       return true;

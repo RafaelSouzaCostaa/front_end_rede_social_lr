@@ -31,6 +31,8 @@ class Profile {
     creationDate = map["creationDate"];
   }
 
+  Profile.defaultGetX();
+
   Map<String, dynamic> toMap() => {
         "name": name,
         "nickname": nickname,
