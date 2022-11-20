@@ -8,6 +8,7 @@ import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
 import '../../Global/token.dart';
+import '../../Models/model_profile.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
@@ -139,7 +140,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                               color: CustomizedColors.linkInText,
                               fontFamily: 'Imprima-Regular'),
                         ),
-                        onTap: () {
+                        onTap: () async {
                           //IMPLEMENTAR Navigator para pagina de trocar senha
                         }),
                   ],
@@ -150,20 +151,19 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   height: 6,
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      if (await ApiService.login(
+                      int statusCode = await ApiService.login(
                         _userController.text,
                         _passwordController.text,
-                      )) {
+                      );
+
+                      if (statusCode == 200) {
                         if (await ApiService.getProfileData()) {
-                          //LUIGGI apos login, foi enviado o token para a rota de validação, retornando o profile e salvando em GLobal/profile_authenticated.dart
-                          print(
-                              "ScreenLogin: ${profileAuthenticated.profile.toString()}");
                           Get.toNamed("/home");
                         }
                       } else {
                         Get.snackbar(
                           "Erro ao fazer login",
-                          "Email ou Senha invalidos",
+                          "Insira dados invalidos",
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: const Color.fromARGB(255, 138, 8, 8),
                           colorText: Colors.white,
