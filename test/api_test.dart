@@ -29,6 +29,13 @@ void main() {
       expect(statusCode, 200);
     });
 
+    test("Buscar perfil por nickname", () async {
+      var auxProfile = await ApiService.getProfileByNick(profile!.nickname);
+
+      expect(auxProfile.email, profileCadastro.email);
+      expect(auxProfile.name, profileCadastro.name);
+    });
+
     test("Deletando Profile", () async {
       bool auxProfile = false;
       if (profile != null) {
