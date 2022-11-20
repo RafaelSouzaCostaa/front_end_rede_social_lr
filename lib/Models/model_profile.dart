@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class Profile {
+  String? id;
   late String name;
   late String nickname;
   late String email;
@@ -12,6 +13,7 @@ class Profile {
   int? creationDate;
 
   Profile({
+    this.id,
     required this.name,
     required this.nickname,
     required this.email,
@@ -22,6 +24,7 @@ class Profile {
   });
 
   Profile.fromMap(Map map) {
+    id = map["id"];
     name = map["name"];
     nickname = map["nickname"];
     email = map["email"];
@@ -34,6 +37,7 @@ class Profile {
   Profile.defaultGetX();
 
   Map<String, dynamic> toMap() => {
+        "id": id,
         "name": name,
         "nickname": nickname,
         "email": email,

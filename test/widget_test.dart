@@ -5,8 +5,6 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'dart:math';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Global/api_service.dart';
@@ -21,15 +19,16 @@ void main() {
       password: "ryan123",
       creationDate: DateTime.now().millisecondsSinceEpoch);
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    Profile testCreate = ApiService.createProfile(testeProfile) as Profile;
+    Profile testCreate =
+        await ApiService.createProfile(testeProfile) as Profile;
     print(testCreate);
     expect(testeProfile, testCreate);
     expect("Ryan", testCreate.name);
 
-    ApiService.login(testeProfile.email, testeProfile.password);
+    await ApiService.login(testeProfile.email, testeProfile.password);
     expect(true, Get.put(Token()));
-
-    var testeDelete = ApiService.deleteProfile("");
+    print(testCreate.id);
+    var testeDelete = ApiService.deleteProfile(testCreate.id.toString());
     //RAFAEL preciso saber a id do banco pra testar aqui, então seria melhor delete by nickname
     expect(true, testeDelete);
   });
