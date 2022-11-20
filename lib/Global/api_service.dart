@@ -11,13 +11,20 @@ import 'profile_authenticated.dart';
 import 'token.dart';
 
 class ApiService {
+  static final Token _token = Get.put(Token());
+  static final Map<String, String> _headerDefault = {
+    'Content-Type': 'application/json; charset=UTF-8',
+  };
+  static final Map<String, String> _headerWithTokenWithTime = {
+    'Content-Type': 'application/json; charset=UTF-8',
+    'x-access-token': _token.token.value,
+    'x-access-time': DateTime.now().millisecondsSinceEpoch.toString()
+  };
   //Profile
   static Future<Profile> createProfile(Profile profile) async {
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.createProfile),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
+      headers: _headerDefault,
       body: jsonEncode(<String, String>{
         'name': profile.name,
         'nickname': profile.nickname,
@@ -41,9 +48,7 @@ class ApiService {
     Token token = Get.put(Token());
     final response =
         await http.post(Uri.parse(APIConstants.apiUrl + APIConstants.login),
-            headers: <String, String>{
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
+            headers: _headerDefault,
             body: jsonEncode(<String, String>{
               'email': email,
               'password': password,
@@ -65,12 +70,8 @@ class ApiService {
     Token token = Get.put(Token());
     ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
     final response = await http.get(
-      Uri.parse(APIConstants.apiUrl + APIConstants.getProfileByToken),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
-      },
-    );
+        Uri.parse(APIConstants.apiUrl + APIConstants.getProfileByToken),
+        headers: _headerWithTokenWithTime);
     if (response.statusCode == 200) {
       profileAuthenticated.profileAuthentic.value =
           Profile.fromMap(jsonDecode(response.body));
@@ -110,13 +111,9 @@ class ApiService {
   static Future<Profile> getProfileByNick(String nickname) async {
     Token token = Get.put(Token());
     final response = await http.get(
-      Uri.parse(
-          APIConstants.apiUrl + APIConstants.getProfileByNickname(nickname)),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
-      },
-    );
+        Uri.parse(
+            APIConstants.apiUrl + APIConstants.getProfileByNickname(nickname)),
+        headers: _headerWithTokenWithTime);
 
     if (response.statusCode == 200) {
       return Profile.fromMap(jsonDecode(response.body));
@@ -130,12 +127,8 @@ class ApiService {
   static Future<bool> deleteProfile(String id) async {
     Token token = Get.put(Token());
     final response = await http.delete(
-      Uri.parse(APIConstants.apiUrl + APIConstants.deleteProfileById(id)),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
-      },
-    );
+        Uri.parse(APIConstants.apiUrl + APIConstants.deleteProfileById(id)),
+        headers: _headerWithTokenWithTime);
 
     if (response.statusCode == 200) {
       return true;
@@ -161,10 +154,7 @@ class ApiService {
 
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.createPost),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
-      },
+      headers: _headerWithTokenWithTime,
       body: jsonEncode(<String, dynamic>{
         'postMedia': auxURLs,
         'postDate': DateTime.now().millisecondsSinceEpoch.toString(),
@@ -183,12 +173,8 @@ class ApiService {
   static Future<List<Post>> getAllPosts() async {
     Token token = Get.put(Token());
     final response = await http.get(
-      Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
-      },
-    );
+        Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
+        headers: _headerWithTokenWithTime);
     if (response.statusCode == 200) {
       List<Post> posts = List<Post>.empty(growable: true);
       var auxResponse = jsonDecode(response.body);
