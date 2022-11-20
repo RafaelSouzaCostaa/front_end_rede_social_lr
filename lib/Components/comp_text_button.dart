@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ComponentTextButton extends StatefulWidget {
   String text;
@@ -33,7 +34,7 @@ class ComponentTextButton extends StatefulWidget {
 class _ComponentTextButtonState extends State<ComponentTextButton> {
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
+    var screenHeight = Get.height;
 
     return SizedBox(
       height: screenHeight * (widget.height / 100),

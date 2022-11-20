@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
@@ -14,11 +15,11 @@ class ComponentSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
             Container(
               //Background image
               color: Colors.white,
-              height: MediaQuery.of(context).size.height * 0.20,
+              height: Get.height * 0.20,
             ),
             Container(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.075),
+                  top: Get.height * 0.075),
               child: Center(
                 //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                 child: Container(

@@ -10,9 +10,6 @@ class Testes extends StatefulWidget {
 class _TestesState extends State<Testes> {
   @override
   Widget build(BuildContext context) {
-    //double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child: Scaffold(),
     );

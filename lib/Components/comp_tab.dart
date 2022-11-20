@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ComponentTab extends StatefulWidget {
   double width;
@@ -11,7 +12,7 @@ class ComponentTab extends StatefulWidget {
 
   ComponentTab({
     super.key,
-    this.width = 1,
+    this.width = 10,
     this.height = 0.3,
     this.indicatorColor = Colors.blue,
     this.unselectedLabelColor = Colors.white70,
@@ -28,7 +29,7 @@ class _ComponentTabState extends State<ComponentTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * widget.width,
+      width: Get.width * (widget.width / 10),
       height: 1500,
       margin: const EdgeInsets.only(top: 15),
       child: DefaultTabController(

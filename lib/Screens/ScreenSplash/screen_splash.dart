@@ -30,12 +30,10 @@ class _ScreenSplashState extends State<ScreenSplash> {
       backgroundColor: CustomizedColors.darkBackground,
       body: Center(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               alignment: Alignment.center,
-              height: MediaQuery.of(context).size.height * 0.9,
+              height: Get.height * 0.9,
               child: SizedBox(
                 width: 60,
                 height: 60,

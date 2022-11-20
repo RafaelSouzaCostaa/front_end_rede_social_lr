@@ -6,18 +6,18 @@ import '../Colors/customized_colors_grobal.dart';
 
 class ComponentButton extends StatefulWidget {
   String text;
-  Color color;
   Function onPressed;
   double width;
   double height;
+  TextStyle? textStyle;
 
   ComponentButton({
     super.key,
     required this.text,
-    this.color = Colors.black,
     required this.onPressed,
     this.width = 25,
     this.height = 6,
+    this.textStyle,
   });
 
   @override
@@ -46,10 +46,7 @@ class _ComponentButtonState extends State<ComponentButton> {
         child: Text(
           widget.text,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            color: widget.color,
-            fontFamily: 'Imprima-Regular',
-          ),
+          style: widget.textStyle,
         ),
       ),
     );
