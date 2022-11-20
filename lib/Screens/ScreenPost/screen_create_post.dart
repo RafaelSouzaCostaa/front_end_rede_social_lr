@@ -53,7 +53,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 maxLines: 5,
                 minLines: 5,
                 maxLenght: 280,
-                fontSize: 20,
+                fontSize: 19,
                 width: Get.width,
               ),
             ),
