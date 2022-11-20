@@ -57,7 +57,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               textColor: Colors.red,
               onPressed: () async {
                 //apagar token
-                await Get.toNamed("/login");
+                Get.offAllNamed('/login');
               },
             ),
           ],

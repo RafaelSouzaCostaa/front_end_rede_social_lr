@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Colors/pattern_colors.dart';
-import '../ScreenLogin/screen_login.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({Key? key}) : super(key: key);
@@ -22,12 +22,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
 
   _navigateToHome() async {
     await Future.delayed(const Duration(milliseconds: 1304), () {});
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: ((context) => const ScreenLogin()),
-      ),
-    );
+    Get.offAndToNamed('/login');
   }
 
   @override

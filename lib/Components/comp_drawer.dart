@@ -37,7 +37,9 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                         backgroundImage:
                             ExactAssetImage("assets/image/perfil.png"))),
             Text(
-              profileAuthenticated.profileAuthentic.value.name,
+              //RAFAEL comentei aqui só pra conseguir testar mais facil
+              // profileAuthenticated.profileAuthentic.value.name,
+              "AAAA",
               style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
@@ -46,7 +48,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
-                "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                "BBBB",
+                // "@${profileAuthenticated.profileAuthentic.value.nickname}",
                 style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
@@ -67,7 +70,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 icon: Icons.person,
                 mainAxisAlignment: MainAxisAlignment.start,
                 onPressed: () {
-                  Navigator.pushNamed(context, "/profile");
+                  Get.toNamed("/profile");
                 },
               ),
             ]),
@@ -81,7 +84,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           padding: const EdgeInsets.only(top: 1, bottom: 1),
           child: ComponentTextButton(
             onPressed: () {
-              Navigator.pushNamed(context, "/setting");
+              Get.toNamed('/setting');
             },
             text: "",
             icon: Icons.settings,

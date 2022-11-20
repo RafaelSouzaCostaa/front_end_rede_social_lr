@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
@@ -21,7 +22,7 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
       title: GestureDetector(
         child: Image.asset("assets/image/logo.png", scale: 3),
         onTap: () {
-          Navigator.pushNamed(context, "/home");
+          Get.offAllNamed('/home');
         },
       ),
       centerTitle: true,
