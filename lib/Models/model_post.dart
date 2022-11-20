@@ -1,7 +1,7 @@
 class Post {
   // List<Image> postImages = [];//ATENCAO CORRIGIR
   late String profileObjectID;
-  List postMedia = [];
+  late List postMedia = [];
   int? postDate;
   late String description;
   int? numberOfLikes;
