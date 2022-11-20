@@ -24,7 +24,7 @@ class Profile {
   });
 
   Profile.fromMap(Map map) {
-    id = map["id"];
+    id = map["_id"];
     name = map["name"];
     nickname = map["nickname"];
     email = map["email"];
@@ -37,7 +37,7 @@ class Profile {
   Profile.defaultGetX();
 
   Map<String, dynamic> toMap() => {
-        "id": id,
+        "_id": id,
         "name": name,
         "nickname": nickname,
         "email": email,

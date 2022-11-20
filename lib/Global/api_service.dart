@@ -31,7 +31,8 @@ class ApiService {
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
-      throw Exception('Falha ao criar Perfil');
+      //throw Exception('Falha ao criar Perfil');
+      return Profile.defaultGetX();
     }
   }
 
@@ -141,7 +142,8 @@ class ApiService {
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
-      throw Exception('Falha ao apagar perfil!');
+      //throw Exception('Falha ao apagar perfil!');
+      return false;
     }
   }
 
