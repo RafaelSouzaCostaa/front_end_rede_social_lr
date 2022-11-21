@@ -1,11 +1,12 @@
 class APIConstants {
-  static String apiUrl = 'http://177.6.197.232:3000';
+  static String apiUrl = 'http://177.5.66.120:3000';
 
   //endpoints
   static String login = '/login/';
 
   static String createPost = '/post/create';
   static String getAllPosts = '/post/getAll';
+  static String getAllByFollow = '/post/getAllByFollow';
 
   static String createProfile = '/profile/create';
   static String getAllProfiles = '/profile/getAll';

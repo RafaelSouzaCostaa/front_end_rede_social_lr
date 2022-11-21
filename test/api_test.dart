@@ -5,7 +5,7 @@ import 'package:rede_social_lr/Global/api_service.dart';
 import 'package:rede_social_lr/Models/model_profile.dart';
 
 void main() {
-  group("Profile", () {
+  group("Profile:", () {
     Profile profileCadastro = Profile(
         name: 'Jose',
         nickname: 'Joses',
@@ -19,6 +19,7 @@ void main() {
       expect(newProfile.name, profileCadastro.name);
       expect(newProfile.nickname, profileCadastro.nickname);
       expect(newProfile.email, profileCadastro.email);
+
       profile = newProfile;
     });
 
@@ -39,7 +40,7 @@ void main() {
     test("Deletando Profile", () async {
       bool auxProfile = false;
       if (profile != null) {
-        auxProfile = await ApiService.deleteProfile(profile!.id.toString());
+        auxProfile = await ApiService.deleteProfile(profile!.id!);
       }
 
       expect(auxProfile, true);

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ui';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -43,9 +42,7 @@ class ApiService {
     }
   }
 
-  //LUIGGI tive que mudar o retorno de bool para int, retornar o statusCode, e tirar o exception, se quiser fazer isso nos outros, fique a vontade
   static Future<int> login(String email, String password) async {
-    Token token = Get.put(Token());
     final response =
         await http.post(Uri.parse(APIConstants.apiUrl + APIConstants.login),
             headers: _headerDefault,
@@ -57,7 +54,7 @@ class ApiService {
     if (response.statusCode == 404) {
       return 404;
     } else if (response.statusCode == 200) {
-      token.token.value = jsonDecode(response.body)["token"];
+      _token.token.value = jsonDecode(response.body)["token"];
       return 200;
     } else {
       print(
@@ -67,7 +64,6 @@ class ApiService {
   }
 
   static Future<bool> getProfileData() async {
-    Token token = Get.put(Token());
     ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getProfileByToken),
@@ -84,12 +80,11 @@ class ApiService {
   }
 
   static Future<List<Profile>> getAllProfiles() async {
-    Token token = Get.put(Token());
     final response = await http.get(
       Uri.parse(APIConstants.apiUrl + APIConstants.getAllProfiles),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
-        'x-access-token': token.token.value
+        'x-access-token': _token.token.value
       },
     );
     if (response.statusCode == 200) {
@@ -109,7 +104,6 @@ class ApiService {
   }
 
   static Future<Profile> getProfileByNick(String nickname) async {
-    Token token = Get.put(Token());
     final response = await http.get(
         Uri.parse(
             APIConstants.apiUrl + APIConstants.getProfileByNickname(nickname)),
@@ -125,7 +119,6 @@ class ApiService {
   }
 
   static Future<bool> deleteProfile(String id) async {
-    Token token = Get.put(Token());
     final response = await http.delete(
         Uri.parse(APIConstants.apiUrl + APIConstants.deleteProfileById(id)),
         headers: _headerWithTokenWithTime);
@@ -142,7 +135,6 @@ class ApiService {
 
   static Future<Post> createPost(
       String description, List<String> urlsImage) async {
-    Token token = Get.put(Token());
     var auxURLs = [];
 
     for (var element in urlsImage) {
@@ -171,9 +163,25 @@ class ApiService {
   }
 
   static Future<List<Post>> getAllPosts() async {
-    Token token = Get.put(Token());
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
+        headers: _headerWithTokenWithTime);
+    if (response.statusCode == 200) {
+      List<Post> posts = List<Post>.empty(growable: true);
+      var auxResponse = jsonDecode(response.body);
+      auxResponse.forEach((post) => {posts.add(Post.fromMap(post))});
+      return posts;
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao recuperar postagens');
+    }
+  }
+
+  //RAFAEL testar esse aqui
+  static Future<List<Post>> getAllPostByFollow() async {
+    final response = await http.get(
+        Uri.parse(APIConstants.apiUrl + APIConstants.getAllByFollow),
         headers: _headerWithTokenWithTime);
     if (response.statusCode == 200) {
       List<Post> posts = List<Post>.empty(growable: true);

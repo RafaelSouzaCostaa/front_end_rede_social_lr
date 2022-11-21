@@ -17,7 +17,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/createPost',
+      initialRoute: '/login',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
