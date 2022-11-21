@@ -42,6 +42,10 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 ),
               ],
             ),
+            const Divider(
+              color: Colors.white,
+              thickness: 0.2,
+            ),
             Container(
               padding: const EdgeInsets.only(top: 10),
               child: ComponentInput(
@@ -57,6 +61,13 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 width: Get.width,
               ),
             ),
+            const Divider(
+              color: Colors.white,
+              thickness: 0.2,
+            ),
+            Row(
+              children: [],
+            )
           ],
         ),
       ),

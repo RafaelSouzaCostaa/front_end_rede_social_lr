@@ -73,7 +73,10 @@ class _ComponentInputState extends State<ComponentInput> {
           ),
           hintStyle: TextStyle(
             fontSize: widget.fontSize,
-            color: Colors.white24,
+            color: Colors.white60,
+          ),
+          counterStyle: TextStyle(
+            color: CustomizedColors.linkInText,
           ),
           suffixIcon: widget.suffixIcon == null
               ? null

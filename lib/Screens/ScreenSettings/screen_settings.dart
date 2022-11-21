@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_text_button.dart';
+import '../../Global/profile_authenticated.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
@@ -15,22 +16,26 @@ class ScreenSettings extends StatefulWidget {
 class _ScreenSettingsState extends State<ScreenSettings> {
   @override
   Widget build(BuildContext context) {
+    ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
+
     return Scaffold(
       backgroundColor: CustomizedColors.darkBackground,
       appBar: ComponentAppBar(hasDrawer: false),
-      // backgroundColor: CustomizedColors.darkBackground,
-      // bottomNavigationBar: BottomAppBar(
-      //   color: Colors.transparent,
-      //   child: Icon(Icons.person),
-      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ComponentTextButton(
-              text: "Alterar Nome",
-              onPressed: () async {
-                await Get.toNamed("/login");
-              },
+            Column(
+              children: [
+                ComponentTextButton(
+                  text: "Alterar Nome",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
+                ),
+                Text(
+                  "@${profileAuthenticated.profileAuthentic.value.name}",
+                ),
+              ],
             ),
             ComponentTextButton(
               text: "Alterar Apelido",

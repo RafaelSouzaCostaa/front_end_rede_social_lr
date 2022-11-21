@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../Colors/customized_colors_grobal.dart';
+
 class ComponentTextButton extends StatefulWidget {
-  String text;
+  String? text;
   IconData? icon;
   Color textColor;
   Color iconColor;
@@ -12,19 +14,21 @@ class ComponentTextButton extends StatefulWidget {
   double rightPadding;
   double leftPadding;
   double spaceBetweenIconAndText;
+  bool hoverAnimation;
 
   ComponentTextButton({
     super.key,
-    required this.text,
+    this.text,
     this.icon,
     this.textColor = Colors.white,
     this.iconColor = Colors.white,
     required this.onPressed,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.height = 6,
-    this.leftPadding = 5,
-    this.rightPadding = 10,
+    this.leftPadding = 0,
+    this.rightPadding = 0,
     this.spaceBetweenIconAndText = 8,
+    this.hoverAnimation = true,
   });
 
   @override
@@ -39,9 +43,11 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
     return SizedBox(
       height: screenHeight * (widget.height / 100),
       child: TextButton(
-        onPressed: () {
-          widget.onPressed();
-        },
+        style: widget.hoverAnimation
+            ? null
+            : TextButton.styleFrom(
+                foregroundColor: CustomizedColors.darkBackground,
+              ),
         child: Row(
           mainAxisAlignment: widget.mainAxisAlignment,
           children: [
@@ -58,13 +64,18 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
               padding: EdgeInsets.only(
                   right: widget.rightPadding,
                   left: widget.spaceBetweenIconAndText),
-              child: Text(
-                widget.text,
-                style: TextStyle(color: widget.textColor),
-              ),
+              child: widget.text != null
+                  ? Text(
+                      widget.text.toString(),
+                      style: TextStyle(color: widget.textColor),
+                    )
+                  : null,
             ),
           ],
         ),
+        onPressed: () {
+          widget.onPressed();
+        },
       ),
     );
   }

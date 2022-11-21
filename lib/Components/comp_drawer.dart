@@ -38,7 +38,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                     ),
             ),
             Text(
-              profileAuthenticated.profileAuthentic.value.name,
+              // profileAuthenticated.profileAuthentic.value.name,
+              "",
               style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
@@ -48,7 +49,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
                 //ATENCAO descomentar posteriormente
-                "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                // "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                "",
                 style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
@@ -79,18 +81,23 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           color: Colors.white30,
           thickness: 0.5,
         ),
-        Container(
-          padding: const EdgeInsets.only(top: 1, bottom: 1),
-          child: ComponentTextButton(
-            onPressed: () {
-              Get.toNamed('/setting');
-            },
-            text: "",
-            icon: Icons.settings,
-            iconColor: CustomizedColors.icons,
-            textColor: CustomizedColors.lightText,
-            mainAxisAlignment: MainAxisAlignment.end,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              width: 50,
+              padding: const EdgeInsets.symmetric(vertical: 1),
+              child: ComponentTextButton(
+                onPressed: () {
+                  Get.toNamed('/setting');
+                },
+                icon: Icons.settings,
+                iconColor: CustomizedColors.icons,
+                textColor: CustomizedColors.lightText,
+                hoverAnimation: false,
+              ),
+            ),
+          ],
         ),
         // Expanded(
       ]),
