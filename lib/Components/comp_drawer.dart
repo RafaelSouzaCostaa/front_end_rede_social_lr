@@ -36,22 +36,22 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                     : const CircleAvatar(
                         backgroundImage:
                             ExactAssetImage("assets/image/perfil.png"))),
-            const Text(
+            Text(
               //RAFAEL comentei aqui só pra conseguir testar mais facil
               //ATENCAO descomentar posteriormente
-              // profileAuthenticated.profileAuthentic.value.name,
-              "AAAA",
-              style: TextStyle(
+              profileAuthenticated.profileAuthentic.value.name,
+
+              style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
                   color: Colors.white),
             ),
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
-              child: const Text(
+              child: Text(
                 //ATENCAO descomentar posteriormente
-                "BBBB",
-                // "@${profileAuthenticated.profileAuthentic.value.nickname}",
+
+                "@${profileAuthenticated.profileAuthentic.value.nickname}",
                 style: TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
