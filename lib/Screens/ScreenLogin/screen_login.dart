@@ -92,7 +92,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     Text(
                       "Não tem uma conta? ",
                       style: TextStyle(
-                          color: CustomizedColors.blueText,
+                          color: CustomizedColors.greyText,
                           fontFamily: 'Imprima-Regular'),
                     ),
                     TextButton(

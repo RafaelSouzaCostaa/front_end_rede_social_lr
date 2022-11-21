@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
-
+import '../../Global/profile_authenticated.dart';
 
 class ScreenProfile extends StatefulWidget {
   const ScreenProfile({super.key});
@@ -12,6 +12,8 @@ class ScreenProfile extends StatefulWidget {
 }
 
 class _ScreenProfileState extends State<ScreenProfile> {
+  ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
+
   ScrollController scrollController = ScrollController();
   bool visible = false;
   double auxScroll = 0.0;
@@ -92,25 +94,38 @@ class _ScreenProfileState extends State<ScreenProfile> {
                       ),
                       Container(
                         padding: const EdgeInsets.only(top: 10),
-                        child: const Text(
-                          "Nome",
-                          style: TextStyle(color: Colors.white, fontSize: 17),
+                        child: Text(
+                          profileAuthenticated.profileAuthentic.value.name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontFamily: 'Imprima-Regular',
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Container(
                         padding: const EdgeInsets.only(top: 5),
-                        child: const Text(
-                          "@Nickname",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        child: Text(
+                          "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 14,
+                            fontFamily: 'Imprima-Regular',
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Container(
                         padding: const EdgeInsets.only(top: 15),
-                        child: const Text(
-                          "Descriçãojdfaskjdghsakjdgakshdglhafghasdfjshdhjsadklhsafdhgashdgsahdgsadgalsgdjsadsadsagdlhsagjdasdsadasdsajdfsjdgsdgsagjadgasdsagdgsajdgsjdgsjdgsjgdjsagdjsg",
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          //FIX mudar para description quando implementar
+                          profileAuthenticated.profileAuthentic.value.name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Imprima-Regular',
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

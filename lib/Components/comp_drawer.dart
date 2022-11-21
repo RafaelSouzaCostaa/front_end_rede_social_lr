@@ -38,8 +38,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                     ),
             ),
             Text(
-              // profileAuthenticated.profileAuthentic.value.name,
-              "",
+              profileAuthenticated.profileAuthentic.value.name,
               style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
@@ -49,8 +48,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
                 //ATENCAO descomentar posteriormente
-                // "@${profileAuthenticated.profileAuthentic.value.nickname}",
-                "",
+                "@${profileAuthenticated.profileAuthentic.value.nickname}",
                 style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',

@@ -28,53 +28,99 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               children: [
                 ComponentTextButton(
                   text: "Alterar Nome",
+                  icon: Icons.person,
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
                 ),
-                Text(
-                  "@${profileAuthenticated.profileAuthentic.value.name}",
+                Container(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        profileAuthenticated.profileAuthentic.value.name,
+                        style: const TextStyle(
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
             ),
             Column(
               children: [
                 ComponentTextButton(
+                  icon: Icons.alternate_email,
                   text: "Alterar Apelido",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
                 ),
-                Text(
-                  "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                Container(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                        style: const TextStyle(
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
             ),
             Column(
               children: [
                 ComponentTextButton(
-                  text: "Alterar Senha",
-                  onPressed: () async {
-                    await Get.toNamed("/login");
-                  },
-                ),
-                Text(
-                  "@${profileAuthenticated.profileAuthentic.value.password}",
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                ComponentTextButton(
+                  icon: Icons.mail,
                   text: "Alterar Email",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
                 ),
-                Text(
-                  "@${profileAuthenticated.profileAuthentic.value.email}",
+                Container(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        profileAuthenticated.profileAuthentic.value.email,
+                        style: const TextStyle(
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
+            ),
+            Column(
+              children: [
+                ComponentTextButton(
+                  icon: Icons.key,
+                  text: "Alterar Senha",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              height: Get.height * 0.03,
             ),
             ComponentTextButton(
               text: "Sair",
