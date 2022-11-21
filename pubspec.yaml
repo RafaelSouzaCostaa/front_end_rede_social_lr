@@ -39,6 +39,8 @@ dependencies:
   sliver_header_delegate: ^0.0.5
   get: ^4.6.5
   http: ^0.13.5
+  image_picker: ^0.8.4+4
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:

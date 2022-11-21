@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Colors/customized_colors_grobal.dart';
 
@@ -8,6 +9,7 @@ class ComponentInput extends StatefulWidget {
   String? labelText;
   String? hintText;
   TextEditingController controller;
+  double fontSize;
   var suffixIcon;
   double width;
   int minLines;
@@ -23,6 +25,7 @@ class ComponentInput extends StatefulWidget {
     this.labelText,
     required this.controller,
     this.hintText,
+    this.fontSize = 13,
     this.suffixIcon,
     this.maxLenght = 35,
     this.minLines = 1,
@@ -42,28 +45,42 @@ class _ComponentInputState extends State<ComponentInput> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * (widget.width / 10),
+      width: Get.width * (widget.width / 10),
       child: TextFormField(
+        //miscelaneous
+        controller: widget.controller,
+        obscureText: widget.obscureText,
+        //tamanho
         maxLength: widget.maxLenght,
         minLines: widget.obscureText ? 1 : widget.minLines,
         maxLines: widget.obscureText ? 1 : widget.maxLines,
-        controller: widget.controller,
-        style: TextStyle(color: Colors.white70, fontFamily: 'Imprima-Regular'),
-        obscureText: widget.obscureText,
+        //Style Text
+        style: TextStyle(
+          color: Colors.white,
+          fontFamily: 'Imprima-Regular',
+          fontSize: widget.fontSize,
+        ),
+
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           alignLabelWithHint: true,
           hintText: widget.hintText,
           labelText: widget.labelText,
-          labelStyle: TextStyle(fontSize: 13, color: Colors.white70),
+          //Style
+          labelStyle: TextStyle(
+            fontSize: widget.fontSize,
+            color: Colors.white70,
+          ),
           hintStyle: TextStyle(
-            fontSize: 13,
+            fontSize: widget.fontSize,
             color: Colors.white24,
           ),
-          suffixIcon: Padding(
-            padding: const EdgeInsetsDirectional.only(end: 12),
-            child: widget.suffixIcon,
-          ),
+          suffixIcon: widget.suffixIcon == null
+              ? null
+              : Padding(
+                  padding: const EdgeInsetsDirectional.only(end: 12),
+                  child: widget.suffixIcon,
+                ),
           //Borda Padrão
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
@@ -80,7 +97,7 @@ class _ComponentInputState extends State<ComponentInput> {
               width: 1.2,
             ),
           ),
-          //Validator Border
+          //Borda do Validador
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(

@@ -25,8 +25,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   @override
   Widget build(BuildContext context) {
-    //double screenHeight = MediaQuery.of(context).size.height;
-    //double screenWidth = MediaQuery.of(context).size.width;
     Token globalToken = Get.put(Token());
     ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
 
@@ -86,7 +84,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
           Row(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: Get.width,
                 padding: const EdgeInsets.only(top: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

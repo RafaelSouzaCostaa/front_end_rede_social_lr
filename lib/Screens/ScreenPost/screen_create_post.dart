@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
@@ -23,6 +24,24 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
       body: Center(
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 15, right: 15),
+                  child: ComponentButton(
+                    height: 7,
+                    width: 20,
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    text: "Kitterar",
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
             Container(
               padding: const EdgeInsets.only(top: 10),
               child: ComponentInput(
@@ -34,11 +53,9 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 maxLines: 5,
                 minLines: 5,
                 maxLenght: 280,
+                fontSize: 19,
+                width: Get.width,
               ),
-            ),
-            ComponentButton(
-              text: "Kitterar",
-              onPressed: () {},
             ),
           ],
         ),

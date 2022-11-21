@@ -26,9 +26,6 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
 
   @override
   Widget build(BuildContext context) {
-    // double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
@@ -99,7 +96,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 20, top: 50),
-              width: screenWidth,
+              width: Get.width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
