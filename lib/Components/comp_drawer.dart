@@ -27,20 +27,18 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           margin: const EdgeInsets.only(top: 20, bottom: 5),
           child: Column(children: [
             Container(
-                margin: const EdgeInsets.only(bottom: 15),
-                width: 100,
-                height: 100,
-                child: urlImageProfile != null
-                    ? CircleAvatar(
-                        backgroundImage: NetworkImage(urlImageProfile))
-                    : const CircleAvatar(
-                        backgroundImage:
-                            ExactAssetImage("assets/image/perfil.png"))),
+              margin: const EdgeInsets.only(bottom: 15),
+              width: 100,
+              height: 100,
+              child: urlImageProfile != null
+                  ? CircleAvatar(backgroundImage: NetworkImage(urlImageProfile))
+                  : const CircleAvatar(
+                      backgroundImage:
+                          ExactAssetImage("assets/image/perfil.png"),
+                    ),
+            ),
             Text(
-              //RAFAEL comentei aqui só pra conseguir testar mais facil
-              //ATENCAO descomentar posteriormente
               profileAuthenticated.profileAuthentic.value.name,
-
               style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
@@ -50,9 +48,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
                 //ATENCAO descomentar posteriormente
-
                 "@${profileAuthenticated.profileAuthentic.value.nickname}",
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
                     color: Colors.white70),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Global/api_service.dart';
 
 import '../../Colors/customized_colors_grobal.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
+import '../../Global/api_service.dart';
 import '../../Models/model_post.dart';
 
 class ScreenHome extends StatefulWidget {
