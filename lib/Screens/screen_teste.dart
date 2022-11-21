@@ -10,14 +10,6 @@ class Testes extends StatefulWidget {
 }
 
 class _TestesState extends State<Testes> with SingleTickerProviderStateMixin {
-  TabController? _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = new TabController(length: 2, vsync: this);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +19,94 @@ class _TestesState extends State<Testes> with SingleTickerProviderStateMixin {
           headerSliverBuilder: (context, value) {
             return [
               SliverAppBar(
-                expandedHeight: 300,
+                expandedHeight: 380,
                 pinned: true,
+                backgroundColor: CustomizedColors.darkBackground,
+                stretch: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            //Background image
+                            color: Colors.white,
+                            height: Get.height * 0.20,
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.height * 0.11),
+                            child: Center(
+                              child: Container(
+                                width: 110,
+                                height: 110,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        width: 3.2,
+                                        color: CustomizedColors.darkBackground),
+                                    borderRadius: BorderRadius.circular(60)),
+                                child: CircleAvatar(
+                                  backgroundColor: CustomizedColors.blueText,
+                                  backgroundImage: const AssetImage(
+                                      "assets/image/profile.png"),
+                                  //ATENCAO Imagem de Profile (image == null ? : ,);
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: const Text(
+                          "Nome",
+                          style: TextStyle(color: Colors.white, fontSize: 17),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: const Text(
+                          "@Nickname",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: const Text(
+                          "Descriçãojdfaskjdghsakjdgakshdglhafghasdfjshdhjsadklhsafdhgashdgsahdgsadgalsgdjsadsadsagdlhsagjdasdsadasdsajdfsjdgsdgsagjadgasdsagdgsajdgsjdgsjdgsjgdjsagdjsg",
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        width: 200,
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "X Seguindo",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "X Seguidores",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 bottom: TabBar(
-                  tabs: [
-                    Tab(icon: Icon(Icons.call), text: "Call"),
-                    Tab(icon: Icon(Icons.message), text: "Message"),
+                  indicatorColor: CustomizedColors.blueBackground,
+                  labelColor: CustomizedColors.blueBackground,
+                  unselectedLabelColor: CustomizedColors.greyText,
+                  tabs: const [
+                    Tab(text: "Postagens"),
+                    Tab(text: "Curtidas"),
                   ],
                 ),
               ),
