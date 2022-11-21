@@ -37,23 +37,44 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                 ),
               ],
             ),
-            ComponentTextButton(
-              text: "Alterar Apelido",
-              onPressed: () async {
-                await Get.toNamed("/login");
-              },
+            Column(
+              children: [
+                ComponentTextButton(
+                  text: "Alterar Apelido",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
+                ),
+                Text(
+                  "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                ),
+              ],
             ),
-            ComponentTextButton(
-              text: "Alterar Senha",
-              onPressed: () async {
-                await Get.toNamed("/login");
-              },
+            Column(
+              children: [
+                ComponentTextButton(
+                  text: "Alterar Senha",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
+                ),
+                Text(
+                  "@${profileAuthenticated.profileAuthentic.value.password}",
+                ),
+              ],
             ),
-            ComponentTextButton(
-              text: "Alterar Email",
-              onPressed: () async {
-                await Get.toNamed("/login");
-              },
+            Column(
+              children: [
+                ComponentTextButton(
+                  text: "Alterar Email",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
+                ),
+                Text(
+                  "@${profileAuthenticated.profileAuthentic.value.email}",
+                ),
+              ],
             ),
             ComponentTextButton(
               text: "Sair",

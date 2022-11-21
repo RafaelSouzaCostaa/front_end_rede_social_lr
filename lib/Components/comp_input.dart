@@ -76,7 +76,9 @@ class _ComponentInputState extends State<ComponentInput> {
             color: Colors.white60,
           ),
           counterStyle: TextStyle(
-            color: CustomizedColors.blueText,
+            color: widget.maxLenght! >= 100
+                ? CustomizedColors.blueText
+                : Colors.transparent,
           ),
           suffixIcon: widget.suffixIcon == null
               ? null
