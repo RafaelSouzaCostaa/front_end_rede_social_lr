@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
-import '../../Components/comp_tab.dart';
+
 
 class ScreenProfile extends StatefulWidget {
-  const ScreenProfile({Key? key}) : super(key: key);
+  const ScreenProfile({super.key});
 
   @override
   State<ScreenProfile> createState() => _ScreenProfileState();
@@ -25,7 +25,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
       }
 
       setState(() {
-        if (auxScroll >= 240.00) {
+        if (auxScroll >= 100) {
           auxScroll = 0.0;
           visible = true;
         } else {
@@ -38,136 +38,121 @@ class _ScreenProfileState extends State<ScreenProfile> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: CustomizedColors.darkBackground,
-        body: CustomScrollView(
+    return Scaffold(
+      body: DefaultTabController(
+        length: 2,
+        child: NestedScrollView(
           controller: scrollController,
-          slivers: [
-            SliverAppBar(
-              backgroundColor: CustomizedColors.darkBackground,
-              pinned: true,
-              expandedHeight: 320,
-              leading: visible
-                  ? const Text("ssdnms", style: TextStyle(color: Colors.amber))
-                  : null,
-              title: visible
-                  ? const Text("data", style: TextStyle(color: Colors.amber))
-                  : null,
-              actions: visible
-                  ? const [
-                      Text("action", style: TextStyle(color: Colors.amber))
-                    ]
-                  : null,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Column(
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          //Background image
-                          color: Colors.white,
-                          height: Get.height * 0.16,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.11),
-                          child: Center(
-                            child: Container(
-                              width: 110,
-                              height: 110,
-                              decoration: BoxDecoration(
+          headerSliverBuilder: (context, value) {
+            return [
+              SliverAppBar(
+                leading: visible
+                    ? IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.arrow_back),
+                      )
+                    : null,
+                expandedHeight: 400,
+                pinned: true,
+                backgroundColor: CustomizedColors.darkBackground,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            //Background image
+                            color: Colors.white,
+                            height: Get.height * 0.175,
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(top: Get.height * 0.11),
+                            child: Center(
+                              child: Container(
+                                width: 110,
+                                height: 110,
+                                decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 3.2,
-                                      color: CustomizedColors.darkBackground),
-                                  borderRadius: BorderRadius.circular(60)),
-                              child: CircleAvatar(
-                                backgroundColor: CustomizedColors.blueText,
-                                backgroundImage: const AssetImage(
-                                    "assets/image/profile.png"),
-                                //ATENCAO Imagem de Profile (image == null ? : ,);
+                                    width: 3.2,
+                                    color: CustomizedColors.darkBackground,
+                                  ),
+                                  borderRadius: BorderRadius.circular(60),
+                                ),
+                                child: CircleAvatar(
+                                  backgroundColor:
+                                      CustomizedColors.blueBackground,
+                                  backgroundImage: const AssetImage(
+                                      "assets/image/profile.png"),
+                                  //ATENCAO Imagem de Profile (image == null ? : ,);
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Text(
-                      "Nome",
-                      style: TextStyle(color: Colors.white, fontSize: 17),
-                    ),
-                    const Text(
-                      "Nickname",
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    const Text(
-                      "Descrição akjdfaskjdghsakjdgakshdglhafghasdfjshdhjsad" +
-                          "klhsafdhgashdgsahdgsadgalsgdjsadsadsagdlhsagjd",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Container(
-                      color: Colors.pink,
-                      width: Get.height * 0.6,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
-                            "X Seguindo",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Text(
-                            "X Seguidores",
-                            style: TextStyle(color: Colors.white),
-                          )
                         ],
                       ),
-                    )
-                  ],
+                      Container(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: const Text(
+                          "Nome",
+                          style: TextStyle(color: Colors.white, fontSize: 17),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: const Text(
+                          "@Nickname",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: const Text(
+                          "Descriçãojdfaskjdghsakjdgakshdglhafghasdfjshdhjsadklhsafdhgashdgsahdgsadgalsgdjsadsadsagdlhsagjdasdsadasdsajdfsjdgsdgsagjadgasdsagdgsajdgsjdgsjdgsjgdjsagdjsg",
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        width: 200,
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "X Seguindo",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "X Seguidores",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            SliverList(
-              delegate: SliverChildListDelegate([
-                ComponentTab(
-                  height: 1,
-                  width: 1,
+                bottom: TabBar(
                   indicatorColor: CustomizedColors.blueBackground,
                   labelColor: CustomizedColors.blueBackground,
                   unselectedLabelColor: CustomizedColors.greyText,
-                  tabsName: const [
-                    Text("Postagens"),
-                    Text("Curtidas"),
-                  ],
-                  tabs: [
-                    Tab(
-                      child: Column(children: [
-                        Container(
-                          color: Colors.white,
-                          height: 300,
-                        ),
-                        Container(
-                          color: Colors.pink,
-                          height: 900,
-                        ),
-                      ]),
-                    ),
-                    Tab(
-                      child: Column(children: [
-                        Container(
-                          color: Colors.white,
-                          height: 300,
-                        ),
-                        Container(
-                          color: Colors.pink,
-                          height: 900,
-                        ),
-                      ]),
-                    ),
+                  tabs: const [
+                    Tab(text: "Postagens"),
+                    Tab(text: "Curtidas"),
                   ],
                 ),
-              ]),
-            ),
-          ],
+              ),
+            ];
+          },
+          body: const TabBarView(
+            children: [
+              Text(
+                  "dagsdsdajsdgjsashdgdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahs"),
+              Text("dsjjsa")
+            ],
+          ),
         ),
       ),
     );
