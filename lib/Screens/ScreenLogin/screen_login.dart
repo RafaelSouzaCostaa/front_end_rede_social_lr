@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../Colors/customized_colors_grobal.dart';
+import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
@@ -92,7 +92,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     Text(
                       "Não tem uma conta? ",
                       style: TextStyle(
-                          color: CustomizedColors.lightText,
+                          color: CustomizedColors.blueText,
                           fontFamily: 'Imprima-Regular'),
                     ),
                     TextButton(
@@ -104,7 +104,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       child: Text(
                         "Cadastre-se",
                         style: TextStyle(
-                            color: CustomizedColors.linkInText,
+                            color: CustomizedColors.blueText,
                             fontFamily: 'Imprima-Regular'),
                       ),
                     ),
@@ -129,7 +129,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     Text(
                       "Esqueceu sua senha?",
                       style: TextStyle(
-                          color: CustomizedColors.lightText,
+                          color: CustomizedColors.greyText,
                           fontFamily: 'Imprima-Regular'),
                     ),
                     TextButton(
@@ -142,7 +142,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       child: Text(
                         "Recuperar",
                         style: TextStyle(
-                            color: CustomizedColors.linkInText,
+                            color: CustomizedColors.blueText,
                             fontFamily: 'Imprima-Regular'),
                       ),
                     ),

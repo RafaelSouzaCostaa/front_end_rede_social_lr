@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Colors/customized_colors_grobal.dart';
+import '../Colors/customized_colors_global.dart';
 
 class ComponentInput extends StatefulWidget {
   String? labelText;
@@ -76,7 +76,7 @@ class _ComponentInputState extends State<ComponentInput> {
             color: Colors.white60,
           ),
           counterStyle: TextStyle(
-            color: CustomizedColors.linkInText,
+            color: CustomizedColors.blueText,
           ),
           suffixIcon: widget.suffixIcon == null
               ? null
@@ -96,7 +96,7 @@ class _ComponentInputState extends State<ComponentInput> {
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: widget.focusedBorderColor ??
-                  CustomizedColors.inputBorderColor,
+                  CustomizedColors.lightGreyBorderColor,
               width: 1.2,
             ),
           ),

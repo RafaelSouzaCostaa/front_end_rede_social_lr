@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
+import '../Colors/customized_colors_global.dart';
 
 class ComponentButton extends StatefulWidget {
   String text;
@@ -38,7 +38,7 @@ class _ComponentButtonState extends State<ComponentButton> {
             ),
           ),
           backgroundColor:
-              MaterialStateProperty.all(CustomizedColors.buttonBackground),
+              MaterialStateProperty.all(CustomizedColors.blueBackground),
         ),
         onPressed: () {
           widget.onPressed();

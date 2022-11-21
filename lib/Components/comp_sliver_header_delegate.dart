@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Colors/customized_colors_grobal.dart';
+import '../Colors/customized_colors_global.dart';
 
 class ComponentSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
@@ -30,7 +30,7 @@ class ComponentSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
                           width: 3.2, color: CustomizedColors.darkBackground),
                       borderRadius: BorderRadius.circular(60)),
                   child: CircleAvatar(
-                    backgroundColor: CustomizedColors.linkInText,
+                    backgroundColor: CustomizedColors.blueText,
                     backgroundImage:
                         const AssetImage("assets/image/perfil.png"),
                     //ATENCAO Imagem de Perfil (image == null ? : ,);

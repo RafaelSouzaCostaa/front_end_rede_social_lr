@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Colors/customized_colors_grobal.dart';
+import '../Colors/customized_colors_global.dart';
 
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
@@ -48,14 +48,14 @@ class _ComponentPostState extends State<ComponentPost> {
                           text: '${widget.postUserName} ',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: CustomizedColors.lightText,
+                            color: CustomizedColors.greyText,
                           ),
                         ),
                         TextSpan(
                           text: '${widget.postNickName}',
                           style: TextStyle(
                             fontWeight: FontWeight.w300,
-                            color: CustomizedColors.lightText,
+                            color: CustomizedColors.greyText,
                           ),
                         ),
                       ],

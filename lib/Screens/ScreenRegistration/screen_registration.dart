@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../Colors/customized_colors_grobal.dart';
+import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_appBar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
@@ -106,7 +106,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       Text(
                         "Já tem uma Conta?",
                         style: TextStyle(
-                            color: CustomizedColors.lightText,
+                            color: CustomizedColors.greyText,
                             fontFamily: 'Imprima-Regular'),
                       ),
                       const SizedBox(
@@ -119,7 +119,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              color: CustomizedColors.linkInText,
+                              color: CustomizedColors.blueText,
                               fontFamily: 'Imprima-Regular'),
                         ),
                       ),

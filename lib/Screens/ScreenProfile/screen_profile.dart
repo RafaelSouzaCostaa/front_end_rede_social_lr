@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../Colors/customized_colors_grobal.dart';
+import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_tab.dart';
 
 class ScreenProfile extends StatefulWidget {
@@ -82,7 +82,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                       color: CustomizedColors.darkBackground),
                                   borderRadius: BorderRadius.circular(60)),
                               child: CircleAvatar(
-                                backgroundColor: CustomizedColors.linkInText,
+                                backgroundColor: CustomizedColors.blueText,
                                 backgroundImage: const AssetImage(
                                     "assets/image/profile.png"),
                                 //ATENCAO Imagem de Profile (image == null ? : ,);
@@ -133,7 +133,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                   width: 1,
                   indicatorColor: CustomizedColors.blueBackground,
                   labelColor: CustomizedColors.blueBackground,
-                  unselectedLabelColor: CustomizedColors.lightText,
+                  unselectedLabelColor: CustomizedColors.greyText,
                   tabsName: const [
                     Text("Postagens"),
                     Text("Curtidas"),

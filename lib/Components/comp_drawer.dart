@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Colors/customized_colors_grobal.dart';
+import '../Colors/customized_colors_global.dart';
 import '../Global/profile_authenticated.dart';
 import 'comp_text_button.dart';
 
@@ -92,8 +92,8 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                   Get.toNamed('/setting');
                 },
                 icon: Icons.settings,
-                iconColor: CustomizedColors.icons,
-                textColor: CustomizedColors.lightText,
+                iconColor: CustomizedColors.lightGreyIcon,
+                textColor: CustomizedColors.blueText,
                 hoverAnimation: false,
               ),
             ),
