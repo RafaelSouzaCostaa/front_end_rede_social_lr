@@ -178,7 +178,7 @@ class ApiService {
     }
   }
 
-  //RAFAEL testar esse aqui
+  //LUIGGI esse aqui busca todos os posts das pessoas que eu sigo
   static Future<List<Post>> getAllPostByFollow() async {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllByFollow),
@@ -195,6 +195,7 @@ class ApiService {
     }
   }
 
+//LUIGGI esse aqui busca os posts de uma pessoa especifica por ID, caso passe nada ele busca o meus posts
   static Future<List<Post>> getAllByProfileId({String? id}) async {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllByProfileId(id)),
