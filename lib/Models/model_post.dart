@@ -1,5 +1,5 @@
 class Post {
-  late String profileObjectID;
+  late String profileObjectId;
   late List postMedia = [];
   int? postDate;
   late String description;
@@ -9,7 +9,7 @@ class Post {
   List? comments = [];
 
   Post({
-    required this.profileObjectID,
+    required this.profileObjectId,
     required this.postMedia,
     this.postDate,
     required this.description,
@@ -21,7 +21,7 @@ class Post {
 
   Post.fromMap(Map map) {
     postDate = map["postDate"];
-    profileObjectID = map["profileObjectID"];
+    profileObjectId = map["profileObjectId"];
     postMedia = map["postMedia"];
     postDate = map["postDate"];
     description = map["description"];
@@ -32,7 +32,7 @@ class Post {
   }
 
   Map<String, dynamic> toMap() => {
-        "profileObjectID": profileObjectID,
+        "profileObjectId": profileObjectId,
         "postMedia": postMedia,
         "postDate": postDate,
         "description": description,
