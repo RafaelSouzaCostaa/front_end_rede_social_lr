@@ -8,6 +8,7 @@ class Profile {
   late String email;
   late String password;
   String? profileDescription;
+  String? description;
   String? phone;
   String? image;
   Image? profilePicture;
@@ -38,7 +39,7 @@ class Profile {
     name = map["name"];
     nickname = map["nickname"];
     email = map["email"];
-    // profileDescription = map["profileDescription"];
+    description = map["description"];
     phone = map["phone"];
     image = map["image"];
     // profileBackgroundImage = map["profileBackgroundImage"];
@@ -55,7 +56,7 @@ class Profile {
         "name": name,
         "nickname": nickname,
         "email": email,
-        // "profileDescription": profileDescription,
+        "description": description,
         "password": password,
         "phone": phone,
         "image": image,

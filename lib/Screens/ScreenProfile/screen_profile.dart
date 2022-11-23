@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
+import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
+import '../../Models/model_post.dart';
 
 class ScreenProfile extends StatefulWidget {
   const ScreenProfile({super.key});
@@ -18,15 +20,24 @@ class _ScreenProfileState extends State<ScreenProfile> {
   bool visible = false;
   double auxScroll = 0.0;
 
+  List<Post> auxPost = List.empty(growable: true);
+
   @override
-  void initState() {
+  initState() {
+    //LUIGGI muda o nome aqui
+    buscarMeusPosts() async {
+      auxPost = await ApiService.getAllByProfileId();
+    }
+
+    buscarMeusPosts();
+
     scrollController.addListener(() {
       if (scrollController.offset > auxScroll) {
         auxScroll = scrollController.offset;
       }
 
       setState(() {
-        if (auxScroll >= ((25 * 80) / 100)) {
+        if (auxScroll >= 100) {
           auxScroll = 0.0;
           visible = true;
         } else {
@@ -46,6 +57,8 @@ class _ScreenProfileState extends State<ScreenProfile> {
     String numberFollowers = profileAuthenticated
         .profileAuthentic.value.getLengthFollowersObjectId
         .toString();
+
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: DefaultTabController(
         length: 2,
@@ -131,7 +144,9 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         padding: const EdgeInsets.only(top: 15),
                         child: Text(
                           //FIX mudar para description quando implementar
-                          profileAuthenticated.profileAuthentic.value.name,
+                          profileAuthenticated
+                              .profileAuthentic.value.description
+                              .toString(),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -172,10 +187,27 @@ class _ScreenProfileState extends State<ScreenProfile> {
               ),
             ];
           },
-          body: const TabBarView(
+          body: TabBarView(
             children: [
-              Text(
-                  "dagsdsdajsdgjsashdgdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsddgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsdagsdsdajsdgjsashdgaljshaljahsefesfeswfewsfewf"),
+              ListView.builder(
+                itemCount: auxPost.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        width: width * 0.90,
+                        child: Image.network(auxPost[index].postMedia[0]),
+                      ),
+                      Text(
+                        auxPost[index].description,
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      const SizedBox(height: 20)
+                    ],
+                  );
+                },
+              ),
               Text("sdsd"),
             ],
           ),

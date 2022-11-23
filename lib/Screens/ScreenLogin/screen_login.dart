@@ -166,7 +166,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       } else {
                         Get.snackbar(
                           "Erro ao fazer login",
-                          "Insira dados invalidos",
+                          "Insira dados validos",
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: const Color.fromARGB(255, 138, 8, 8),
                           colorText: Colors.white,

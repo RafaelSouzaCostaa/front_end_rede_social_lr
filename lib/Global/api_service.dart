@@ -194,4 +194,20 @@ class ApiService {
       throw Exception('Falha ao recuperar postagens');
     }
   }
+
+  static Future<List<Post>> getAllByProfileId({String? id}) async {
+    final response = await http.get(
+        Uri.parse(APIConstants.apiUrl + APIConstants.getAllByProfileId(id)),
+        headers: _headerWithTokenWithTime);
+    if (response.statusCode == 200) {
+      List<Post> posts = List<Post>.empty(growable: true);
+      var auxResponse = jsonDecode(response.body);
+      auxResponse.forEach((post) => {posts.add(Post.fromMap(post))});
+      return posts;
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao recuperar postagens');
+    }
+  }
 }
