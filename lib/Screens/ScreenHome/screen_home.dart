@@ -18,14 +18,19 @@ class _ScreenHomeState extends State<ScreenHome> {
   List<Post> postsFollow = List.empty(growable: true);
 
   @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    carregarPosts() async {
+  initState() {
+    buscarPosts() async {
       postsFollow = await ApiService.getAllPostByFollow();
-      setState(() {});
     }
 
-    carregarPosts();
+    buscarPosts();
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -38,15 +43,15 @@ class _ScreenHomeState extends State<ScreenHome> {
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
-                Container(
+                SizedBox(
                   width: width * 0.90,
                   child: Image.network(postsFollow[index].postMedia[0]),
                 ),
                 Text(
                   postsFollow[index].description,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
-                SizedBox(height: 20)
+                const SizedBox(height: 20)
               ],
             );
           },

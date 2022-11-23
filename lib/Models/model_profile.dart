@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 class Profile {
@@ -13,6 +14,11 @@ class Profile {
   Image? profileBackgroundImage;
   int? birthDate;
   int? creationDate;
+  List<dynamic> followingObjectId = List.empty(growable: true);
+  List<dynamic> followersObjectId = List.empty(growable: true);
+
+  get getLengthFollowingObjectId => followingObjectId.length;
+  get getLengthFollowersObjectId => followersObjectId.length;
 
   Profile({
     this.id,
@@ -38,6 +44,8 @@ class Profile {
     // profileBackgroundImage = map["profileBackgroundImage"];
     birthDate = map["birthDate"];
     creationDate = map["creationDate"];
+    followingObjectId = map["followingObjectId"];
+    followersObjectId = map["followersObjectId"];
   }
 
   Profile.defaultGetX();
