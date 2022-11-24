@@ -24,12 +24,11 @@ class _ScreenProfileState extends State<ScreenProfile> {
 
   @override
   initState() {
-    //LUIGGI muda o nome aqui
-    buscarMeusPosts() async {
+    getMyPosts() async {
       auxPost = await ApiService.getAllByProfileId();
     }
 
-    buscarMeusPosts();
+    getMyPosts();
 
     scrollController.addListener(() {
       if (scrollController.offset > auxScroll) {

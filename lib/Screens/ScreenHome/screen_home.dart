@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../Colors/customized_colors_global.dart';
-import '../../Components/comp_appBar.dart';
+import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
 import '../../Global/api_service.dart';
@@ -35,9 +35,8 @@ class _ScreenHomeState extends State<ScreenHome> {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: const ComponentFloatingButtonPost(),
-        backgroundColor: CustomizedColors.darkBackground,
         drawer: const ComponentDrawer(),
-        appBar: ComponentAppBar(),
+        appBar: const ComponentAppBar(),
         body: ListView.builder(
           itemCount: postsFollow.length,
           itemBuilder: (BuildContext context, int index) {

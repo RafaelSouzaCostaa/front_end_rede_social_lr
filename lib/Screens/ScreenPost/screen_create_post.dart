@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
-import '../../Components/comp_appBar.dart';
+import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 
@@ -19,8 +19,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomizedColors.darkBackground,
-      appBar: ComponentAppBar(),
+      appBar: const ComponentAppBar(),
       body: Center(
         child: Column(
           children: [

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
-import '../../Components/comp_appBar.dart';
+import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
@@ -31,8 +31,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        backgroundColor: CustomizedColors.darkBackground,
-        appBar: ComponentAppBar(),
+        appBar: const ComponentAppBar(),
         body: Column(children: [
           Flexible(
             child: Container(),

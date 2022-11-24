@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rede_social_lr/Colors/customized_colors_global.dart';
-import 'package:rede_social_lr/Components/comp_appBar.dart';
+import 'package:rede_social_lr/Components/comp_app_bar.dart';
 import 'package:rede_social_lr/Components/comp_drawer.dart';
 
 class Testes extends StatefulWidget {

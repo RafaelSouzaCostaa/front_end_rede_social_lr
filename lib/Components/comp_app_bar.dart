@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Colors/themes.dart';
 
-import '../Colors/customized_colors_global.dart';
-
 class ComponentAppBar extends StatefulWidget implements PreferredSizeWidget {
   const ComponentAppBar({super.key});
 
@@ -15,20 +13,6 @@ class ComponentAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _ComponentAppBarState extends State<ComponentAppBar> {
-  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-
-  // _saveThemeStatus() async {
-  //   SharedPreferences pref = await _prefs;
-  //   pref.setBool('theme', _isLightTheme.value);
-  // }
-
-  // _getThemeStatus() async {
-  //   var _isLight = _prefs.then((SharedPreferences prefs) {
-  //     return prefs.getBool('theme') != null ? prefs.getBool('theme') : true;
-  //   }).obs;
-  //   _isLightTheme.value = await _isLight.value;
-  //   Get.changeThemeMode(_isLightTheme.value ? ThemeMode.light : ThemeMode.dark);
-
   @override
   Widget build(BuildContext context) {
     Themes theme = Get.put(Themes());
@@ -46,20 +30,16 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Icon(
+              theme.isLightTheme.value
+                  ? Icons.wb_sunny_sharp
+                  : Icons.nightlight_round_sharp,
+              color: theme.isLightTheme.value
+                  ? Colors.amber[400]
+                  : Colors.blue[400],
+            ),
             Container(
-              padding: const EdgeInsets.only(left: 15),
-              // child: IconButton(
-              //   icon: theme.isLightTheme.value
-              //       ? Icon(
-              //           Icons.wb_sunny_sharp,
-              //           color: Colors.amber[200],
-              //         )
-              //       : Icon(
-              //           Icons.nightlight_round_sharp,
-              //           color: Colors.blue[200],
-              //         ),
-              //   onPressed: () {},
-              // ),
+              padding: const EdgeInsets.only(right: 5),
               child: Switch(
                   activeTrackColor: Colors.amber[200],
                   activeColor: Colors.amber[400],
@@ -76,7 +56,7 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
                           : ThemeMode.dark,
                     );
                   }),
-            )
+            ),
           ],
         )
       ],
