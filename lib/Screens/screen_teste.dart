@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rede_social_lr/Components/comp_post.dart';
 
 import '../Components/comp_app_bar.dart';
 import '../Components/comp_drawer.dart';
@@ -13,9 +14,14 @@ class Testes extends StatefulWidget {
 class _TestesState extends State<Testes> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      drawer: ComponentDrawer(),
-      appBar: ComponentAppBar(),
+    return SafeArea(
+      child: Scaffold(
+        drawer: const ComponentDrawer(),
+        appBar: const ComponentAppBar(),
+        body: Container(
+          child: ComponentPost(),
+        ),
+      ),
     );
   }
 }

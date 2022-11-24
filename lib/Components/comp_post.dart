@@ -8,8 +8,8 @@ class ComponentPost extends StatefulWidget {
   // String perfilImage;
   // List<String> postImage = new List<String>.empty(growable: true);
   String? postText;
-  String? postUserName;
-  String? postNickName; //nojo
+  String? postUsername;
+  String? postNickname; //nojo
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
@@ -17,8 +17,8 @@ class ComponentPost extends StatefulWidget {
   ComponentPost(
       {super.key,
       this.postText,
-      this.postUserName,
-      this.postNickName,
+      this.postUsername,
+      this.postNickname,
       this.numberOfLikes,
       this.numberOfReposts,
       this.numberOfComments});
@@ -35,40 +35,64 @@ class _ComponentPostState extends State<ComponentPost> {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                radius: 10,
-                backgroundColor: CustomizedColors.pinkBackground,
-                //IMPLEMENTAR trocar foto pelo do perfil quando implementar
-                child: const Icon(Icons.add_a_photo),
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 25, right: 15),
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: CustomizedColors.blueBackground,
+                      //IMPLEMENTAR trocar foto pelo do perfil quando implementar
+                      child: const Icon(
+                        Icons.add_a_photo,
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Column(
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.postUserName} ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: CustomizedColors.greyText,
-                          ),
+                  Row(
+                    //Nome Nickname e opções
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            const TextSpan(
+                              text: "Ablueblue",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Imprima-Regular',
+                                color: Colors.white,
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' @iojfsdhfsd',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: CustomizedColors.greyText,
+                                fontFamily: 'Imprima-Regular',
+                              ),
+                            ),
+                          ],
                         ),
-                        TextSpan(
-                          text: '${widget.postNickName}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            color: CustomizedColors.greyText,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.more_vert),
+                        onPressed: () {},
+                      )
+                    ],
                   ),
-                  Container(),
+                  Container(), //imagens do Post
+                  const Divider(
+                    color: Colors.white30,
+                    thickness: 0.5,
+                  ),
                 ],
               ),
             ],
-          ),
-          Row(),
+          )
         ],
       ),
     );
