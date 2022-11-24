@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Colors/customized_colors_global.dart';
+
+import 'customized_colors_global.dart';
 
 class Themes extends GetxController {
   RxBool isLightTheme = false.obs;
