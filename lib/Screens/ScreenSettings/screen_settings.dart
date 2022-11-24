@@ -19,8 +19,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
     ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
 
     return Scaffold(
-      backgroundColor: CustomizedColors.darkBackground,
-      appBar: ComponentAppBar(),
+      appBar: const ComponentAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

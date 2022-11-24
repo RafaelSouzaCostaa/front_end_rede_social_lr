@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social_lr/Colors/customized_colors_global.dart';
-import 'package:rede_social_lr/Components/comp_app_bar.dart';
-import 'package:rede_social_lr/Components/comp_drawer.dart';
+
+import '../Components/comp_app_bar.dart';
+import '../Components/comp_drawer.dart';
 
 class Testes extends StatefulWidget {
   const Testes({super.key});
@@ -13,8 +13,8 @@ class Testes extends StatefulWidget {
 class _TestesState extends State<Testes> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const ComponentDrawer(),
+    return const Scaffold(
+      drawer: ComponentDrawer(),
       appBar: ComponentAppBar(),
     );
   }

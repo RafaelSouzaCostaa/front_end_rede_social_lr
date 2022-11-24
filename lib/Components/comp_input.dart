@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, must_be_immutable
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -62,7 +62,8 @@ class _ComponentInputState extends State<ComponentInput> {
         ),
 
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           alignLabelWithHint: true,
           hintText: widget.hintText,
           labelText: widget.labelText,
@@ -88,14 +89,14 @@ class _ComponentInputState extends State<ComponentInput> {
                 ),
           //Borda Padrão
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(7)),
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: widget.unfocusedBorderColor ?? Colors.grey.shade600,
               width: 0.45,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(7)),
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: widget.focusedBorderColor ??
                   CustomizedColors.lightGreyBorderColor,
@@ -103,14 +104,14 @@ class _ComponentInputState extends State<ComponentInput> {
             ),
           ),
           //Borda do Validador
-          errorBorder: OutlineInputBorder(
+          errorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: Colors.red,
               width: 0.45,
             ),
           ),
-          focusedErrorBorder: OutlineInputBorder(
+          focusedErrorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7)),
             borderSide: BorderSide(
               color: Colors.red,

@@ -74,7 +74,6 @@ class _ScreenProfileState extends State<ScreenProfile> {
                     : null,
                 expandedHeight: 400,
                 pinned: true,
-                backgroundColor: CustomizedColors.darkBackground,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Column(
                     children: [
@@ -207,7 +206,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                   );
                 },
               ),
-              Text("sdsd"),
+              const Text("sdsd"),
             ],
           ),
         ),
