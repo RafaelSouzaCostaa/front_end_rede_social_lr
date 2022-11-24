@@ -6,22 +6,26 @@ class Themes extends GetxController {
   RxBool isLightTheme = false.obs;
 
   static ThemeData darkTheme = ThemeData(
+    primarySwatch: Colors.blue,
     brightness: Brightness.dark,
-    backgroundColor: CustomizedColors.darkBackground,
+    scaffoldBackgroundColor: CustomizedColors.darkBackground,
     appBarTheme: AppBarTheme(
       backgroundColor: CustomizedColors.darkBackground,
       centerTitle: true,
+      iconTheme: const IconThemeData(color: Colors.white),
     ),
-    primarySwatch: Colors.blue,
+    iconTheme: const IconThemeData(color: Colors.white),
   );
 
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    backgroundColor: Colors.white,
+    primarySwatch: Colors.purple,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       centerTitle: true,
+      iconTheme: IconThemeData(color: Colors.black),
     ),
-    primarySwatch: Colors.purple,
+    iconTheme: const IconThemeData(color: Colors.black),
   );
 }

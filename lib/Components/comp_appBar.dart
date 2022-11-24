@@ -5,7 +5,7 @@ import 'package:rede_social_lr/Colors/themes.dart';
 import '../Colors/customized_colors_global.dart';
 
 class ComponentAppBar extends StatefulWidget implements PreferredSizeWidget {
-  ComponentAppBar({super.key});
+  const ComponentAppBar({super.key});
 
   @override
   State<ComponentAppBar> createState() => _ComponentAppBarState();
@@ -15,10 +15,23 @@ class ComponentAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _ComponentAppBarState extends State<ComponentAppBar> {
+  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  // _saveThemeStatus() async {
+  //   SharedPreferences pref = await _prefs;
+  //   pref.setBool('theme', _isLightTheme.value);
+  // }
+
+  // _getThemeStatus() async {
+  //   var _isLight = _prefs.then((SharedPreferences prefs) {
+  //     return prefs.getBool('theme') != null ? prefs.getBool('theme') : true;
+  //   }).obs;
+  //   _isLightTheme.value = await _isLight.value;
+  //   Get.changeThemeMode(_isLightTheme.value ? ThemeMode.light : ThemeMode.dark);
+
   @override
   Widget build(BuildContext context) {
     Themes theme = Get.put(Themes());
-    bool islightTheme = theme.isLightTheme.value;
 
     return AppBar(
       title: GestureDetector(
@@ -28,7 +41,6 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
         },
       ),
       centerTitle: true,
-      backgroundColor: CustomizedColors.darkBackground,
       automaticallyImplyLeading: true,
       actions: [
         Row(
@@ -36,18 +48,34 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
           children: [
             Container(
               padding: const EdgeInsets.only(left: 15),
-              child: IconButton(
-                icon: islightTheme
-                    ? Icon(
-                        Icons.wb_sunny_sharp,
-                        color: Colors.amber[100],
-                      )
-                    : Icon(
-                        Icons.nightlight_round_sharp,
-                        color: Colors.blue[100],
-                      ),
-                onPressed: () {},
-              ),
+              // child: IconButton(
+              //   icon: theme.isLightTheme.value
+              //       ? Icon(
+              //           Icons.wb_sunny_sharp,
+              //           color: Colors.amber[200],
+              //         )
+              //       : Icon(
+              //           Icons.nightlight_round_sharp,
+              //           color: Colors.blue[200],
+              //         ),
+              //   onPressed: () {},
+              // ),
+              child: Switch(
+                  activeTrackColor: Colors.amber[200],
+                  activeColor: Colors.amber[400],
+                  inactiveTrackColor: Colors.blue[200],
+                  inactiveThumbColor: Colors.blue[400],
+                  value: theme.isLightTheme.value,
+                  onChanged: (x) {
+                    setState(() {
+                      theme.isLightTheme.value = !theme.isLightTheme.value;
+                    });
+                    Get.changeThemeMode(
+                      theme.isLightTheme.value
+                          ? ThemeMode.light
+                          : ThemeMode.dark,
+                    );
+                  }),
             )
           ],
         )
