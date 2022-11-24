@@ -20,7 +20,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
 
     return Scaffold(
       backgroundColor: CustomizedColors.darkBackground,
-      appBar: ComponentAppBar(hasDrawer: false),
+      appBar: ComponentAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

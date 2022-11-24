@@ -37,7 +37,7 @@ class _ScreenHomeState extends State<ScreenHome> {
         floatingActionButton: const ComponentFloatingButtonPost(),
         backgroundColor: CustomizedColors.darkBackground,
         drawer: const ComponentDrawer(),
-        appBar: ComponentAppBar(hasDrawer: false),
+        appBar: ComponentAppBar(),
         body: ListView.builder(
           itemCount: postsFollow.length,
           itemBuilder: (BuildContext context, int index) {

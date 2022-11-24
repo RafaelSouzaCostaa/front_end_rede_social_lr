@@ -32,7 +32,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: CustomizedColors.darkBackground,
-        appBar: ComponentAppBar(hasDrawer: false),
+        appBar: ComponentAppBar(),
         body: Column(children: [
           Flexible(
             child: Container(),

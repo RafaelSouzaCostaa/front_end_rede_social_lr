@@ -29,7 +29,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomizedColors.darkBackground,
-        appBar: ComponentAppBar(hasDrawer: false),
+        appBar: ComponentAppBar(),
         body: Column(
           children: [
             Flexible(

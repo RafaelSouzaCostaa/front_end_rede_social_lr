@@ -20,7 +20,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomizedColors.darkBackground,
-      appBar: ComponentAppBar(hasDrawer: false),
+      appBar: ComponentAppBar(),
       body: Center(
         child: Column(
           children: [

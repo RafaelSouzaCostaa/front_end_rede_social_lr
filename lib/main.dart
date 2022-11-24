@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Colors/themes.dart';
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
 import 'Screens/ScreenPost/screen_create_post.dart';
@@ -14,10 +15,10 @@ void main() {
   runApp(
     GetMaterialApp(
       title: 'RedeSocial',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/login',
+      theme: Themes.lightTheme,
+      darkTheme: Themes.darkTheme,
+      themeMode: ThemeMode.system,
+      initialRoute: '/teste',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
