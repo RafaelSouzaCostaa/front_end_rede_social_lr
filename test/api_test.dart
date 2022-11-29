@@ -5,13 +5,14 @@ import 'package:rede_social_lr/Models/model_profile.dart';
 void main() {
   group("Profile:", () {
     Profile profileCadastro = Profile(
-        name: 'Jose',
-        nickname: 'Joses',
-        email: "jose@jose.com",
-        password: "profilepassword",
-        creationDate: 151513155153);
+      name: 'Teste',
+      nickname: 'teste_prof',
+      email: "teste@gmail.com",
+      password: "profilepassword",
+      creationDate: DateTime.now().millisecondsSinceEpoch,
+    );
     Profile? profile;
-    test('Testando Criação de Profile', () async {
+    test('Criar Perfil', () async {
       var newProfile = await ApiService.createProfile(profileCadastro);
 
       expect(newProfile.name, profileCadastro.name);
@@ -21,21 +22,21 @@ void main() {
       profile = newProfile;
     });
 
-    test("Logando", () async {
+    test("Logar", () async {
       int statusCode = await ApiService.login(
           profileCadastro.email, profileCadastro.password);
 
       expect(statusCode, 200);
     });
 
-    test("Buscar perfil por nickname", () async {
+    test("Buscar Perfil pelo nickname", () async {
       var auxProfile = await ApiService.getProfileByNick(profile!.nickname);
 
       expect(auxProfile.email, profileCadastro.email);
       expect(auxProfile.name, profileCadastro.name);
     });
 
-    test("Deletando Profile", () async {
+    test("Deletar Perfil", () async {
       bool auxProfile = false;
       if (profile != null) {
         auxProfile = await ApiService.deleteProfile(profile!.id!);
