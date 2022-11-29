@@ -19,7 +19,9 @@ class _TestesState extends State<Testes> {
         drawer: const ComponentDrawer(),
         appBar: const ComponentAppBar(),
         body: Container(
-          child: ComponentPost(),
+          child: ComponentPost(
+            postImage: ["aaa", "aaa"],
+          ),
         ),
       ),
     );
