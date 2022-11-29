@@ -125,7 +125,7 @@ class _ComponentPostState extends State<ComponentPost> {
                       )
                     : Container(),
                 //Três imagens
-                //LUIGGI FAZER 3 e 4 
+                //LUIGGI FAZER 3 e 4
                 widget.postImage?.length == 3
                     ? Container(
                         color: Colors.pink,
