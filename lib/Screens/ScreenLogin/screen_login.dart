@@ -28,9 +28,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   @override
   Widget build(BuildContext context) {
-    Token globalToken = Get.put(Token());
-    ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
-
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
