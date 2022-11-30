@@ -26,53 +26,53 @@ class _ScreenHomeState extends State<ScreenHome> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
-    buscarPosts() async {
-      postsFollow = await ApiService.getAllPostByFollow();
-      setState(() {});
-    }
-
-    buscarPosts();
-
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: const ComponentFloatingButtonPost(),
-        drawer: const ComponentDrawer(),
-        appBar: const ComponentAppBar(),
-        body: ListView.builder(
-          itemCount: postsFollow.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Column(
-              children: [
-                Row(children: [
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  CircleAvatar(
-                      backgroundColor: CustomizedColors.blueText,
-                      child: const Icon(Icons.add_a_photo)),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Text(postsFollow[index].nameProfile.toString()),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Text("@${postsFollow[index].nickname}"),
-                ]),
-                SizedBox(
-                  width: width * 0.90,
-                  child: Image.network(postsFollow[index].postMedia[0]),
-                ),
-                Text(
-                  postsFollow[index].description,
-                  style: const TextStyle(color: Colors.white),
-                ),
-                const SizedBox(height: 20)
-              ],
-            );
-          },
-        ),
-      ),
+          floatingActionButton: const ComponentFloatingButtonPost(),
+          drawer: const ComponentDrawer(),
+          appBar: const ComponentAppBar(),
+          body: FutureBuilder(
+              future: ApiService.getAllPostByFollow(),
+              builder: (context, listPost) {
+                return ListView.builder(
+                  itemCount: listPost.data == null ? 0 : listPost.data!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: [
+                        Row(children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          CircleAvatar(
+                              backgroundColor: CustomizedColors.blueText,
+                              child: const Icon(Icons.add_a_photo)),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(listPost.data!
+                              .elementAt(index)
+                              .nameProfile
+                              .toString()),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text("@${listPost.data!.elementAt(index).nickname}"),
+                        ]),
+                        SizedBox(
+                          width: width * 0.90,
+                          child: Image.network(
+                              listPost.data!.elementAt(index).postMedia[0]),
+                        ),
+                        Text(
+                          listPost.data!.elementAt(index).description,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        const SizedBox(height: 20)
+                      ],
+                    );
+                  },
+                );
+              })),
     );
   }
 }
