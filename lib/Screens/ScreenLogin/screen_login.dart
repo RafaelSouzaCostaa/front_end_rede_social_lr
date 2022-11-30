@@ -21,7 +21,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
 
   bool _visiblePassword = false;
