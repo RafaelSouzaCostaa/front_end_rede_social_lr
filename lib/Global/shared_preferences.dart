@@ -30,16 +30,10 @@ class InstanceSharedPreference {
     pref.setBool('theme', themeData);
   }
 
-  Future<bool> getThemeStatus() async {
-    bool themeData;
-    var isLight = prefs.then((SharedPreferences prefs) {
+  Future<bool> getThemeStatus() {
+    Future<bool> isLight = prefs.then((SharedPreferences prefs) {
       return prefs.getBool('theme') ?? true;
-    }).obs;
-    // theme.isLightTheme.value = await isLight.value;
-    // Get.changeThemeMode(
-    //   theme.isLightTheme.value ? ThemeMode.light : ThemeMode.dark,
-    // );
-    themeData = await isLight.value;
-    return themeData;
+    });
+    return isLight;
   }
 }

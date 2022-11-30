@@ -18,22 +18,27 @@ class _ComponentThemeButtonState extends State<ComponentThemeButton> {
 
   @override
   Widget build(BuildContext context) {
-    bool themeData = true;
-    return IconButton(
-      icon: Icon(
-        themeData ? Icons.wb_sunny_sharp : Icons.nightlight_round_sharp,
-        color: theme.isLightTheme.value ? Colors.amber[400] : Colors.blue[400],
-      ),
-      onPressed: () {
-        setState(() {
-          theme.isLightTheme.value = !theme.isLightTheme.value;
-          bool themeData = sharedPreferences.getThemeStatus() as bool;
-          sharedPreferences.saveThemeStatus(!themeData);
-
-          Get.changeThemeMode(
-            theme.isLightTheme.value ? ThemeMode.light : ThemeMode.dark,
-          );
-        });
+    return FutureBuilder(
+      future: sharedPreferences.getThemeStatus(),
+      builder: (context, themeData) {
+        return IconButton(
+          icon: Icon(
+            themeData.data!
+                ? Icons.nightlight_round_sharp
+                : Icons.wb_sunny_sharp,
+            color:
+                theme.isLightTheme.value ? Colors.amber[400] : Colors.blue[400],
+          ),
+          onPressed: () {
+            setState(() {
+              bool aux = themeData.data!;
+              sharedPreferences.saveThemeStatus(!aux);
+              Get.changeThemeMode(
+                aux ? ThemeMode.light : ThemeMode.dark,
+              );
+            });
+          },
+        );
       },
     );
   }
