@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
 import '../../Components/comp_post.dart';
 import '../../Global/api_service.dart';
-import '../../Models/model_post.dart';
 
 class ScreenHome extends StatefulWidget {
   const ScreenHome({super.key});
@@ -18,8 +16,6 @@ class ScreenHome extends StatefulWidget {
 class _ScreenHomeState extends State<ScreenHome> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child: Scaffold(
         floatingActionButton: const ComponentFloatingButtonPost(),
@@ -33,32 +29,18 @@ class _ScreenHomeState extends State<ScreenHome> {
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
-                    Row(children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      CircleAvatar(
-                          backgroundColor: CustomizedColors.blueText,
-                          child: const Icon(Icons.add_a_photo)),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Text(listPost.data!.elementAt(index).name.toString()),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Text("@${listPost.data!.elementAt(index).nickname}"),
-                    ]),
-                    SizedBox(
-                      width: width * 0.90,
-                      child: Image.network(
-                          listPost.data!.elementAt(index).postMedia[0]),
-                    ),
-                    Text(
-                      listPost.data!.elementAt(index).description,
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                    const SizedBox(height: 20)
+                    Row(
+                      children: [
+                        ComponentPost(
+                          postUsername:
+                              listPost.data!.elementAt(index).name.toString(),
+                          postNickname:
+                              "@${listPost.data!.elementAt(index).nickname}",
+                          postDescription:
+                              listPost.data!.elementAt(index).description,
+                        )
+                      ],
+                    )
                   ],
                 );
               },
