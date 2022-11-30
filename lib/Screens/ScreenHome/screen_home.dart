@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
@@ -41,6 +42,22 @@ class _ScreenHomeState extends State<ScreenHome> {
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
+                Row(children: [
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  CircleAvatar(
+                      backgroundColor: CustomizedColors.blueText,
+                      child: const Icon(Icons.add_a_photo)),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text(postsFollow[index].nameProfile.toString()),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text("@${postsFollow[index].nickname}"),
+                ]),
                 SizedBox(
                   width: width * 0.90,
                   child: Image.network(postsFollow[index].postMedia[0]),
