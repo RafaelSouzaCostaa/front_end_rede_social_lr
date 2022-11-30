@@ -64,10 +64,13 @@ class _ComponentPostState extends State<ComponentPost> {
                           fontSize: 18.0,
                           text: widget.postUsername,
                         ),
-                        ComponentText(
-                            fontSize: 14.0,
-                            text: widget.postNickname,
-                            color: Colors.grey),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2),
+                          child: ComponentText(
+                              fontSize: 14.0,
+                              text: widget.postNickname,
+                              color: Colors.grey),
+                        ),
                       ],
                     ),
                     IconButton(
@@ -80,58 +83,62 @@ class _ComponentPostState extends State<ComponentPost> {
             ],
           ),
           //Uma imagem
-          Container(
-            padding: const EdgeInsets.only(left: 60),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                widget.postImage?.length == 1
-                    ? Container(
-                        color: Colors.pink,
-                        width: Get.width * 0.75,
-                        height: 300,
-                      )
-                    : Container(),
-                //Duas imagens
-                widget.postImage?.length == 2
-                    ? Row(
-                        children: [
-                          Container(
-                            color: Colors.green,
-                            width: Get.width * 0.38,
-                            height: 300,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            color: Colors.blue,
-                            width: Get.width * 0.38,
-                            height: 300,
-                          )
-                        ],
-                      )
-                    : Container(),
-                //Três imagens
-                //LUIGGI FAZER 3 e 4
-                widget.postImage?.length == 3
-                    ? Container(
-                        color: Colors.pink,
-                        width: Get.width * 0.8,
-                        height: 300,
-                      )
-                    : Container(),
-                //Quatro imagens
-                widget.postImage?.length == 4
-                    ? Container(
-                        color: Colors.pink,
-                        width: Get.width * 0.8,
-                        height: 300,
-                      )
-                    : Container(),
-              ],
+          SizedBox(
+            width: Get.width * 0.8,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 5, bottom: 10),
+                    alignment: Alignment.centerLeft,
+                    child: Text(widget.postDescription!),
+                  ),
+                  widget.postImage?.length == 1
+                      ? SizedBox(
+                          child: Image.network(widget.postImage!.elementAt(0)),
+                        )
+                      : Container(),
+                  //Duas imagens
+                  widget.postImage?.length == 2
+                      ? Row(
+                          children: [
+                            Container(
+                              color: Colors.green,
+                              width: Get.width * 0.38,
+                              height: 300,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Container(
+                              color: Colors.blue,
+                              width: Get.width * 0.38,
+                              height: 300,
+                            )
+                          ],
+                        )
+                      : Container(),
+                  //Três imagens
+                  //LUIGGI FAZER 3 e 4
+                  widget.postImage?.length == 3
+                      ? SizedBox(
+                          width: Get.width * 0.8,
+                          height: 300,
+                        )
+                      : Container(),
+                  //Quatro imagens
+                  widget.postImage?.length == 4
+                      ? SizedBox(
+                          width: Get.width * 0.8,
+                          height: 300,
+                        )
+                      : Container()
+                ],
+              ),
             ),
-          )
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );
