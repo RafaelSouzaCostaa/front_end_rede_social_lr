@@ -44,7 +44,9 @@ class _ScreenHomeState extends State<ScreenHome> {
             return Column(
               children: [
                 ComponentPost(
+                  postUsername: followingUsersPosts[index].name,
                   postNickname: followingUsersPosts[index].nickname,
+                  postDescription: followingUsersPosts[index].description,
                 )
               ],
             );

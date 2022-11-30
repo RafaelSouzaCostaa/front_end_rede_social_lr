@@ -21,6 +21,9 @@ class _TestesState extends State<Testes> {
         body: Container(
           child: ComponentPost(
             postImage: ["aaa", "aaa"],
+            postNickname: "a",
+            postDescription: "a",
+            postUsername: "a",
           ),
         ),
       ),
