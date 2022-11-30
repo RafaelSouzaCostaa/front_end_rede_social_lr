@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Global/languages.dart';
 
 import 'Colors/themes.dart';
 import 'Screens/ScreenHome/screen_home.dart';
@@ -18,6 +19,9 @@ void main() {
       theme: Themes.lightTheme,
       darkTheme: Themes.darkTheme,
       themeMode: ThemeMode.system,
+      translations: Languages(),
+      locale: Get.deviceLocale,
+      fallbackLocale: const Locale('pt', 'BR'),
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => const ScreenSplash(),

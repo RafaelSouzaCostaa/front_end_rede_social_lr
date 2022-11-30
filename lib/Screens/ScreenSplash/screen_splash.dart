@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Colors/pattern_colors.dart';
-import '../../Colors/themes.dart';
-import '../../Global/shared_preferences.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({Key? key}) : super(key: key);
