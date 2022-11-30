@@ -4,17 +4,7 @@ class APIConstants {
   //endpoints
   static String login = '/login/';
 
-  static String createPost = '/post/create';
-  static String getAllPosts = '/post/getAll';
-  static String getAllByFollow = '/post/getAllByFollow';
-  static String getAllByProfileId(id) {
-    if (id != null) {
-      return '/post/getAllByProfileId/$id';
-    } else {
-      return '/post/getAllByProfileId/null';
-    }
-  }
-
+  //Profile
   static String createProfile = '/profile/create';
   static String getAllProfiles = '/profile/getAll';
   static String getProfileByToken = '/profile/getProfileByToken';
@@ -35,6 +25,20 @@ class APIConstants {
     return '/profile/setFollow/$id';
   }
 
+  //Posts
+  static String createPost = '/post/create';
+  static String getAllPosts = '/post/getAll';
+  static String getAllByFollow = '/post/getAllByFollow';
+
+  static String getAllByProfileId(id) {
+    if (id != null) {
+      return '/post/getAllByProfileId/$id';
+    } else {
+      return '/post/getAllByProfileId/null';
+    }
+  }
+
+  //Comments
   static String createComment = '/comment/create';
   static String createSubComment = '/comment/createSubComment';
 }

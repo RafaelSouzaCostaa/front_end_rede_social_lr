@@ -1,5 +1,5 @@
 class Post {
-  String? nameProfile;
+  String? name;
   String? nickname;
   late String profileObjectId;
   late List postMedia = [];
@@ -21,7 +21,7 @@ class Post {
   });
 
   Post.fromMap(Map map) {
-    nameProfile = map["nameProfile"];
+    name = map["name"];
     postDate = map["postDate"];
     nickname = map["nickname"];
     profileObjectId = map["profileObjectId"];
@@ -35,7 +35,7 @@ class Post {
   }
 
   Map<String, dynamic> toMap() => {
-        "nameProfile": nameProfile,
+        "name": name,
         "profileObjectId": profileObjectId,
         "nickname": nickname,
         "postMedia": postMedia,

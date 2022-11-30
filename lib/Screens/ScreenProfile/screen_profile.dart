@@ -25,7 +25,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
   @override
   initState() {
     getMyPosts() async {
-      auxPost = await ApiService.getAllByProfileId();
+      auxPost = await ApiService.getAllPostsByProfileId();
     }
 
     getMyPosts();
