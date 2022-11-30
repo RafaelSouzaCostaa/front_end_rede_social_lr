@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -88,14 +89,14 @@ class ApiService {
       },
     );
     if (response.statusCode == 200) {
-      List<Profile> profiles = List<Profile>.empty(growable: true);
-      var auxResponse = jsonDecode(response.body);
+      List<Profile> profilesJson = List<Profile>.empty(growable: true);
+      var profilesMap = jsonDecode(response.body);
 
-      for (var profile in auxResponse) {
-        profiles.add(Profile.fromMap(profile));
+      for (var profile in profilesMap) {
+        profilesJson.add(Profile.fromMap(profile));
       }
 
-      return profiles;
+      return profilesJson;
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
@@ -133,26 +134,20 @@ class ApiService {
     }
   }
 
-  static Future<Post> createPost(
-      String description, List<String> urlsImage) async {
-    var auxURLs = [];
-
-    for (var element in urlsImage) {
-      {
-        auxURLs.add(element);
-      }
-      ;
-    }
-
+  //Post
+  static Future<Post> createPost(String description, List<String> media) async {
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.createPost),
       headers: _headerWithTokenWithTime,
-      body: jsonEncode(<String, dynamic>{
-        'postMedia': auxURLs,
-        'postDate': DateTime.now().millisecondsSinceEpoch.toString(),
-        'description': description
-      }),
+      body: jsonEncode(
+        <String, dynamic>{
+          'postMedia': media,
+          'postDate': DateTime.now().millisecondsSinceEpoch.toString(),
+          'description': description
+        },
+      ),
     );
+
     if (response.statusCode == 200) {
       return Post.fromMap(jsonDecode(response.body));
     } else {
@@ -166,11 +161,12 @@ class ApiService {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
         headers: _headerWithTokenWithTime);
+
     if (response.statusCode == 200) {
-      List<Post> posts = List<Post>.empty(growable: true);
-      var auxResponse = jsonDecode(response.body);
-      auxResponse.forEach((post) => {posts.add(Post.fromMap(post))});
-      return posts;
+      List<Post> postsJson = List<Post>.empty(growable: true);
+      var postsMap = jsonDecode(response.body);
+      postsMap.forEach((post) => {postsJson.add(Post.fromMap(post))});
+      return postsJson;
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
@@ -178,16 +174,17 @@ class ApiService {
     }
   }
 
-  //LUIGGI esse aqui busca todos os posts das pessoas que eu sigo
   static Future<List<Post>> getAllPostByFollow() async {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllByFollow),
         headers: _headerWithTokenWithTime);
+
     if (response.statusCode == 200) {
-      List<Post> posts = List<Post>.empty(growable: true);
-      var auxResponse = jsonDecode(response.body);
-      auxResponse.forEach((post) => {posts.add(Post.fromMap(post))});
-      return posts;
+      var postsMap = jsonDecode(response.body);
+      List<Post> postsJson = List<Post>.empty(growable: true);
+
+      postsMap.forEach((post) => {postsJson.add(Post.fromMap(post))});
+      return postsJson;
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
@@ -195,16 +192,17 @@ class ApiService {
     }
   }
 
-//LUIGGI esse aqui busca os posts de uma pessoa especifica por ID, caso passe nada ele busca o meus posts
-  static Future<List<Post>> getAllByProfileId({String? id}) async {
+  static Future<List<Post>> getAllPostsByProfileId({String? id}) async {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllByProfileId(id)),
         headers: _headerWithTokenWithTime);
+
     if (response.statusCode == 200) {
-      List<Post> posts = List<Post>.empty(growable: true);
-      var auxResponse = jsonDecode(response.body);
-      auxResponse.forEach((post) => {posts.add(Post.fromMap(post))});
-      return posts;
+      var postsMap = jsonDecode(response.body);
+      List<Post> postsJson = List<Post>.empty(growable: true);
+
+      postsMap.forEach((post) => {postsJson.add(Post.fromMap(post))});
+      return postsJson;
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");

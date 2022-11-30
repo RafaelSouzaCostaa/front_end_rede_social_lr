@@ -4,6 +4,7 @@ import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
+import '../../Components/comp_post.dart';
 import '../../Global/api_service.dart';
 import '../../Models/model_post.dart';
 
@@ -15,11 +16,17 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
-  List<Post> postsFollow = List.empty(growable: true);
+  List<Post> followingUsersPosts = List.empty(growable: true);
 
   @override
   initState() {
     super.initState();
+    buscarPosts();
+  }
+
+  buscarPosts() async {
+    followingUsersPosts = await ApiService.getAllPostByFollow();
+    setState(() {});
   }
 
   @override
@@ -49,10 +56,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                           const SizedBox(
                             width: 20,
                           ),
-                          Text(listPost.data!
-                              .elementAt(index)
-                              .nameProfile
-                              .toString()),
+                          Text(listPost.data!.elementAt(index).name.toString()),
                           const SizedBox(
                             width: 20,
                           ),
