@@ -9,18 +9,18 @@ import '../Colors/customized_colors_global.dart';
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
   List<String>? postImage = List<String>.empty(growable: true);
-  String? postText;
+  String? postDescription;
   String? postUsername;
-  String? postNickname; //nojo
+  String? postNickname;
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
 
   ComponentPost({
     super.key,
-    this.postText,
-    this.postUsername,
-    this.postNickname,
+    required this.postDescription,
+    required this.postUsername,
+    required this.postNickname,
     this.numberOfLikes,
     this.numberOfReposts,
     this.numberOfComments,
@@ -67,14 +67,12 @@ class _ComponentPostState extends State<ComponentPost> {
                           children: [
                             Flexible(
                               child: ComponentText(
-                                //profileAuthenticated.profileAuthentic.value.name
-                                text: "@asasaasaaaa",
+                                text: widget.postUsername,
                               ),
                             ),
                             Flexible(
                               child: ComponentText(
-                                  //profileAuthenticated.profileAuthentic.value.name
-                                  text: "@asasas",
+                                  text: widget.postNickname,
                                   color: Colors.grey),
                             ),
                           ],
