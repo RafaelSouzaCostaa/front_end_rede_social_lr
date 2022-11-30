@@ -28,9 +28,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   @override
   Widget build(BuildContext context) {
-    Token globalToken = Get.put(Token());
-    ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
-
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -69,7 +66,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             Icons.visibility_off_sharp,
                             // size: 23,
                           ),
-                    color: Colors.white70,
+                    color: Colors.grey,
                     // style: const ButtonStyle(),
                     onPressed: () {
                       setState(
@@ -83,37 +80,37 @@ class _ScreenLoginState extends State<ScreenLogin> {
               ],
             ),
           ),
-          Row(
-            children: [
-              Container(
-                width: Get.width,
-                padding: const EdgeInsets.only(top: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Não tem uma conta? ",
-                      style: TextStyle(
-                          color: CustomizedColors.greyText,
-                          fontFamily: 'Imprima-Regular'),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          foregroundColor: CustomizedColors.darkBackground),
-                      onPressed: () async {
-                        await Get.toNamed("/cadastro");
-                      },
-                      child: Text(
-                        "Cadastre-se",
-                        style: TextStyle(
-                            color: CustomizedColors.blueText,
-                            fontFamily: 'Imprima-Regular'),
+          Flexible(
+            child: Row(
+              children: [
+                Container(
+                  width: Get.width,
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Não tem uma conta? ",
+                        style: TextStyle(fontFamily: 'Imprima-Regular'),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                      TextButton(
+                        style: TextButton.styleFrom(
+                            foregroundColor: CustomizedColors.darkBackground),
+                        onPressed: () async {
+                          await Get.toNamed("/cadastro");
+                        },
+                        child: Text(
+                          "Cadastre-se",
+                          style: TextStyle(
+                              color: CustomizedColors.blueText,
+                              fontFamily: 'Imprima-Regular'),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
           Flexible(
             child: Container(),
@@ -128,11 +125,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   //Texto
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Esqueceu sua senha?",
-                      style: TextStyle(
-                          color: CustomizedColors.greyText,
-                          fontFamily: 'Imprima-Regular'),
+                      style: TextStyle(fontFamily: 'Imprima-Regular'),
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
@@ -172,7 +167,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           "Insira dados validos",
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: const Color.fromARGB(255, 138, 8, 8),
-                          colorText: Colors.white,
+                          colorText: Colors.black,
                           borderRadius: 2,
                           duration: const Duration(milliseconds: 3000),
                           isDismissible: true,

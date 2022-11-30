@@ -56,7 +56,6 @@ class _ComponentInputState extends State<ComponentInput> {
         maxLines: widget.obscureText ? 1 : widget.maxLines,
         //Style Text
         style: TextStyle(
-          color: Colors.white,
           fontFamily: 'Imprima-Regular',
           fontSize: widget.fontSize,
         ),
@@ -70,11 +69,9 @@ class _ComponentInputState extends State<ComponentInput> {
           //Style
           labelStyle: TextStyle(
             fontSize: widget.fontSize,
-            color: Colors.white70,
           ),
           hintStyle: TextStyle(
             fontSize: widget.fontSize,
-            color: Colors.white60,
           ),
           counterStyle: TextStyle(
             color: widget.maxLenght! >= 100
