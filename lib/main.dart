@@ -18,7 +18,7 @@ void main() {
       theme: Themes.lightTheme,
       darkTheme: Themes.darkTheme,
       themeMode: ThemeMode.system,
-      initialRoute: '/teste',
+      initialRoute: '/splash',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),

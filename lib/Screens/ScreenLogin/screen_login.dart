@@ -7,6 +7,7 @@ import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
+import '../../Global/shared_preferences.dart';
 import '../../Global/token.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -20,6 +21,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
 
   bool _visiblePassword = false;
 
@@ -160,6 +163,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
                       if (statusCode == 200) {
                         if (await ApiService.getProfileData()) {
+                          sharedPreferences.saveTokenStatus();
                           Get.toNamed("/home");
                         }
                       } else {
