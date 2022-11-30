@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Components/comp_theme_button.dart';
 
 import '../Colors/themes.dart';
 import '../Global/shared_preferences.dart';
@@ -39,8 +38,22 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
-            ComponentThemeButton(),
+          children: [
+            Obx(() => Switch(
+                activeColor: Colors.amber[400],
+                activeTrackColor: Colors.amber[200],
+                inactiveThumbColor: Colors.blue[400],
+                inactiveTrackColor: Colors.blue[200],
+                value: theme.isLightTheme.value,
+                onChanged: (x) {
+                  setState(() {
+                    theme.isLightTheme.value = x;
+                  });
+                  Get.changeThemeMode(
+                    theme.isLightTheme.value ? ThemeMode.light : ThemeMode.dark,
+                  );
+                  sharedPreferences.saveThemeStatus();
+                })),
           ],
         )
       ],
