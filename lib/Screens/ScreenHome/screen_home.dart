@@ -19,18 +19,19 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   @override
   initState() {
-    buscarPosts() async {
-      postsFollow = await ApiService.getAllPostByFollow();
-    }
-
-    buscarPosts();
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+
+    buscarPosts() async {
+      postsFollow = await ApiService.getAllPostByFollow();
+      setState(() {});
+    }
+
+    buscarPosts();
 
     return SafeArea(
       child: Scaffold(
