@@ -119,7 +119,7 @@ class _ComponentInputState extends State<ComponentInput> {
         validator: widget.validator == true
             ? (value) {
                 if (value!.isEmpty) {
-                  return "Campo Obrigatorio";
+                  return 'required'.tr;
                 }
                 return null;
               }

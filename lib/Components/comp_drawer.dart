@@ -65,7 +65,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           child: SingleChildScrollView(
             child: Column(children: [
               ComponentTextButton(
-                text: "Perfil",
+                text: 'profile'.tr,
                 icon: Icons.person,
                 mainAxisAlignment: MainAxisAlignment.start,
                 onPressed: () {

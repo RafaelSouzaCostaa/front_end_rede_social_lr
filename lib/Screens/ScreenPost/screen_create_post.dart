@@ -47,7 +47,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
             Container(
               padding: const EdgeInsets.only(top: 10),
               child: ComponentInput(
-                hintText: "Alguma fofoca nova?",
+                hintText: 'anygossip'.tr,
                 controller: _textController,
                 focusedBorderColor: Colors.transparent,
                 unfocusedBorderColor: Colors.transparent,

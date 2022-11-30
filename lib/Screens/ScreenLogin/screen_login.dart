@@ -40,7 +40,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
             child: Column(
               children: [
                 ComponentInput(
-                  labelText: 'Usuario',
+                  labelText: 'user'.tr,
                   controller: _userController,
                   validator: true,
                 ),
@@ -50,7 +50,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ComponentInput(
                   //Senha
                   obscureText: !_visiblePassword,
-                  labelText: 'Senha',
+                  labelText: 'password'.tr,
                   controller: _passwordController,
                   validator: true,
                   suffixIcon: IconButton(
@@ -88,9 +88,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Não tem uma conta? ",
-                        style: TextStyle(fontFamily: 'Imprima-Regular'),
+                      Text(
+                        'nullaccount'.tr,
+                        style: const TextStyle(fontFamily: 'Imprima-Regular'),
                       ),
                       TextButton(
                         style: TextButton.styleFrom(
@@ -99,7 +99,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           await Get.toNamed("/cadastro");
                         },
                         child: Text(
-                          "Cadastre-se",
+                          'register'.tr,
                           style: TextStyle(
                               color: CustomizedColors.blueText,
                               fontFamily: 'Imprima-Regular'),
@@ -124,9 +124,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   //Texto
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Esqueceu sua senha?",
-                      style: TextStyle(fontFamily: 'Imprima-Regular'),
+                    Text(
+                      'forgotpassword'.tr,
+                      style: const TextStyle(fontFamily: 'Imprima-Regular'),
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
@@ -136,7 +136,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         //IMPLEMENTAR Navigator para pagina de trocar senha
                       },
                       child: Text(
-                        "Recuperar",
+                        'recover'.tr,
                         style: TextStyle(
                             color: CustomizedColors.blueText,
                             fontFamily: 'Imprima-Regular'),
@@ -145,7 +145,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   ],
                 ),
                 ComponentButton(
-                  text: "Login",
+                  text: 'login'.tr,
                   width: 20,
                   height: 6,
                   onPressed: () async {
@@ -162,8 +162,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         }
                       } else {
                         Get.snackbar(
-                          "Erro ao fazer login",
-                          "Insira dados validos",
+                          'loginError'.tr,
+                          'validData'.tr,
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: const Color.fromARGB(255, 138, 8, 8),
                           colorText: Colors.black,

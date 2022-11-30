@@ -43,25 +43,25 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                   child: Column(
                     children: [
                       ComponentInput(
-                        labelText: 'Usuario',
+                        labelText: 'user'.tr,
                         controller: _nameController,
                         validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: 'Email',
+                        labelText: "Email",
                         controller: _emailController,
                         validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: '@nickname',
+                        labelText: '@${'nickname'.tr}',
                         controller: _nicknameController,
                         validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
-                        labelText: 'Senha',
+                        labelText: 'password'.tr,
                         controller: _passwordController,
                         validator: true,
                         suffixIcon: IconButton(
@@ -103,7 +103,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Já tem uma Conta?",
+                        'alreadyhaveaccount'.tr,
                         style: TextStyle(
                             color: CustomizedColors.greyText,
                             fontFamily: 'Imprima-Regular'),
@@ -116,7 +116,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                           await Get.toNamed("/login");
                         },
                         child: Text(
-                          "Login",
+                          'login'.tr,
                           style: TextStyle(
                               color: CustomizedColors.blueText,
                               fontFamily: 'Imprima-Regular'),
@@ -127,7 +127,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                   Container(
                     padding: const EdgeInsets.only(left: 5),
                     child: ComponentButton(
-                      text: "Cadastro",
+                      text: 'register'.tr,
                       width: 25,
                       height: 6,
                       onPressed: () async {

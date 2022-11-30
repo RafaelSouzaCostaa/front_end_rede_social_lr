@@ -25,7 +25,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
             Column(
               children: [
                 ComponentTextButton(
-                  text: "Alterar Nome",
+                  text: "${'change'.tr} ${'name'.tr}",
                   icon: Icons.person,
                   onPressed: () async {
                     await Get.toNamed("/login");
@@ -54,7 +54,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               children: [
                 ComponentTextButton(
                   icon: Icons.alternate_email,
-                  text: "Alterar Apelido",
+                  text: "${'change'.tr} ${'nickname'.tr}",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
@@ -82,7 +82,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               children: [
                 ComponentTextButton(
                   icon: Icons.mail,
-                  text: "Alterar Email",
+                  text: "${'change'.tr} Email",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
@@ -110,7 +110,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               children: [
                 ComponentTextButton(
                   icon: Icons.key,
-                  text: "Alterar Senha",
+                  text: "${'change'.tr} ${'password'.tr}",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
@@ -121,7 +121,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               height: Get.height * 0.03,
             ),
             ComponentTextButton(
-              text: "Sair",
+              text: 'logout'.tr,
               icon: Icons.logout,
               iconColor: Colors.red,
               textColor: Colors.red,

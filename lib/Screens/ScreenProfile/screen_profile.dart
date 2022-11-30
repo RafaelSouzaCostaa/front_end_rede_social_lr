@@ -160,11 +160,11 @@ class _ScreenProfileState extends State<ScreenProfile> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Seguindo: $numberfollowing",
+                              "$numberfollowing ${'following'.tr}",
                               style: const TextStyle(color: Colors.white),
                             ),
                             Text(
-                              "Seguidores: $numberFollowers",
+                              "$numberFollowers ${'followers'.tr}",
                               style: const TextStyle(color: Colors.white),
                             )
                           ],
@@ -177,9 +177,9 @@ class _ScreenProfileState extends State<ScreenProfile> {
                   indicatorColor: CustomizedColors.blueBackground,
                   labelColor: CustomizedColors.blueBackground,
                   unselectedLabelColor: CustomizedColors.greyText,
-                  tabs: const [
-                    Tab(text: "Postagens"),
-                    Tab(text: "Curtidas"),
+                  tabs: [
+                    Tab(text: 'posts'.tr),
+                    Tab(text: 'likes'.tr),
                   ],
                 ),
               ),
