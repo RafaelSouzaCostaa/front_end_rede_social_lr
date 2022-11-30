@@ -10,6 +10,7 @@ class InstanceSharedPreference {
   Token token = Get.put(Token());
   Themes theme = Get.put(Themes());
 
+  //Token
   saveTokenStatus() async {
     SharedPreferences pref = await prefs;
     pref.setString('token', token.token.value);
@@ -17,7 +18,6 @@ class InstanceSharedPreference {
 
   getToken() async {
     var savedToken = prefs.then((SharedPreferences prefs) {
-      //se tiver vazio retorna tema claro, se não retorna o tema
       return prefs.getString('token') ?? "";
     }).obs;
     token.token.value = savedToken.value.toString();

@@ -14,6 +14,7 @@ class Themes extends GetxController {
       backgroundColor: CustomizedColors.darkBackground,
       centerTitle: true,
       iconTheme: const IconThemeData(color: Colors.white),
+      elevation: 0.5,
     ),
     iconTheme: const IconThemeData(color: Colors.white),
   );
@@ -26,6 +27,7 @@ class Themes extends GetxController {
       backgroundColor: Colors.white,
       centerTitle: true,
       iconTheme: IconThemeData(color: Colors.black),
+      elevation: 0.5,
     ),
     iconTheme: const IconThemeData(color: Colors.black),
   );
