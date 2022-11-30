@@ -42,7 +42,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               style: const TextStyle(
                   fontSize: 18,
                   fontFamily: 'Imprima-Regular',
-                  color: Colors.white),
+                  color: Colors.black),
             ),
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
@@ -52,7 +52,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
-                    color: Colors.white70),
+                    color: Colors.grey),
               ),
             ),
             const Divider(

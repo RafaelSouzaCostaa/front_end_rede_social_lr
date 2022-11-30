@@ -74,7 +74,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                               : const Icon(
                                   Icons.visibility_off_sharp,
                                 ),
-                          color: Colors.white70,
+                          color: Colors.grey,
                           onPressed: () {
                             setState(
                               () {
