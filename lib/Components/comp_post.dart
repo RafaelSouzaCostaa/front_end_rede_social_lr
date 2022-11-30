@@ -48,7 +48,7 @@ class _ComponentPostState extends State<ComponentPost> {
                   //IMPLEMENTAR trocar foto pelo do perfil quando implementar
                   child: const Icon(
                     Icons.add_a_photo,
-                    size: 15,
+                    size: 18,
                   ),
                 ),
               ),
@@ -57,19 +57,17 @@ class _ComponentPostState extends State<ComponentPost> {
                   //Nome Nickname e opções
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: ComponentText(
-                            text: widget.postUsername,
-                          ),
+                        ComponentText(
+                          fontSize: 18.0,
+                          text: widget.postUsername,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: ComponentText(
-                              text: widget.postNickname, color: Colors.grey),
-                        ),
+                        ComponentText(
+                            fontSize: 14.0,
+                            text: widget.postNickname,
+                            color: Colors.grey),
                       ],
                     ),
                     IconButton(
