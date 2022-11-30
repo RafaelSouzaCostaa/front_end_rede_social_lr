@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_ftbutton_post.dart';
@@ -31,8 +30,6 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child: Scaffold(
         floatingActionButton: const ComponentFloatingButtonPost(),
