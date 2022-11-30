@@ -38,7 +38,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                               "@${listPost.data!.elementAt(index).nickname}",
                           postDescription:
                               listPost.data!.elementAt(index).description,
-                          //LUIGGI listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
+                          //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
                         )
                       ],
                     )
