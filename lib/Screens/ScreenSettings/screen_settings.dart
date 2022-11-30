@@ -39,7 +39,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                       Text(
                         profileAuthenticated.profileAuthentic.value.name,
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.grey,
                         ),
                       ),
                     ],
@@ -67,7 +67,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                       Text(
                         "@${profileAuthenticated.profileAuthentic.value.nickname}",
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.grey,
                         ),
                       ),
                     ],
@@ -95,7 +95,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                       Text(
                         profileAuthenticated.profileAuthentic.value.email,
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.grey,
                         ),
                       ),
                     ],

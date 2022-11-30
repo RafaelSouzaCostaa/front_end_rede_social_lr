@@ -119,7 +119,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         child: Text(
                           profileAuthenticated.profileAuthentic.value.name,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 17,
                             fontFamily: 'Imprima-Regular',
                           ),
@@ -131,7 +131,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         child: Text(
                           "@${profileAuthenticated.profileAuthentic.value.nickname}",
                           style: const TextStyle(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             fontSize: 14,
                             fontFamily: 'Imprima-Regular',
                           ),
@@ -146,7 +146,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                               .profileAuthentic.value.description
                               .toString(),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 16,
                             fontFamily: 'Imprima-Regular',
                           ),
@@ -161,11 +161,11 @@ class _ScreenProfileState extends State<ScreenProfile> {
                           children: [
                             Text(
                               "$numberfollowing ${'following'.tr}",
-                              style: const TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.black),
                             ),
                             Text(
                               "$numberFollowers ${'followers'.tr}",
-                              style: const TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.black),
                             )
                           ],
                         ),
