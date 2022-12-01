@@ -4,10 +4,11 @@ class Languages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'pt_BR': {
+          'language': "Português",
           'user': 'Usuario',
-          'password': 'Senha',
           'name': 'Nome',
           'nickname': 'Apelido',
+          'password': 'Senha',
           'posts': 'Postagens',
           'likes': 'Curtidas',
           'followers': 'Seguidores',
@@ -27,10 +28,11 @@ class Languages extends Translations {
           'validData': 'Insira dados validos'
         },
         'en_US': {
+          'language': "English",
           'user': 'User',
-          'password': 'Password',
           'name': 'Name',
           'nickname': 'Nickname',
+          'password': 'Password',
           'posts': 'Posts',
           'likes': 'Likes',
           'followers': 'Followers',
