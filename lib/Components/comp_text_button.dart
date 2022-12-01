@@ -6,8 +6,8 @@ import '../Colors/customized_colors_global.dart';
 class ComponentTextButton extends StatefulWidget {
   String? text;
   IconData? icon;
-  Color textColor;
-  Color iconColor;
+  Color? textColor;
+  Color? iconColor;
   Function onPressed;
   MainAxisAlignment mainAxisAlignment;
   num height;
@@ -19,8 +19,8 @@ class ComponentTextButton extends StatefulWidget {
     super.key,
     this.text,
     this.icon,
-    this.textColor = Colors.white,
-    this.iconColor = Colors.white,
+    this.textColor,
+    this.iconColor,
     required this.onPressed,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.height = 6,
@@ -59,12 +59,13 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
             ),
             Container(
               padding: EdgeInsets.only(
-                  right: widget.rightPadding,
-                  left: widget.spaceBetweenIconAndText),
+                right: widget.rightPadding,
+                left: widget.spaceBetweenIconAndText,
+              ),
               child: widget.text != null
                   ? Text(
                       widget.text.toString(),
-                      style: TextStyle(color: widget.textColor),
+                      style: TextStyle(color: widget.textColor, fontSize: 15.5),
                     )
                   : null,
             ),

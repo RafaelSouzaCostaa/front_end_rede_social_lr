@@ -81,7 +81,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         children: [
                           Container(
                             //Background image
-                            color: Colors.white,
+                            color: Colors.yellow,
                             height: Get.height * 0.175,
                           ),
                           Container(

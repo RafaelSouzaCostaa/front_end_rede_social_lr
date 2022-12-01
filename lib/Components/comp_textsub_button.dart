@@ -79,9 +79,8 @@ class _ComponentTextButtonWithSubtextState
                       ),
                       child: Text(
                         widget.text.toString(),
-                        style: TextStyle(
-                          color: widget.textColor,
-                        ),
+                        style:
+                            TextStyle(color: widget.textColor, fontSize: 15.5),
                       ),
                     ),
                 ],
@@ -89,13 +88,11 @@ class _ComponentTextButtonWithSubtextState
               if (widget.subText != null)
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.only(left: 32),
+                  padding: const EdgeInsets.only(left: 32, top: 3),
                   child: Text(
                     overflow: TextOverflow.ellipsis,
                     widget.subText.toString(),
-                    style: const TextStyle(
-                      color: Colors.grey,
-                    ),
+                    style: const TextStyle(color: Colors.grey),
                   ),
                 ),
             ],

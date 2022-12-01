@@ -51,5 +51,29 @@ class Languages extends Translations {
           'loginError': 'Error on: logging in',
           'validData': 'Enter valid data'
         },
+        'es_ES': {
+          'language': "Espanõl",
+          'user': 'Usuario',
+          'name': 'Nombre',
+          'nickname': 'Apodo',
+          'password': 'Clave',
+          'posts': 'Correos',
+          'likes': 'Gustos',
+          'followers': 'Seguidores',
+          'following': 'Siguiendo',
+          'nullaccount': '¿No tienes una cuenta?',
+          'register': 'Registro',
+          'forgotpassword': '¿Olvidaste tu contraseña?',
+          'alreadyhaveaccount': '¿Ya tienes una cuenta?',
+          'recover': 'Recuperar',
+          'profile': 'Perfil',
+          'change': 'Cambiar',
+          'logout': 'Salir',
+          'anygossip': '¿Ningun chisme?',
+          'required': "Campo Obligatorio",
+          'login': "Iniciar Sesión",
+          'loginError': 'Error on: Iniciar Sesión',
+          'validData': 'Introduce datos válidos'
+        },
       };
 }
