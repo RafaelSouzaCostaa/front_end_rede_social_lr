@@ -7,6 +7,7 @@ import '../Colors/customized_colors_global.dart';
 
 class ComponentTextButton extends StatefulWidget {
   String? text;
+  String? subText;
   IconData? icon;
   Color? textColor;
   Color? iconColor;
@@ -21,6 +22,7 @@ class ComponentTextButton extends StatefulWidget {
   ComponentTextButton({
     super.key,
     this.text,
+    this.subText,
     this.icon,
     this.iconColor,
     this.textColor,
@@ -55,27 +57,78 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
         child: Row(
           mainAxisAlignment: widget.mainAxisAlignment,
           children: [
-            Container(
-              padding: EdgeInsets.only(left: widget.leftPadding),
-              child: widget.icon != null
-                  ? Icon(
-                      widget.icon,
-                      color: widget.iconColor,
-                    )
-                  : null,
+            Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: widget.leftPadding),
+                  child: widget.icon != null
+                      ? Icon(
+                          widget.icon,
+                          color: widget.iconColor,
+                        )
+                      : null,
+                ),
+              ],
             ),
             Container(
-              padding: EdgeInsets.only(
-                  right: widget.rightPadding,
-                  left: widget.spaceBetweenIconAndText),
-              child: widget.text != null
-                  ? Text(
-                      widget.text.toString(),
-                      style: TextStyle(
-                          color: widget.textColor,
-                          fontFamily: 'Imprima-Regular'),
-                    )
-                  : null,
+              color: Colors.blue,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      if (widget.text != null)
+                        Container(
+                          color: Colors.pink,
+                          padding: EdgeInsets.only(
+                            right: widget.rightPadding,
+                            left: widget.spaceBetweenIconAndText,
+                          ),
+                          child: Text(
+                            widget.text.toString(),
+                            style: TextStyle(
+                              color: widget.textColor,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        // widget.subText != null
+                        //     ? Container(
+                        //         color: Colors.green,
+                        //         padding: EdgeInsets.only(
+                        //           right: widget.rightPadding,
+                        //           left: widget.spaceBetweenIconAndText,
+                        //         ),
+                        //         child: Text(
+                        //           widget.subText.toString(),
+                        //           style: const TextStyle(
+                        //             color: Colors.grey,
+                        //           ),
+                        //         ),
+                        //       )
+                        //     : Container(),
+                        if (widget.subText != null)
+                          Container(
+                            color: Colors.green,
+                            padding: EdgeInsets.only(
+                              right: widget.rightPadding,
+                              left: widget.spaceBetweenIconAndText,
+                            ),
+                            child: Text(
+                              widget.subText.toString(),
+                              style: const TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

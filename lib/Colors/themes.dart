@@ -22,9 +22,9 @@ class Themes extends GetxController {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primarySwatch: Colors.teal,
-    scaffoldBackgroundColor: Colors.pink,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.white,
       centerTitle: true,
       iconTheme: IconThemeData(color: Colors.black),
       elevation: 0.5,

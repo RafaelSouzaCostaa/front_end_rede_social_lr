@@ -94,46 +94,42 @@ class _ComponentPostState extends State<ComponentPost> {
                     alignment: Alignment.centerLeft,
                     child: Text(widget.postDescription!),
                   ),
-                  widget.postImage?.length == 1
-                      ? SizedBox(
-                          child: Image.network(widget.postImage!.elementAt(0)),
-                        )
-                      : Container(),
+                  if (widget.postImage?.length == 1)
+                    SizedBox(
+                      child: Image.network(widget.postImage!.elementAt(0)),
+                    ),
                   //Duas imagens
-                  widget.postImage?.length == 2
-                      ? Row(
-                          children: [
-                            Container(
-                              color: Colors.green,
-                              width: Get.width * 0.38,
-                              height: 300,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Container(
-                              color: Colors.blue,
-                              width: Get.width * 0.38,
-                              height: 300,
-                            )
-                          ],
+                  if (widget.postImage?.length == 2)
+                    Row(
+                      children: [
+                        Container(
+                          color: Colors.green,
+                          width: Get.width * 0.38,
+                          height: 300,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          color: Colors.blue,
+                          width: Get.width * 0.38,
+                          height: 300,
                         )
-                      : Container(),
+                      ],
+                    ),
                   //Três imagens
                   //LUIGGI FAZER 3 e 4
-                  widget.postImage?.length == 3
-                      ? SizedBox(
-                          width: Get.width * 0.8,
-                          height: 300,
-                        )
-                      : Container(),
+                  if (widget.postImage?.length == 3)
+                    SizedBox(
+                      width: Get.width * 0.8,
+                      height: 300,
+                    ),
                   //Quatro imagens
-                  widget.postImage?.length == 4
-                      ? SizedBox(
-                          width: Get.width * 0.8,
-                          height: 300,
-                        )
-                      : Container()
+                  if (widget.postImage?.length == 4)
+                    SizedBox(
+                      width: Get.width * 0.8,
+                      height: 300,
+                    ),
                 ],
               ),
             ),
