@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Components/comp_textsub_button.dart';
 
 import '../Colors/customized_colors_global.dart';
 import '../Components/comp_app_bar.dart';
@@ -106,64 +107,46 @@ class _TestesState extends State<Testes> {
             // ),
             Column(
               children: [
-                Column(
-                  children: [
-                    ComponentTextButton(
-                      text: "${'change'.tr} ${'name'.tr}",
-                      icon: Icons.person,
-                      subText:
-                          'profileAuthenticated.profileAuthentic.value.name',
-                      onPressed: () async {
-                        await Get.toNamed("/login");
-                      },
-                    ),
-                  ],
+                ComponentTextButtonWithSubtext(
+                  text: "${'change'.tr} ${'name'.tr}",
+                  icon: Icons.person,
+                  subText: 'profileAuthenticated.profileAuthentic.value.name',
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
                 ),
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Column(
-                  children: [
-                    ComponentTextButton(
-                      icon: Icons.alternate_email,
-                      text: "${'change'.tr} ${'nickname'.tr}",
-                      subText:
-                          "@\${profileAuthenticated.profileAuthentic.value.nickname}",
-                      onPressed: () async {
-                        await Get.toNamed("/login");
-                      },
-                    ),
-                  ],
+                ComponentTextButtonWithSubtext(
+                  icon: Icons.alternate_email,
+                  text: "${'change'.tr} ${'nickname'.tr}",
+                  subText:
+                      "@\${profileAuthenticated.profileAuthentic.value.nickname}",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
                 ),
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Column(
-                  children: [
-                    ComponentTextButton(
-                      icon: Icons.mail,
-                      text: "${'change'.tr} Email",
-                      subText:
-                          'profileAuthenticated.profileAuthentic.value.email',
-                      onPressed: () async {
-                        await Get.toNamed("/login");
-                      },
-                    ),
-                  ],
+                ComponentTextButtonWithSubtext(
+                  icon: Icons.mail,
+                  text: "${'change'.tr} Email",
+                  subText: 'profileAuthenticated.profileAuthentic.value.email',
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
                 ),
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Column(
-                  children: [
-                    ComponentTextButton(
-                      icon: Icons.key,
-                      text: "${'change'.tr} ${'password'.tr}",
-                      onPressed: () async {
-                        await Get.toNamed("/login");
-                      },
-                    ),
-                  ],
+                ComponentTextButtonWithSubtext(
+                  icon: Icons.key,
+                  text: "${'change'.tr} ${'password'.tr}",
+                  onPressed: () async {
+                    await Get.toNamed("/login");
+                  },
                 ),
                 SizedBox(
                   height: Get.height * 0.03,

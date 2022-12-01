@@ -28,7 +28,7 @@ class ComponentTextButtonWithSubtext extends StatefulWidget {
     this.textColor,
     required this.onPressed,
     this.mainAxisAlignment = MainAxisAlignment.start,
-    this.height = 6,
+    this.height = 7,
     this.leftPadding = 0,
     this.rightPadding = 0,
     this.spaceBetweenIconAndText = 8,
@@ -36,10 +36,12 @@ class ComponentTextButtonWithSubtext extends StatefulWidget {
   });
 
   @override
-  State<ComponentTextButtonWithSubtext> createState() => _ComponentTextButtonWithSubtextState();
+  State<ComponentTextButtonWithSubtext> createState() =>
+      _ComponentTextButtonWithSubtextState();
 }
 
-class _ComponentTextButtonWithSubtextState extends State<ComponentTextButtonWithSubtext> {
+class _ComponentTextButtonWithSubtextState
+    extends State<ComponentTextButtonWithSubtext> {
   @override
   Widget build(BuildContext context) {
     var screenHeight = Get.height;
@@ -70,65 +72,37 @@ class _ComponentTextButtonWithSubtextState extends State<ComponentTextButtonWith
                 ),
               ],
             ),
-            Container(
-              color: Colors.blue,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      if (widget.text != null)
-                        Container(
-                          color: Colors.pink,
-                          padding: EdgeInsets.only(
-                            right: widget.rightPadding,
-                            left: widget.spaceBetweenIconAndText,
-                          ),
-                          child: Text(
-                            widget.text.toString(),
-                            style: TextStyle(
-                              color: widget.textColor,
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
+            Column(
+              children: [
+                if (widget.text != null)
                   Container(
-                    child: Row(
-                      children: [
-                        // widget.subText != null
-                        //     ? Container(
-                        //         color: Colors.green,
-                        //         padding: EdgeInsets.only(
-                        //           right: widget.rightPadding,
-                        //           left: widget.spaceBetweenIconAndText,
-                        //         ),
-                        //         child: Text(
-                        //           widget.subText.toString(),
-                        //           style: const TextStyle(
-                        //             color: Colors.grey,
-                        //           ),
-                        //         ),
-                        //       )
-                        //     : Container(),
-                        if (widget.subText != null)
-                          Container(
-                            color: Colors.green,
-                            padding: EdgeInsets.only(
-                              right: widget.rightPadding,
-                              left: widget.spaceBetweenIconAndText,
-                            ),
-                            child: Text(
-                              widget.subText.toString(),
-                              style: const TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                      ],
+                    width: Get.width * 0.5,
+                    padding: EdgeInsets.only(
+                      right: widget.rightPadding,
+                      left: widget.spaceBetweenIconAndText,
+                    ),
+                    child: Text(
+                      widget.text.toString(),
+                      style: TextStyle(
+                        color: widget.textColor,
+                      ),
                     ),
                   ),
-                ],
-              ),
+                if (widget.subText != null)
+                  Container(
+                    width: Get.width * 0.5,
+                    padding: EdgeInsets.only(
+                        right: widget.rightPadding,
+                        left: widget.spaceBetweenIconAndText,
+                        top: 10),
+                    child: Text(
+                      widget.subText.toString(),
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ],
         ),
