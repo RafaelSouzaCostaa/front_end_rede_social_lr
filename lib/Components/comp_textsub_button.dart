@@ -44,71 +44,63 @@ class _ComponentTextButtonWithSubtextState
     extends State<ComponentTextButtonWithSubtext> {
   @override
   Widget build(BuildContext context) {
-    var screenHeight = Get.height;
-
     return SizedBox(
-      height: screenHeight * (widget.height / 100),
-      child: TextButton(
-        style: widget.hoverAnimation
-            ? null
-            : TextButton.styleFrom(
-                foregroundColor: Get.isDarkMode
-                    ? CustomizedColors.darkBackground
-                    : Colors.white,
-              ),
-        child: Row(
-          mainAxisAlignment: widget.mainAxisAlignment,
-          children: [
-            Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(left: widget.leftPadding),
-                  child: widget.icon != null
-                      ? Icon(
-                          widget.icon,
-                          color: widget.iconColor,
-                        )
-                      : null,
+      width: Get.width * 0.98,
+      child: Flexible(
+        child: TextButton(
+          onPressed: () {
+            //IMPLEMENTAR //LUIGGI
+          },
+          style: widget.hoverAnimation
+              ? null
+              : TextButton.styleFrom(
+                  foregroundColor: Get.isDarkMode
+                      ? CustomizedColors.darkBackground
+                      : Colors.white,
                 ),
-              ],
-            ),
-            Column(
-              children: [
-                if (widget.text != null)
+          child: Column(
+            children: [
+              Row(
+                children: [
                   Container(
-                    width: Get.width * 0.5,
-                    padding: EdgeInsets.only(
-                      right: widget.rightPadding,
-                      left: widget.spaceBetweenIconAndText,
-                    ),
-                    child: Text(
-                      widget.text.toString(),
-                      style: TextStyle(
-                        color: widget.textColor,
-                      ),
-                    ),
+                    child: widget.icon != null
+                        ? Icon(
+                            widget.icon,
+                            color: widget.iconColor,
+                          )
+                        : null,
                   ),
-                if (widget.subText != null)
-                  Container(
-                    width: Get.width * 0.5,
-                    padding: EdgeInsets.only(
+                  if (widget.text != null)
+                    Container(
+                      width: Get.width * 0.5,
+                      padding: EdgeInsets.only(
                         right: widget.rightPadding,
                         left: widget.spaceBetweenIconAndText,
-                        top: 10),
-                    child: Text(
-                      widget.subText.toString(),
-                      style: const TextStyle(
-                        color: Colors.grey,
+                      ),
+                      child: Text(
+                        widget.text.toString(),
+                        style: TextStyle(
+                          color: widget.textColor,
+                        ),
                       ),
                     ),
+                ],
+              ),
+              if (widget.subText != null)
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(left: 32),
+                  child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    widget.subText.toString(),
+                    style: const TextStyle(
+                      color: Colors.grey,
+                    ),
                   ),
-              ],
-            ),
-          ],
+                ),
+            ],
+          ),
         ),
-        onPressed: () {
-          widget.onPressed();
-        },
       ),
     );
   }

@@ -85,7 +85,7 @@ class _TestesState extends State<Testes> {
                   icon: Icons.alternate_email,
                   text: "${'change'.tr} ${'nickname'.tr}",
                   subText:
-                      "@\${profileAuthenticated.profileAuthentic.value.nickname}",
+                      "profileAuthenticated.profileAuthentic.value.nickname}",
                   onPressed: () async {
                     await Get.toNamed("/login");
                   },
@@ -104,7 +104,7 @@ class _TestesState extends State<Testes> {
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                ComponentTextButtonWithSubtext(
+                ComponentTextButton(
                   icon: Icons.key,
                   text: "${'change'.tr} ${'password'.tr}",
                   onPressed: () async {
