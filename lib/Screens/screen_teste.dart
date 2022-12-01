@@ -68,43 +68,6 @@ class _TestesState extends State<Testes> {
                 ),
               ],
             ),
-            // Container(
-            //   padding: const EdgeInsets.only(top: 10),
-            //   child: Text(
-            //     'profileAuthenticated.profileAuthentic.value.name',
-            //     style: const TextStyle(
-            //       fontSize: 17,
-            //       fontFamily: 'Imprima-Regular',
-            //     ),
-            //     textAlign: TextAlign.center,
-            //   ),
-            // ),
-            // Container(
-            //   padding: const EdgeInsets.only(top: 5),
-            //   child: Text(
-            //     "@\${profileAuthenticated.profileAuthentic.value.nickname}",
-            //     style: const TextStyle(
-            //       color: Colors.grey,
-            //       fontSize: 14,
-            //       fontFamily: 'Imprima-Regular',
-            //     ),
-            //     textAlign: TextAlign.center,
-            //   ),
-            // ),
-            // Container(
-            //   padding: const EdgeInsets.only(top: 15),
-            //   child: Text(
-            //     //FIX mudar para description quando implementar
-            //     profileAuthenticated.profileAuthentic.value.description
-            //         .toString(),
-            //     style: const TextStyle(
-            //       color: Colors.grey,
-            //       fontSize: 16,
-            //       fontFamily: 'Imprima-Regular',
-            //     ),
-            //     textAlign: TextAlign.center,
-            //   ),
-            // ),
             Column(
               children: [
                 ComponentTextButtonWithSubtext(
