@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../Colors/customized_colors_global.dart';
 import '../Global/profile_authenticated.dart';
-import '../Global/comp_text_button.dart';
+import 'comp_text_button.dart';
 
 class ComponentDrawer extends StatefulWidget {
   const ComponentDrawer({super.key});
