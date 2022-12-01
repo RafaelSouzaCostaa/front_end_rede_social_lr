@@ -49,7 +49,6 @@ class _ComponentButtonState extends State<ComponentButton> {
           overflow: TextOverflow.ellipsis,
           style: widget.textStyle ??
               const TextStyle(
-                color: Colors.black,
                 fontFamily: 'Imprima-Regular',
                 fontWeight: FontWeight.bold,
               ),

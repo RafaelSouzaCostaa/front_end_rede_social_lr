@@ -119,7 +119,6 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         child: Text(
                           profileAuthenticated.profileAuthentic.value.name,
                           style: const TextStyle(
-                            color: Colors.black,
                             fontSize: 17,
                             fontFamily: 'Imprima-Regular',
                           ),
@@ -161,11 +160,9 @@ class _ScreenProfileState extends State<ScreenProfile> {
                           children: [
                             Text(
                               "$numberfollowing ${'following'.tr}",
-                              style: const TextStyle(color: Colors.black),
                             ),
                             Text(
                               "$numberFollowers ${'followers'.tr}",
-                              style: const TextStyle(color: Colors.black),
                             )
                           ],
                         ),

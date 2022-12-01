@@ -39,7 +39,8 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Obx(() => Switch(
+            Obx(
+              () => Switch(
                 activeColor: Colors.amber[400],
                 activeTrackColor: Colors.amber[200],
                 inactiveThumbColor: Colors.blue[400],
@@ -53,7 +54,9 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
                     theme.isLightTheme.value ? ThemeMode.light : ThemeMode.dark,
                   );
                   sharedPreferences.saveThemeStatus();
-                })),
+                },
+              ),
+            ),
           ],
         )
       ],

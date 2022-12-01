@@ -166,7 +166,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                           'validData'.tr,
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: const Color.fromARGB(255, 138, 8, 8),
-                          colorText: Colors.black,
                           borderRadius: 2,
                           duration: const Duration(milliseconds: 3000),
                           isDismissible: true,

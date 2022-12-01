@@ -31,7 +31,6 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                     height: 7,
                     width: 20,
                     textStyle: const TextStyle(
-                      color: Colors.black,
                       fontWeight: FontWeight.w700,
                     ),
                     text: "Kitterar",
