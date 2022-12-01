@@ -5,10 +5,9 @@ import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
+import '../../Components/comp_text_button.dart';
 import '../../Global/api_service.dart';
-import '../../Global/profile_authenticated.dart';
 import '../../Global/shared_preferences.dart';
-import '../../Global/token.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({Key? key}) : super(key: key);
@@ -92,18 +91,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         'nullaccount'.tr,
                         style: const TextStyle(fontFamily: 'Imprima-Regular'),
                       ),
-                      TextButton(
-                        style: TextButton.styleFrom(
-                            foregroundColor: CustomizedColors.darkBackground),
+                      ComponentTextButton(
+                        text: 'register'.tr,
+                        hoverAnimation: false,
+                        textColor: CustomizedColors.blueText,
                         onPressed: () async {
                           await Get.toNamed("/cadastro");
                         },
-                        child: Text(
-                          'register'.tr,
-                          style: TextStyle(
-                              color: CustomizedColors.blueText,
-                              fontFamily: 'Imprima-Regular'),
-                        ),
                       ),
                     ],
                   ),
@@ -128,19 +122,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       'forgotpassword'.tr,
                       style: const TextStyle(fontFamily: 'Imprima-Regular'),
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: CustomizedColors.darkBackground,
-                      ),
+                    ComponentTextButton(
+                      text: 'recover'.tr,
+                      hoverAnimation: false,
+                      textColor: CustomizedColors.blueText,
                       onPressed: () async {
-                        //IMPLEMENTAR Navigator para pagina de trocar senha
+                        await Get.toNamed("/cadastro");
                       },
-                      child: Text(
-                        'recover'.tr,
-                        style: TextStyle(
-                            color: CustomizedColors.blueText,
-                            fontFamily: 'Imprima-Regular'),
-                      ),
                     ),
                   ],
                 ),

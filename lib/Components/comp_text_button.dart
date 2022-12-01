@@ -48,7 +48,9 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
         style: widget.hoverAnimation
             ? null
             : TextButton.styleFrom(
-                foregroundColor: CustomizedColors.darkBackground,
+                foregroundColor: Get.isDarkMode
+                    ? CustomizedColors.darkBackground
+                    : Colors.white,
               ),
         child: Row(
           mainAxisAlignment: widget.mainAxisAlignment,
@@ -69,7 +71,9 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
               child: widget.text != null
                   ? Text(
                       widget.text.toString(),
-                      style: TextStyle(color: widget.textColor),
+                      style: TextStyle(
+                          color: widget.textColor,
+                          fontFamily: 'Imprima-Regular'),
                     )
                   : null,
             ),
