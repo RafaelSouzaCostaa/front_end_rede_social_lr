@@ -39,14 +39,15 @@ class ComponentOpenInputButton extends StatefulWidget {
     this.inputHintText,
     required this.inputCotroller,
   });
-  bool input = false;
+
   @override
   State<ComponentOpenInputButton> createState() =>
       _ComponentOpenInputButtonState();
 }
 
-class _ComponentOpenInputButtonState
-    extends State<ComponentOpenInputButton> {
+class _ComponentOpenInputButtonState extends State<ComponentOpenInputButton> {
+  bool input = false;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -87,7 +88,7 @@ class _ComponentOpenInputButtonState
                     ),
                 ],
               ),
-              if (widget.subText != null && widget.input == false)
+              if (widget.subText != null && input == false)
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(left: 32, top: 3),
@@ -97,7 +98,7 @@ class _ComponentOpenInputButtonState
                     style: const TextStyle(color: Colors.grey),
                   ),
                 ),
-              if (widget.input)
+              if (input)
                 Padding(
                   padding: const EdgeInsets.only(top: 20, left: 30),
                   child: ComponentInput(
@@ -109,11 +110,8 @@ class _ComponentOpenInputButtonState
           ),
           onPressed: () {
             setState(() {
-              //BUG
-              if (widget.inputCotroller.text != widget.subText) {
-                widget.input = !widget.input;
-              } else {
-                widget.input = false;
+              if (widget.inputCotroller.text == widget.subText) {
+                input = !input;
               }
             });
           },
