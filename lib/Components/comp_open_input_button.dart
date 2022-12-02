@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../Colors/customized_colors_global.dart';
 
-class ComponentTextButtonWithSubtext extends StatefulWidget {
+class ComponentOpenInputButton extends StatefulWidget {
   String? text;
   String? subText;
   IconData? icon;
@@ -19,7 +19,7 @@ class ComponentTextButtonWithSubtext extends StatefulWidget {
   double spaceBetweenIconAndText;
   bool hoverAnimation;
 
-  ComponentTextButtonWithSubtext({
+  ComponentOpenInputButton({
     super.key,
     this.text,
     this.subText,
@@ -36,12 +36,12 @@ class ComponentTextButtonWithSubtext extends StatefulWidget {
   });
 
   @override
-  State<ComponentTextButtonWithSubtext> createState() =>
-      _ComponentTextButtonWithSubtextState();
+  State<ComponentOpenInputButton> createState() =>
+      _ComponentOpenInputButtonState();
 }
 
-class _ComponentTextButtonWithSubtextState
-    extends State<ComponentTextButtonWithSubtext> {
+class _ComponentOpenInputButtonState
+    extends State<ComponentOpenInputButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Components/comp_textsub_button.dart';
+import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
 import '../Colors/customized_colors_global.dart';
 import '../Components/comp_app_bar.dart';
@@ -68,7 +68,7 @@ class _TestesState extends State<Testes> {
               ),
               Column(
                 children: [
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     text: "${'change'.tr} ${'name'.tr}",
                     icon: Icons.person,
                     subText: 'profileAuthenticated.profileAuthentic.value.name',
@@ -79,7 +79,7 @@ class _TestesState extends State<Testes> {
                   SizedBox(
                     height: Get.height * 0.03,
                   ),
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     icon: Icons.alternate_email,
                     text: "${'change'.tr} ${'nickname'.tr}",
                     subText:
@@ -91,7 +91,7 @@ class _TestesState extends State<Testes> {
                   SizedBox(
                     height: Get.height * 0.03,
                   ),
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     icon: Icons.mail,
                     text: "${'change'.tr} Email",
                     subText:
