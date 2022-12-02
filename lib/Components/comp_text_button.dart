@@ -38,6 +38,7 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
   Widget build(BuildContext context) {
     var screenHeight = Get.height;
     return SizedBox(
+      width: Get.width * 0.98,
       height: screenHeight * (widget.height / 100),
       child: TextButton(
         style: widget.hoverAnimation

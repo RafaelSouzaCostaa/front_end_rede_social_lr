@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Global/languages.dart';
 
 import 'Colors/themes.dart';
+import 'Global/languages.dart';
 import 'Screens/ScreenHome/screen_home.dart';
 import 'Screens/ScreenLogin/screen_login.dart';
 import 'Screens/ScreenPost/screen_create_post.dart';
 import 'Screens/ScreenProfile/screen_profile.dart';
 import 'Screens/ScreenRegistration/screen_registration.dart';
+import 'Screens/ScreenSettings/screen_setting_senha.dart';
 import 'Screens/ScreenSettings/screen_settings.dart';
 import 'Screens/ScreenSplash/screen_splash.dart';
 import 'Screens/screen_teste.dart';
@@ -30,6 +31,7 @@ void main() {
         "/login": (context) => const ScreenLogin(),
         "/profile": (context) => const ScreenProfile(),
         "/setting": (context) => const ScreenSettings(),
+        "/settingsPassword":(context) => const ScreenSettingsPassword(),
         "/createPost": (context) => const ScreenCreatePost(),
         "/teste": (context) => const Testes(),
       },

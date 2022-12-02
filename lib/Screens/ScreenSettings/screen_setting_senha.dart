@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class ScreenSettingsPassword extends StatefulWidget {
+  const ScreenSettingsPassword({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<ScreenSettingsPassword> createState() => _ScreenSettingsPasswordState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _ScreenSettingsPasswordState extends State<ScreenSettingsPassword> {
   @override
   Widget build(BuildContext context) {
     return Container();

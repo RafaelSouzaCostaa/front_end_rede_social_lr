@@ -50,17 +50,14 @@ class _ComponentOpenInputButtonState extends State<ComponentOpenInputButton> {
 
   @override
   Widget build(BuildContext context) {
+    Color backgroundColor = Theme.of(context).scaffoldBackgroundColor;
     return SizedBox(
       width: Get.width * 0.98,
       child: Flexible(
         child: TextButton(
-          style: widget.hoverAnimation
-              ? null
-              : TextButton.styleFrom(
-                  foregroundColor: Get.isDarkMode
-                      ? CustomizedColors.darkBackground
-                      : Colors.white,
-                ),
+          style: !widget.hoverAnimation
+              ? TextButton.styleFrom(foregroundColor: backgroundColor)
+              : null,
           child: Column(
             children: [
               Row(

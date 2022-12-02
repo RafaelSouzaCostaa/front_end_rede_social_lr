@@ -7,6 +7,7 @@ import '../Components/comp_app_bar.dart';
 import '../Components/comp_drawer.dart';
 import '../Components/comp_text_button.dart';
 import '../Global/profile_authenticated.dart';
+import '../Global/token.dart';
 
 class Testes extends StatefulWidget {
   const Testes({super.key});
@@ -21,6 +22,7 @@ class _TestesState extends State<Testes> {
   @override
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
+    Token token = Get.put(Token());
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
     TextEditingController controllerName = TextEditingController(
       text: 'profileAuthenticated.profileAuthentic.value.name',
@@ -75,6 +77,9 @@ class _TestesState extends State<Testes> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: Get.height * 0.07,
+              ),
               Column(
                 children: [
                   ComponentOpenInputButton(
@@ -123,7 +128,7 @@ class _TestesState extends State<Testes> {
                     },
                   ),
                   SizedBox(
-                    height: Get.height * 0.03,
+                    height: Get.height * 0.02,
                   ),
                   ComponentTextButton(
                     text: 'logout'.tr,
@@ -131,7 +136,7 @@ class _TestesState extends State<Testes> {
                     iconColor: Colors.red,
                     textColor: Colors.red,
                     onPressed: () async {
-                      //apagar token
+                      token.deleteToken();
                       Get.offAllNamed('/login');
                     },
                   ),
