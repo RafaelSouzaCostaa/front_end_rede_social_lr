@@ -110,7 +110,7 @@ class _ComponentOpenInputButtonState
           onPressed: () {
             setState(() {
               //BUG
-              if (widget.inputCotroller.toString() != widget.subText) {
+              if (widget.inputCotroller.text != widget.subText) {
                 widget.input = !widget.input;
               } else {
                 widget.input = false;

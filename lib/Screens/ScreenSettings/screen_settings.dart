@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_text_button.dart';
-import '../../Components/comp_textsub_button.dart';
 import '../../Global/profile_authenticated.dart';
 
 class ScreenSettings extends StatefulWidget {
@@ -71,7 +71,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
               ),
               Column(
                 children: [
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     text: "${'change'.tr} ${'name'.tr}",
                     icon: Icons.person,
                     subText: 'profileAuthenticated.profileAuthentic.value.name',
@@ -83,7 +83,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   SizedBox(
                     height: Get.height * 0.03,
                   ),
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     icon: Icons.alternate_email,
                     text: "${'change'.tr} ${'nickname'.tr}",
                     inputCotroller: controllerNickname,
@@ -96,7 +96,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   SizedBox(
                     height: Get.height * 0.03,
                   ),
-                  ComponentTextButtonWithSubtext(
+                  ComponentOpenInputButton(
                     icon: Icons.mail,
                     text: "${'change'.tr} Email",
                     inputCotroller: controllerEmail,
