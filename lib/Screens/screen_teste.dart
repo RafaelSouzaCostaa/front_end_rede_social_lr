@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Components/comp_button.dart';
 import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
 import '../Colors/customized_colors_global.dart';
@@ -131,20 +132,9 @@ class _TestesState extends State<Testes> {
                   SizedBox(
                     height: Get.height * 0.02,
                   ),
-                  ComponentTextButton(
-                    text: 'logout'.tr,
-                    icon: Icons.logout,
-                    iconColor: Colors.red,
-                    textColor: Colors.red,
-                    width: Get.width * 0.98,
-                    onPressed: () async {
-                      token.deleteToken();
-                      Get.offAllNamed('/login');
-                    },
-                  ),
+                  // ComponentButton(text: text, onPressed: onPressed)
                 ],
               ),
-              //input
             ],
           ),
         ),

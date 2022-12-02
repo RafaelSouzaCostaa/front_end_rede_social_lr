@@ -122,7 +122,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       style: const TextStyle(fontFamily: 'Imprima-Regular'),
                     ),
                     ComponentTextButton(
-                      
                       text: 'recover'.tr,
                       hoverAnimation: false,
                       textColor: CustomizedColors.blueText,
@@ -134,8 +133,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
                 ComponentButton(
                   text: 'login'.tr,
-                  width: 20,
-                  height: 6,
+                  width: 9,
+                  height: 5,
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       int statusCode = await ApiService.login(
