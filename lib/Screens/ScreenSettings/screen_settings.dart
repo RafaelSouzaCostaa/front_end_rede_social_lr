@@ -4,9 +4,11 @@ import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
+import '../../Components/comp_button.dart';
 import '../../Components/comp_drawer.dart';
 import '../../Components/comp_text_button.dart';
 import '../../Global/profile_authenticated.dart';
+import '../../Global/token.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
@@ -22,9 +24,15 @@ class _ScreenSettingsState extends State<ScreenSettings> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
-    TextEditingController controllerName = TextEditingController();
-    TextEditingController controllerNickname = TextEditingController();
-    TextEditingController controllerEmail = TextEditingController();
+    TextEditingController controllerName = TextEditingController(
+      text: 'profileAuthenticated.profileAuthentic.value.name',
+    );
+    TextEditingController controllerNickname = TextEditingController(
+      text: "profileAuthenticated.profileAuthentic.value.nickname}",
+    );
+    TextEditingController controllerEmail = TextEditingController(
+      text: 'profileAuthenticated.profileAuthentic.value.email',
+    );
 
     return SafeArea(
       child: Scaffold(
@@ -69,6 +77,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: Get.height * 0.07,
+              ),
               Column(
                 children: [
                   ComponentOpenInputButton(
@@ -86,9 +97,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ComponentOpenInputButton(
                     icon: Icons.alternate_email,
                     text: "${'change'.tr} ${'nickname'.tr}",
-                    inputCotroller: controllerNickname,
                     subText:
                         "profileAuthenticated.profileAuthentic.value.nickname}",
+                    inputCotroller: controllerNickname,
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
@@ -99,10 +110,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ComponentOpenInputButton(
                     icon: Icons.mail,
                     text: "${'change'.tr} Email",
-                    inputCotroller: controllerEmail,
-                    inputHintText: 'rafaelsafadinha69@estudante.edu.br',
                     subText:
                         'profileAuthenticated.profileAuthentic.value.email',
+                    inputCotroller: controllerEmail,
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
@@ -113,26 +123,25 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ComponentTextButton(
                     icon: Icons.key,
                     text: "${'change'.tr} ${'password'.tr}",
+                    width: Get.width * 0.98,
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
                   ),
                   SizedBox(
-                    height: Get.height * 0.03,
+                    height: Get.height * 0.02,
                   ),
-                  ComponentTextButton(
-                    text: 'logout'.tr,
-                    icon: Icons.logout,
-                    iconColor: Colors.red,
-                    textColor: Colors.red,
-                    onPressed: () async {
-                      //apagar token
-                      Get.offAllNamed('/login');
-                    },
-                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    padding: const EdgeInsets.only(right: 15),
+                    child: ComponentButton(
+                        text: 'Salvar',
+                        onPressed: () {
+                          //RAFAEL coloca o put de profile aqui
+                        }),
+                  )
                 ],
               ),
-              //input
             ],
           ),
         ),

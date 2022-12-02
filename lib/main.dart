@@ -23,7 +23,7 @@ void main() {
       translations: Languages(),
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('pt', 'BR'),
-      initialRoute: '/teste',
+      initialRoute: '/setting',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),
@@ -31,7 +31,7 @@ void main() {
         "/login": (context) => const ScreenLogin(),
         "/profile": (context) => const ScreenProfile(),
         "/setting": (context) => const ScreenSettings(),
-        "/settingsPassword":(context) => const ScreenSettingsPassword(),
+        "/settingsPassword": (context) => const ScreenSettingsPassword(),
         "/createPost": (context) => const ScreenCreatePost(),
         "/teste": (context) => const Testes(),
       },
