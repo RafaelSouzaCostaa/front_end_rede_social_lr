@@ -9,13 +9,14 @@ class ComponentInput extends StatefulWidget {
   String? labelText;
   String? hintText;
   TextEditingController controller;
+  String? Function(String?)? validator;
+  bool nullValidator;
   double fontSize;
   var suffixIcon;
   double width;
   int minLines;
   int maxLines;
   int? maxLenght;
-  bool validator = false;
   bool obscureText = false;
   Color? focusedBorderColor;
   Color? unfocusedBorderColor;
@@ -30,7 +31,8 @@ class ComponentInput extends StatefulWidget {
     this.maxLenght = 90,
     this.minLines = 1,
     this.maxLines = 1,
-    this.validator = false,
+    this.validator,
+    this.nullValidator = true,
     this.obscureText = false,
     this.width = 8.5,
     this.focusedBorderColor,
@@ -116,14 +118,14 @@ class _ComponentInputState extends State<ComponentInput> {
             ),
           ),
         ),
-        validator: widget.validator == true
+        validator: widget.nullValidator
             ? (value) {
                 if (value!.isEmpty) {
                   return 'required'.tr;
                 }
                 return null;
               }
-            : null,
+            : widget.validator,
       ),
     );
   }

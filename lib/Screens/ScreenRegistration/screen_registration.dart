@@ -45,25 +45,30 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       ComponentInput(
                         labelText: 'user'.tr,
                         controller: _nameController,
-                        validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: "Email",
                         controller: _emailController,
-                        validator: true,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'required'.tr;
+                          }
+                          if (!value.isEmail) {
+                            return 'validData'.tr;
+                          }
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: '@${'nickname'.tr}',
                         controller: _nicknameController,
-                        validator: true,
                       ),
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: 'password'.tr,
                         controller: _passwordController,
-                        validator: true,
                         suffixIcon: IconButton(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
@@ -128,7 +133,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     padding: const EdgeInsets.only(left: 5),
                     child: ComponentButton(
                       text: 'register'.tr,
-                      width: 25,
+                      width: 5,
                       height: 6,
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {

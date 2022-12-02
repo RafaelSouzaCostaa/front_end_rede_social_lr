@@ -123,6 +123,7 @@ class _TestesState extends State<Testes> {
                   ComponentTextButton(
                     icon: Icons.key,
                     text: "${'change'.tr} ${'password'.tr}",
+                    width: Get.width * 0.98,
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
@@ -135,6 +136,7 @@ class _TestesState extends State<Testes> {
                     icon: Icons.logout,
                     iconColor: Colors.red,
                     textColor: Colors.red,
+                    width: Get.width * 0.98,
                     onPressed: () async {
                       token.deleteToken();
                       Get.offAllNamed('/login');

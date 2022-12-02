@@ -41,7 +41,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ComponentInput(
                   labelText: 'user'.tr,
                   controller: _userController,
-                  validator: true,
                 ),
                 const SizedBox(
                   height: 20,
@@ -51,7 +50,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   obscureText: !_visiblePassword,
                   labelText: 'password'.tr,
                   controller: _passwordController,
-                  validator: true,
+
                   suffixIcon: IconButton(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
@@ -123,6 +122,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       style: const TextStyle(fontFamily: 'Imprima-Regular'),
                     ),
                     ComponentTextButton(
+                      
                       text: 'recover'.tr,
                       hoverAnimation: false,
                       textColor: CustomizedColors.blueText,

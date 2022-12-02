@@ -10,7 +10,8 @@ class ComponentTextButton extends StatefulWidget {
   Color? iconColor;
   Function onPressed;
   MainAxisAlignment mainAxisAlignment;
-  num height;
+  double height;
+  double? width;
   double rightPadding;
   double leftPadding;
   double spaceBetweenIconAndText;
@@ -24,6 +25,7 @@ class ComponentTextButton extends StatefulWidget {
     required this.onPressed,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.height = 6,
+    this.width,
     this.leftPadding = 0,
     this.rightPadding = 0,
     this.spaceBetweenIconAndText = 8,
@@ -38,7 +40,7 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
   Widget build(BuildContext context) {
     var screenHeight = Get.height;
     return SizedBox(
-      width: Get.width * 0.98,
+      width: widget.width,
       height: screenHeight * (widget.height / 100),
       child: TextButton(
         style: widget.hoverAnimation
