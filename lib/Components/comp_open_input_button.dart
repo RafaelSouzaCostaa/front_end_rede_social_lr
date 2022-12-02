@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../Colors/customized_colors_global.dart';
+import 'comp_input.dart';
 
 class ComponentOpenInputButton extends StatefulWidget {
   String? text;
@@ -18,6 +19,8 @@ class ComponentOpenInputButton extends StatefulWidget {
   double leftPadding;
   double spaceBetweenIconAndText;
   bool hoverAnimation;
+  String? inputHintText;
+  TextEditingController inputCotroller;
 
   ComponentOpenInputButton({
     super.key,
@@ -33,8 +36,10 @@ class ComponentOpenInputButton extends StatefulWidget {
     this.rightPadding = 0,
     this.spaceBetweenIconAndText = 8,
     this.hoverAnimation = true,
+    this.inputHintText,
+    required this.inputCotroller,
   });
-
+  bool input = false;
   @override
   State<ComponentOpenInputButton> createState() =>
       _ComponentOpenInputButtonState();
@@ -48,9 +53,6 @@ class _ComponentOpenInputButtonState
       width: Get.width * 0.98,
       child: Flexible(
         child: TextButton(
-          onPressed: () {
-            //IMPLEMENTAR //LUIGGI
-          },
           style: widget.hoverAnimation
               ? null
               : TextButton.styleFrom(
@@ -85,7 +87,7 @@ class _ComponentOpenInputButtonState
                     ),
                 ],
               ),
-              if (widget.subText != null)
+              if (widget.subText != null && widget.input == false)
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(left: 32, top: 3),
@@ -95,8 +97,26 @@ class _ComponentOpenInputButtonState
                     style: const TextStyle(color: Colors.grey),
                   ),
                 ),
+              if (widget.input)
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 30),
+                  child: ComponentInput(
+                    controller: widget.inputCotroller,
+                    hintText: widget.inputHintText,
+                  ),
+                )
             ],
           ),
+          onPressed: () {
+            setState(() {
+              //BUG
+              if (widget.inputCotroller.toString() != widget.subText) {
+                widget.input = !widget.input;
+              } else {
+                widget.input = false;
+              }
+            });
+          },
         ),
       ),
     );

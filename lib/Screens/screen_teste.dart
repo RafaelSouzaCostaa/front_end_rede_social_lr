@@ -22,6 +22,12 @@ class _TestesState extends State<Testes> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
+    //BUG
+    TextEditingController _controllerName = TextEditingController(
+        text: 'profileAuthenticated.profileAuthentic.value.name');
+    TextEditingController _controllerNickname = TextEditingController();
+    TextEditingController _controllerEmail = TextEditingController();
+    TextEditingController _controllerpassword = TextEditingController();
 
     return SafeArea(
       child: Scaffold(
@@ -72,6 +78,9 @@ class _TestesState extends State<Testes> {
                     text: "${'change'.tr} ${'name'.tr}",
                     icon: Icons.person,
                     subText: 'profileAuthenticated.profileAuthentic.value.name',
+                    inputCotroller: _controllerName,
+                    inputHintText:
+                        'profileAuthenticated.profileAuthentic.value.name',
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
@@ -84,6 +93,9 @@ class _TestesState extends State<Testes> {
                     text: "${'change'.tr} ${'nickname'.tr}",
                     subText:
                         "profileAuthenticated.profileAuthentic.value.nickname}",
+                    inputCotroller: _controllerNickname,
+                    inputHintText:
+                        "profileAuthenticated.profileAuthentic.value.nickname}",
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },
@@ -95,6 +107,9 @@ class _TestesState extends State<Testes> {
                     icon: Icons.mail,
                     text: "${'change'.tr} Email",
                     subText:
+                        'profileAuthenticated.profileAuthentic.value.email',
+                    inputCotroller: _controllerEmail,
+                    inputHintText:
                         'profileAuthenticated.profileAuthentic.value.email',
                     onPressed: () async {
                       await Get.toNamed("/login");
@@ -125,6 +140,7 @@ class _TestesState extends State<Testes> {
                   ),
                 ],
               ),
+              //input
             ],
           ),
         ),

@@ -27,7 +27,7 @@ class ComponentInput extends StatefulWidget {
     this.hintText,
     this.fontSize = 13,
     this.suffixIcon,
-    this.maxLenght = 35,
+    this.maxLenght = 90,
     this.minLines = 1,
     this.maxLines = 1,
     this.validator = false,
