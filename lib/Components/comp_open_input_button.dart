@@ -85,7 +85,7 @@ class _ComponentOpenInputButtonState extends State<ComponentOpenInputButton> {
                     ),
                 ],
               ),
-              if (widget.subText != null && input == false)
+              if (widget.subText != null && !input)
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(left: 32, top: 3),

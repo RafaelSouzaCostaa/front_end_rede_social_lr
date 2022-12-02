@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Components/comp_edit_button.dart';
 import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_drawer.dart';
+import '../../Components/comp_input.dart';
 import '../../Components/comp_text_button.dart';
 import '../../Global/profile_authenticated.dart';
 import '../../Global/token.dart';
@@ -24,6 +26,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
+    bool inputData = false;
     TextEditingController controllerName = TextEditingController(
       text: 'profileAuthenticated.profileAuthentic.value.name',
     );
@@ -32,6 +35,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
     );
     TextEditingController controllerEmail = TextEditingController(
       text: 'profileAuthenticated.profileAuthentic.value.email',
+    );
+    TextEditingController controllerBirthDate = TextEditingController(
+      text: 'profileAuthenticated.profileAuthentic.value.birthDate',
     );
 
     return SafeArea(
@@ -43,35 +49,63 @@ class _ScreenSettingsState extends State<ScreenSettings> {
             children: [
               Stack(
                 children: [
-                  Container(
-                    //Background image
-                    color: Colors.yellow,
-                    height: Get.height * 0.175,
+                  Stack(
+                    children: [
+                      Container(
+                        //Background image
+                        color: Colors.yellow,
+                        height: Get.height * 0.175,
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.only(
+                          top: Get.height * 0.10,
+                          right: 12,
+                        ),
+                        child: ComponentEditButton(
+                          icon: Icons.image,
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
                     padding: EdgeInsets.only(top: Get.height * 0.11),
                     child: Center(
-                      child: Container(
-                        width: 110,
-                        height: 110,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 3.2,
-                            color: themeColor,
-                          ),
-                          borderRadius: BorderRadius.circular(60),
-                        ),
-                        child: urlImageProfile != null
-                            ? CircleAvatar(
-                                backgroundColor:
-                                    CustomizedColors.blueBackground,
-                                backgroundImage: NetworkImage(urlImageProfile))
-                            : CircleAvatar(
-                                backgroundColor:
-                                    CustomizedColors.blueBackground,
-                                backgroundImage: const ExactAssetImage(
-                                    "assets/image/perfil.png"),
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: 110,
+                            height: 110,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 3.2,
+                                color: themeColor,
                               ),
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: urlImageProfile != null
+                                ? CircleAvatar(
+                                    backgroundColor:
+                                        CustomizedColors.blueBackground,
+                                    backgroundImage:
+                                        NetworkImage(urlImageProfile))
+                                : CircleAvatar(
+                                    backgroundColor:
+                                        CustomizedColors.blueBackground,
+                                    backgroundImage: const ExactAssetImage(
+                                        "assets/image/perfil.png"),
+                                  ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(
+                              top: Get.height * 0.10,
+                              left: 70,
+                            ),
+                            child: ComponentEditButton(
+                              icon: Icons.add_a_photo,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -112,7 +146,31 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     text: "${'change'.tr} Email",
                     subText:
                         'profileAuthenticated.profileAuthentic.value.email',
+                    inputCotroller: controllerBirthDate,
+                    onPressed: () async {
+                      await Get.toNamed("/login");
+                    },
+                  ),
+                  SizedBox(
+                    height: Get.height * 0.03,
+                  ),
+                  ComponentOpenInputButton(
+                    icon: Icons.mail,
+                    text: "${'change'.tr} ${'birthDate'.tr}",
+                    subText:
+                        'profileAuthenticated.profileAuthentic.value.birthDate',
                     inputCotroller: controllerEmail,
+                    onPressed: () async {
+                      await Get.toNamed("/login");
+                    },
+                  ),
+                  SizedBox(
+                    height: Get.height * 0.03,
+                  ),
+                  ComponentTextButton(
+                    icon: Icons.date_range_outlined,
+                    text: "${'change'.tr} ${'birthDate'.tr}",
+                    width: Get.width * 0.98,
                     onPressed: () async {
                       await Get.toNamed("/login");
                     },

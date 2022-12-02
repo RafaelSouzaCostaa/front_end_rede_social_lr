@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
+import '../../Components/comp_edit_button.dart';
 import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
 import '../../Models/model_post.dart';
@@ -110,6 +111,16 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                             "assets/image/perfil.png"),
                                       ),
                               ),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.centerRight,
+                            padding: EdgeInsets.only(
+                              top: Get.height * 0.10,
+                              right: 12,
+                            ),
+                            child: ComponentEditButton(
+                              icon: Icons.image,
                             ),
                           ),
                         ],
