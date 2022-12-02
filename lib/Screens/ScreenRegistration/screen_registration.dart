@@ -133,8 +133,6 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                     padding: const EdgeInsets.only(left: 5),
                     child: ComponentButton(
                       text: 'register'.tr,
-                      width: 9,
-                      height: 5,
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           Profile newProfile = Profile(

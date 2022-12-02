@@ -133,8 +133,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
                 ComponentButton(
                   text: 'login'.tr,
-                  width: 9,
-                  height: 5,
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       int statusCode = await ApiService.login(

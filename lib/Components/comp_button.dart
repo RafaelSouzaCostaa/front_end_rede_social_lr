@@ -16,7 +16,7 @@ class ComponentButton extends StatefulWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.width = 10,
+    this.width = 9,
     this.height = 5,
     this.textStyle,
   });
