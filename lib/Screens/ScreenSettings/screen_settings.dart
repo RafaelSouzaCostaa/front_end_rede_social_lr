@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:rede_social_lr/Components/comp_edit_button.dart';
 import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 
@@ -26,7 +30,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
-    bool inputData = false;
+    File? _image;
     TextEditingController controllerName = TextEditingController(
       text: 'profileAuthenticated.profileAuthentic.value.name',
     );
@@ -103,6 +107,26 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                             ),
                             child: ComponentEditButton(
                               icon: Icons.add_a_photo,
+                              onPressed: () async {
+                                final ImagePicker picker = ImagePicker();
+                                final XFile? pickedFile = await picker
+                                    .pickImage(source: ImageSource.camera);
+                                if (pickedFile != null) {
+                                  File image = File(pickedFile.path);
+                                  Directory directory =
+                                      await getApplicationDocumentsDirectory();
+                                  String localPath = directory.path;
+
+                                  String uniqueID = UniqueKey().toString();
+
+                                  final File savedImage = await image
+                                      .copy('$localPath/image_$uniqueID.png');
+
+                                  setState(() {
+                                    _image = savedImage;
+                                  });
+                                }
+                              },
                             ),
                           ),
                         ],
