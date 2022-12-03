@@ -23,9 +23,9 @@ class _ScreenHomeState extends State<ScreenHome> {
         appBar: const ComponentAppBar(),
         body: FutureBuilder(
           future: ApiService.getAllPostByFollow(),
-          builder: (context, listPost) {
+          builder: (context, postList) {
             return ListView.builder(
-              itemCount: listPost.data == null ? 0 : listPost.data!.length,
+              itemCount:postList.data!.length,// postList.data == null ? 0 :  (RAFAEL aqui não precisava disso, pq se for null ele ja pega 0)
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
@@ -33,15 +33,15 @@ class _ScreenHomeState extends State<ScreenHome> {
                       children: [
                         ComponentPost(
                           postUsername:
-                              listPost.data!.elementAt(index).name.toString(),
+                              postList.data!.elementAt(index).name.toString(),
                           postNickname:
-                              "@${listPost.data!.elementAt(index).nickname}",
+                              "@${postList.data!.elementAt(index).nickname}",
                           postDescription:
-                              listPost.data!.elementAt(index).description,
+                              postList.data!.elementAt(index).description,
                           postImage: [
-                            listPost.data!.elementAt(index).postMedia[0]
+                            postList.data!.elementAt(index).postMedia[0]
                           ],
-                          //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
+                          //LUIGGI  postList.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
                         )
                       ],
                     )

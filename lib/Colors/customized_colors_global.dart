@@ -5,12 +5,17 @@ class CustomizedColors {
   //Texto
   static Color blueText = PatternColors.fluorescentBlue;
   static Color greyText = PatternColors.blackShadows;
+  static Color pinkText = PatternColors.fashionFuchsia;
+  static Color yellowText = PatternColors.speedYellow;
+  static Color greenText = PatternColors.garishGreen;
 
   //Background
   static Color blueBackground = PatternColors.fluorescentBlue;
   static Color darkBackground = PatternColors.chineseDark;
   static Color pinkBackground = PatternColors.fashionFuchsia;
   static Color greyBackground = PatternColors.outerSpace;
+  static Color yellowBackground = PatternColors.speedYellow;
+  static Color greenBackground = PatternColors.garishGreen;
 
   //Bordas
   static Color lightGreyBorderColor = PatternColors.blackShadows;
@@ -18,4 +23,7 @@ class CustomizedColors {
   //Icons
   static Color lightGreyIcon = PatternColors.blackShadows;
   static Color blueIcon = PatternColors.fluorescentBlue;
+  static Color yellowIcon = PatternColors.speedYellow;
+  static Color pinkIcon = PatternColors.fashionFuchsia;
+  static Color greenIcon = PatternColors.garishGreen;
 }

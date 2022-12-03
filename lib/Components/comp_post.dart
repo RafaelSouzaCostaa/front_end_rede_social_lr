@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Components/comp_icon_text.dart';
 import 'package:rede_social_lr/Components/comp_text.dart';
 
 import '../Colors/customized_colors_global.dart';
@@ -134,7 +135,40 @@ class _ComponentPostState extends State<ComponentPost> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          Container(
+            width: Get.width * 0.5,
+            padding: const EdgeInsets.only(top: 10),
+            alignment: Alignment.centerRight,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ComponentIconText(
+                  icon: Icons.chat_bubble_outline,
+                  text: "545", //RAFAWL colocar o numero de likes e etc aqui dps
+                  iconActiveColor: CustomizedColors.blueIcon,
+                  textActiveColor: CustomizedColors.blueText,
+                ),
+                ComponentIconText(
+                  icon: Icons.change_circle_outlined,
+                  text: "545",
+                  iconActiveColor: CustomizedColors.greenIcon,
+                  textActiveColor: CustomizedColors.greenText,
+                ),
+                ComponentIconText(
+                  icon: Icons.star_border,
+                  text: "545",
+                  iconActiveColor: CustomizedColors.yellowIcon,
+                  textActiveColor: CustomizedColors.yellowText,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Divider(
+            color: CustomizedColors.blueBackground,
+            height: 4,
+            thickness: 0.5,
+          )
         ],
       ),
     );
