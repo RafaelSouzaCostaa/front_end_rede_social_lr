@@ -64,7 +64,9 @@ class _ScreenProfileState extends State<ScreenProfile> {
               SliverAppBar(
                 leading: visible
                     ? IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed("/profile");
+                        },
                         icon: const Icon(Icons.arrow_back),
                       )
                     : null,
