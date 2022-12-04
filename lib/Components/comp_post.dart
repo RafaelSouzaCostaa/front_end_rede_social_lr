@@ -9,7 +9,7 @@ import '../Colors/customized_colors_global.dart';
 
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
-  List<String>? postImage = List<String>.empty(growable: true);
+  List<dynamic>? postImage = List<dynamic>.empty(growable: true);
   String? postDescription;
   String? postUsername;
   String? postNickname;
@@ -92,7 +92,6 @@ class _ComponentPostState extends State<ComponentPost> {
                 children: [
                   Container(
                     padding: const EdgeInsets.only(top: 5, bottom: 10),
-                    alignment: Alignment.centerLeft,
                     child: Text(widget.postDescription!),
                   ),
                   if (widget.postImage?.length == 1)
@@ -101,23 +100,24 @@ class _ComponentPostState extends State<ComponentPost> {
                     ),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
-                    Row(
-                      children: [
-                        Container(
-                          color: Colors.green,
-                          width: Get.width * 0.38,
-                          height: 300,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: SizedBox(
+                        height: Get.height * 0.2,
+                        child: Row(
+                          children: [
+                            Image.network(widget.postImage!.elementAt(0)),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Image.network(widget.postImage!.elementAt(1))
+                          ],
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Container(
-                          color: Colors.blue,
-                          width: Get.width * 0.38,
-                          height: 300,
-                        )
-                      ],
+                      ),
                     ),
+
+                  //AUQI
+
                   //Três imagens
                   //LUIGGI FAZER 3 e 4
                   if (widget.postImage?.length == 3)
@@ -151,14 +151,14 @@ class _ComponentPostState extends State<ComponentPost> {
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
                   text: "545",
-                  iconActiveColor: CustomizedColors.greenIcon,
-                  textActiveColor: CustomizedColors.greenText,
+                  iconActiveColor: CustomizedColors.blueIcon,
+                  textActiveColor: CustomizedColors.blueText,
                 ),
                 ComponentIconText(
                   icon: Icons.star_border,
                   text: "545",
-                  iconActiveColor: CustomizedColors.yellowIcon,
-                  textActiveColor: CustomizedColors.yellowText,
+                  iconActiveColor: CustomizedColors.blueIcon,
+                  textActiveColor: CustomizedColors.blueText,
                 ),
               ],
             ),
