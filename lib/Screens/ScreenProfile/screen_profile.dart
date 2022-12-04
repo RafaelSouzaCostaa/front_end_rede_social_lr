@@ -53,7 +53,6 @@ class _ScreenProfileState extends State<ScreenProfile> {
         .profileAuthentic.value.getLengthFollowersObjectId
         .toString();
 
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: DefaultTabController(
         length: 2,
@@ -146,18 +145,19 @@ class _ScreenProfileState extends State<ScreenProfile> {
                         ),
                       ),
                       Container(
-                        padding: const EdgeInsets.only(top: 15),
+                        padding:
+                            const EdgeInsets.only(top: 15, left: 15, right: 15),
                         child: Text(
                           //FIX mudar para description quando implementar
                           profileAuthenticated
                               .profileAuthentic.value.description
                               .toString(),
+                          textAlign: TextAlign.justify,
                           style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
                             fontFamily: 'Imprima-Regular',
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                       Container(
