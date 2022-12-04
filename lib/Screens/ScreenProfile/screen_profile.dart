@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_edit_button.dart';
+import '../../Components/comp_post.dart';
 import '../../Global/api_service.dart';
 import '../../Global/profile_authenticated.dart';
 import '../../Models/model_post.dart';
@@ -25,12 +26,6 @@ class _ScreenProfileState extends State<ScreenProfile> {
 
   @override
   initState() {
-    getMyPosts() async {
-      auxPost = await ApiService.getAllPostsByProfileId();
-    }
-
-    getMyPosts();
-
     scrollController.addListener(() {
       if (scrollController.offset > auxScroll) {
         auxScroll = scrollController.offset;
@@ -195,24 +190,29 @@ class _ScreenProfileState extends State<ScreenProfile> {
           },
           body: TabBarView(
             children: [
-              ListView.builder(
-                itemCount: auxPost.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      SizedBox(
-                        width: width * 0.90,
-                        child: Image.network(auxPost[index].postMedia[0]),
-                      ),
-                      Text(
-                        auxPost[index].description,
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 0, 0, 0)),
-                      ),
-                      const SizedBox(height: 20)
-                    ],
+              FutureBuilder(
+                future: ApiService.getAllPostsByProfileId(),
+                builder: ((context, posts) {
+                  return ListView.builder(
+                    itemCount: posts.data == null ? 0 : posts.data!.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Column(
+                        children: [
+                          ComponentPost(
+                            postUsername:
+                                posts.data!.elementAt(index).name.toString(),
+                            postNickname:
+                                "@${posts.data!.elementAt(index).nickname}",
+                            postDescription:
+                                posts.data!.elementAt(index).description,
+                            postImage: posts.data!.elementAt(index).postMedia,
+                            //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
+                          )
+                        ],
+                      );
+                    },
                   );
-                },
+                }),
               ),
               const Text("sdsd"),
             ],
