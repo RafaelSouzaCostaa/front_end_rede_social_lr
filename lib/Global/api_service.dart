@@ -102,6 +102,25 @@ class ApiService {
     }
   }
 
+  static Future<Profile> getProfileById(id) async {
+    final response = await http.get(
+      Uri.parse(APIConstants.apiUrl + APIConstants.getProfileById(id)),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-access-token': _token.token.value
+      },
+    );
+    if (response.statusCode == 200) {
+      var profilesMap = jsonDecode(response.body);
+
+      return Profile.fromMap(profilesMap);
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao recuperar perfis');
+    }
+  }
+
   static Future<Profile> getProfileByNick(String nickname) async {
     final response = await http.get(
         Uri.parse(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_drawer.dart';
@@ -25,6 +26,7 @@ class _ScreenHomeState extends State<ScreenHome> {
           future: ApiService.getAllPostByFollow(),
           builder: (context, listPost) {
             return ListView.builder(
+              cacheExtent: Get.height,
               itemCount: listPost.data == null ? 0 : listPost.data!.length,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
@@ -41,6 +43,11 @@ class _ScreenHomeState extends State<ScreenHome> {
                           postImage: [
                             listPost.data!.elementAt(index).postMedia[0]
                           ],
+                          numberOfLikes:
+                              listPost.data!.elementAt(index).numberOfLikes,
+                          numberOfComments:
+                              listPost.data!.elementAt(index).numberOfComments,
+                          comments: listPost.data!.elementAt(index).comments,
                           //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
                         )
                       ],

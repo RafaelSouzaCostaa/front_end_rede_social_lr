@@ -6,6 +6,7 @@ import 'package:rede_social_lr/Components/comp_icon_text.dart';
 import 'package:rede_social_lr/Components/comp_text.dart';
 
 import '../Colors/customized_colors_global.dart';
+import '../Global/api_service.dart';
 
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
@@ -16,17 +17,18 @@ class ComponentPost extends StatefulWidget {
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
+  List<dynamic>? comments = List<dynamic>.empty(growable: true);
 
-  ComponentPost({
-    super.key,
-    required this.postDescription,
-    required this.postUsername,
-    required this.postNickname,
-    this.numberOfLikes,
-    this.numberOfReposts,
-    this.numberOfComments,
-    this.postImage,
-  });
+  ComponentPost(
+      {super.key,
+      required this.postDescription,
+      required this.postUsername,
+      required this.postNickname,
+      this.numberOfLikes,
+      this.numberOfReposts,
+      this.numberOfComments,
+      this.postImage,
+      this.comments});
 
   @override
   State<ComponentPost> createState() => _ComponentPostState();
@@ -95,25 +97,86 @@ class _ComponentPostState extends State<ComponentPost> {
                     child: Text(widget.postDescription!),
                   ),
                   if (widget.postImage?.length == 1)
-                    SizedBox(
-                      child: Image.network(widget.postImage!.elementAt(0)),
+                    Column(
+                      children: [
+                        Container(
+                          constraints: BoxConstraints(
+                              minHeight: Get.height * 0.1,
+                              maxHeight: Get.height *
+                                  0.5), //LUIGGI Altura da img de postagens
+                          child: Image.network(widget.postImage!.elementAt(0)),
+                        ),
+                        Container(
+                          constraints: BoxConstraints(
+                              minHeight: 0, maxHeight: Get.height * 0.5),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: widget.comments == null
+                                ? 0
+                                : widget.comments!.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return FutureBuilder(
+                                future: ApiService.getProfileById(
+                                    widget.comments![index]['profileObjectId']),
+                                builder: (context, profileCommented) {
+                                  return //LUIGGI //IMPLEMENTAR aqui precisa pegar o profileObjectId para buscar os dados de que fez o comment
+                                      Text(
+                                          "${profileCommented.data?.name}:  ${widget.comments?[index]['comment']}");
+                                },
+                              );
+                            },
+                          ),
+                        )
+                      ],
                     ),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: SizedBox(
-                        height: Get.height * 0.2,
-                        child: Row(
-                          children: [
-                            Image.network(widget.postImage!.elementAt(0)),
-                            const SizedBox(
-                              width: 5,
+                    //RAFAEL //IMPLEMENTAR o modelo relogio aqui para testar, tem no catalogo do flutter
+                    Column(
+                      children: [
+                        Container(
+                          constraints: BoxConstraints(
+                              minHeight: Get.height * 0.1,
+                              maxHeight: Get.height *
+                                  0.5), //LUIGGI Altura da img de postagens
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                    width: Get.width * 0.5,
+                                    child: Image.network(
+                                        widget.postImage!.elementAt(1))),
+                                SizedBox(
+                                    width: Get.width * 0.5,
+                                    child: Image.network(
+                                        widget.postImage!.elementAt(0))),
+                              ],
                             ),
-                            Image.network(widget.postImage!.elementAt(1))
-                          ],
+                          ),
                         ),
-                      ),
+                        Container(
+                          constraints: BoxConstraints(
+                              minHeight: 0, maxHeight: Get.height * 0.5),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: widget.comments == null
+                                ? 0
+                                : widget.comments!.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return FutureBuilder(
+                                future: ApiService.getProfileById(
+                                    widget.comments![index]['profileObjectId']),
+                                builder: (context, profileCommented) {
+                                  return //LUIGGI //IMPLEMENTAR aqui precisa pegar o profileObjectId para buscar os dados de que fez o comment
+                                      Text(
+                                          "${profileCommented.data?.name}:  ${widget.comments?[index]['comment']}");
+                                },
+                              );
+                            },
+                          ),
+                        )
+                      ],
                     ),
 
                   //AUQI
@@ -144,19 +207,20 @@ class _ComponentPostState extends State<ComponentPost> {
               children: [
                 ComponentIconText(
                   icon: Icons.chat_bubble_outline,
-                  text: "545", //RAFAWL colocar o numero de likes e etc aqui dps
+                  text: widget.numberOfComments
+                      .toString(), //RAFAWL colocar o numero de likes e etc aqui dps
                   iconActiveColor: CustomizedColors.greenIcon,
                   textActiveColor: CustomizedColors.greenText,
                 ),
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
-                  text: "545",
+                  text: "545", //IMPLEMENTAR
                   iconActiveColor: CustomizedColors.yellowIcon,
                   textActiveColor: CustomizedColors.yellowText,
                 ),
                 ComponentIconText(
                   icon: Icons.star_border,
-                  text: "545",
+                  text: widget.numberOfLikes.toString(),
                   iconActiveColor: CustomizedColors.blueIcon,
                   textActiveColor: CustomizedColors.blueText,
                 ),
