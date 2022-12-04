@@ -2,13 +2,14 @@ class Post {
   String? name;
   String? nickname;
   late String profileObjectId;
-  late List postMedia = [];
+  late List<dynamic> postMedia = List<dynamic>.empty(growable: true);
   int? postDate;
   late String description;
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
   List? comments = [];
+  List? postLikedBy = [];
 
   Post({
     required this.postMedia,
@@ -32,6 +33,7 @@ class Post {
     numberOfReposts = map["number"];
     numberOfComments = map["numberOfComments"];
     comments = map["comments"];
+    postLikedBy = map["postLikedBy"];
   }
 
   Map<String, dynamic> toMap() => {
@@ -45,5 +47,6 @@ class Post {
         "numberOfReposts": numberOfReposts,
         "numberOfComments": numberOfComments,
         "comments": comments,
+        "postLikedBy": postLikedBy,
       };
 }
