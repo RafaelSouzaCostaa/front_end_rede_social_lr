@@ -145,14 +145,14 @@ class _ComponentPostState extends State<ComponentPost> {
                 ComponentIconText(
                   icon: Icons.chat_bubble_outline,
                   text: "545", //RAFAWL colocar o numero de likes e etc aqui dps
-                  iconActiveColor: CustomizedColors.blueIcon,
-                  textActiveColor: CustomizedColors.blueText,
+                  iconActiveColor: CustomizedColors.greenIcon,
+                  textActiveColor: CustomizedColors.greenText,
                 ),
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
                   text: "545",
-                  iconActiveColor: CustomizedColors.blueIcon,
-                  textActiveColor: CustomizedColors.blueText,
+                  iconActiveColor: CustomizedColors.yellowIcon,
+                  textActiveColor: CustomizedColors.yellowText,
                 ),
                 ComponentIconText(
                   icon: Icons.star_border,
