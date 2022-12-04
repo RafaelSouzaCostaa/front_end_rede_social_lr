@@ -37,7 +37,6 @@ class ComponentPost extends StatefulWidget {
 class _ComponentPostState extends State<ComponentPost> {
   @override
   Widget build(BuildContext context) {
-    print(widget.image.toString());
     return SizedBox(
       width: Get.width * 1.0,
       child: Column(
