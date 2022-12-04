@@ -8,7 +8,8 @@ class Post {
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
-  List? comments = [];
+  String? image;
+
   List? postLikedBy = [];
 
   Post({
@@ -18,7 +19,6 @@ class Post {
     this.numberOfLikes,
     this.numberOfReposts,
     this.numberOfComments,
-    this.comments,
   });
 
   Post.fromMap(Map map) {
@@ -32,8 +32,8 @@ class Post {
     numberOfLikes = map["numberOfLikes"];
     numberOfReposts = map["number"];
     numberOfComments = map["numberOfComments"];
-    comments = map["comments"];
     postLikedBy = map["postLikedBy"];
+    image = map["image"];
   }
 
   Map<String, dynamic> toMap() => {
@@ -46,7 +46,7 @@ class Post {
         "numberOfLikes": numberOfLikes,
         "numberOfReposts": numberOfReposts,
         "numberOfComments": numberOfComments,
-        "comments": comments,
         "postLikedBy": postLikedBy,
+        "image": image,
       };
 }

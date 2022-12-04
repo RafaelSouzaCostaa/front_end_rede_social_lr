@@ -17,7 +17,7 @@ class ComponentPost extends StatefulWidget {
   int? numberOfLikes;
   int? numberOfReposts;
   int? numberOfComments;
-  List<dynamic>? comments = List<dynamic>.empty(growable: true);
+  String? image;
 
   ComponentPost(
       {super.key,
@@ -28,7 +28,7 @@ class ComponentPost extends StatefulWidget {
       this.numberOfReposts,
       this.numberOfComments,
       this.postImage,
-      this.comments});
+      this.image});
 
   @override
   State<ComponentPost> createState() => _ComponentPostState();
@@ -37,6 +37,7 @@ class ComponentPost extends StatefulWidget {
 class _ComponentPostState extends State<ComponentPost> {
   @override
   Widget build(BuildContext context) {
+    print(widget.image.toString());
     return SizedBox(
       width: Get.width * 1.0,
       child: Column(
@@ -45,15 +46,15 @@ class _ComponentPostState extends State<ComponentPost> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10),
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: CustomizedColors.blueBackground,
-                  //IMPLEMENTAR trocar foto pelo do perfil quando implementar
-                  child: const Icon(
-                    Icons.add_a_photo,
-                    size: 18,
-                  ),
-                ),
+                child: widget.image != null
+                    ? CircleAvatar(
+                        backgroundColor: CustomizedColors.blueBackground,
+                        backgroundImage: NetworkImage(widget.image.toString()))
+                    : CircleAvatar(
+                        backgroundColor: CustomizedColors.blueBackground,
+                        backgroundImage:
+                            const ExactAssetImage("assets/image/perfil.png"),
+                      ),
               ),
               Flexible(
                 child: Row(
@@ -101,31 +102,10 @@ class _ComponentPostState extends State<ComponentPost> {
                       children: [
                         Container(
                           constraints: BoxConstraints(
-                              minHeight: Get.height * 0.1,
+                              minHeight: Get.height * 0.05,
                               maxHeight: Get.height *
                                   0.5), //LUIGGI Altura da img de postagens
                           child: Image.network(widget.postImage!.elementAt(0)),
-                        ),
-                        Container(
-                          constraints: BoxConstraints(
-                              minHeight: 0, maxHeight: Get.height * 0.5),
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: widget.comments == null
-                                ? 0
-                                : widget.comments!.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return FutureBuilder(
-                                future: ApiService.getProfileById(
-                                    widget.comments![index]['profileObjectId']),
-                                builder: (context, profileCommented) {
-                                  return //LUIGGI //IMPLEMENTAR aqui precisa pegar o profileObjectId para buscar os dados de que fez o comment
-                                      Text(
-                                          "${profileCommented.data?.name}:  ${widget.comments?[index]['comment']}");
-                                },
-                              );
-                            },
-                          ),
                         )
                       ],
                     ),
@@ -136,7 +116,7 @@ class _ComponentPostState extends State<ComponentPost> {
                       children: [
                         Container(
                           constraints: BoxConstraints(
-                              minHeight: Get.height * 0.1,
+                              minHeight: Get.height * 0.05,
                               maxHeight: Get.height *
                                   0.5), //LUIGGI Altura da img de postagens
                           child: SingleChildScrollView(
@@ -155,31 +135,8 @@ class _ComponentPostState extends State<ComponentPost> {
                             ),
                           ),
                         ),
-                        Container(
-                          constraints: BoxConstraints(
-                              minHeight: 0, maxHeight: Get.height * 0.5),
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: widget.comments == null
-                                ? 0
-                                : widget.comments!.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return FutureBuilder(
-                                future: ApiService.getProfileById(
-                                    widget.comments![index]['profileObjectId']),
-                                builder: (context, profileCommented) {
-                                  return //LUIGGI //IMPLEMENTAR aqui precisa pegar o profileObjectId para buscar os dados de que fez o comment
-                                      Text(
-                                          "${profileCommented.data?.name}:  ${widget.comments?[index]['comment']}");
-                                },
-                              );
-                            },
-                          ),
-                        )
                       ],
                     ),
-
-                  //AUQI
 
                   //Três imagens
                   //LUIGGI FAZER 3 e 4

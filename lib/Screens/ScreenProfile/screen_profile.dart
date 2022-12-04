@@ -199,19 +199,20 @@ class _ScreenProfileState extends State<ScreenProfile> {
                     itemCount: posts.data == null ? 0 : posts.data!.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ComponentPost(
-                        postUsername:
-                            posts.data!.elementAt(index).name.toString(),
-                        postNickname:
-                            "@${posts.data?.elementAt(index).nickname}",
-                        postDescription:
-                            posts.data!.elementAt(index).description,
-                        postImage: posts.data!.elementAt(index).postMedia,
-                        numberOfLikes:
-                            posts.data!.elementAt(index).numberOfLikes,
-                        numberOfComments:
-                            posts.data!.elementAt(index).numberOfComments,
-                        //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
-                      );
+                          postUsername:
+                              posts.data!.elementAt(index).name.toString(),
+                          postNickname:
+                              "@${posts.data?.elementAt(index).nickname}",
+                          postDescription:
+                              posts.data!.elementAt(index).description,
+                          postImage: posts.data!.elementAt(index).postMedia,
+                          numberOfLikes:
+                              posts.data!.elementAt(index).numberOfLikes,
+                          numberOfComments:
+                              posts.data!.elementAt(index).numberOfComments,
+                          image: posts.data!.elementAt(index).image
+                          //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
+                          );
                     },
                   );
                 }),

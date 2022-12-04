@@ -47,7 +47,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                               listPost.data!.elementAt(index).numberOfLikes,
                           numberOfComments:
                               listPost.data!.elementAt(index).numberOfComments,
-                          comments: listPost.data!.elementAt(index).comments,
+                          image: listPost.data!.elementAt(index).image,
                           //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
                         )
                       ],
