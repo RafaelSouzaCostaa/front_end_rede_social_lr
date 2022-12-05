@@ -90,7 +90,7 @@ class _ComponentPostState extends State<ComponentPost> {
           ),
           //Uma imagem
           SizedBox(
-            width: Get.width * 0.88,
+            width: Get.width * 0.87,
             child: Padding(
               padding: const EdgeInsets.only(left: 25),
               child: Column(
@@ -126,7 +126,7 @@ class _ComponentPostState extends State<ComponentPost> {
                       child: Row(
                         children: [
                           SizedBox(
-                            width: Get.width * 0.4,
+                            width: Get.width * 0.4 - 12.5,
                             height: Get.height * 0.4,
                             child: ClipRRect(
                               borderRadius: const BorderRadius.only(
@@ -141,7 +141,7 @@ class _ComponentPostState extends State<ComponentPost> {
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
                             child: SizedBox(
-                              width: Get.width * 0.4,
+                              width: Get.width * 0.4 - 12.5,
                               height: Get.height * 0.4,
                               child: ClipRRect(
                                 borderRadius: const BorderRadius.only(
