@@ -6,7 +6,7 @@ import 'package:rede_social_lr/Components/comp_icon_text.dart';
 import 'package:rede_social_lr/Components/comp_text.dart';
 
 import '../Colors/customized_colors_global.dart';
-import '../Global/api_service.dart';
+
 
 class ComponentPost extends StatefulWidget {
   // String perfilImage;

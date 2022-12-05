@@ -16,6 +16,7 @@ class ComponentTextButton extends StatefulWidget {
   double leftPadding;
   double spaceBetweenIconAndText;
   bool hoverAnimation;
+
   ComponentTextButton({
     super.key,
     this.text,
@@ -28,7 +29,7 @@ class ComponentTextButton extends StatefulWidget {
     this.width,
     this.leftPadding = 0,
     this.rightPadding = 0,
-    this.spaceBetweenIconAndText = 8,
+    this.spaceBetweenIconAndText = 0,
     this.hoverAnimation = true,
   });
   @override
@@ -68,7 +69,7 @@ class _ComponentTextButtonState extends State<ComponentTextButton> {
               child: widget.text != null
                   ? Text(
                       widget.text.toString(),
-                      style: TextStyle(color: widget.textColor, fontSize: 15.5),
+                      style: TextStyle(color: widget.textColor, fontSize: 14),
                     )
                   : null,
             ),
