@@ -103,8 +103,8 @@ class _ComponentPostState extends State<ComponentPost> {
                   if (widget.postImage?.length == 1)
                     Container(
                       constraints: BoxConstraints(
-                          minHeight: Get.height * 0.5,
-                          maxHeight: Get.height * 0.5),
+                          minHeight: Get.height * 0.45,
+                          maxHeight: Get.height * 0.45),
                       child: ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
@@ -119,8 +119,8 @@ class _ComponentPostState extends State<ComponentPost> {
                     //RAFAEL //IMPLEMENTAR o modelo relogio aqui para testar, tem no catalogo do flutter
                     Container(
                       constraints: BoxConstraints(
-                        minHeight: Get.height * 0.40,
-                        maxHeight: Get.height * 0.40,
+                        minHeight: Get.height * 0.4,
+                        maxHeight: Get.height * 0.4,
                         minWidth: Get.width * 0.4,
                         maxWidth: Get.width * 0.81,
                       ),
@@ -233,13 +233,13 @@ class _ComponentPostState extends State<ComponentPost> {
                           Column(
                             children: [
                               SizedBox(
-                                width: Get.width * 0.4,
+                                width: Get.width * 0.4 - 24,
                                 height: Get.height * 0.203,
                                 child: ClipRRect(
                                   borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(10)),
+                                      topLeft: Radius.circular(10)),
                                   child: Image.network(
-                                    widget.postImage!.elementAt(1),
+                                    widget.postImage!.elementAt(0),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -247,11 +247,11 @@ class _ComponentPostState extends State<ComponentPost> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 3, top: 3),
                                 child: SizedBox(
-                                  width: Get.width * 0.4,
+                                  width: Get.width * 0.4 - 24,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(
-                                      bottomRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
                                     ),
                                     child: Image.network(
                                       widget.postImage!.elementAt(1),
@@ -267,13 +267,13 @@ class _ComponentPostState extends State<ComponentPost> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 3),
                                 child: SizedBox(
-                                  width: Get.width * 0.4,
+                                  width: Get.width * 0.4 - 24,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(
                                         topRight: Radius.circular(10)),
                                     child: Image.network(
-                                      widget.postImage!.elementAt(1),
+                                      widget.postImage!.elementAt(2),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -282,14 +282,14 @@ class _ComponentPostState extends State<ComponentPost> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 3, top: 3),
                                 child: SizedBox(
-                                  width: Get.width * 0.4,
+                                  width: Get.width * 0.4 - 24,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(
                                       bottomRight: Radius.circular(10),
                                     ),
                                     child: Image.network(
-                                      widget.postImage!.elementAt(1),
+                                      widget.postImage!.elementAt(3),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
