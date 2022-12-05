@@ -90,7 +90,7 @@ class _ComponentPostState extends State<ComponentPost> {
           ),
           //Uma imagem
           SizedBox(
-            width: Get.width * 0.87,
+            width: Get.width * 0.81,
             child: Padding(
               padding: const EdgeInsets.only(left: 25),
               child: Column(
