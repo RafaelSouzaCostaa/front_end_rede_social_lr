@@ -90,7 +90,7 @@ class _ComponentPostState extends State<ComponentPost> {
           ),
           //Uma imagem
           SizedBox(
-            width: Get.width * 0.87,
+            width: Get.width * 0.88,
             child: Padding(
               padding: const EdgeInsets.only(left: 25),
               child: Column(
@@ -208,7 +208,7 @@ class _ComponentPostState extends State<ComponentPost> {
                                       bottomRight: Radius.circular(10),
                                     ),
                                     child: Image.network(
-                                      widget.postImage!.elementAt(1),
+                                      widget.postImage!.elementAt(2),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -221,9 +221,83 @@ class _ComponentPostState extends State<ComponentPost> {
                     ),
                   //Quatro imagens
                   if (widget.postImage?.length == 4)
-                    SizedBox(
-                      width: Get.width * 0.8,
-                      height: 300,
+                    Container(
+                      constraints: BoxConstraints(
+                          minHeight: Get.height * 0.40,
+                          maxHeight: Get.height * 0.41,
+                          minWidth: Get.width * 0.4,
+                          maxWidth: Get.width * 0.81),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              SizedBox(
+                                width: Get.width * 0.4,
+                                height: Get.height * 0.203,
+                                child: ClipRRect(
+                                  borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(10)),
+                                  child: Image.network(
+                                    widget.postImage!.elementAt(1),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 3, top: 3),
+                                child: SizedBox(
+                                  width: Get.width * 0.4,
+                                  height: Get.height * 0.203,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                    child: Image.network(
+                                      widget.postImage!.elementAt(1),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 3),
+                                child: SizedBox(
+                                  width: Get.width * 0.4,
+                                  height: Get.height * 0.203,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                        topRight: Radius.circular(10)),
+                                    child: Image.network(
+                                      widget.postImage!.elementAt(1),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 3, top: 3),
+                                child: SizedBox(
+                                  width: Get.width * 0.4,
+                                  height: Get.height * 0.203,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                    child: Image.network(
+                                      widget.postImage!.elementAt(1),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                 ],
               ),
