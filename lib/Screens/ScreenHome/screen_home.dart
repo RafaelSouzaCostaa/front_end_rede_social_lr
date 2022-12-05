@@ -26,7 +26,7 @@ class _ScreenHomeState extends State<ScreenHome> {
           future: ApiService.getAllPostByFollow(),
           builder: (context, listPost) {
             return ListView.builder(
-              cacheExtent: Get.height,
+              cacheExtent: Get.height * 5,
               itemCount: listPost.data == null ? 0 : listPost.data!.length,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
@@ -40,9 +40,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                               "@${listPost.data!.elementAt(index).nickname}",
                           postDescription:
                               listPost.data!.elementAt(index).description,
-                          postImage: [
-                            listPost.data!.elementAt(index).postMedia[0]
-                          ],
+                          postImage: listPost.data!.elementAt(index).postMedia,
                           numberOfLikes:
                               listPost.data!.elementAt(index).numberOfLikes,
                           numberOfComments:

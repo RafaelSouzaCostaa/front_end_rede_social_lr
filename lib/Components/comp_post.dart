@@ -11,6 +11,8 @@ import '../Global/api_service.dart';
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
   List<dynamic>? postImage = List<dynamic>.empty(growable: true);
+  String? profileObjectId;
+  String? postObjectId;
   String? postDescription;
   String? postUsername;
   String? postNickname;
@@ -28,7 +30,9 @@ class ComponentPost extends StatefulWidget {
       this.numberOfReposts,
       this.numberOfComments,
       this.postImage,
-      this.image});
+      this.image,
+      this.profileObjectId,
+      this.postObjectId});
 
   @override
   State<ComponentPost> createState() => _ComponentPostState();
@@ -164,7 +168,7 @@ class _ComponentPostState extends State<ComponentPost> {
                 ComponentIconText(
                   icon: Icons.chat_bubble_outline,
                   text: widget.numberOfComments
-                      .toString(), //RAFAWL colocar o numero de likes e etc aqui dps
+                      .toString(), //RAFAEL colocar o numero de likes e etc aqui dps
                   iconActiveColor: CustomizedColors.greenIcon,
                   textActiveColor: CustomizedColors.greenText,
                 ),
