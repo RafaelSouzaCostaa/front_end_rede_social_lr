@@ -196,6 +196,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                 future: ApiService.getAllPostsByProfileId(),
                 builder: ((context, posts) {
                   return ListView.builder(
+                    cacheExtent: Get.height * 5,
                     itemCount: posts.data == null ? 0 : posts.data!.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ComponentPost(

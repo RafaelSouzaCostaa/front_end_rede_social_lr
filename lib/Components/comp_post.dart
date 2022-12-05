@@ -130,10 +130,13 @@ class _ComponentPostState extends State<ComponentPost> {
                                     width: Get.width * 0.5,
                                     child: Image.network(
                                         widget.postImage!.elementAt(1))),
-                                SizedBox(
-                                    width: Get.width * 0.5,
-                                    child: Image.network(
-                                        widget.postImage!.elementAt(0))),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 3),
+                                  child: SizedBox(
+                                      width: Get.width * 0.5,
+                                      child: Image.network(
+                                          widget.postImage!.elementAt(0))),
+                                ),
                               ],
                             ),
                           ),
