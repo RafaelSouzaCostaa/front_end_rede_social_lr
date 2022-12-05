@@ -102,9 +102,11 @@ class _ComponentPostState extends State<ComponentPost> {
                   //UMA IMAGEM
                   if (widget.postImage?.length == 1)
                     Container(
+                      width: Get.width * 0.81,
                       constraints: BoxConstraints(
-                          minHeight: Get.height * 0.45,
-                          maxHeight: Get.height * 0.45),
+                        minHeight: Get.height * 0.45,
+                        maxHeight: Get.height * 0.45,
+                      ),
                       child: ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
@@ -320,7 +322,7 @@ class _ComponentPostState extends State<ComponentPost> {
                 ),
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
-                  text: "545", //IMPLEMENTAR
+                  text: "0", //IMPLEMENTAR
                   iconActiveColor: CustomizedColors.yellowIcon,
                   textActiveColor: CustomizedColors.yellowText,
                 ),
