@@ -119,10 +119,11 @@ class _ComponentPostState extends State<ComponentPost> {
                     //RAFAEL //IMPLEMENTAR o modelo relogio aqui para testar, tem no catalogo do flutter
                     Container(
                       constraints: BoxConstraints(
-                          minHeight: Get.height * 0.40,
-                          maxHeight: Get.height * 0.40,
-                          minWidth: Get.width * 0.4,
-                          maxWidth: Get.width * 0.81),
+                        minHeight: Get.height * 0.40,
+                        maxHeight: Get.height * 0.40,
+                        minWidth: Get.width * 0.4,
+                        maxWidth: Get.width * 0.81,
+                      ),
                       child: Row(
                         children: [
                           SizedBox(
@@ -162,8 +163,8 @@ class _ComponentPostState extends State<ComponentPost> {
                   if (widget.postImage?.length == 3)
                     Container(
                       constraints: BoxConstraints(
-                          minHeight: Get.height * 0.40,
-                          maxHeight: Get.height * 0.41,
+                          minHeight: Get.height * 0.4 - 25,
+                          maxHeight: Get.height * 0.4,
                           minWidth: Get.width * 0.4,
                           maxWidth: Get.width * 0.81),
                       child: Row(
@@ -186,8 +187,8 @@ class _ComponentPostState extends State<ComponentPost> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 3),
                                 child: SizedBox(
-                                  width: Get.width * 0.4,
-                                  height: Get.height * 0.203,
+                                  width: Get.width * 0.4 - 24,
+                                  height: Get.height * 0.198,
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(
                                         topRight: Radius.circular(10)),
@@ -201,8 +202,8 @@ class _ComponentPostState extends State<ComponentPost> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 3, top: 3),
                                 child: SizedBox(
-                                  width: Get.width * 0.4,
-                                  height: Get.height * 0.203,
+                                  width: Get.width * 0.4 - 24,
+                                  height: Get.height * 0.198,
                                   child: ClipRRect(
                                     borderRadius: const BorderRadius.only(
                                       bottomRight: Radius.circular(10),
