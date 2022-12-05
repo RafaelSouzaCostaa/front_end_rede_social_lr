@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Colors/customized_colors_global.dart';
 import 'comp_input.dart';
 
 class ComponentOpenInputButton extends StatefulWidget {

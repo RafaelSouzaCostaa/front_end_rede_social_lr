@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rede_social_lr/Components/comp_app_bar.dart';
 import 'package:rede_social_lr/Components/comp_post.dart';
 
@@ -16,12 +14,16 @@ class _TestesState extends State<Testes> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: ComponentAppBar(),
+        appBar: const ComponentAppBar(),
         body: ComponentPost(
           postDescription: "postDescription",
           postUsername: "postUsername",
           postNickname: "postNickname",
-          postImage: ["a", "a"],
+          postImage: [
+            "https://www.letras.com.br/storage/artista/0/0/1/001.jpg",
+            "https://rollingstone.uol.com.br/media/_versions/twenty-one-pilots-6-melhores-covers-divulgacao_widelg.jpg",
+            "https://blognroll.com.br/wp-content/uploads/2017/05/ba071a6f-1350-4ad3-8bd6-6a96b383c9fe.jpg"
+          ],
         ),
       ),
     );

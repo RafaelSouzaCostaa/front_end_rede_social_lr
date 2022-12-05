@@ -7,7 +7,6 @@ import 'package:rede_social_lr/Components/comp_text.dart';
 
 import '../Colors/customized_colors_global.dart';
 
-
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
   List<dynamic>? postImage = List<dynamic>.empty(growable: true);
@@ -91,65 +90,139 @@ class _ComponentPostState extends State<ComponentPost> {
           ),
           //Uma imagem
           SizedBox(
-            width: Get.width * 0.8,
+            width: Get.width * 0.87,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 25),
               child: Column(
                 children: [
                   Container(
                     padding: const EdgeInsets.only(top: 5, bottom: 10),
                     child: Text(widget.postDescription!),
                   ),
+                  //UMA IMAGEM
                   if (widget.postImage?.length == 1)
-                    Column(
-                      children: [
-                        Container(
-                          constraints: BoxConstraints(
-                              minHeight: Get.height * 0.05,
-                              maxHeight: Get.height *
-                                  0.5), //LUIGGI Altura da img de postagens
-                          child: Image.network(widget.postImage!.elementAt(0)),
-                        )
-                      ],
+                    Container(
+                      constraints: BoxConstraints(
+                          minHeight: Get.height * 0.5,
+                          maxHeight: Get.height * 0.5),
+                      child: ClipRRect(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        child: Image.network(
+                          widget.postImage!.elementAt(0),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
                     //RAFAEL //IMPLEMENTAR o modelo relogio aqui para testar, tem no catalogo do flutter
-                    Column(
-                      children: [
-                        Container(
-                          constraints: BoxConstraints(
-                              minHeight: Get.height * 0.05,
-                              maxHeight: Get.height *
-                                  0.5), //LUIGGI Altura da img de postagens
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                    width: Get.width * 0.5,
-                                    child: Image.network(
-                                        widget.postImage!.elementAt(1))),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 3),
-                                  child: SizedBox(
-                                      width: Get.width * 0.5,
-                                      child: Image.network(
-                                          widget.postImage!.elementAt(0))),
-                                ),
-                              ],
+                    Container(
+                      constraints: BoxConstraints(
+                          minHeight: Get.height * 0.40,
+                          maxHeight: Get.height * 0.40,
+                          minWidth: Get.width * 0.4,
+                          maxWidth: Get.width * 0.81),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: Get.width * 0.4,
+                            height: Get.height * 0.4,
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10)),
+                              child: Image.network(
+                                widget.postImage!.elementAt(0),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 3),
+                            child: SizedBox(
+                              width: Get.width * 0.4,
+                              height: Get.height * 0.4,
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.only(
+                                    bottomRight: Radius.circular(10),
+                                    topRight: Radius.circular(10)),
+                                child: Image.network(
+                                  widget.postImage!.elementAt(1),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
 
                   //Três imagens
-                  //LUIGGI FAZER 3 e 4
                   if (widget.postImage?.length == 3)
-                    SizedBox(
-                      width: Get.width * 0.8,
-                      height: 300,
+                    Container(
+                      constraints: BoxConstraints(
+                          minHeight: Get.height * 0.40,
+                          maxHeight: Get.height * 0.40,
+                          minWidth: Get.width * 0.4,
+                          maxWidth: Get.width * 0.81),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: Get.width * 0.4,
+                            height: Get.height * 0.4,
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10)),
+                              child: Image.network(
+                                widget.postImage!.elementAt(0),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 20,
+                                color: Colors.red,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 3),
+                                child: SizedBox(
+                                  width: Get.width * 0.2,
+                                  height: Get.height * 0.2,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                        bottomRight: Radius.circular(10),
+                                        topRight: Radius.circular(10)),
+                                    child: Image.network(
+                                      widget.postImage!.elementAt(1),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 3),
+                                child: SizedBox(
+                                  width: Get.width * 0.2,
+                                  height: Get.height * 0.2,
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                        bottomRight: Radius.circular(10),
+                                        topRight: Radius.circular(10)),
+                                    child: Image.network(
+                                      widget.postImage!.elementAt(1),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   //Quatro imagens
                   if (widget.postImage?.length == 4)
