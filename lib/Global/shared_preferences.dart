@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rede_social_lr/Global/languages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Colors/themes.dart';

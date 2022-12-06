@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-class Languages extends Translations {
+class Languages extends Translations{
   @override
   Map<String, Map<String, String>> get keys => {
         'pt_BR': {
-          'language': "Português",
+          'actualLanguage': "Português",
           'user': 'Usuario',
           'name': 'Nome',
           'nickname': 'Apelido',
@@ -21,6 +21,13 @@ class Languages extends Translations {
           'recover': 'Recuperar',
           'profile': 'Perfil',
           'change': 'Alterar',
+          'theme': 'Tema',
+          'light': 'Claro',
+          'dark': 'Escuro',
+          'language': 'Idioma',
+          'pt': 'Português',
+          'en': 'Inglês',
+          'es': 'Espanhol',
           'logout': 'Sair',
           'anygossip': 'Alguma fofoca?',
           'required': 'Campo Obrigatorio',
@@ -30,7 +37,7 @@ class Languages extends Translations {
           'validData': 'Insira dados validos'
         },
         'en_US': {
-          'language': "English",
+          'actualLanguage': "English",
           'user': 'User',
           'name': 'Name',
           'nickname': 'Nickname',
@@ -47,6 +54,13 @@ class Languages extends Translations {
           'recover': 'Recover',
           'profile': 'Profile',
           'change': 'Change',
+          'theme': 'Theme',
+          'light': 'Light',
+          'dark': 'Dark',
+          'language': 'Language',
+          'pt': 'Portuguese',
+          'en': 'English',
+          'es': 'Spanish',
           'logout': 'Logout',
           'anygossip': 'Any gossip?',
           'required': "Required Field",
@@ -56,7 +70,7 @@ class Languages extends Translations {
           'validData': 'Enter valid data'
         },
         'es_ES': {
-          'language': "Espanõl",
+          'actualLanguage': "Espanõl",
           'user': 'Usuario',
           'name': 'Nombre',
           'nickname': 'Apodo',
@@ -73,6 +87,13 @@ class Languages extends Translations {
           'recover': 'Recuperar',
           'profile': 'Perfil',
           'change': 'Cambiar',
+          'theme': 'Tema',
+          'light': 'Claro',
+          'dark': 'Oscuro',
+          'language': 'Idioma',
+          'pt': 'Portugués',
+          'en': 'Inglés',
+          'es': 'Español',
           'logout': 'Salir',
           'anygossip': '¿Ningun chisme?',
           'required': "Campo Obligatorio",
