@@ -19,6 +19,7 @@ class ApiService {
     'x-access-token': _token.token.value,
     'x-access-time': DateTime.now().millisecondsSinceEpoch.toString()
   };
+
   //Profile
   static Future<Profile> createProfile(Profile profile) async {
     final response = await http.post(
@@ -59,6 +60,20 @@ class ApiService {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
       return response.statusCode;
+    }
+  }
+
+  static Future<bool> followProfile(String profileId) async {
+    final response = await http.post(
+      Uri.parse(APIConstants.apiUrl + APIConstants.followProfile(profileId)),
+      headers: _headerWithTokenWithTime,
+    );
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      return false;
     }
   }
 
@@ -174,6 +189,27 @@ class ApiService {
     }
   }
 
+  static Future<Post> likePost(String postOwnerId, String postId) async {
+    final response = await http.post(
+      Uri.parse(APIConstants.apiUrl + APIConstants.likePost),
+      headers: _headerWithTokenWithTime,
+      body: jsonEncode(
+        <String, dynamic>{
+          'profileObjectId': postOwnerId,
+          'postObjectId': postId
+        },
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      return Post.fromMap(jsonDecode(response.body));
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      throw Exception('Falha ao fazer postagem!');
+    }
+  }
+
   static Future<List<Post>> getAllPosts() async {
     final response = await http.get(
         Uri.parse(APIConstants.apiUrl + APIConstants.getAllPosts),
@@ -224,6 +260,20 @@ class ApiService {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");
       throw Exception('Falha ao recuperar postagens');
+    }
+  }
+
+  static Future<bool> deletePost(String postOwnerId, String postId) async {
+    final response = await http.delete(
+        Uri.parse(APIConstants.apiUrl +
+            APIConstants.deletePostById(postOwnerId, postId)),
+        headers: _headerWithTokenWithTime);
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      print(
+          "Error ${response.statusCode.toString()}: ${response.body.toString()}");
+      return false;
     }
   }
 }
