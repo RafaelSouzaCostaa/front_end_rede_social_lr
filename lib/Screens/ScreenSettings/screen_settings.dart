@@ -10,11 +10,8 @@ import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
-import '../../Components/comp_drawer.dart';
-import '../../Components/comp_input.dart';
 import '../../Components/comp_text_button.dart';
 import '../../Global/profile_authenticated.dart';
-import '../../Global/token.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
@@ -46,7 +43,6 @@ class _ScreenSettingsState extends State<ScreenSettings> {
 
     return SafeArea(
       child: Scaffold(
-        drawer: const ComponentDrawer(),
         appBar: const ComponentAppBar(),
         body: SingleChildScrollView(
           child: Column(

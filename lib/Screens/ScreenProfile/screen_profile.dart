@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_edit_button.dart';
 import '../../Components/comp_post.dart';
@@ -45,6 +44,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
 
   @override
   Widget build(BuildContext context) {
+    Color themeColor = Theme.of(context).scaffoldBackgroundColor;
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     String numberfollowing = profileAuthenticated
         .profileAuthentic.value.getLengthFollowingObjectId
@@ -90,7 +90,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     width: 3.2,
-                                    color: CustomizedColors.darkBackground,
+                                    color: themeColor, //aqiu
                                   ),
                                   borderRadius: BorderRadius.circular(60),
                                 ),
@@ -104,19 +104,25 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                         backgroundColor:
                                             CustomizedColors.blueBackground,
                                         backgroundImage: const ExactAssetImage(
-                                            "assets/image/perfil.png"),
+                                          "assets/image/perfil.png",
+                                        ),
                                       ),
                               ),
                             ),
                           ),
-                          Container(
-                            alignment: Alignment.centerRight,
-                            padding: EdgeInsets.only(
-                              top: Get.height * 0.10,
-                              right: 12,
-                            ),
-                            child: ComponentEditButton(
-                              icon: Icons.image,
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed("/setting");
+                            },
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                              padding: EdgeInsets.only(
+                                top: Get.height * 0.20,
+                                right: 12,
+                              ),
+                              child: ComponentEditButton(
+                                icon: Icons.image,
+                              ),
                             ),
                           ),
                         ],
@@ -162,7 +168,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                       ),
                       Container(
                         width: 200,
-                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.only(top: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

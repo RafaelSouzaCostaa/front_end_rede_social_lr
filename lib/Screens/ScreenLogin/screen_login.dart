@@ -18,14 +18,19 @@ class ScreenLogin extends StatefulWidget {
 
 class _ScreenLoginState extends State<ScreenLogin> {
   //ATENCAO retirar os valores padrão - quando produção
+  InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
   final TextEditingController _userController =
       TextEditingController(text: "teste");
   final TextEditingController _passwordController =
       TextEditingController(text: "teste");
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
 
   bool _visiblePassword = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +72,6 @@ class _ScreenLoginState extends State<ScreenLogin> {
                             // size: 23,
                           ),
                     color: Colors.grey,
-                    // style: const ButtonStyle(),
                     onPressed: () {
                       setState(
                         () {
