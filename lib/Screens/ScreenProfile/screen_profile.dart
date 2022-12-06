@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,21 +29,18 @@ class _ScreenProfileState extends State<ScreenProfile> {
 
   @override
   initState() {
+    super.initState();
     scrollController.addListener(() {
       if (scrollController.offset > auxScroll) {
         auxScroll = scrollController.offset;
       }
-
-      setState(() {
-        if (auxScroll >= 100) {
-          auxScroll = 0.0;
-          visible = true;
-        } else {
-          visible = false;
-        }
-      });
+      if (auxScroll >= 100) {
+        auxScroll = 0.0;
+        visible = true;
+      } else {
+        visible = false;
+      }
     });
-    super.initState();
   }
 
   @override
@@ -64,7 +64,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                 leading: visible
                     ? IconButton(
                         onPressed: () {
-                          Get.toNamed("/profile");
+                          Get.toNamed("/home");
                         },
                         icon: const Icon(Icons.arrow_back),
                       )
@@ -98,8 +98,14 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                     ? CircleAvatar(
                                         backgroundColor:
                                             CustomizedColors.blueBackground,
-                                        backgroundImage:
-                                            NetworkImage(urlImageProfile))
+                                        backgroundImage: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              urlImageProfile,
+                                            ),
+                                          ),
+                                        ),
+                                      )
                                     : CircleAvatar(
                                         backgroundColor:
                                             CustomizedColors.blueBackground,

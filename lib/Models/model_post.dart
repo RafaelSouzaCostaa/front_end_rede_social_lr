@@ -1,7 +1,7 @@
 class Post {
   String? name;
   String? nickname;
-  late String profileObjectId;
+  late String? profileObjectId;
   late List<dynamic> postMedia = List<dynamic>.empty(growable: true);
   int? postDate;
   late String description;

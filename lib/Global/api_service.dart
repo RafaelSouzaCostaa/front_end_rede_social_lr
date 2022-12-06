@@ -152,7 +152,7 @@ class ApiService {
   }
 
   //Post
-  static Future<Post> createPost(String description, List<String> media) async {
+  static Future<int> createPost(String description, List<String> media) async {
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.createPost),
       headers: _headerWithTokenWithTime,
@@ -166,7 +166,7 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      return Post.fromMap(jsonDecode(response.body));
+      return response.statusCode;
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");

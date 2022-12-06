@@ -1,5 +1,8 @@
 // ignore_for_file: unnecessary_null_comparison
 
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +34,15 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
               width: 100,
               height: 100,
               child: urlImageProfile != null
-                  ? CircleAvatar(backgroundImage: NetworkImage(urlImageProfile))
+                  ? CircleAvatar(
+                      backgroundImage: MemoryImage(
+                        Uint8List.fromList(
+                          base64Decode(
+                            urlImageProfile,
+                          ),
+                        ),
+                      ),
+                    )
                   : const CircleAvatar(
                       backgroundImage:
                           ExactAssetImage("assets/image/perfil.png"),

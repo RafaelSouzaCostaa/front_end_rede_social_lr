@@ -144,8 +144,9 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                             password: _passwordController.text,
                             creationDate: DateTime.now().millisecondsSinceEpoch,
                           );
+
                           await ApiService.createProfile(newProfile);
-                          Get.toNamed("/home");
+                          Get.toNamed("/login");
                         }
                       }, //IMPLEMENTAR
                     ),

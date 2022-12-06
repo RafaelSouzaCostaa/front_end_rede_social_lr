@@ -1,6 +1,9 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Components/comp_icon_text.dart';
 import 'package:rede_social_lr/Components/comp_text.dart';
@@ -51,7 +54,15 @@ class _ComponentPostState extends State<ComponentPost> {
                 child: widget.image != null
                     ? CircleAvatar(
                         backgroundColor: CustomizedColors.blueBackground,
-                        backgroundImage: NetworkImage(widget.image.toString()))
+                        //NetworkImage(widget.image.toString())
+                        backgroundImage: MemoryImage(
+                          Uint8List.fromList(
+                            base64Decode(
+                              widget.image!,
+                            ),
+                          ),
+                        ),
+                      )
                     : CircleAvatar(
                         backgroundColor: CustomizedColors.blueBackground,
                         backgroundImage:
@@ -102,20 +113,27 @@ class _ComponentPostState extends State<ComponentPost> {
                   //UMA IMAGEM
                   if (widget.postImage?.length == 1)
                     Container(
-                      width: Get.width * 0.81,
-                      constraints: BoxConstraints(
-                        minHeight: Get.height * 0.45,
-                        maxHeight: Get.height * 0.45,
-                      ),
-                      child: ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        child: Image.network(
-                          widget.postImage!.elementAt(0),
-                          fit: BoxFit.cover,
+                        width: Get.width * 0.81,
+                        constraints: BoxConstraints(
+                          minHeight: Get.height * 0.45,
+                          maxHeight: Get.height * 0.45,
                         ),
-                      ),
-                    ),
+                        child: ClipRRect(
+                            borderRadius:
+                                //Image.memory(decodificando);
+                                const BorderRadius.all(Radius.circular(10)),
+                            child: widget.image != null
+                                ? Image(
+                                    image: MemoryImage(
+                                      Uint8List.fromList(
+                                        base64Decode(
+                                          widget.postImage![0],
+                                        ),
+                                      ),
+                                    ),
+                                    fit: BoxFit.cover,
+                                  )
+                                : null)),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
                     Container(
@@ -131,14 +149,19 @@ class _ComponentPostState extends State<ComponentPost> {
                             width: Get.width * 0.4 - 12.5,
                             height: Get.height * 0.4,
                             child: ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10)),
-                              child: Image.network(
-                                widget.postImage!.elementAt(0),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                                borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10)),
+                                child: Image(
+                                  image: MemoryImage(
+                                    Uint8List.fromList(
+                                      base64Decode(
+                                        widget.postImage![0],
+                                      ),
+                                    ),
+                                  ),
+                                  fit: BoxFit.cover,
+                                )),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
@@ -146,14 +169,19 @@ class _ComponentPostState extends State<ComponentPost> {
                               width: Get.width * 0.4 - 12.5,
                               height: Get.height * 0.4,
                               child: ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                    bottomRight: Radius.circular(10),
-                                    topRight: Radius.circular(10)),
-                                child: Image.network(
-                                  widget.postImage!.elementAt(1),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                                  borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                  child: Image(
+                                    image: MemoryImage(
+                                      Uint8List.fromList(
+                                        base64Decode(
+                                          widget.postImage![1],
+                                        ),
+                                      ),
+                                    ),
+                                    fit: BoxFit.cover,
+                                  )),
                             ),
                           ),
                         ],
@@ -174,14 +202,19 @@ class _ComponentPostState extends State<ComponentPost> {
                             width: Get.width * 0.4 - 12.5,
                             height: Get.height * 0.41,
                             child: ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10)),
-                              child: Image.network(
-                                widget.postImage!.elementAt(0),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                                borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10)),
+                                child: Image(
+                                  image: MemoryImage(
+                                    Uint8List.fromList(
+                                      base64Decode(
+                                        widget.postImage![0],
+                                      ),
+                                    ),
+                                  ),
+                                  fit: BoxFit.cover,
+                                )),
                           ),
                           Column(
                             children: [
@@ -191,13 +224,18 @@ class _ComponentPostState extends State<ComponentPost> {
                                   width: Get.width * 0.4 - 12.5,
                                   height: Get.height * 0.198,
                                   child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                        topRight: Radius.circular(10)),
-                                    child: Image.network(
-                                      widget.postImage!.elementAt(1),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: const BorderRadius.only(
+                                          topRight: Radius.circular(10)),
+                                      child: Image(
+                                        image: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              widget.postImage![1],
+                                            ),
+                                          ),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
                               ),
                               Padding(
@@ -206,14 +244,19 @@ class _ComponentPostState extends State<ComponentPost> {
                                   width: Get.width * 0.4 - 12.5,
                                   height: Get.height * 0.198,
                                   child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                      bottomRight: Radius.circular(10),
-                                    ),
-                                    child: Image.network(
-                                      widget.postImage!.elementAt(2),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: const BorderRadius.only(
+                                        bottomRight: Radius.circular(10),
+                                      ),
+                                      child: Image(
+                                        image: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              widget.postImage![2],
+                                            ),
+                                          ),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
                               ),
                             ],
@@ -237,13 +280,18 @@ class _ComponentPostState extends State<ComponentPost> {
                                 width: Get.width * 0.4 - 14,
                                 height: Get.height * 0.203,
                                 child: ClipRRect(
-                                  borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(10)),
-                                  child: Image.network(
-                                    widget.postImage!.elementAt(0),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                                    borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(10)),
+                                    child: Image(
+                                      image: MemoryImage(
+                                        Uint8List.fromList(
+                                          base64Decode(
+                                            widget.postImage![0],
+                                          ),
+                                        ),
+                                      ),
+                                      fit: BoxFit.cover,
+                                    )),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 3),
@@ -251,14 +299,19 @@ class _ComponentPostState extends State<ComponentPost> {
                                   width: Get.width * 0.4 - 14,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(10),
-                                    ),
-                                    child: Image.network(
-                                      widget.postImage!.elementAt(1),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: const BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                      ),
+                                      child: Image(
+                                        image: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              widget.postImage![1],
+                                            ),
+                                          ),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
                               ),
                             ],
@@ -271,13 +324,18 @@ class _ComponentPostState extends State<ComponentPost> {
                                   width: Get.width * 0.4 - 14,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                        topRight: Radius.circular(10)),
-                                    child: Image.network(
-                                      widget.postImage!.elementAt(2),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: const BorderRadius.only(
+                                          topRight: Radius.circular(10)),
+                                      child: Image(
+                                        image: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              widget.postImage![2],
+                                            ),
+                                          ),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
                               ),
                               Padding(
@@ -286,14 +344,19 @@ class _ComponentPostState extends State<ComponentPost> {
                                   width: Get.width * 0.4 - 14,
                                   height: Get.height * 0.203,
                                   child: ClipRRect(
-                                    borderRadius: const BorderRadius.only(
-                                      bottomRight: Radius.circular(10),
-                                    ),
-                                    child: Image.network(
-                                      widget.postImage!.elementAt(3),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                      borderRadius: const BorderRadius.only(
+                                        bottomRight: Radius.circular(10),
+                                      ),
+                                      child: Image(
+                                        image: MemoryImage(
+                                          Uint8List.fromList(
+                                            base64Decode(
+                                              widget.postImage![3],
+                                            ),
+                                          ),
+                                        ),
+                                        fit: BoxFit.cover,
+                                      )),
                                 ),
                               ),
                             ],
