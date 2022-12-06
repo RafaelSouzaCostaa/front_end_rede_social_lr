@@ -61,8 +61,8 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                   Container(
                     padding: const EdgeInsets.only(top: 15, right: 15),
                     child: ComponentButton(
-                      height: 7,
-                      width: 22,
+                      height: 40,
+                      width: 80,
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.w700,
                       ),
