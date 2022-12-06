@@ -13,7 +13,7 @@ class ScreenCreatePost extends StatefulWidget {
 }
 
 class _ScreenCreatePostState extends State<ScreenCreatePost> {
-  final TextEditingController _textController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,9 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                         fontWeight: FontWeight.w700,
                       ),
                       text: "Kitten",
-                      onPressed: () {},
+                      onPressed: () {
+                        
+                      },
                     ),
                   ),
                 ],
@@ -49,7 +51,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 padding: const EdgeInsets.only(top: 10),
                 child: ComponentInput(
                   hintText: 'anygossip'.tr,
-                  controller: _textController,
+                  controller: descriptionController,
                   focusedBorderColor: Colors.transparent,
                   unfocusedBorderColor: Colors.transparent,
                   maxLines: 5,
