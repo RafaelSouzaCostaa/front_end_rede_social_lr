@@ -21,7 +21,7 @@ class ScreenCreatePost extends StatefulWidget {
 }
 
 class _ScreenCreatePostState extends State<ScreenCreatePost> {
-  final TextEditingController _textController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
 
   List<String> listImage = List.empty(growable: true);
 
@@ -69,9 +69,9 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                       text: "Kitterar",
                       onPressed: () {
                         if (listImage.isNotEmpty &&
-                            _textController.text != "") {
+                            _descriptionController.text != "") {
                           ApiService.createPost(
-                              _textController.text, listImage);
+                              _descriptionController.text, listImage);
                         }
                       },
                     ),
@@ -124,7 +124,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                 padding: const EdgeInsets.only(top: 10),
                 child: ComponentInput(
                   hintText: 'anygossip'.tr,
-                  controller: _textController,
+                  controller: _descriptionController,
                   focusedBorderColor: Colors.transparent,
                   unfocusedBorderColor: Colors.transparent,
                   maxLines: 5,

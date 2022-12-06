@@ -22,7 +22,7 @@ class _ComponentFloatingButtonPostState
       backgroundColor: CustomizedColors.blueBackground,
       child: const Icon(
         Icons.add,
-        color: Colors.white,
+        color: Colors.black,
       ),
     );
   }

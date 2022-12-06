@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class ComponentIconText extends StatefulWidget {
   IconData? icon;
   String? text;
-  Color? iconColor;
-  Color? textColor;
+  Color? iconColor = Colors.grey;
+  double? iconSize;
+  Color? textColor = Colors.grey;
   Color? iconInactiveColor;
   Color? iconActiveColor;
   Color? textInactiveColor;
@@ -14,6 +15,7 @@ class ComponentIconText extends StatefulWidget {
     super.key,
     required this.icon,
     required this.text,
+    this.iconSize = 25,
     this.iconActiveColor = Colors.red,
     this.iconInactiveColor = Colors.grey,
     this.textActiveColor = Colors.red,
@@ -42,7 +44,7 @@ class _ComponentIconTextState extends State<ComponentIconText> {
               Icon(
                 widget.icon,
                 color: widget.iconColor,
-                size: 20,
+                size: widget.iconSize,
               ),
               Container(
                 padding: const EdgeInsets.only(left: 5),

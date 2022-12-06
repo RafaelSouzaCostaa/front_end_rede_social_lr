@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ComponentEditButton extends StatefulWidget {
   IconData? icon;
@@ -12,18 +13,16 @@ class ComponentEditButton extends StatefulWidget {
 class _ComponentEditButtonState extends State<ComponentEditButton> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: CircleAvatar(
-        backgroundColor: const Color.fromARGB(40, 0, 0, 0),
-        child: Icon(
-          widget.icon ?? Icons.edit,
-          color: Colors.black,
-          size: 25,
-        ),
+    Color themeColor = Theme.of(context).iconTheme.color!;
+    return CircleAvatar(
+      backgroundColor: Get.isDarkMode
+          ? const Color.fromARGB(60, 255, 255, 255)
+          : const Color.fromARGB(40, 0, 0, 0),
+      child: Icon(
+        widget.icon ?? Icons.edit,
+        color: themeColor,
+        size: 25,
       ),
-      onTap: () {
-        widget.onPressed;
-      },
     );
   }
 }

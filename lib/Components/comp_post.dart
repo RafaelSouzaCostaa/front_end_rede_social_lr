@@ -369,7 +369,7 @@ class _ComponentPostState extends State<ComponentPost> {
             ),
           ),
           Container(
-            width: Get.width * 0.5,
+            width: Get.width * 0.75,
             padding: const EdgeInsets.only(top: 10),
             alignment: Alignment.centerRight,
             child: Row(
@@ -383,7 +383,7 @@ class _ComponentPostState extends State<ComponentPost> {
                 ),
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
-                  text: "0", //IMPLEMENTAR
+                  text: widget.numberOfReposts.toString(), //IMPLEMENTAR
                   iconActiveColor: CustomizedColors.yellowIcon,
                   textActiveColor: CustomizedColors.yellowText,
                 ),

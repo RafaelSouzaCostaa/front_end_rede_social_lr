@@ -10,11 +10,8 @@ import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
-import '../../Components/comp_drawer.dart';
-import '../../Components/comp_input.dart';
 import '../../Components/comp_text_button.dart';
 import '../../Global/profile_authenticated.dart';
-import '../../Global/token.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
@@ -40,13 +37,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
     TextEditingController controllerEmail = TextEditingController(
       text: 'profileAuthenticated.profileAuthentic.value.email',
     );
-    TextEditingController controllerBirthDate = TextEditingController(
-      text: 'profileAuthenticated.profileAuthentic.value.birthDate',
-    );
 
     return SafeArea(
       child: Scaffold(
-        drawer: const ComponentDrawer(),
         appBar: const ComponentAppBar(),
         body: SingleChildScrollView(
           child: Column(
@@ -63,7 +56,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                       Container(
                         alignment: Alignment.centerRight,
                         padding: EdgeInsets.only(
-                          top: Get.height * 0.10,
+                          top: Get.height * 0.12,
                           right: 12,
                         ),
                         child: ComponentEditButton(
@@ -87,46 +80,56 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                               ),
                               borderRadius: BorderRadius.circular(60),
                             ),
-                            child: urlImageProfile != null
+                            //RAFAEL a logica aqui é complicada mesmo
+                            child: urlImageProfile != null && _image == null
                                 ? CircleAvatar(
                                     backgroundColor:
                                         CustomizedColors.blueBackground,
                                     backgroundImage:
-                                        NetworkImage(urlImageProfile))
-                                : CircleAvatar(
-                                    backgroundColor:
-                                        CustomizedColors.blueBackground,
-                                    backgroundImage: const ExactAssetImage(
-                                        "assets/image/perfil.png"),
-                                  ),
+                                        NetworkImage(urlImageProfile),
+                                  )
+                                : _image != null
+                                    ? CircleAvatar(
+                                        backgroundColor:
+                                            CustomizedColors.blueBackground,
+                                        backgroundImage: FileImage(_image),
+                                      )
+                                    : CircleAvatar(
+                                        backgroundColor:
+                                            CustomizedColors.blueBackground,
+                                        backgroundImage: const ExactAssetImage(
+                                            "assets/image/perfil.png"),
+                                      ),
                           ),
-                          Container(
-                            padding: EdgeInsets.only(
-                              top: Get.height * 0.10,
-                              left: 70,
-                            ),
-                            child: ComponentEditButton(
-                              icon: Icons.add_a_photo,
-                              onPressed: () async {
-                                final ImagePicker picker = ImagePicker();
-                                final XFile? pickedFile = await picker
-                                    .pickImage(source: ImageSource.camera);
-                                if (pickedFile != null) {
-                                  File image = File(pickedFile.path);
-                                  Directory directory =
-                                      await getApplicationDocumentsDirectory();
-                                  String localPath = directory.path;
+                          GestureDetector(
+                            onTap: () async {
+                              final ImagePicker picker = ImagePicker();
+                              final XFile? pickedFile = await picker.pickImage(
+                                  source: ImageSource.camera);
+                              if (pickedFile != null) {
+                                File image = File(pickedFile.path);
+                                Directory directory =
+                                    await getApplicationDocumentsDirectory();
+                                String localPath = directory.path;
 
-                                  String uniqueID = UniqueKey().toString();
+                                String uniqueID = UniqueKey().toString();
 
-                                  final File savedImage = await image
-                                      .copy('$localPath/image_$uniqueID.png');
+                                final File savedImage = await image
+                                    .copy('$localPath/image_$uniqueID.png');
 
-                                  setState(() {
-                                    _image = savedImage;
-                                  });
-                                }
-                              },
+                                setState(() {
+                                  _image = savedImage;
+                                });
+                              }
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(
+                                top: Get.height * 0.08,
+                                left: 70,
+                              ),
+                              child: ComponentEditButton(
+                                icon: Icons.add_a_photo,
+                              ),
                             ),
                           ),
                         ],
@@ -170,19 +173,6 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     text: "${'change'.tr} Email",
                     subText:
                         'profileAuthenticated.profileAuthentic.value.email',
-                    inputCotroller: controllerBirthDate,
-                    onPressed: () async {
-                      await Get.toNamed("/login");
-                    },
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.03,
-                  ),
-                  ComponentOpenInputButton(
-                    icon: Icons.mail,
-                    text: "${'change'.tr} ${'birthDate'.tr}",
-                    subText:
-                        'profileAuthenticated.profileAuthentic.value.birthDate',
                     inputCotroller: controllerEmail,
                     onPressed: () async {
                       await Get.toNamed("/login");
@@ -193,10 +183,11 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ),
                   ComponentTextButton(
                     icon: Icons.date_range_outlined,
+                    spaceBetweenIconAndText: 9,
                     text: "${'change'.tr} ${'birthDate'.tr}",
                     width: Get.width * 0.98,
                     onPressed: () async {
-                      await Get.toNamed("/login");
+                      await Get.toNamed("/");
                     },
                   ),
                   SizedBox(
@@ -217,10 +208,13 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     alignment: Alignment.centerRight,
                     padding: const EdgeInsets.only(right: 15),
                     child: ComponentButton(
-                        text: 'Salvar',
-                        onPressed: () {
-                          //RAFAEL coloca o put de profile aqui
-                        }),
+                      height: 35,
+                      width: 100,
+                      text: 'save'.tr,
+                      onPressed: () {
+                        //RAFAEL coloca o put de profile aqui
+                      },
+                    ),
                   )
                 ],
               ),
