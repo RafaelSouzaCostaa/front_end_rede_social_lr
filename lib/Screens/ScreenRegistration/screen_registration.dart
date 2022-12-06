@@ -6,6 +6,7 @@ import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_input.dart';
 import '../../Global/api_service.dart';
+import '../../Global/shared_preferences.dart';
 import '../../Models/model_profile.dart';
 
 class ScreenRegistration extends StatefulWidget {
@@ -21,6 +22,8 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
   final TextEditingController _nicknameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
 
   bool _visiblePassword = false;
 
@@ -144,7 +147,17 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                             creationDate: DateTime.now().millisecondsSinceEpoch,
                           );
                           await ApiService.createProfile(newProfile);
-                          Get.toNamed("/home");
+                          int statusCode = await ApiService.login(
+                            newProfile.email,
+                            newProfile.password,
+                          );
+
+                          if (statusCode == 200) {
+                            if (await ApiService.getProfileData()) {
+                              sharedPreferences.saveTokenStatus();
+                              Get.offAndToNamed("/home");
+                            }
+                          }
                         }
                       }, //IMPLEMENTAR
                     ),

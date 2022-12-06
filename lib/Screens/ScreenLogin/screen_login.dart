@@ -146,7 +146,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       if (statusCode == 200) {
                         if (await ApiService.getProfileData()) {
                           sharedPreferences.saveTokenStatus();
-                          Get.toNamed("/home");
+                          Get.offAndToNamed("/home");
                         }
                       } else {
                         Get.snackbar(
