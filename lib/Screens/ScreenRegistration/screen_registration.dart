@@ -132,8 +132,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                   Container(
                     padding: const EdgeInsets.only(left: 5),
                     child: ComponentButton(
-                      width: 30,
-                      height: 4,
+                      width: 130,
                       text: 'register'.tr,
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {

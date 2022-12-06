@@ -16,8 +16,8 @@ class ComponentButton extends StatefulWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.width = 30,
-    this.height = 4,
+    this.width = 90,
+    this.height = 30,
     this.textStyle,
   });
 
@@ -29,8 +29,8 @@ class _ComponentButtonState extends State<ComponentButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: Get.width * (widget.width / 100),
-      height: Get.height * (widget.height / 100),
+      width: widget.width,
+      height: widget.height,
       child: ElevatedButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all(
