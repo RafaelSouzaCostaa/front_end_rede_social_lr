@@ -118,7 +118,6 @@ class _ComponentPostState extends State<ComponentPost> {
                     ),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
-                    //RAFAEL //IMPLEMENTAR o modelo relogio aqui para testar, tem no catalogo do flutter
                     Container(
                       constraints: BoxConstraints(
                         minHeight: Get.height * 0.4,
@@ -315,8 +314,7 @@ class _ComponentPostState extends State<ComponentPost> {
               children: [
                 ComponentIconText(
                   icon: Icons.chat_bubble_outline,
-                  text: widget.numberOfComments
-                      .toString(), //RAFAEL colocar o numero de likes e etc aqui dps
+                  text: widget.numberOfComments.toString(),
                   iconActiveColor: CustomizedColors.greenIcon,
                   textActiveColor: CustomizedColors.greenText,
                 ),

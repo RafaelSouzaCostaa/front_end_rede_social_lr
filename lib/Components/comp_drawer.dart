@@ -47,7 +47,6 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
-                //ATENCAO descomentar posteriormente
                 "@${profileAuthenticated.profileAuthentic.value.nickname}",
                 style: const TextStyle(
                     fontSize: 14,

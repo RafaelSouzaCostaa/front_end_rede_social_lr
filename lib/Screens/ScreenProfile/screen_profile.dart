@@ -211,9 +211,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                               posts.data!.elementAt(index).numberOfLikes,
                           numberOfComments:
                               posts.data!.elementAt(index).numberOfComments,
-                          image: posts.data!.elementAt(index).image
-                          //LUIGGI  listPost.data!.elementAt(index).postMedia[0] isso e as midias postadas, ta pegando a posição 0, tem que fazer um for dentro do componente
-                          );
+                          image: posts.data!.elementAt(index).image);
                     },
                   );
                 }),

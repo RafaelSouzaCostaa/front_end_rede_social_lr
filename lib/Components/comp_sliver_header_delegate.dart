@@ -18,10 +18,8 @@ class ComponentSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
               height: Get.height * 0.20,
             ),
             Container(
-              padding: EdgeInsets.only(
-                  top: Get.height * 0.075),
+              padding: EdgeInsets.only(top: Get.height * 0.075),
               child: Center(
-                //ATENCAO modifiquei a ideia que tava daqui para baixo, botei uma borda ao inves de 2 circle avatar
                 child: Container(
                   width: 110,
                   height: 110,
