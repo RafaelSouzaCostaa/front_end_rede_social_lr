@@ -29,12 +29,13 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                   Container(
                     padding: const EdgeInsets.only(top: 15, right: 15),
                     child: ComponentButton(
-                      height: 7,
-                      width: 20,
+                      height: 30,
+                      width: 90,
                       textStyle: const TextStyle(
+                        color: Colors.black,
                         fontWeight: FontWeight.w700,
                       ),
-                      text: "Kitterar",
+                      text: "Kitten",
                       onPressed: () {},
                     ),
                   ),
