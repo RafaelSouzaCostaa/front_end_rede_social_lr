@@ -21,6 +21,8 @@ class InstanceSharedPreference {
       return prefs.getString('token') ?? "";
     }).obs;
     token.token.value = savedToken.value.toString();
+
+    return token.token.value;
   }
 
   //Themes

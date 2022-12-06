@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Components/comp_app_bar.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../Colors/customized_colors_global.dart';
 import '../../Colors/pattern_colors.dart';
+import '../../Global/profile_authenticated.dart';
 import '../../Global/shared_preferences.dart';
 
 class ScreenSplash extends StatefulWidget {
@@ -19,16 +17,17 @@ class _ScreenSplashState extends State<ScreenSplash> {
 
   @override
   void initState() {
-    super.initState();
     sharedPreferences.getThemeStatus();
     sharedPreferences.getToken();
     _navigateToHome();
+    super.initState();
   }
 
   _navigateToHome() async {
     await Future.delayed(const Duration(milliseconds: 1304), () {});
 
-    if (sharedPreferences.getToken()) {
+    //RAFAEL quando iniciar verificar o token e ir pra home
+    if (sharedPreferences.getToken() == "") {
       Get.offAndToNamed('/home');
     } else {
       Get.offAndToNamed('/login');
