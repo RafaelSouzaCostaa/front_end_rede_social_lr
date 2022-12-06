@@ -36,8 +36,8 @@ class _ScreenSplashState extends State<ScreenSplash> {
               alignment: Alignment.center,
               height: Get.height * 0.9,
               child: SizedBox(
-                width: 60,
-                height: 60,
+                width: 150,
+                height: 150,
                 child: Image.asset("assets/image/logo.png"),
               ),
             ),

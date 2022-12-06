@@ -28,7 +28,10 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: GestureDetector(
-        child: Image.asset("assets/image/logo.png", scale: 3),
+        child: SizedBox(
+          width: 35,
+          child: Image.asset("assets/image/logo.png", scale: 3),
+        ),
         onTap: () {
           Get.offAllNamed('/home');
         },
