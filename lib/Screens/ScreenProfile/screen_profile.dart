@@ -65,7 +65,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                   leading: visible
                       ? IconButton(
                           onPressed: () {
-                            Get.toNamed("/profile");
+                            Get.toNamed("/home");
                           },
                           icon: const Icon(Icons.arrow_back),
                         )
@@ -214,18 +214,20 @@ class _ScreenProfileState extends State<ScreenProfile> {
                       itemCount: posts.data == null ? 0 : posts.data!.length,
                       itemBuilder: (BuildContext context, int index) {
                         return ComponentPost(
-                            postUsername:
-                                posts.data!.elementAt(index).name.toString(),
-                            postNickname:
-                                "@${posts.data?.elementAt(index).nickname}",
-                            postDescription:
-                                posts.data!.elementAt(index).description,
-                            postImage: posts.data!.elementAt(index).postMedia,
-                            numberOfLikes:
-                                posts.data!.elementAt(index).numberOfLikes,
-                            numberOfComments:
-                                posts.data!.elementAt(index).numberOfComments,
-                            image: posts.data!.elementAt(index).image);
+                          postUsername:
+                              posts.data!.elementAt(index).name.toString(),
+                          postNickname:
+                              "@${posts.data?.elementAt(index).nickname}",
+                          postDescription:
+                              posts.data!.elementAt(index).description,
+                          postImage: posts.data!.elementAt(index).postMedia,
+                          numberOfLikes:
+                              posts.data!.elementAt(index).numberOfLikes,
+                          numberOfComments:
+                              posts.data!.elementAt(index).numberOfComments,
+                          image: posts.data!.elementAt(index).image,
+                          postObjectId: posts.data!.elementAt(index).id,
+                        );
                       },
                     );
                   }),

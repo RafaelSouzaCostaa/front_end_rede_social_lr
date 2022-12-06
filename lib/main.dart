@@ -23,7 +23,7 @@ void main() {
       translations: Languages(),
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('pt', 'BR'),
-      initialRoute: '/teste',
+      initialRoute: '/splash',
       routes: {
         '/splash': (context) => const ScreenSplash(),
         '/home': (context) => const ScreenHome(),

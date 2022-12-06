@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:rede_social_lr/Components/comp_icon_text.dart';
 import 'package:rede_social_lr/Components/comp_text.dart';
+import 'package:rede_social_lr/Global/api_service.dart';
 
 import '../Colors/customized_colors_global.dart';
 
@@ -54,7 +55,6 @@ class _ComponentPostState extends State<ComponentPost> {
                 child: widget.image != null
                     ? CircleAvatar(
                         backgroundColor: CustomizedColors.blueBackground,
-                        //NetworkImage(widget.image.toString())
                         backgroundImage: MemoryImage(
                           Uint8List.fromList(
                             base64Decode(
@@ -92,7 +92,10 @@ class _ComponentPostState extends State<ComponentPost> {
                     ),
                     IconButton(
                       icon: const Icon(Icons.more_vert),
-                      onPressed: () {},
+                      onPressed: () {
+                        ApiService.deletePost(widget.postObjectId!);
+                        setState(() {});
+                      },
                     )
                   ],
                 ),

@@ -46,6 +46,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                           numberOfComments:
                               listPost.data!.elementAt(index).numberOfComments,
                           image: listPost.data!.elementAt(index).image,
+                          postObjectId: listPost.data!.elementAt(index).id,
                         )
                       ],
                     )

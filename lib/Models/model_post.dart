@@ -2,6 +2,7 @@ class Post {
   String? name;
   String? nickname;
   late String? profileObjectId;
+  String? id;
   late List<dynamic> postMedia = List<dynamic>.empty(growable: true);
   int? postDate;
   late String description;
@@ -26,6 +27,7 @@ class Post {
     postDate = map["postDate"];
     nickname = map["nickname"];
     profileObjectId = map["profileObjectId"];
+    id = map["_id"];
     postMedia = map["postMedia"];
     postDate = map["postDate"];
     description = map["description"];
@@ -39,6 +41,7 @@ class Post {
   Map<String, dynamic> toMap() => {
         "name": name,
         "profileObjectId": profileObjectId,
+        "_id": id,
         "nickname": nickname,
         "postMedia": postMedia,
         "postDate": postDate,

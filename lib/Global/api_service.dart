@@ -263,10 +263,9 @@ class ApiService {
     }
   }
 
-  static Future<bool> deletePost(String postOwnerId, String postId) async {
+  static Future<bool> deletePost(String postId) async {
     final response = await http.delete(
-        Uri.parse(APIConstants.apiUrl +
-            APIConstants.deletePostById(postOwnerId, postId)),
+        Uri.parse(APIConstants.apiUrl + APIConstants.deletePostById(postId)),
         headers: _headerWithTokenWithTime);
     if (response.statusCode == 200) {
       return true;

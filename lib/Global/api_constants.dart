@@ -1,11 +1,6 @@
 class APIConstants {
-<<<<<<< HEAD
   //static String apiUrl = 'http://177.6.193.211:3000';
   static String apiUrl = 'http://10.0.0.196:3000';
-=======
-  // static String apiUrl = 'http://177.6.193.211:3000';
-  static String apiUrl = 'http://10.0.0.105:3000';
->>>>>>> 169dc91c7344ca69b2cda5a56d3a3887010b5e01
 
   //endpoints
   static String login = '/login/';
@@ -47,8 +42,8 @@ class APIConstants {
     }
   }
 
-  static String deletePostById(profileId, postId) {
-    return '/post/deleteById/$profileId/$postId';
+  static String deletePostById(postId) {
+    return '/post/deleteById/$postId';
   }
 
   //Comments

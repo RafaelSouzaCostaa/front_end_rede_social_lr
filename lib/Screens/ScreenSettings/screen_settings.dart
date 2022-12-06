@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -85,8 +87,13 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                                 ? CircleAvatar(
                                     backgroundColor:
                                         CustomizedColors.blueBackground,
-                                    backgroundImage:
-                                        NetworkImage(urlImageProfile),
+                                    backgroundImage: MemoryImage(
+                                      Uint8List.fromList(
+                                        base64Decode(
+                                          urlImageProfile,
+                                        ),
+                                      ),
+                                    ),
                                   )
                                 : _image != null
                                     ? CircleAvatar(
