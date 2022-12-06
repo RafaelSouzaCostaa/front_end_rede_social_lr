@@ -25,6 +25,7 @@ class Languages extends Translations {
           'anygossip': 'Alguma fofoca?',
           'required': 'Campo Obrigatorio',
           'login': 'Entrar',
+          'save': 'Salvar',
           'loginError': 'Erro ao fazer login',
           'validData': 'Insira dados validos'
         },
@@ -50,6 +51,7 @@ class Languages extends Translations {
           'anygossip': 'Any gossip?',
           'required': "Required Field",
           'login': "Login",
+          'save': 'Save',
           'loginError': 'Error on: logging in',
           'validData': 'Enter valid data'
         },
@@ -75,6 +77,7 @@ class Languages extends Translations {
           'anygossip': '¿Ningun chisme?',
           'required': "Campo Obligatorio",
           'login': "Iniciar Sesión",
+          'save': 'Guardar',
           'loginError': 'Error on: Iniciar Sesión',
           'validData': 'Introduce datos válidos'
         },
