@@ -16,9 +16,9 @@ class _TestesState extends State<Testes> {
       child: Scaffold(
         appBar: const ComponentAppBar(),
         body: ComponentPost(
-          postDescription: "postDescription",
-          postUsername: "postUsername",
-          postNickname: "postNickname",
+          postDescription: "Mostra sua força Brasil",
+          postUsername: "TylerJoseph",
+          postNickname: "@scaledandicy",
           postImage: const [
             "https://www.letras.com.br/storage/artista/0/0/1/001.jpg",
             "https://rollingstone.uol.com.br/media/_versions/twenty-one-pilots-6-melhores-covers-divulgacao_widelg.jpg",
