@@ -23,7 +23,7 @@ class APIConstants {
     return '/profile/follow/$id';
   }
 
-  static String updateProfile = '/profile/updateById';
+  static String updateProfile = '/profile/update';
 
   static String deleteProfileById(id) {
     return '/profile/deleteById/$id';
