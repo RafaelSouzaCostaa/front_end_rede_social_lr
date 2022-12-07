@@ -14,6 +14,7 @@ import '../Colors/customized_colors_global.dart';
 class ComponentPost extends StatefulWidget {
   // String perfilImage;
   List<dynamic>? postImage = List<dynamic>.empty(growable: true);
+  Function? onPressed;
   String? profileObjectId;
   String? postObjectId;
   String? postDescription;
@@ -26,6 +27,7 @@ class ComponentPost extends StatefulWidget {
 
   ComponentPost(
       {super.key,
+      this.onPressed,
       required this.postDescription,
       required this.postUsername,
       required this.postNickname,
@@ -110,33 +112,36 @@ class _ComponentPostState extends State<ComponentPost> {
               child: Column(
                 children: [
                   Container(
+                    width: Get.width * 0.81,
                     padding: const EdgeInsets.only(top: 5, bottom: 10),
-                    child: Text(widget.postDescription!),
+                    child: Text(
+                      widget.postDescription!,
+                      textAlign: TextAlign.justify,
+                    ),
                   ),
                   //UMA IMAGEM
                   if (widget.postImage?.length == 1)
                     Container(
-                        width: Get.width * 0.81,
-                        constraints: BoxConstraints(
-                          minHeight: Get.height * 0.45,
-                          maxHeight: Get.height * 0.45,
-                        ),
-                        child: ClipRRect(
-                            borderRadius:
-                                //Image.memory(decodificando);
-                                const BorderRadius.all(Radius.circular(10)),
-                            child: widget.image != null
-                                ? Image(
-                                    image: MemoryImage(
-                                      Uint8List.fromList(
-                                        base64Decode(
-                                          widget.postImage![0],
-                                        ),
-                                      ),
-                                    ),
-                                    fit: BoxFit.cover,
-                                  )
-                                : null)),
+                      width: Get.width * 0.81,
+                      constraints: BoxConstraints(
+                        minHeight: Get.height * 0.45,
+                        maxHeight: Get.height * 0.45,
+                      ),
+                      child: ClipRRect(
+                          borderRadius:
+                              //Image.memory(decodificando);
+                              const BorderRadius.all(Radius.circular(10)),
+                          child: Image(
+                            image: MemoryImage(
+                              Uint8List.fromList(
+                                base64Decode(
+                                  widget.postImage![0],
+                                ),
+                              ),
+                            ),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
                   //Duas imagens
                   if (widget.postImage?.length == 2)
                     Container(
@@ -152,19 +157,20 @@ class _ComponentPostState extends State<ComponentPost> {
                             width: Get.width * 0.4 - 12.5,
                             height: Get.height * 0.4,
                             child: ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                child: Image(
-                                  image: MemoryImage(
-                                    Uint8List.fromList(
-                                      base64Decode(
-                                        widget.postImage![0],
-                                      ),
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10)),
+                              child: Image(
+                                image: MemoryImage(
+                                  Uint8List.fromList(
+                                    base64Decode(
+                                      widget.postImage![0],
                                     ),
                                   ),
-                                  fit: BoxFit.cover,
-                                )),
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
@@ -386,7 +392,7 @@ class _ComponentPostState extends State<ComponentPost> {
                 ),
                 ComponentIconText(
                   icon: Icons.change_circle_outlined,
-                  text: widget.numberOfReposts.toString(), //IMPLEMENTAR
+                  text: "0", //IMPLEMENTAR
                   iconActiveColor: CustomizedColors.yellowIcon,
                   textActiveColor: CustomizedColors.yellowText,
                 ),

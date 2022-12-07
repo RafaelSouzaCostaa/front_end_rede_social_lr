@@ -129,7 +129,7 @@ class _ScreenProfileState extends State<ScreenProfile> {
                                   right: 12,
                                 ),
                                 child: ComponentEditButton(
-                                  icon: Icons.image,
+                                  icon: Icons.settings,
                                 ),
                               ),
                             ),
@@ -221,6 +221,8 @@ class _ScreenProfileState extends State<ScreenProfile> {
                           postDescription:
                               posts.data!.elementAt(index).description,
                           postImage: posts.data!.elementAt(index).postMedia,
+                          numberOfReposts:
+                              posts.data!.elementAt(index).numberOfReposts,
                           numberOfLikes:
                               posts.data!.elementAt(index).numberOfLikes,
                           numberOfComments:

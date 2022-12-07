@@ -17,6 +17,9 @@ class Themes extends GetxController {
       elevation: 0.5,
     ),
     iconTheme: const IconThemeData(color: Colors.white),
+    drawerTheme: DrawerThemeData(
+      backgroundColor: CustomizedColors.darkBackground,
+    ),
   );
 
   static ThemeData lightTheme = ThemeData(
@@ -30,5 +33,8 @@ class Themes extends GetxController {
       elevation: 0.5,
     ),
     iconTheme: const IconThemeData(color: Colors.black),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: Colors.white,
+    ),
   );
 }

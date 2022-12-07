@@ -152,7 +152,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                             newProfile.email,
                             newProfile.password,
                           );
-
+                          print(statusCode);
                           if (statusCode == 200) {
                             if (await ApiService.getProfileData()) {
                               sharedPreferences.saveTokenStatus();

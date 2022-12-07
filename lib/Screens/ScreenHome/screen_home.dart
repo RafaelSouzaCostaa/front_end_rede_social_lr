@@ -17,6 +17,7 @@ class ScreenHome extends StatefulWidget {
 class _ScreenHomeState extends State<ScreenHome> {
   @override
   Widget build(BuildContext context) {
+    setState(() {});
     return SafeArea(
       child: Scaffold(
         floatingActionButton: const ComponentFloatingButtonPost(),
@@ -41,6 +42,8 @@ class _ScreenHomeState extends State<ScreenHome> {
                           postDescription:
                               listPost.data!.elementAt(index).description,
                           postImage: listPost.data!.elementAt(index).postMedia,
+                          numberOfReposts:
+                              listPost.data!.elementAt(index).numberOfReposts,
                           numberOfLikes:
                               listPost.data!.elementAt(index).numberOfLikes,
                           numberOfComments:

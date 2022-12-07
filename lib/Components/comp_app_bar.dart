@@ -117,18 +117,18 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
                   <PopupMenuEntry<changeLanguage>>[
                 PopupMenuItem<changeLanguage>(
                   value: changeLanguage.english,
-                  child: Text('en'.tr,
-                      style: TextStyle(color: Colors.blue.shade100)),
+                  child:
+                      Text('en'.tr, style: const TextStyle(color: Colors.blue)),
                 ),
                 PopupMenuItem<changeLanguage>(
                   value: changeLanguage.spanish,
-                  child: Text('es'.tr,
-                      style: TextStyle(color: Colors.red.shade100)),
+                  child:
+                      Text('es'.tr, style: const TextStyle(color: Colors.red)),
                 ),
                 PopupMenuItem<changeLanguage>(
                   value: changeLanguage.portuguese,
                   child: Text('pt'.tr,
-                      style: TextStyle(color: Colors.green.shade100)),
+                      style: const TextStyle(color: Colors.green)),
                 ),
               ],
             ),

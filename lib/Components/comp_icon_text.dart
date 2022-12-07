@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ComponentIconText extends StatefulWidget {
   IconData? icon;
   String? text;
+  Function? onPressed;
   Color? iconColor = Colors.grey;
   double? iconSize;
   Color? textColor = Colors.grey;
@@ -15,6 +16,7 @@ class ComponentIconText extends StatefulWidget {
     super.key,
     required this.icon,
     required this.text,
+    this.onPressed,
     this.iconSize = 25,
     this.iconActiveColor = Colors.red,
     this.iconInactiveColor = Colors.grey,
@@ -70,6 +72,7 @@ class _ComponentIconTextState extends State<ComponentIconText> {
                 widget.textColor = widget.textActiveColor;
               });
             }
+            widget.onPressed;
           },
         )
       ],
