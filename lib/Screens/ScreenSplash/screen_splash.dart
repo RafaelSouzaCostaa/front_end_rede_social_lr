@@ -37,27 +37,29 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              alignment: Alignment.center,
-              height: Get.height * 0.9,
-              child: SizedBox(
-                width: 150,
-                height: 150,
-                child: Image.asset("assets/image/logo.png"),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                height: Get.height * 0.9,
+                child: SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: Image.asset("assets/image/logo.png"),
+                ),
               ),
-            ),
-            SizedBox(
-              width: 30,
-              height: 30,
-              child: CircularProgressIndicator(
-                strokeWidth: 4,
-                color: PatternColors.fluorescentBlue,
+              SizedBox(
+                width: 30,
+                height: 30,
+                child: CircularProgressIndicator(
+                  strokeWidth: 4,
+                  color: PatternColors.fluorescentBlue,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
