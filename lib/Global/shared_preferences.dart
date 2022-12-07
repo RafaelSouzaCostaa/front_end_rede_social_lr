@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rede_social_lr/Global/languages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Colors/themes.dart';
@@ -17,13 +16,18 @@ class InstanceSharedPreference {
     pref.setString('token', token.token.value);
   }
 
-  getToken() async {
+  getToken() {
     var savedToken = prefs.then((SharedPreferences prefs) {
       return prefs.getString('token') ?? "";
     }).obs;
     token.token.value = savedToken.value.toString();
 
     return token.token.value;
+  }
+
+  deleteToken() async {
+    token.token.value = "";
+
   }
 
   //Themes

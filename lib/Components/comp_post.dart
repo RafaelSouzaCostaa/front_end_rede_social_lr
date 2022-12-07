@@ -106,10 +106,11 @@ class _ComponentPostState extends State<ComponentPost> {
           SizedBox(
             width: Get.width * 0.81,
             child: Padding(
-              padding: const EdgeInsets.only(left: 25),
+              padding: const EdgeInsets.only(left: 25, top: 15),
               child: Column(
                 children: [
                   Container(
+                    width: Get.width * 0.81,
                     padding: const EdgeInsets.only(top: 5, bottom: 10),
                     child: Text(widget.postDescription!),
                   ),

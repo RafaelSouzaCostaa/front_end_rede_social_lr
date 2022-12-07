@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class Languages extends Translations{
+class Languages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'pt_BR': {
@@ -22,8 +22,8 @@ class Languages extends Translations{
           'profile': 'Perfil',
           'change': 'Alterar',
           'theme': 'Tema',
-          'light': 'Claro',
-          'dark': 'Escuro',
+          'lightTheme': 'Tema Claro',
+          'darkTheme': 'Tema Escuro',
           'language': 'Idioma',
           'pt': 'Português',
           'en': 'Inglês',
@@ -55,8 +55,8 @@ class Languages extends Translations{
           'profile': 'Profile',
           'change': 'Change',
           'theme': 'Theme',
-          'light': 'Light',
-          'dark': 'Dark',
+          'lightTheme': 'Light Theme',
+          'darkTheme': 'Dark Theme',
           'language': 'Language',
           'pt': 'Portuguese',
           'en': 'English',
@@ -88,8 +88,8 @@ class Languages extends Translations{
           'profile': 'Perfil',
           'change': 'Cambiar',
           'theme': 'Tema',
-          'light': 'Claro',
-          'dark': 'Oscuro',
+          'lightTheme': 'Tema Claro',
+          'darkTheme': 'Tema Oscuro',
           'language': 'Idioma',
           'pt': 'Portugués',
           'en': 'Inglés',

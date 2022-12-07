@@ -19,6 +19,7 @@ class ComponentDrawer extends StatefulWidget {
 
 class _ComponentDrawerState extends State<ComponentDrawer> {
   ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
+  bool themeSwitch = false;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                     ),
             ),
             Text(
-              profileAuthenticated.profileAuthentic.value.name,
+              "profileAuthenticated.profileAuthentic.value.name",
               style: const TextStyle(
                 fontSize: 18,
                 fontFamily: 'Imprima-Regular',
@@ -58,7 +59,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 22),
               child: Text(
-                "@${profileAuthenticated.profileAuthentic.value.nickname}",
+                "@\${profileAuthenticated.profileAuthentic.value.nickname}",
                 style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Imprima-Regular',
@@ -82,6 +83,36 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                   Get.toNamed("/profile");
                 },
               ),
+              ComponentTextButton(
+                text: 'theme'.tr,
+                icon: Icons.person,
+                mainAxisAlignment: MainAxisAlignment.start,
+                onPressed: () {
+                  setState(() {
+                    themeSwitch = !themeSwitch;
+                  });
+                },
+              ),
+              if (themeSwitch)
+                Container(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: Column(
+                    children: [
+                      ComponentTextButton(
+                        text: 'lightTheme'.tr,
+                        icon: Icons.person,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        onPressed: () {},
+                      ),
+                      ComponentTextButton(
+                        text: 'darkTheme'.tr,
+                        icon: Icons.person,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
             ]),
           ),
         ),
@@ -89,23 +120,24 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           color: Colors.white30,
           thickness: 0.5,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              width: 50,
-              padding: const EdgeInsets.symmetric(vertical: 1),
-              child: ComponentTextButton(
-                onPressed: () {
-                  Get.toNamed('/setting');
-                },
-                icon: Icons.settings,
-                iconColor: CustomizedColors.lightGreyIcon,
-                textColor: CustomizedColors.blueText,
-                hoverAnimation: false,
-              ),
-            ),
-          ],
+        const Divider(
+          color: Colors.white30,
+          thickness: 0.5,
+        ),
+
+        Container(
+          alignment: Alignment.centerRight,
+          width: 50,
+          padding: const EdgeInsets.symmetric(vertical: 1),
+          child: ComponentTextButton(
+            onPressed: () {
+              Get.toNamed('/setting');
+            },
+            icon: Icons.settings,
+            iconColor: CustomizedColors.lightGreyIcon,
+            textColor: CustomizedColors.blueText,
+            hoverAnimation: false,
+          ),
         ),
         // Expanded(
       ]),
