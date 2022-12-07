@@ -22,7 +22,9 @@ class _ScreenHomeState extends State<ScreenHome> {
       child: Scaffold(
         floatingActionButton: const ComponentFloatingButtonPost(),
         drawer: const ComponentDrawer(),
-        appBar: ComponentAppBar(),
+        appBar: ComponentAppBar(
+          onTap: () {},
+        ),
         body: FutureBuilder(
           future: ApiService.getAllPostByFollow(),
           builder: (context, listPost) {
