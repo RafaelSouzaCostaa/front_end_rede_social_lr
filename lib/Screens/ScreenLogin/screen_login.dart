@@ -99,7 +99,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                         hoverAnimation: false,
                         textColor: CustomizedColors.blueText,
                         onPressed: () async {
-                          await Get.toNamed("/cadastro");
+                          await Get.toNamed("/register");
                         },
                       ),
                     ],
