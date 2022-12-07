@@ -8,4 +8,5 @@ class PatternColors {
   static Color blackShadows = const Color(0xFFC2B7B7);
   static Color speedYellow = const Color(0xFFF3D104);
   static Color garishGreen = const Color(0xFF51BF8A);
+  static Color absoluteZero = const Color(0xFF0940D6);
 }
