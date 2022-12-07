@@ -17,7 +17,7 @@ class _ComponentEditButtonState extends State<ComponentEditButton> {
     return CircleAvatar(
       backgroundColor: Get.isDarkMode
           ? const Color.fromARGB(40, 0, 0, 0)
-          : const Color.fromARGB(58, 116, 116, 116),
+          : const Color.fromARGB(60, 116, 116, 116),
       child: Icon(
         widget.icon ?? Icons.edit,
         color: themeColor,
