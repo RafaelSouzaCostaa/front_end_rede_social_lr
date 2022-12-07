@@ -73,6 +73,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                       const SizedBox(height: 20),
                       ComponentInput(
                         labelText: 'password'.tr,
+                        obscureText: !_visiblePassword,
                         controller: _passwordController,
                         suffixIcon: IconButton(
                           splashColor: Colors.transparent,
@@ -150,7 +151,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                           );
 
                           await ApiService.createProfile(newProfile);
-                          
+
                           int statusCode = await ApiService.login(
                             newProfile.email,
                             newProfile.password,
