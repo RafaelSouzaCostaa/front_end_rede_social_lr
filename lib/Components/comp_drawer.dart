@@ -97,7 +97,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 ),
               ),
               const Divider(
-                color: Colors.white30,
+                color: Colors.grey,
                 thickness: 0.5,
               ),
             ],
@@ -221,7 +221,7 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           ),
         ),
         const Divider(
-          color: Colors.white30,
+          color: Colors.grey,
           thickness: 0.5,
         ),
       ]),

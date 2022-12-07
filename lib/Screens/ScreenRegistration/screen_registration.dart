@@ -150,11 +150,11 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
                           );
 
                           await ApiService.createProfile(newProfile);
+                          
                           int statusCode = await ApiService.login(
                             newProfile.email,
                             newProfile.password,
                           );
-                          print(statusCode);
                           if (statusCode == 200) {
                             if (await ApiService.getProfileData()) {
                               sharedPreferences.saveTokenStatus();
