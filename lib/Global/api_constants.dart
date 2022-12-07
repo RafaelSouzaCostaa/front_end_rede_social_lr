@@ -1,9 +1,9 @@
 class APIConstants {
   //static String apiUrl = 'http://177.6.193.211:3000';
-  static String apiUrl = 'http://10.0.0.196:3000';
+  static String apiUrl = 'http://192.168.0.198:3000';
 
   //endpoints
-  static String login = '/login/';
+  static String login = '/login';
 
   //Profile
   static String createProfile = '/profile/create';

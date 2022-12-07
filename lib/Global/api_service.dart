@@ -189,7 +189,7 @@ class ApiService {
     }
   }
 
-  static Future<Post> likePost(String postOwnerId, String postId) async {
+  static Future<Object> likePost(String postOwnerId, String postId) async {
     final response = await http.post(
       Uri.parse(APIConstants.apiUrl + APIConstants.likePost),
       headers: _headerWithTokenWithTime,
@@ -202,7 +202,7 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      return Post.fromMap(jsonDecode(response.body));
+      return jsonDecode(response.body);
     } else {
       print(
           "Error ${response.statusCode.toString()}: ${response.body.toString()}");

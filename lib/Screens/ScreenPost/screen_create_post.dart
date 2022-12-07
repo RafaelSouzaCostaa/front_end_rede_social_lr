@@ -67,11 +67,12 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
                         fontWeight: FontWeight.w700,
                       ),
                       text: "Kitterar",
-                      onPressed: () {
+                      onPressed: () async {
                         if (listImage.isNotEmpty &&
                             _descriptionController.text != "") {
-                          ApiService.createPost(
+                          await ApiService.createPost(
                               _descriptionController.text, listImage);
+                          Get.offAndToNamed("/home");
                         }
                       },
                     ),

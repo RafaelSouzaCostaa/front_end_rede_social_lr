@@ -25,7 +25,6 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     return Drawer(
-      backgroundColor: CustomizedColors.darkBackground,
       child: Column(children: [
         Container(
           margin: const EdgeInsets.only(top: 20, bottom: 5),

@@ -17,12 +17,9 @@ class ScreenLogin extends StatefulWidget {
 }
 
 class _ScreenLoginState extends State<ScreenLogin> {
-  //ATENCAO retirar os valores padrão - quando produção
   InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
-  final TextEditingController _userController =
-      TextEditingController(text: "teste");
-  final TextEditingController _passwordController =
-      TextEditingController(text: "teste");
+  final TextEditingController _userController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool _visiblePassword = false;

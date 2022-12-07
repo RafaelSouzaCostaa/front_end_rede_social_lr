@@ -8,12 +8,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:rede_social_lr/Components/comp_edit_button.dart';
 import 'package:rede_social_lr/Components/comp_open_input_button.dart';
+import 'package:rede_social_lr/Global/token.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
 import '../../Components/comp_button.dart';
 import '../../Components/comp_text_button.dart';
 import '../../Global/profile_authenticated.dart';
+import '../../Global/shared_preferences.dart';
 
 class ScreenSettings extends StatefulWidget {
   const ScreenSettings({super.key});
@@ -29,15 +32,17 @@ class _ScreenSettingsState extends State<ScreenSettings> {
   Widget build(BuildContext context) {
     String? urlImageProfile = profileAuthenticated.profileAuthentic.value.image;
     Color themeColor = Theme.of(context).scaffoldBackgroundColor;
+    InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
+    Token token = Get.put(Token());
     File? _image;
     TextEditingController controllerName = TextEditingController(
-      text: 'profileAuthenticated.profileAuthentic.value.name',
+      text: profileAuthenticated.profileAuthentic.value.name,
     );
     TextEditingController controllerNickname = TextEditingController(
-      text: "profileAuthenticated.profileAuthentic.value.nickname}",
+      text: profileAuthenticated.profileAuthentic.value.nickname,
     );
     TextEditingController controllerEmail = TextEditingController(
-      text: 'profileAuthenticated.profileAuthentic.value.email',
+      text: profileAuthenticated.profileAuthentic.value.email,
     );
 
     return SafeArea(
@@ -153,7 +158,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ComponentOpenInputButton(
                     text: "${'change'.tr} ${'name'.tr}",
                     icon: Icons.person,
-                    subText: 'profileAuthenticated.profileAuthentic.value.name',
+                    subText: profileAuthenticated.profileAuthentic.value.name,
                     inputCotroller: controllerName,
                     onPressed: () async {
                       await Get.toNamed("/login");
@@ -166,7 +171,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     icon: Icons.alternate_email,
                     text: "${'change'.tr} ${'nickname'.tr}",
                     subText:
-                        "profileAuthenticated.profileAuthentic.value.nickname}",
+                        profileAuthenticated.profileAuthentic.value.nickname,
                     inputCotroller: controllerNickname,
                     onPressed: () async {
                       await Get.toNamed("/login");
@@ -178,8 +183,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ComponentOpenInputButton(
                     icon: Icons.mail,
                     text: "${'change'.tr} Email",
-                    subText:
-                        'profileAuthenticated.profileAuthentic.value.email',
+                    subText: profileAuthenticated.profileAuthentic.value.email,
                     inputCotroller: controllerEmail,
                     onPressed: () async {
                       await Get.toNamed("/login");
@@ -202,10 +206,27 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                   ),
                   ComponentTextButton(
                     icon: Icons.key,
+                    spaceBetweenIconAndText: 10,
                     text: "${'change'.tr} ${'password'.tr}",
                     width: Get.width * 0.98,
                     onPressed: () async {
                       await Get.toNamed("/login");
+                    },
+                  ),
+                  SizedBox(
+                    height: Get.height * 0.02,
+                  ),
+                  ComponentTextButton(
+                    icon: Icons.logout,
+                    spaceBetweenIconAndText: 10,
+                    iconColor: Colors.red,
+                    textColor: Colors.red,
+                    text: 'logout'.tr,
+                    width: Get.width * 0.98,
+                    onPressed: () {
+                      token.deleteToken();
+                      sharedPreferences.saveTokenStatus();
+                      Get.offAndToNamed("/login");
                     },
                   ),
                   SizedBox(
