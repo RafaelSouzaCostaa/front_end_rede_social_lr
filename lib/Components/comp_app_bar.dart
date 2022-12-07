@@ -30,7 +30,7 @@ class _ComponentAppBarState extends State<ComponentAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: GestureDetector(
-        onTap: widget.onTap == null
+        onTap: widget.onTap != null
             ? () {
                 widget.onTap;
               }
