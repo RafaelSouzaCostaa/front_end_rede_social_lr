@@ -16,7 +16,7 @@ class _TestesState extends State<Testes> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const ComponentAppBar(),
+        appBar: ComponentAppBar(),
         drawer: const ComponentDrawer(),
         body: ComponentPost(
           postDescription: "Mostra sua força Brasil",

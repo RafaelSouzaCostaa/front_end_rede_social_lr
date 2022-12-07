@@ -31,7 +31,7 @@ class _ScreenRegistrationState extends State<ScreenRegistration> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const ComponentAppBar(),
+        appBar: ComponentAppBar(),
         body: Column(
           children: [
             Flexible(

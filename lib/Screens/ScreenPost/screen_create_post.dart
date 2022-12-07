@@ -50,7 +50,7 @@ class _ScreenCreatePostState extends State<ScreenCreatePost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ComponentAppBar(),
+      appBar: ComponentAppBar(),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

@@ -34,7 +34,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: const ComponentAppBar(),
+        appBar: ComponentAppBar(
+          onTap: () {},
+        ),
         body: Column(children: [
           Flexible(
             child: Container(),

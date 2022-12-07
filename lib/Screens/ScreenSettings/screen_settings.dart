@@ -47,7 +47,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
 
     return SafeArea(
       child: Scaffold(
-        appBar: const ComponentAppBar(),
+        appBar: ComponentAppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
