@@ -224,25 +224,6 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
           color: Colors.white30,
           thickness: 0.5,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              width: 50,
-              padding: const EdgeInsets.symmetric(vertical: 1),
-              child: ComponentTextButton(
-                onPressed: () {
-                  Get.toNamed('/setting');
-                },
-                icon: Icons.settings,
-                iconColor: Colors.grey,
-                textColor: CustomizedColors.blueText,
-                hoverAnimation: false,
-              ),
-            ),
-          ],
-        ),
-        // Expanded(
       ]),
     );
   }

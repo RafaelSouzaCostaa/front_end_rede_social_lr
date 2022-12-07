@@ -1,6 +1,7 @@
 class APIConstants {
-  //static String apiUrl = 'http://177.6.193.211:3000';
-  static String apiUrl = 'http://192.168.0.198:3000';
+  //static String apiUrl = 'http://177.6.193.211:3000';//Rafael Casa
+  // static String apiUrl = 'http://192.168.0.198:3000';//Rafael Roteador
+  static String apiUrl = 'http://10.0.0.105:3000'; //Luiggi Casa
 
   //endpoints
   static String login = '/login';

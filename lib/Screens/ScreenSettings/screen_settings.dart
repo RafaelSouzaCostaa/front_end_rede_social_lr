@@ -9,7 +9,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:rede_social_lr/Components/comp_edit_button.dart';
 import 'package:rede_social_lr/Components/comp_open_input_button.dart';
 import 'package:rede_social_lr/Global/token.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../Colors/customized_colors_global.dart';
 import '../../Components/comp_app_bar.dart';
@@ -198,7 +197,9 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     text: "${'change'.tr} ${'birthDate'.tr}",
                     width: Get.width * 0.98,
                     onPressed: () async {
-                      await Get.toNamed("/");
+                      //IMPLEMENTAR > Tela de Colocar Data de Nascimento
+                      //Mudar componente, pra quando tiver a data mostrar a data
+                      //Se tem Data não deixar mais alterar
                     },
                   ),
                   SizedBox(
@@ -210,7 +211,7 @@ class _ScreenSettingsState extends State<ScreenSettings> {
                     text: "${'change'.tr} ${'password'.tr}",
                     width: Get.width * 0.98,
                     onPressed: () async {
-                      await Get.toNamed("/login");
+                      //IMPLEMENTAR > Tela de Trocar Senha
                     },
                   ),
                   SizedBox(
