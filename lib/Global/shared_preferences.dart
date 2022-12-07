@@ -26,8 +26,9 @@ class InstanceSharedPreference {
   }
 
   deleteToken() async {
+    SharedPreferences pref = await prefs;
     token.token.value = "";
-
+    pref.setString('token', "");
   }
 
   //Themes

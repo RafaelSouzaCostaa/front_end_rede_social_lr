@@ -21,13 +21,19 @@ class ComponentDrawer extends StatefulWidget {
 }
 
 class _ComponentDrawerState extends State<ComponentDrawer> {
-  ProfileAuthenticated profileAuthenticated = Get.put(ProfileAuthenticated());
+  ProfileAuthenticated profileAuthenticated = ProfileAuthenticated();
   InstanceSharedPreference sharedPreferences = InstanceSharedPreference();
   Themes theme = Get.put(Themes());
   Token token = Get.put(Token());
 
   bool themeSwitch = false;
   bool languageSwitch = false;
+
+  @override
+  void initState() {
+    profileAuthenticated = Get.put(ProfileAuthenticated());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -212,8 +218,10 @@ class _ComponentDrawerState extends State<ComponentDrawer> {
                 text: 'logout'.tr,
                 width: Get.width * 0.98,
                 onPressed: () {
-                  token.deleteToken();
-                  sharedPreferences.saveTokenStatus();
+                  //BUG quando fazer logout e login novamente, as telas devem atualizar com os novos dados
+                  setState(() {
+                    sharedPreferences.deleteToken();
+                  });
                   Get.offAndToNamed("/login");
                 },
               ),
